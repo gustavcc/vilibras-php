@@ -1,2 +1,2 @@
 # VILIBRAS_PHP
- Projeto escolar
+ Projeto escolar usando PHP como Back-End
