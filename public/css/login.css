@@ -1,0 +1,182 @@
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    /* height: calc(100vh - 140px); */
+}
+
+.left {
+    display: flex;
+    width: 50%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.left img {
+    width: 50%;
+}
+
+.right {
+    display: flex;
+    width: 50%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 500px;
+    height: auto;
+    color: var(--letters-color);
+    background: var(--login-bg);
+    border-radius: 10px;
+    border: 2px solid var(--login-border);
+    box-shadow: 5px 5px 0px var(--login-border);
+    padding: 20px 40px 20px 40px;
+}
+
+.error_message{
+    color: rgb(225, 33, 33);
+    margin-top: 30px;
+}
+
+.container h2 {
+    padding-top: 20px;
+}
+
+.container p {
+    padding-bottom: 20px;
+}
+
+
+.box {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0px 10px 0;
+}
+
+.box input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+}
+
+#senha{
+    border: 2px solid #000;
+    box-shadow: 2px 2px 0px #000;
+    width: 80%;
+    padding: 10px;
+    border-radius: 5px;
+    outline: none;
+}
+
+.required {
+    border: 2px solid #000;
+    box-shadow: 2px 2px 0px #000;
+}
+
+#senha:hover{
+    border: 2px solid #8282f1;
+}
+
+.required:hover {
+    border: 2px solid #8282f1;
+}
+
+.pass-check {
+    box-shadow: none;
+}
+
+#eye{
+    color: var(--letters-color);
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* ------ Animation ------ */
+@keyframes keyframes-fill {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+/* ---------------------------- */
+/* ---------------------------- */
+/* ---------------------------- */
+
+input::placeholder {
+    color: #a3a386;
+    font-size: 12pt;
+}
+
+.lets-go {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    width: 50%;
+    background: #9a9aff;
+    border: 2px solid #000;
+    box-shadow: 3px 3px 0px #000;
+    color: var(--login-border);
+    padding: 5px;
+    margin-top: 20px;
+    border-radius: 10px;
+    font-size: 12pt;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.right .container a {
+    text-decoration: none;
+    color: inherit;
+    color: #9a9aff;
+    cursor: pointer;
+    border-bottom: 1px solid #9a9aff;
+}
+
+button:hover {
+    box-shadow: none;
+}
+
+@media screen and (max-width: 550px) {
+    
+    main{
+        flex-direction: column;
+    }
+
+    .container{
+        width: 100%;
+    }
+
+    .left{
+        display: none;
+    }
+
+    .right{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+}

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}Cadastro | VILIBRAS{% endblock %}
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'app/style/login.css' %}">
+
+<main>
+    <div class="left">
+        <img src="{% static 'app/images/Signup-amico.png'%}" alt="">
+    </div>
+    <div class="right">
+        <form action="{% url 'Cadastro' %}" method="post">
+            {% csrf_token %}
+            <div class="container">
+                <h2>Seja bem-vindo</h2>
+                <p>Faça seu cadastro!</p>
+                <div class="box">
+                    <input class="required" name="username" type="text" placeholder="Usuário" required>
+                </div>
+                <div class="box">
+                    <input class="required" name="email" type="email" placeholder="Email" required>
+                </div>
+                <div class="box">
+                    <input name="senha" id="senha" type="password" placeholder="Senha" required>
+                    <i id="eye" class="fa-solid fa-eye-slash"></i>
+                </div>
+                <div class="box">
+                    <p>Já tem uma conta? <span><a href="{% url 'Login'  %}">Login</a></span></p>
+                </div>
+                <div class="lets-go">
+                    <button type="submit">Lets go!</button>
+                </div>
+                {% if error_message %}
+                    <p class="error_message">{{ error_message }}</p>
+                {% endif %}
+            </div>
+        </form>
+    </div>
+</main>
+
+{% endblock %}

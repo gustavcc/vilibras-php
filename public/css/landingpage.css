@@ -1,0 +1,444 @@
+/* VILIBRAS */
+/* -------------------------------------------------------- */
+
+
+
+/* ---------------------------------------------------------------- */
+/* Main */
+
+.return-top{
+    position: fixed;
+    right: 10px;
+    bottom: 100px;
+    color: var(--links-color);
+    background-color: #084569;
+    border-radius: 5px;
+    font-size: 16pt;
+}
+
+.return-top a{
+    padding: 10px;
+}
+
+main {
+    flex: 1 1 100vw;
+    height: auto;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* quebra de linha se necessário*/
+    justify-content: center;
+    align-items: center;
+    background: var(--main-bg);
+}
+
+.libras-main {
+    width: 100%;
+    min-height: 100vh;
+    /* height: calc(100vh - 85px); */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background-image: linear-gradient(to bottom, #000, #031926, #143042, #20538a);
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: 0.7s ease-in-out;
+    animation: blendmode 15s ease-in-out infinite alternate;
+}
+
+@keyframes blendmode {
+    0% {
+        background-color: #031926;
+    }
+
+    50% {
+        background-color: #2e93ff;
+    }
+
+    100% {
+        background-color: #585858;
+    }
+}
+
+.libras-text {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 10% 5% 10% 5%;
+    color: #ffffff;
+    transition: .3s ease-in-out;
+}
+
+.libras-text h1 {
+    font-size: 30pt;
+    margin-bottom: 3rem ;
+    border-right: 4px solid;
+    background-image: linear-gradient(to right bottom, var(--title-1), var(--title-2), var(--title-3));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #ffffff;
+    width: 9ch;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3s steps(9), blinking 1s infinite step-end alternate;
+}
+
+.libras-img{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 50%;
+    padding: 0 5% 0 5%;
+
+}
+
+.libras-img img{
+    width: 70%;
+    border-radius: 40px;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+}
+
+@keyframes blinking {
+    50% {
+        border-color: transparent;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.libras-text p {
+    font-size: 14pt;
+}
+
+.main h1 {
+    padding-bottom: 5%;
+    font-size: 26pt;
+    background-image: linear-gradient(to right bottom, var(--title-1), var(--title-2), var(--title-3));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #ffffff;
+}
+
+.main h2 {
+    padding: 5px 0 5px 0;
+    font-size: 16pt;
+    background-image: linear-gradient(to right bottom, var(--title-1), var(--title-2), var(--title-3));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #ffffff;
+}
+
+.main {
+    min-height: 100vh;
+    transition: all 1s ease-in-out;
+    filter: blur(15px);
+    opacity: 0;
+    color: var(--letters-color);
+    border-bottom: 1px solid var(--section-line);
+    border-top: 1px solid var(--section-line);
+    display: flex;
+}
+
+.show{
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+}
+
+.show h1{
+    transform: translateX(0);
+}
+
+.main p {
+    font-size: 14pt;
+    padding-bottom: 20px;
+}
+
+.button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+    box-sizing: border-box;
+    transition: all 1s ease;
+}
+
+.button a {
+    border-radius: 10px;
+    background-color: #009dff;
+    cursor: pointer;
+    color: #fff;
+    padding: 10px;
+    font-size: 16pt;
+    transition: all .3s;
+    border: 3px solid #009dff;
+}
+
+.button a:hover{
+    background: #fff;
+    color: #000;
+}
+
+#button-final {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.inicio-final {
+    width: 100%;
+    display: flex;
+    padding: 5% 10% 5% 10%;
+}
+
+.text-inicio-final {    
+    flex: 10 1 70%;
+    padding: 10% 5% 10% 0%;
+}
+
+.img-inicio-final {
+    flex: 1 1 30%;
+    display: flex;
+    align-items: center;
+}
+
+.img-inicio-final img {
+    width: 100%;
+    height: 90%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.principios {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 5% 0 5% 0;
+}
+
+.text {
+    flex: 1 1 100%;
+    padding: 0% 10% 0% 10%;
+}
+
+.box-principios {
+    height: auto;
+    display: flex;
+    padding: 0% 10% 0% 10%;
+    justify-content: space-between;
+}
+
+.box-center {
+    padding: 0 3% 0 3%;
+}
+
+.box {
+    flex-wrap: wrap;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.box img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.vocabulario {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3% 0 3% 0;
+}
+
+.box-vocabulario {
+    flex-wrap: wrap;
+    height: auto;
+    display: flex;
+    padding: 0% 10% 20px 10%;
+}
+
+.box-voc {
+    width: calc(50% - 10px);
+    height: auto;
+    background: var(--section-especial-bg);
+    padding: 20px;
+    margin: 5px;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+.text-adicional {
+    padding-top: 5%;
+    flex: 1 1 100%;
+    padding: 0% 10% 0% 10%;
+    text-align: center;
+}
+
+.generic-back {
+    width: 100%;
+    height: auto;
+    padding: 5%;
+    background: var(--section-especial-bg);
+}
+
+.generic {
+    height: auto;
+    background: var(--main-bg);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3% 0 3% 0;
+    border-radius: 20px;
+}
+
+.text-generic {
+    flex: 1 1 100%;
+    padding: 0% 6% 0% 6%;
+    margin: 5px;
+}
+
+.box-generic {
+    flex-wrap: wrap;
+    height: auto;
+    display: flex;
+    padding: 0% 6% 20px 6%;
+}
+
+.box-a {
+    width: calc(50% - 10px);
+    height: auto;
+    background: var(--section-especial-bg);
+    padding: 20px;
+    margin: 5px;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+.main span {
+    color: #009dff;
+    border-bottom: 2px solid #009dff;
+}
+
+@media only screen and (max-width: 710px){
+    #inscription {
+        width: 200px;
+        flex-direction: column;
+        right: 20px;
+        top: 120px;
+    }
+    
+    #inscription a {
+        width: 150px;
+        padding: 5px;
+        margin: 5px;
+    }
+}
+
+@media screen and (max-width:892px) {
+    .box-voc {
+        width: 100%;
+        margin: 0 0 10px 0;
+    }
+
+    .box-a {
+        width: 100%;
+        margin: 0 0 10px 0;
+    }
+
+    .libras-main {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .libras-img {
+        width: 100%;
+        justify-content: center;
+        padding: 0 5% 10% 5%;
+    }
+
+    .libras-text {
+        width: 100%;
+        padding: 10%;
+    }
+}
+
+@media screen and (max-width:570px) {
+    .inicio-final {
+        flex-direction: column;
+    }
+
+    .img-inicio-final img {
+        height: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 20px;
+        padding: 0 0 0 0;
+    }
+
+    .text-inicio-final {
+        padding: 0;
+    }
+
+    .box-principios {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .box-center {
+        padding: 0;
+    }
+
+    .box {
+        padding-bottom: 5%;
+    }
+
+    #button-final{
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .main h1{
+        font-size: 20pt;
+    }
+
+    .main h2{
+        padding: 20px 0 20px 0;
+    }
+
+    .main {
+        padding-top: 10%;
+        padding-bottom: 10%;
+    }
+}
+
+/* Main */
+/* ---------------------------------------------------------------- */

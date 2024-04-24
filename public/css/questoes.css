@@ -1,0 +1,109 @@
+/* VILIBRAS */
+
+/* -------------------------------------------------------- */
+
+
+/* ---------------------------------------------------------------- */
+/* main */
+
+main {
+    min-height: 100vh;
+    flex: 1 1 100vw;
+    display: flex;
+    background: var(--main-bg);
+    padding: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.box-questoes {
+    height: auto;
+    width: 80vw;
+    background: var(--section-especial-bg);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    box-shadow: 0 0 20px var(--section-shadow);
+}
+
+.main h1 {
+    padding-bottom: 30px;
+    font-size: 26pt;
+    font-weight: 600;
+    background-image: linear-gradient(to right bottom, var(--title-1), var(--title-2), var(--title-3));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #ffffff;
+    border-bottom: 1px solid var(--letters-color);
+}
+
+.quiz {
+    padding: 20px 0;
+}
+
+.quiz h2 {
+    padding: 5px 0 5px 0;
+    font-size: 16pt;
+    font-weight: 600;
+    color: var(--letters-color);
+}
+
+#buttons-resposta {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn {
+    background: var(--section-especial-bg);
+    color: var(--letters-color);
+    font-weight: 500;
+    width: 100%;
+    border: 1px solid var(--letters-color);
+    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 0 10px 0;
+    cursor: pointer;
+    text-align: left;
+    transition: all .3s;
+    box-sizing: border-box;
+}
+
+.btn:hover {
+    border: 1px solid var(--section-especial-bg);
+}
+
+#next-btn {
+    background-image: linear-gradient(to right bottom, #031926, #04215b, #009dff);
+    color: #fff;
+    border: none;
+    font-weight: 600;
+    width: 150px;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 30px auto 0;
+    cursor: pointer;
+    display: none;
+}
+
+.correct {
+    background: #58de92;
+}
+
+.incorrect {
+    background: #fc6060;
+}
+
+@media screen and (max-width: 479px) {
+
+    .box-questoes{
+        width: 100vw;
+        padding: 30px;
+    }
+}
+
+/* main  */
+/* ---------------------------------------------------------------- */
