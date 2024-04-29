@@ -6,15 +6,15 @@
     
     <title>VILIBRAS</title>
 
-    <link rel="icon" href="public/images/Logo.png">
+    <link rel="icon" href="../../public/images/Logo.png">
 
-    <link rel="stylesheet" href="public/css/base.css">
+    <link rel="stylesheet" href="../../public/css/base.css">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     
-        <script src="public/js/base.js" type="text/javascript" defer></script>
+        <script src="../../public/js/base.js" type="text/javascript" defer></script>
 </head>
 <body>
 
@@ -33,17 +33,17 @@
 <header>
     <div class="logo">
         <button id="openMenu"><i class="fa-solid fa-bars"></i></button>
-        <a href="#"><img src="public/images/Logo.png" alt=""></a>
+        <a href="#"><img src="../../public/images/Logo.png" alt=""></a>
         <a id="logoname" href="#">VILIBRAS</a>
     </div>
 
     <div class="menu-right">
         <nav id="menu">
             <button id="closeMenu"><i class="fa-solid fa-xmark"></i></button>
-            <a class="b-link" href="Dashboard">Home</a> <!--aparecer se for autenticado-->
-            <a class="b-link" href="Questions">Questões</a>
-            <a class="b-link" href="Questions">Aulas</a>
-            <a class="b-link" href="Questions">Dicionário</a>
+            <a class="b-link" href="app/pages/dashboard.php">Home</a> <!--aparecer se for autenticado-->
+            <a class="b-link" href="app/pages/questoes.php">Questões</a>
+            <a class="b-link" href="../aulas.php">Aulas</a>
+            <a class="b-link" href="#">Dicionário</a>
             <div class="search-box">
                 <input type="text" class="search-text" placeholder="Pesquisar...">
                 <a class="search-btn" href="#">

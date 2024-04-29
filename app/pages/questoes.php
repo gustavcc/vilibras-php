@@ -1,9 +1,9 @@
-<link rel="stylesheet" href="public/css/questoes.css">
-<script src="public/js/questoes.js" type="text/javascript" defer></script>
-
 <?php
 require_once("base/cabecalho.php");
 ?>
+
+<link rel="stylesheet" href="../../public/css/questoes.css">
+<script src="../../public/js/questoes.js" type="text/javascript" defer></script>
 
 <main>
     <div class="box-questoes">
