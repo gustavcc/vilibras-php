@@ -42,9 +42,9 @@
         <div class="menu-right">
             <nav id="menu">
                 <button id="closeMenu"><i class="fa-solid fa-xmark"></i></button>
-                <a class="b-link" href="app/pages/dashboard.php">Home</a> <!--aparecer se for autenticado-->
-                <a class="b-link" href="app/pages/questoes.php">Questões</a>
-                <a class="b-link" href="app/pages/aulas.php">Aulas</a>
+                <a class="b-link" href="dashboard.php">Home</a> <!--aparecer se for autenticado-->
+                <a class="b-link" href="questoes.php">Questões</a>
+                <a class="b-link" href="aulas.php">Aulas</a>
                 <a class="b-link" href="#">Dicionário</a>
                 <div class="search-box">
                     <input type="text" class="search-text" placeholder="Pesquisar...">

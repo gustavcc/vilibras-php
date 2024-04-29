@@ -19,7 +19,7 @@ main {
     gap: 30px;
 }
 
-.box-questoes {
+.questoes {
     height: auto;
     width: 80vw;
     background: var(--main-bg);
@@ -31,15 +31,22 @@ main {
     box-shadow: 0 0 5px var(--section-line);
 }
 
-.main h1 {
-    padding-bottom: 30px;
-    font-size: 16pt;
-    font-weight: 600;
+.text-question h1 {
+    font-size: 14pt;
+    font-weight: 400;
     background-image: linear-gradient(to right bottom, var(--title-1), var(--title-2), var(--title-3));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     color: #ffffff;
+}
+
+.informations {
+    display: flex;
+    font-size: 14pt;
+    font-weight: 400;
+    padding-bottom: 30px;
+    justify-content: flex;
     border-bottom: 1px solid var(--text);
 }
 
@@ -47,7 +54,7 @@ main {
     padding: 20px 0;
 }
 
-#pergunta {
+.enunciado {
     padding: 5px 0 5px 0;
     font-size: 16pt;
     font-weight: 300;
@@ -61,7 +68,7 @@ main {
     color: var(--text);
 } */
 
-#buttons-resposta {
+.answers {
     display: flex;
     flex-direction: column;
 }
@@ -99,7 +106,7 @@ main {
 }
 
 .correct {
-    background: #58de92;
+    background: #004e22;
 }
 
 .incorrect {
@@ -108,7 +115,7 @@ main {
 
 @media screen and (max-width: 479px) {
 
-    .box-questoes{
+    .questoes{
         width: 100vw;
         padding: 30px;
     }
