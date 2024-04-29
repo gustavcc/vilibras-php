@@ -1,5 +1,5 @@
 <?php
-require_once("base/cabecalho.php");
+require_once("cabecalho.php");
 ?>
 
 <link rel="stylesheet" href="../../public/css/questoes.css">
@@ -40,5 +40,5 @@ require_once("base/cabecalho.php");
 </main>
 
 <?php
-require_once("base/footer.php");
+require_once("footer.php");
 ?>

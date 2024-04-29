@@ -5,7 +5,7 @@ window.addEventListener("load", function () {
 //* ----- Scroll animate -----
 
 // seleciona as seções / class
-const sections = document.querySelectorAll('.main');
+const sections = document.querySelectorAll('.landing');
 const return_top = document.querySelector('.return-top');
 
 // objeto / função que observa os elementos do html

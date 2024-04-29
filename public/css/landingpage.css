@@ -132,7 +132,7 @@ main {
     font-size: 14pt;
 }
 
-.main h1 {
+.landing h1 {
     padding-bottom: 5%;
     font-size: 26pt;
     background-image: linear-gradient(to right bottom, var(--title-1), var(--title-2), var(--title-3));
@@ -142,7 +142,7 @@ main {
     color: #ffffff;
 }
 
-.main h2 {
+.landing h2 {
     padding: 5px 0 5px 0;
     font-size: 16pt;
     background-image: linear-gradient(to right bottom, var(--title-1), var(--title-2), var(--title-3));
@@ -152,7 +152,7 @@ main {
     color: #ffffff;
 }
 
-.main {
+.landing {
     min-height: 100vh;
     transition: all 1s ease-in-out;
     filter: blur(15px);
@@ -173,7 +173,7 @@ main {
     transform: translateX(0);
 }
 
-.main p {
+.landing p {
     font-size: 14pt;
     padding-bottom: 20px;
 }
@@ -346,24 +346,9 @@ main {
     transition: 0.5s;
 }
 
-.main span {
+.landing span {
     color: #009dff;
     border-bottom: 2px solid #009dff;
-}
-
-@media only screen and (max-width: 710px){
-    #inscription {
-        width: 200px;
-        flex-direction: column;
-        right: 20px;
-        top: 120px;
-    }
-    
-    #inscription a {
-        width: 150px;
-        padding: 5px;
-        margin: 5px;
-    }
 }
 
 @media screen and (max-width:892px) {
@@ -431,15 +416,15 @@ main {
         padding: 0;
     }
 
-    .main h1{
+    .landing h1{
         font-size: 20pt;
     }
 
-    .main h2{
+    .landing h2{
         padding: 20px 0 20px 0;
     }
 
-    .main {
+    .landing {
         padding-top: 10%;
         padding-bottom: 10%;
     }
