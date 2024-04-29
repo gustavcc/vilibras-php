@@ -8,7 +8,7 @@ checkbox.addEventListener('change', function () {
 const close = document.getElementById('closeMenu');
 openMenu.addEventListener('click', () => {
     close.style.display = 'flex',
-    menu.style.right = '0'
+    menu.style.left = '0'
 })
 
 closeMenu.addEventListener('click', () => {

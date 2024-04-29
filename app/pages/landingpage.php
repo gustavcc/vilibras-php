@@ -2,7 +2,7 @@
 <script src="public/js/landingpage.js" type="text/javascript" defer></script>
 
 <?php
-require_once("cabecalho.php");
+require_once("base/cabecalho.php");
 ?>
 
 <main>
@@ -160,5 +160,5 @@ require_once("cabecalho.php");
 </main>
 
 <?php
-require_once("footer.php");
+require_once("base/footer.php");
 ?>

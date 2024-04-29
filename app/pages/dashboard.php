@@ -1,20 +1,17 @@
-{% extends 'base.html' %}
-{% block title %}Dashboard | VILIBRAS{% endblock %}
-{% block content %}
-{% load static %}
+<link rel="stylesheet" href="public/css/dashboard.css">
+<script src="public/js/dashboard.js" type="text/javascript" defer></script>
 
-<link rel="stylesheet" href="{% static 'app/style/dashboard.css' %}">
+<?php
+require_once("base/cabecalho.php");
+?>
 
-<body>
     <main>
         <section id="slide" class="carrossel">
             <div class="containerSlide" id="imagens">
-                <img src="{% static 'app/images/SL-113022-54210-35.jpg' %}" class="imgs">
-                <img src="{% static 'app/images/uyfydu6.jpg' %}" class="imgs">
-                <img src="{% static 'app/images/69603047_uyfydu4.jpg' %}" class="imgs">
-                <img src="{% static 'app/images//13777983_gradient_2.jpg' %}" class="imgs">
-                <button class="button-slide" id="next-slide"><i class="fa-solid fa-chevron-right"></i></button>
-                <button class="button-slide" id="back-slide"><i class="fa-solid fa-chevron-right"></i></button>
+                <img src="public/images/SL-113022-54210-35.jpg" class="imgs">
+                <img src="public/images/uyfydu6.jpg" class="imgs">
+                <img src="public/images/69603047_uyfydu4.jpg" class="imgs">
+                <img src="public/images/13777983_gradient_2.jpg" class="imgs">
             </div>
             <button class="button-slide" id="next-slide"><i class="fa-solid fa-chevron-right"></i></button>
             <button class="button-slide" id="back-slide"><i class="fa-solid fa-chevron-right"></i></button>
@@ -38,7 +35,7 @@
                 <i class="fa-solid fa-location-dot"></i>
                 <p class="text">Seja bem-vindo(a) ao seu <span id="dash">Dashboard</span></p>
             </div>
-            <img src="{% static 'app/images/desktop computer-rafiki.svg' %}" alt="">
+            <img src="IMG/desktop computer-rafiki.svg" alt="">
 
             </div>
         </section>
@@ -73,10 +70,10 @@
         <section class="perfil">
             <p class="text">Perfil de Usuário</p>
             <a href="perfil.html" class="image-perfil">
-                <img id="image" src="{% static 'app/images/user.png' %}" alt="Perfil usuário">
+                <img id="image" src="public/images/user.png" alt="Perfil usuário">
             </a>
             <a href="perfil.html" class="box-perfil">
-                <p id="user-perfil">{{ username }}</p>
+                <p id="user-perfil">Gustavo</p>
             </a>
             <div class="calender">
                 <p>Calender</p>
@@ -84,7 +81,6 @@
         </section>
     </aside>
 
-    <script src="{% static 'app/js/dashboard.js' %}" type="text/javascript" defer></script>
-</body>
-
-{% endblock %}
+<?php
+require_once("base/footer.php");
+?>

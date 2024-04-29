@@ -1,4 +1,4 @@
-/* VILIBRAS */
+/* VILIBRAS  QUESTOES*/
 
 /* -------------------------------------------------------- */
 
@@ -8,7 +8,7 @@
 
 main {
     min-height: 100vh;
-    flex: 1 1 100vw;
+    width: 100%;
     display: flex;
     background: var(--main-bg);
     padding: 5%;
@@ -16,41 +16,50 @@ main {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    gap: 30px;
 }
 
 .box-questoes {
     height: auto;
     width: 80vw;
-    background: var(--section-especial-bg);
+    background: var(--main-bg);
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     padding: 30px;
-    box-shadow: 0 0 20px var(--section-shadow);
+    border: 1px solid var(--section-line);
+    box-shadow: 0 0 5px var(--section-line);
 }
 
 .main h1 {
     padding-bottom: 30px;
-    font-size: 26pt;
+    font-size: 16pt;
     font-weight: 600;
     background-image: linear-gradient(to right bottom, var(--title-1), var(--title-2), var(--title-3));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     color: #ffffff;
-    border-bottom: 1px solid var(--letters-color);
+    border-bottom: 1px solid var(--text);
 }
 
 .quiz {
     padding: 20px 0;
 }
 
-.quiz h2 {
+#pergunta {
     padding: 5px 0 5px 0;
     font-size: 16pt;
-    font-weight: 600;
-    color: var(--letters-color);
+    font-weight: 300;
+    color: var(--text);
 }
+
+/* .quiz h2 {
+    padding: 5px 0 5px 0;
+    font-size: 16pt;
+    font-weight: 400;
+    color: var(--text);
+} */
 
 #buttons-resposta {
     display: flex;
@@ -58,11 +67,11 @@ main {
 }
 
 .btn {
-    background: var(--section-especial-bg);
-    color: var(--letters-color);
+    background: var(--main-bg);
+    color: var(--text);
     font-weight: 500;
     width: 100%;
-    border: 1px solid var(--letters-color);
+    border: 1px solid var(--text);
     padding: 10px;
     border-radius: 5px;
     margin: 10px 0 10px 0;
@@ -73,7 +82,7 @@ main {
 }
 
 .btn:hover {
-    border: 1px solid var(--section-especial-bg);
+    border: 1px solid var(--main-bg);
 }
 
 #next-btn {

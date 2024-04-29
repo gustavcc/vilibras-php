@@ -14,7 +14,7 @@
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     
-    <script src="public/js/base.js" type="text/javascript" defer></script>
+        <script src="public/js/base.js" type="text/javascript" defer></script>
 </head>
 <body>
 
@@ -32,16 +32,25 @@
 
 <header>
     <div class="logo">
-        <a href="#"><img src="public/images/Logo.png" alt="Logo"></a>
-        <a href="#">VILIBRAS</a>
+        <button id="openMenu"><i class="fa-solid fa-bars"></i></button>
+        <a href="#"><img src="public/images/Logo.png" alt=""></a>
+        <a id="logoname" href="#">VILIBRAS</a>
     </div>
 
-    <nav id="menu">
-        <button id="closeMenu"><i class="fa-solid fa-xmark"></i></button>
-        <!-- {% if user.is_authenticated %} -->
-        <a href="{% url 'Dashboard' %}">Home</a>
-        <a href="{% url 'Questoes' %}">Questões</a>
-        <!-- {% endif %} -->
+    <div class="menu-right">
+        <nav id="menu">
+            <button id="closeMenu"><i class="fa-solid fa-xmark"></i></button>
+            <a class="b-link" href="Dashboard">Home</a> <!--aparecer se for autenticado-->
+            <a class="b-link" href="Questions">Questões</a>
+            <a class="b-link" href="Questions">Aulas</a>
+            <a class="b-link" href="Questions">Dicionário</a>
+            <div class="search-box">
+                <input type="text" class="search-text" placeholder="Pesquisar...">
+                <a class="search-btn" href="#">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </a>
+            </div>
+        </nav>
         <label class="container-box">
             <input id="checkbox" checked="checked" type="checkbox">
             <svg viewBox="0 0 384 512" height="1em" xmlns="http://www.w3.org/2000/svg" class="moon">
@@ -55,37 +64,28 @@
                 </path>
             </svg>
         </label>
-    </nav>
-    
-    <div id="nav-right">
-        <div class="search-box">
-            <input type="text" class="search-text" placeholder="Pesquisar...">
-            <a class="search-btn" href="#">
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </a>
-        </div>
-        <!--*** Usuario ***-->
-
-        <div class="user">
-            <div class="options-user">
-                <a class="option-u" href="#">
-                    <span><i class="fa-solid fa-house"></i></span>
-                    <span>Minha Conta</span>
-                </a>
-                <a id="sair" class="option-u" href="#">
-                    <span><i class="fa-solid fa-right-from-bracket"></i></span>
-                    <span>Sair</span>
-                </a>
-            </div>
-            <div id="icon-user">
-                <i class="fa-solid fa-user"></i>
-            </div>
-            <div class="seta"><i class="fa-solid fa-circle-chevron-down"></i></div>
-        </div>
         <!-- <div class="login">
-            <a href="{% url 'Dashboard' %}">Sou Aluno(a)</a>
+            <a href="Dashboard">Entrar</a>
         </div> -->
-        
-        <button id="openMenu"><i class="fa-solid fa-bars"></i></button>
+        <div class="menu-user">
+            <ul class="dropdown-menu">
+                <li>
+                    <i id="menu-icon" class="fa-solid fa-user"></i>
+                    <ul class="dropdown">
+                        <li>
+                            <p>Olá, </p>
+                        </li>
+                        <li><a href="#">
+                                <span><i class="fa-solid fa-house"></i></span>
+                                <span>Acessar Conta</span>
+                            </a></li>
+                        <li><a id="sair" href="#">
+                                <span><i class="fa-solid fa-right-from-bracket"></i></span>
+                                <span>Sair</span>
+                            </a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
     </div>
 </header>
