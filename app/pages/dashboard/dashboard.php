@@ -1,17 +1,17 @@
 <?php
-require_once("cabecalho.php");
+require_once("../base/cabecalho.php");
 ?>
 
-<link rel="stylesheet" href="../../public/css/dashboard.css">
-<script src="../../public/js/dashboard.js" type="text/javascript" defer></script>
+<link rel="stylesheet" href="../../../public/css/dashboard.css">
+<script src="../../../public/js/dashboard.js" type="text/javascript" defer></script>
 
     <main>
         <section id="slide" class="carrossel">
             <div class="containerSlide" id="imagens">
-                <img src="../../public/images/SL-113022-54210-35.jpg" class="imgs">
-                <img src="../../public/images/uyfydu6.jpg" class="imgs">
-                <img src="../../public/images/69603047_uyfydu4.jpg" class="imgs">
-                <img src="../../public/images/13777983_gradient_2.jpg" class="imgs">
+                <img src="../../../public/images/SL-113022-54210-35.jpg" class="imgs">
+                <img src="../../../public/images/uyfydu6.jpg" class="imgs">
+                <img src="../../../public/images/69603047_uyfydu4.jpg" class="imgs">
+                <img src="../../../public/images/13777983_gradient_2.jpg" class="imgs">
             </div>
             <button class="button-slide" id="next-slide"><i class="fa-solid fa-chevron-right"></i></button>
             <button class="button-slide" id="back-slide"><i class="fa-solid fa-chevron-right"></i></button>
@@ -35,7 +35,7 @@ require_once("cabecalho.php");
                 <i class="fa-solid fa-location-dot"></i>
                 <p class="text">Seja bem-vindo(a) ao seu <span id="dash">Dashboard</span></p>
             </div>
-            <img src="../../public/images/desktop computer-rafiki.svg" alt="">
+            <img src="../../../public/images/desktop computer-rafiki.svg" alt="">
 
             </div>
         </section>
@@ -70,7 +70,7 @@ require_once("cabecalho.php");
         <section class="perfil">
             <p class="text">Perfil de Usuário</p>
             <a href="perfil.php" class="image-perfil">
-                <img id="image" src="../../public/images/user.png" alt="Perfil usuário">
+                <img id="image" src="../../../public/images/user.png" alt="Perfil usuário">
             </a>
             <a href="perfil.php" class="box-perfil">
                 <p id="user-perfil">Gustavo</p>
@@ -82,5 +82,5 @@ require_once("cabecalho.php");
     </aside>
 
 <?php
-require_once("footer.php");
+require_once("../base/footer.php");
 ?>

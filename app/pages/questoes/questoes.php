@@ -1,9 +1,9 @@
 <?php
-require_once("cabecalho.php");
+require_once("../base/cabecalho.php");
 ?>
 
-<link rel="stylesheet" href="../../public/css/questoes.css">
-<script src="../../public/js/questoes.js" type="text/javascript" defer></script>
+<link rel="stylesheet" href="../../../public/css/questoes.css">
+<script src="../../../public/js/questoes.js" type="text/javascript" defer></script>
 
 <main>
     <div class="questoes">
@@ -72,5 +72,5 @@ require_once("cabecalho.php");
 </main>
 
 <?php
-require_once("footer.php");
+require_once("../base/footer.php");
 ?>

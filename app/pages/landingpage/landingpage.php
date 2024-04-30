@@ -1,9 +1,9 @@
 <?php
-require_once("cabecalho.php");
+require_once("../base/cabecalho.php");
 ?>
 
-    <link rel="stylesheet" href="../../public/css/landingpage.css">
-    <script src="../../public/js/landingpage.js" type="text/javascript" defer></script>
+    <link rel="stylesheet" href="../../../public/css/landingpage.css">
+    <script src="../../../public/js/landingpage.js" type="text/javascript" defer></script>
 
     <main>
         <div class="libras-main">
@@ -14,7 +14,7 @@ require_once("cabecalho.php");
                     comunicar com a comunidade surda. Comece hoje a aprender!</p>
             </div>
             <div class="libras-img">
-                <img src="../../public/images/ensinando-libras.jpg" alt="Imagem">
+                <img src="../../../public/images/ensinando-libras.jpg" alt="Imagem">
             </div>
         </div>
 
@@ -26,7 +26,7 @@ require_once("cabecalho.php");
                 </p>
             </div>
             <div class="img-inicio-final">
-                <img src="../../public/images/ajudando-uns-aos-outros.jpg" alt="Alfabeto">
+                <img src="../../../public/images/ajudando-uns-aos-outros.jpg" alt="Alfabeto">
             </div>
         </div>
 
@@ -36,19 +36,19 @@ require_once("cabecalho.php");
             </div>
             <div class="box-principios">
                 <div class="box">
-                    <img src="../../public/images/image ia 2.jpeg" alt="">
+                    <img src="../../../public/images/image ia 2.jpeg" alt="">
                     <h2>Configuração de mãos</h2>
                     <p>Cada sinal é formado por uma ou mais configurações de mãos que representam um fonema, letra ou
                         palavra em português.</p>
                 </div>
                 <div class="box box-center">
-                    <img src="../../public/images/lingua-gestual-com-as-maos-no-estudio.jpg" alt="">
+                    <img src="../../../public/images/lingua-gestual-com-as-maos-no-estudio.jpg" alt="">
                     <h2>Movimento e direcionalidade</h2>
                     <p>O movimento das mãos, a velocidade, a direção e o ponto de contato com o corpo são elementos
                         cruciais na formação de um sinal em Libras.</p>
                 </div>
                 <div class="box">
-                    <img src="../../public/images/lib 1.jpeg" alt="">
+                    <img src="../../../public/images/lib 1.jpeg" alt="">
                     <h2>Expressão facial e corporal</h2>
                     <p>A expressão facial e corporal do sinalizador ajudam a transmitir o humor, a intenção e o
                         significado de uma frase em Libras.</p>
@@ -150,7 +150,7 @@ require_once("cabecalho.php");
                 </div>
             </div>
             <div class="img-inicio-final">
-                <img src="../../public/images/image ia 2.jpeg" alt="Alfabeto">
+                <img src="../../../public/images/image ia 2.jpeg" alt="Alfabeto">
             </div>
         </div>
 
@@ -160,5 +160,5 @@ require_once("cabecalho.php");
     </main>
 
 <?php
-require_once("footer.php");
+require_once("../base/footer.php");
 ?>
