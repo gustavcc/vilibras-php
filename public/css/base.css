@@ -1,11 +1,12 @@
 /* VILIBRAS BASE */
 /* -------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'JetBrains Mono';
+    font-family: 'JetBrains Mono', monospace;
 }
 
 body {
