@@ -3,7 +3,7 @@
 define('user','root');
 define('password','admin');
 define('host','localhost');
-define('db','vilibras_questoes');
+define('db','vilibras');
 
 $mysqli;
 
@@ -21,5 +21,3 @@ function desconecta(){
     global $mysqli;
     $mysqli->close();
 }
-
-conecta();

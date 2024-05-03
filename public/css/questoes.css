@@ -16,19 +16,19 @@ main {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 50px;
 }
 
 .questoes {
     height: auto;
     width: 80vw;
-    background: var(--main-bg);
+    color: var(--text);
+    background: var(--bg-questoes);
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     padding: 30px;
-    border: 1px solid var(--section-line);
-    box-shadow: 0 0 5px var(--section-line);
+    border: 2px solid var(--section-line);
 }
 
 .text-question h1 {
@@ -47,6 +47,7 @@ main {
     font-weight: 400;
     padding-bottom: 30px;
     justify-content: flex;
+    color: var(--text);
     border-bottom: 1px solid var(--text);
 }
 
@@ -61,20 +62,13 @@ main {
     color: var(--text);
 }
 
-/* .quiz h2 {
-    padding: 5px 0 5px 0;
-    font-size: 16pt;
-    font-weight: 400;
-    color: var(--text);
-} */
-
 .answers {
     display: flex;
     flex-direction: column;
 }
 
 .btn {
-    background: var(--main-bg);
+    background: var(--bg-questoes);
     color: var(--text);
     font-weight: 500;
     width: 100%;

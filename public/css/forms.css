@@ -1,0 +1,35 @@
+main {
+    color: var(--text);
+    padding: 5%;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.label {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.radio {
+    padding: 20px;
+}
+
+.msg_erro {
+    margin: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgb(181, 99, 99);
+}
+
+.msg {
+    margin: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #76c5f3;
+}

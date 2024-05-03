@@ -555,6 +555,7 @@ footer a:hover {
     --login-border: #000;
     --login-bg: #4f4fff;
     --links-bg: #fff;
+    --bg-questoes: #f2f6fc;
 
 }
 
@@ -576,4 +577,5 @@ footer a:hover {
     --login-border: #fff;
     --login-bg: #084569;
     --links-bg: #010d14;
+    --bg-questoes: #434343;
 }
