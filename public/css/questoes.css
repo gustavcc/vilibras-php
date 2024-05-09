@@ -15,8 +15,27 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     flex-wrap: wrap;
     gap: 50px;
+}
+
+.options {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+    font-size: 20px;
+}
+
+#edit {
+    cursor: pointer;
+    color: #00883b;
+}
+#del {
+    cursor: pointer;
+    color: #fc6060;
 }
 
 .questoes {
@@ -24,11 +43,11 @@ main {
     width: 80vw;
     color: var(--text);
     background: var(--bg-questoes);
-    border-radius: 20px;
+    /* border-radius: 20px; */
     display: flex;
     flex-direction: column;
     padding: 30px;
-    border: 2px solid var(--section-line);
+    border-bottom: 2px solid var(--section-line);
 }
 
 .text-question h1 {
@@ -48,6 +67,7 @@ main {
     padding-bottom: 30px;
     justify-content: flex;
     color: var(--text);
+    gap: 5px;
     border-bottom: 1px solid var(--text);
 }
 
@@ -57,36 +77,45 @@ main {
 
 .enunciado {
     padding: 5px 0 5px 0;
+    padding-bottom: 40px;
     font-size: 16pt;
     font-weight: 300;
     color: var(--text);
 }
 
 .answers {
+    gap: 10px;
     display: flex;
     flex-direction: column;
+}
+
+.answer {
+    gap: 10px;
+    display: flex;
+    align-items: center;
 }
 
 .btn {
     background: var(--bg-questoes);
     color: var(--text);
-    font-weight: 500;
+    font-weight: 400;
     width: 100%;
-    border: 1px solid var(--text);
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
+    border: none;
     margin: 10px 0 10px 0;
     cursor: pointer;
     text-align: left;
     transition: all .3s;
     box-sizing: border-box;
+    font-size: 12pt;
 }
 
 .btn:hover {
-    border: 1px solid var(--main-bg);
+    background: #c8c8c8;
 }
 
-#next-btn {
+/* #next-btn {
     background-image: linear-gradient(to right bottom, #031926, #04215b, #009dff);
     color: #fff;
     border: none;
@@ -97,7 +126,7 @@ main {
     margin: 30px auto 0;
     cursor: pointer;
     display: none;
-}
+} */
 
 .correct {
     background: #004e22;

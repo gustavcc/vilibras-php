@@ -1,54 +1,71 @@
 <?php
 require_once("../base/cabecalho.php");
+require_once("../../actions/questoes/mostrarQuestoes.php");
 ?>
 
 <link rel="stylesheet" href="../../../public/css/questoes.css">
 <script src="../../../public/js/questoes.js" type="text/javascript" defer></script>
 
 <main>
-    
-    <div class="questoes">
-        <div class="text-question">
-            <div class="informations">
-                <p class="indexQuestao">Q.</p>
-                <p>-</p>
-                <p class="prova">test</p>
-                <p>-</p>
-                <p class="conteudo">mat</p>
-                <p>-</p>
-                <p class="ano">2024</p>
-            </div>
-        </div>
-        <div class="quiz">
-            <p class="enunciado" id="pergunta">{{question.title}}</p>
-            <div id="errou" class="answers">
+    <?php
+    if (isset($questoes)) {
+        foreach($questoes as $questao) {
+            $id = $questao['id_questao'];
+            $title = $questao['title'];
+            $test = $questao['test'];
+            $content = $questao['content'];
+            $year = $questao['year'];
+            $correct = $questao['correct'];
+            $answer_A = $questao['answer_A'];
+            $answer_B = $questao['answer_B'];
+            $answer_C = $questao['answer_C'];
+            $answer_D = $questao['answer_D'];
+            $answer_E = $questao['answer_E'];
+            echo "<div class='questoes'>";
+            echo "   <div class='text-question'>";
+            echo "        <div class='informations'>";
+            echo "            <p class='indexQuestao'>Q.$id</p>";
+            echo '            <p>-</p>';
+            echo "            <p class='prova'>$test</p>";
+            echo '            <p>-</p>';
+            echo "            <p class='conteudo'>$content</p>";
+            echo '            <p>-</p>';
+            echo "            <p class='ano'>$year</p>";
+            echo "        </div>";
+            echo "    </div>";
+            echo '    <div class="quiz">';
+            echo "        <p class='enunciado' id='pergunta'>$title</p>";
+            echo "        <div id='errou' class='answers'>";
 
-                <p class="true">Você acertou!</p>
-
-                <div class="answer">
-                    <p>A)</p>
-                    <button id="{{question.correct}}" value="A" class="btn">{{question.answer_a}}</button>
-                </div>
-                <div class="answer">
-                    <p>B)</p>
-                    <button id="{{question.correct}}" value="B" class="btn">{{question.answer_b}}</button>
-                </div>
-                <div class="answer">
-                    <p>C)</p>
-                    <button id="{{question.correct}}" value="C" class="btn">{{question.answer_c}}</button>
-                </div>
-                <div class="answer">
-                    <p>D)</p>
-                    <button id="{{question.correct}}" value="D" class="btn">{{question.answer_d}}</button>
-                </div>
-                <div class="answer">
-                    <p>E)</p>
-                    <button id="{{question.correct}}" value="E" class="btn">{{question.answer_e}}</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    {% endfor %}
+            echo '            <div class="answer">';
+            echo '                <p>A)</p>';
+            echo "                <button id='$correct' value='A' class='btn'>$answer_A</button>";
+            echo "            </div>";
+            echo '            <div class="answer">';
+            echo '                <p>B)</p>';
+            echo "                <button id='$correct' value='B' class='btn'>$answer_B</button>";
+            echo "            </div>";
+            echo '            <div class="answer">';
+            echo '                <p>C)</p>';
+            echo "                <button id='$correct' value='C' class='btn'>$answer_C</button>";
+            echo "            </div>";
+            echo '            <div class="answer">';
+            echo '                <p>D)</p>';
+            echo "                <button id='$correct' value='D' class='btn'>$answer_D</button>";
+            echo "            </div>";
+            echo '            <div class="answer">';
+            echo '                <p>E)</p>';
+            echo "                <button id='$correct' value='E' class='btn'>$answer_E</button>";
+            echo "            </div>";
+            echo "        </div>";
+            echo "    </div>";
+            echo "<div class='options'>";
+            echo "      <a href='' id='edit'> <i class='fa-solid fa-pen-to-square'></i> </a>";
+            echo "      <a href='' id='del'> <i class='fa-solid fa-trash'></i> </a>";
+            echo '</div>';
+        }
+    }
+    ?>
 
 </main>
 
