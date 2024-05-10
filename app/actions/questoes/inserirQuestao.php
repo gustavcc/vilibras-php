@@ -2,32 +2,32 @@
 
 require_once("../../config/conecta.php");
 
-$msg_erro;
+$msg;
 $msg;
 
 # verifica de as variaveis foram definidas ou se estão vazias
 if(empty($_POST['title'])){
-    $msg_erro = "Presencha o titulo";
+    $msg = "Presencha o titulo";
 }
 elseif(empty($_POST['answer_A'])){
-    $msg_erro = "Preencha todas as respostas";
+    $msg = "Preencha todas as respostas";
 }elseif(empty($_POST['answer_B'])){
-    $msg_erro = "Preencha todas as respostas";
+    $msg = "Preencha todas as respostas";
 }elseif(empty($_POST['answer_C'])){
-    $msg_erro = "Preencha todas as respostas";
+    $msg = "Preencha todas as respostas";
 }elseif(empty($_POST['answer_D'])){
-    $msg_erro = "Preencha todas as respostas";
+    $msg = "Preencha todas as respostas";
 }elseif(empty($_POST['answer_E'])){
-    $msg_erro = "Preencha todas as respostas";
+    $msg = "Preencha todas as respostas";
 }
 elseif(empty($_POST['correct'])){
-    $msg_erro = "Escolha a resposta correta";
+    $msg = "Escolha a resposta correta";
 // }elseif(empty($_POST['test'])){
-//     $msg_erro = "Preencha o campo prova";
+//     $msg = "Preencha o campo prova";
 // }elseif(empty($_POST['content'])){
-//     $msg_erro = "Preencha o campo prova";
+//     $msg = "Preencha o campo prova";
 // }elseif(empty($_POST['year'])){
-//     $msg_erro = "Preencha o campo prova";
+//     $msg = "Preencha o campo prova";
 
 }else{
 
@@ -60,12 +60,12 @@ elseif(empty($_POST['correct'])){
 
 		# verifica se foi adicionado algum registro
     if($stmt->affected_rows > 0){
-            $msg = "Produto cadastrado com sucesso.";
+            $msg = "Questão cadastrada com sucesso.";
     }else{
-            $msg_erro = "Não foi possível inserir.";
+            $msg = "Não foi possível inserir.";
     }
 
     desconecta();
 }
 
-header("Location: ../../pages/questoes/inserirQuestaoForm.php?msg={$msg}%?msg_erro={$msg_erro}");
+header("Location: ../../pages/questoes/inserirQuestaoForm.php?msg={$msg}");
