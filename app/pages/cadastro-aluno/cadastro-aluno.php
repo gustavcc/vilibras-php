@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="IMG/Logo VILIBRAS.png" type="image/x-icon">
-    <link rel="stylesheet" href="./CSS/cadastro.css">
+    <link rel="shortcut icon" href="../images/Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../../public/css/cadastro.css">
     <!--  passar o js para ca <script src="../script/script-cadastro.js"></script> -->
     <title>Cadastro - Aluno | VILIBRAS</title>
 </head>
@@ -20,24 +20,24 @@
         <div class="container2">
           </div>
           <div class="logo"></div>
-            <img id="foto" class="logo" src="./IMG/Logo VILIBRAS.png" alt="">
+            <img id="foto" class="logo" src="../../../public/images/Logo.png" alt="">
           </div>
             <div class="area-professor">
               <h2>Você é <strong>professor?</strong></h2>
-              <button><a href="./cadastro-professor.html">Cadastro Professor</a></button>
+              <button><a href="../cadastro-professor/cadastro-professor.php">Cadastro Professor</a></button>
             </div>
         </div>
     </div>
     <div class="right-section">
       <div class="mobile">
         <div class="intro2"></div>
-        <img id="foto2" class="logo2" src="./IMG/Logo VILIBRAS.png" alt="">
+        <img id="foto2" class="logo2" src="../../../public/images/Logo.png" alt="">
         <h2 id="h2-mobile">Faça o seu <strong>cadastro</strong></h2>
       </div>
       <div class="class">
         <button id="btnMostrarPopup">Registrar</button>
-        <button id="btnMostrarPopup2"><a href="./login.html">Fazer Login</a></button>
-        <button id="btnMostrarPopup3"><a href="./cadastro-professor.html">Professor</a></button>
+        <button id="btnMostrarPopup2"><a href="../login/login.php">Fazer Login</a></button>
+        <button id="btnMostrarPopup3"><a href="../cadastro-professor/cadastro-professor.php">Professor</a></button>
       </div>
 
 <div id="popupCadastro" class="popup">
@@ -58,7 +58,7 @@
           </select>
       </form>
       <div id="nav">
-        <p>Já é membro? <a href="./login.html">Faça login</a></p>
+        <p>Já é membro? <a href="../login/login.php"">Faça login</a></p>
       <button id="proximo1">Próximo</button>
       </div>
     </div>
@@ -73,7 +73,7 @@
         <input type="password" placeholder="Senha" required>
         <label for="data-nascimento">Data de Nascimento:</label>
         <input type="date" id="data-nascimento" name="data-nascimento" required><br><br>
-        <button type="submit"><a href="dashboard.html">Inscrição</a></button>
+        <button type="submit"><a href="../dashboard/dashboard.php">Inscrição</a></button>
         <label>
           <input type="checkbox" />
           Mantenha-me conectado

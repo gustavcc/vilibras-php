@@ -24,7 +24,7 @@
           </div>
             <div class="area-professor">
               <h2>Você é <strong>aluno?</strong></h2>
-              <button><a href="./cadastro-aluno.html">Cadastro Aluno</a></button>
+              <button><a href="../cadastro-aluno/cadastro-aluno.php">Cadastro Aluno</a></button>
             </div>
         </div>
     </div>
@@ -36,8 +36,8 @@
       </div>
       <div class="class">
         <button id="btnMostrarPopup">Registrar</button>
-        <button id="btnMostrarPopup2"><a href="./login.html">Fazer Login</a></button>
-        <button id="btnMostrarPopup3"><a href="./cadastro-aluno.html">Aluno</a></button>
+        <button id="btnMostrarPopup2"><a href="../login/login.php">Fazer Login</a></button>
+        <button id="btnMostrarPopup3"><a href="../cadastro-aluno/cadastro-aluno.php">Aluno</a></button>
       </div>
 
 <div id="popupCadastro" class="popup">
@@ -58,7 +58,7 @@
           </select>
       </form>
       <div id="nav">
-        <p>Já é membro? <a href="./login.html">Faça login</a></p>
+        <p>Já é membro? <a href="../login/login.php"">Faça login</a></p>
       <button id="proximo1">Próximo</button>
       </div>
     </div>
@@ -73,7 +73,7 @@
         <input type="password" placeholder="Senha" required>
         <label for="data-nascimento">Data de Nascimento:</label>
         <input type="date" id="data-nascimento" name="data-nascimento" required><br><br>
-        <button type="submit"><a href="dashboard.html">Inscrição</a></button>
+        <button type="submit"><a href="../dashboard/dashboard.php">Inscrição</a></button>
         <label>
           <input type="checkbox" />
           Mantenha-me conectado

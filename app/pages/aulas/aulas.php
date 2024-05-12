@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aulas | VILIBRAS</title>
-    <link rel="stylesheet" href="CSS/aulas.css">
-    <link rel="icon" href="img/Logo VILIBRAS.png">
+    <link rel="stylesheet" href="../../../public/css/aulas.css">
+    <link rel="icon" href="../images/Logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -163,7 +163,7 @@
             <p>lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem</p>
             <div class="info">
               <p>feito por</p>
-              <img src="IMG/user_657052.png" alt="">
+              <img src="../../../public/images/IMG/user.png" alt="">
             </div>
             <p id="youtuber">nome da pessoa</p>
             </div>
@@ -173,7 +173,7 @@
       <div class="grid-item">
         <input type="checkbox" id="teste8">
         <label for="teste8">
-          <img src="IMG/69603047_uyfydu4.jpg" alt="">
+          <img src="../../../public/images/IMG/69603047_uyfydu4.jpg" alt="">
           <div class="conteudo-item borda">
           <div class="conteudo-item">
 
@@ -190,7 +190,7 @@
       <div class="grid-item">
         <input type="checkbox" id="teste9">
         <label for="teste9">
-          <img src="IMG/69603047_uyfydu4.jpg" alt="">
+          <img src="../../../public/images/IMG/69603047_uyfydu4.jpg" alt="">
           <div class="conteudo-item borda">
           <div class="conteudo-item">
             <p>lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem</p>
@@ -207,7 +207,7 @@
       <div class="grid-item">
         <input type="checkbox" id="teste10">
         <label for="teste10">
-          <img src="IMG/69603047_uyfydu4.jpg" alt="">
+          <img src="../../../public/images/IMG/69603047_uyfydu4.jpg" alt="">
           <div class="conteudo-item borda">
           <div class="conteudo-item">
             <p>lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem</p>
@@ -223,7 +223,7 @@
       <div class="grid-item">
         <input type="checkbox" id="teste11">
         <label for="teste11">
-          <img src="IMG/69603047_uyfydu4.jpg" alt="">
+          <img src="../../../public/images/IMG/69603047_uyfydu4.jpg" alt="">
           <div class="conteudo-item borda">
           <div class="conteudo-item">
             <p>lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem</p>
@@ -239,7 +239,7 @@
       <div class="grid-item">
         <input type="checkbox" id="teste12">
         <label for="teste12">
-          <img src="IMG/69603047_uyfydu4.jpg" alt="">
+          <img src="../../../public/images/IMG/69603047_uyfydu4.jpg" alt="">
           <div class="conteudo-item borda">
           <div class="conteudo-item">
             <p>lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem</p>
@@ -255,7 +255,7 @@
       <div class="grid-item">
         <input type="checkbox" id="teste13">
         <label for="teste13">
-          <img src="IMG/69603047_uyfydu4.jpg" alt="">
+          <img src="../../../public/images/IMG/69603047_uyfydu4.jpg" alt="">
           <div class="conteudo-item borda">
           <div class="conteudo-item">
             <p>lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem</p>
@@ -271,7 +271,7 @@
       <div class="grid-item">
         <input type="checkbox" id="teste14">
         <label for="teste14">
-          <img src="IMG/69603047_uyfydu4.jpg" alt="">
+          <img src="../../../public/images/IMG/69603047_uyfydu4.jpg" alt="">
           <div class="conteudo-item borda">
           <div class="conteudo-item">
             <p>lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem</p>
@@ -287,7 +287,7 @@
       <div class="grid-item">
         <input type="checkbox" id="teste15">
         <label for="teste15">
-          <img src="IMG/69603047_uyfydu4.jpg" alt="">
+          <img src="../../../public/images/IMG/69603047_uyfydu4.jpg" alt="">
           <div class="conteudo-item borda">
           <div class="conteudo-item">
             <p>lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem</p>
