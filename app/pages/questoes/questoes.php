@@ -21,6 +21,7 @@ require_once("../../actions/questoes/mostrarQuestoes.php");
             $answer_C = $questao['answer_C'];
             $answer_D = $questao['answer_D'];
             $answer_E = $questao['answer_E'];
+            
             echo "<div class='questoes'>";
             echo "   <div class='text-question'>";
             echo "        <div class='informations'>";
@@ -62,6 +63,7 @@ require_once("../../actions/questoes/mostrarQuestoes.php");
             echo "<div class='options'>";
             echo "      <a href='' id='edit'> <i class='fa-solid fa-pen-to-square'></i> </a>";
             echo "      <a href='' id='del'> <i class='fa-solid fa-trash'></i> </a>";
+            echo "</div>";
             echo '</div>';
         }
     }

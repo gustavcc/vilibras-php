@@ -20,18 +20,17 @@
 
 <body>
 
-    <!-- <div vw class="enabled">
+<div vw class="enabled">
         <div vw-access-button class="active"></div>
         <div vw-plugin-wrapper>
-            <div class="vw-plugin-top-wrapper"></div>
+          <div class="vw-plugin-top-wrapper"></div>
         </div>
-    </div>
+        </div>
 
-    <script src="https://vlibras.gov.br/app/vlibras-plugin.js" defer></script>
-    <script>
+            <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+      <script>
         new window.VLibras.Widget('https://vlibras.gov.br/app');
-    </script> -->
-
+      </script>
     <header>
         <div class="logo">
             <button id="openMenu"><i class="fa-solid fa-bars"></i></button>
