@@ -20,6 +20,13 @@ main {
     gap: 50px;
 }
 
+.msg {
+    margin: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #76c5f3;
+}
+
 .options {
     width: 100%;
     height: auto;
@@ -88,6 +95,9 @@ main {
     gap: 10px;
     display: flex;
     flex-direction: column;
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid var(--bg-questoes);
 }
 
 .answer {
@@ -103,7 +113,7 @@ main {
     width: 100%;
     padding: 10px;
     border-radius: 10px;
-    border: none;
+    border: 1px solid var(--bg-questoes);
     margin: 10px 0 10px 0;
     cursor: pointer;
     text-align: left;
@@ -113,7 +123,11 @@ main {
 }
 
 .btn:hover {
-    background: #7e7e7e;
+    border: 1px solid #777777;
+}
+
+#acertou {
+    border: 1px solid #00d05a;
 }
 
 /* #next-btn {
@@ -130,7 +144,7 @@ main {
 } */
 
 .correct {
-    background: #004e22;
+    background: #00d05a;
 }
 
 .incorrect {

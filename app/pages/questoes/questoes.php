@@ -8,6 +8,12 @@ require_once("../../actions/questoes/mostrarQuestoes.php");
 
 <main>
     <?php
+
+    // if (isset($_GET['msg'])){
+    //     $msg=$_GET['msg'];
+    //     echo "<div class='msg'>". $msg ."</div>";
+    // }
+
     if (isset($questoes)) {
         foreach($questoes as $questao) {
             $id = $questao['id_questao'];
@@ -62,7 +68,7 @@ require_once("../../actions/questoes/mostrarQuestoes.php");
             echo "    </div>";
             echo "<div class='options'>";
             echo "      <a href='' id='edit'> <i class='fa-solid fa-pen-to-square'></i> </a>";
-            echo "      <a href='' id='del'> <i class='fa-solid fa-trash'></i> </a>";
+            echo "      <a href='../../actions/questoes/excluirQuestao.php?id={$id}' id='del'> <i class='fa-solid fa-trash'></i> </a>";
             echo "</div>";
             echo '</div>';
         }

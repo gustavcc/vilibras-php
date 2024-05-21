@@ -3,7 +3,6 @@
 require_once("../../config/conecta.php");
 
 $msg;
-$msg;
 
 # verifica de as variaveis foram definidas ou se estão vazias
 if(empty($_POST['title'])){
@@ -22,13 +21,6 @@ elseif(empty($_POST['answer_A'])){
 }
 elseif(empty($_POST['correct'])){
     $msg = "Escolha a resposta correta";
-// }elseif(empty($_POST['test'])){
-//     $msg = "Preencha o campo prova";
-// }elseif(empty($_POST['content'])){
-//     $msg = "Preencha o campo prova";
-// }elseif(empty($_POST['year'])){
-//     $msg = "Preencha o campo prova";
-
 }else{
 
     $title = $_POST['title'];
