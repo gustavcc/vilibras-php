@@ -6,6 +6,7 @@ require_once("../base/cabecalho.php");
     <script src="../../../public/js/landingpage.js" type="text/javascript" defer></script>
 
     <main>
+
         <div class="libras-main">
             <div class="libras-text">
                 <h1 class="title-main">VILIBRAS</h1>

@@ -158,8 +158,8 @@ main {
     filter: blur(15px);
     opacity: 0;
     color: var(--text);
-    border-bottom: 1px solid var(--section-line);
-    border-top: 1px solid var(--section-line);
+    /* border-bottom: .5px solid var(--section-line); */
+    border-top: .5px solid #76c5f3;
     display: flex;
 }
 
