@@ -1,3 +1,4 @@
+// Dark mode
 const html = document.querySelector('html');
 const checkbox = document.getElementById('checkbox');
 
@@ -5,6 +6,7 @@ checkbox.addEventListener('change', function () {
   html.classList.toggle('dark-mode')
 })
 
+// Menu
 const close = document.getElementById('closeMenu');
 openMenu.addEventListener('click', () => {
   close.style.display = 'flex',
@@ -16,6 +18,7 @@ closeMenu.addEventListener('click', () => {
   close.removeAttribute('style')
 })
 
+// Scroll
 var lastScrollTop = 0;
 const header = document.getElementsByTagName('header')[0];
 
@@ -29,3 +32,19 @@ window.addEventListener('scroll', function (e) {
     lastScrollTop = this.scrollY;
 
   }, true)
+
+// Search Position
+const searchBox = document.getElementById('search-box');
+const menuTop = document.getElementById('menu-top');
+const menuBottom = document.getElementById('menu-bottom');
+
+window.addEventListener('resize', ()=>{
+  if (window.innerWidth <= 950) {
+    menuBottom.appendChild(searchBox);
+  }
+  else {
+    // menuTop.appendChild(searchBox);
+    menuBottom.removeChild(searchBox)
+    menuTop.insertBefore(searchBox, menuTop.firstChild);
+  }
+})

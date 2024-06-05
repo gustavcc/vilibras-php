@@ -38,9 +38,9 @@
                 <a id="logoname" href="#">VILIBRAS</a>
             </div>
 
-            <div class="menu-right">
-                <div class="search-box-t">
-                    <input type="text" class="search-text" placeholder="Pesquisar...">
+            <div id="menu-top" class="menu-right">
+                <div id="search-box" class="search-box">
+                    <input id="search" type="text" class="search-text" placeholder="Pesquisar...">
                     <a class="search-btn" href="#">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </a>
@@ -59,7 +59,7 @@
                     </svg>
                 </label>
                 <div class="login">
-                <a href="Dashboard">Entrar</a>
+                <a href="Dashboard">Login</a>
                 </div>
                 <div class="menu-user">
                     <ul class="dropdown-menu">
@@ -84,13 +84,7 @@
                 <button id="openMenu"><i class="fa-solid fa-bars"></i></button>
             </div>
         </div>
-        <div class="menu-bottom">
-            <div class="search-box-b">
-                <input type="text" class="search-text" placeholder="Pesquisar...">
-                <a class="search-btn" href="#">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </a>
-            </div>
+        <div id="menu-bottom" class="menu-bottom">
             <div id="menu">
                 <button id="closeMenu"><i class="fa-solid fa-xmark"></i></button>
                 <a class="b-link" href="../dashboard/dashboard.php">Home</a> <!--aparecer se for autenticado-->
