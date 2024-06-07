@@ -38,6 +38,17 @@ const searchBox = document.getElementById('search-box');
 const menuTop = document.getElementById('menu-top');
 const menuBottom = document.getElementById('menu-bottom');
 
+window.addEventListener('load', ()=>{
+  if (window.innerWidth <= 950) {
+    menuBottom.appendChild(searchBox);
+  }
+  else {
+    // menuTop.appendChild(searchBox);
+    menuBottom.removeChild(searchBox)
+    menuTop.insertBefore(searchBox, menuTop.firstChild);
+  }
+})
+
 window.addEventListener('resize', ()=>{
   if (window.innerWidth <= 950) {
     menuBottom.appendChild(searchBox);
