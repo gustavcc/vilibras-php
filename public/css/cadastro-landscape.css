@@ -1,0 +1,57 @@
+
+.nav, .footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 2em;
+    background: #0000008c;
+    transition: background 0.5s, color 0.5s;
+}
+
+
+.links {
+    display: flex;
+    gap: 2em;
+}
+
+.links img, #help-a, #github-a {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) saturate(0%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+}
+
+.links a {
+    animation: moveLeft 3s ease forwards;
+}
+
+.hero-copy h1{
+    font-size: 8vw;
+}
+
+.hero-copy p{
+    font-size: 2vw;
+    margin: 0.5em 0;
+}
+
+form {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#text-sidebar-portrait{
+    display: none;
+}
+
+#help-text{
+    position:relative;
+    top: -15%;
+}

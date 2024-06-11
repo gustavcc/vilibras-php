@@ -1,0 +1,72 @@
+/* CSS FOR PORTRAIT SCRRENS */
+
+.nav, .footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 2em;
+    background: #0000008c;
+    transition: background 0.5s, color 0.5s;
+}
+
+
+.logo{
+    margin: 0 auto;
+}
+
+.links img{
+    display: none;
+}
+
+.hero-copy{
+    top: 45%;
+}
+
+
+.hero-copy h1{
+    font-size: 20vw;
+}
+
+.hero-copy p{
+    font-size: 8vw;
+    margin: 0.2em 0;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.links{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.links a{
+    margin: 0.5em;
+}
+
+
+.sidebar.show {
+    display: block;
+    width: 100%; /* Largura desejada da barra lateral */
+}
+
+#text-sidebar-portrait{
+    display: block;
+}
+
+#text-sidebar{
+    display: none;
+}
+
