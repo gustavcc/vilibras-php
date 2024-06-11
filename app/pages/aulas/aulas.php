@@ -1,59 +1,10 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aulas | VILIBRAS</title>
-    <link rel="stylesheet" href="../../../public/css/aulas.css">
-    <link rel="icon" href="../images/Logo.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
+<?php
+require_once("../base/cabecalho.php");
+?>
 
-<body>
+<link rel="stylesheet" href="../../../public/css/aulas.css">
 
-    <div vw class="enabled">
-        <div vw-access-button class="active"></div>
-        <div vw-plugin-wrapper>
-          <div class="vw-plugin-top-wrapper"></div>
-        </div>
-        </div>
-
-            <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-      <script>
-        new window.VLibras.Widget('https://vlibras.gov.br/app');
-      </script>
-
-<header>
-    <div id="logo">
-        <a href="aulas.html">VILIBRAS</a>
-        <a href="aulas.html"><img src="img/Logo VILIBRAS.png" alt="logo"></a>
-    </div>
-
-    <nav id="menu">
-        <button id="closeMenu"><i class="fa-solid fa-xmark"></i></button>
-        <a href="dashboard.html">Dashboard</a>
-        <a href="dicionario.html">Dicionario</a>
-        <a href="questoes.html">Questões</a>
-        <a href="faq.html">FAQ</a>
-    </nav>
-
-    <div id="nav-right">
-        <div class="search-box">
-            <input type="text" class="search-text" placeholder="Pesquisar...">
-            <a class="search-btn" href="#">
-                <i class="fa-solid fa-magnifying-glass"></i>
-            </a>
-        </div>
-        <div class="user">
-            <a class="icon-user" href="perfil.html" target="_blank"><i class="fa-solid fa-user"></i></a>
-        </div>
-        <button id="openMenu"><i class="fa-solid fa-bars"></i></button>
-    </div>
-</header>
-
+  <main>
     <h1>Aulas</h1>
     <section class="grid">
       <div class="grid-item">
@@ -301,28 +252,9 @@
         </label>
       </div>
     </section>
-    <footer>
-      <div class="footer-item">
-          <h2>VILIBRAS</h2>
-          <p><a href="#">Sobre</a></p>
-          <p><a href="#">Contato</a></p>
-          <p><a href="#">Serviços</a></p>
-          <p><a href="#">Política de Privacidade</a></p>
-      </div>
-      <div class="footer-item">
-          <h2>Ajuda</h2>
-          <p><a href="faq.html">FAQ</a></p>
-          <p><a href="faq.html">Enviados</a></p>
-      </div>
-      <div class="footer-item social">
-          <h2> Siga-nos </h2>
-          <ul>
-              <li> <a href="https://www.instagram.com/gustavoc_costa/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
-              <li> <i class="fa-brands fa-linkedin-in"></i> </li>
-              <li> <i class="fa-brands fa-youtube"></i> </li>
-              <li> <i class="fa-brands fa-twitter"></i> </li>
-          </ul>
-      </div>
-  </footer>
-  </body>
-</html>
+  </main>
+
+<?php
+require_once("../base/footer.php");
+?>
+

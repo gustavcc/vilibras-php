@@ -120,7 +120,7 @@ header {
 }
 
 .b-link:hover {
-	border-bottom: 1.5px solid #009dff;
+	border-bottom: 1.5px solid #fff;
 }
 
 #menu:has(.b-link:hover) .b-link:not(:hover) {
@@ -605,6 +605,8 @@ footer a:hover {
 	--login-border: #000;
 	--login-bg: #4f4fff;
 	--links-bg: #fff;
+	--perfil-datas: #eeeeee;
+	--perfil-text: #333;
 	--bg-questoes: #f2f6fc;
 
 }
@@ -628,5 +630,7 @@ footer a:hover {
 	--login-border: #fff;
 	--login-bg: #084569;
 	--links-bg: #010d14;
+	--perfil-datas: #252525;
+	--perfil-text: #dcdcdc;
 	--bg-questoes: #434343;
 }
