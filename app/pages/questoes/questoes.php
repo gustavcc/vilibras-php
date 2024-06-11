@@ -67,7 +67,7 @@ require_once("../../actions/questoes/mostrarQuestoes.php");
             echo "        </div>";
             echo "    </div>";
             echo "<div class='options'>";
-            echo "      <a href='' id='edit'> <i class='fa-solid fa-pen-to-square'></i> </a>";
+            echo "      <a href='../../actions/questoes/editarQuestaoForm.php?id={$id}' id='edit'> <i class='fa-solid fa-pen-to-square'></i> </a>";
             echo "      <a href='../../actions/questoes/excluirQuestao.php?id={$id}' id='del'> <i class='fa-solid fa-trash'></i> </a>";
             echo "</div>";
             echo '</div>';
