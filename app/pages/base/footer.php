@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="../../../public/css/base.css"> 
+    
     <footer>
         <div class="footer_section">
             <div class="footer-item">

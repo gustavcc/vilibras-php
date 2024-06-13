@@ -48,7 +48,7 @@ tipo_desafio VARCHAR(40) NOT NULL,
 conteudo VARCHAR(50) NOT NULL);
 
 CREATE TABLE dicionario_sinais(
-id_dicio INT PRIMARY KEY AUTO_INCREMENT,
+id_dicio TEXT PRIMARY KEY,
 titulo VARCHAR (50) NOT NULL,
 iframe TEXT NOT NULL,
 descricao TEXT NOT NULL);
