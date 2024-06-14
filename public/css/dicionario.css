@@ -1,29 +1,38 @@
 /* VILIBRAS */
 
-/* -------------------------------------------------------- */
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-
-/* ---------------------------------------------------------------- */
 /* Main */
 
       .apresentacao-main{
         width: 100%;
         height: auto;
+        /* height: calc(100vh - 85px); */
         display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
+        flex-direction: row;
         justify-content: center;
         align-items: center;
-        background-color: #009dff;
-        /* background-image: radial-gradient(transparent 5%,#0f547f,#102430) */
-        background-image: linear-gradient(to top, black, #031926, #102430);
+        color: #fff;
+        background-image: linear-gradient(to bottom, #000, #031926, #143042, #20538a);
+        background-blend-mode: multiply;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        transition: 0.7s ease-in-out;
+        animation: blendmode 15s ease-in-out infinite alternate;  
     }   
+
+    @keyframes blendmode {
+      0% {
+          background-color: #031926;
+      }
+  
+      50% {
+          background-color: #2e93ff;
+      }
+  
+      100% {
+          background-color: #585858;
+      }
+  }
 
     .apresentacao-text{
         width: 90vw;
@@ -32,17 +41,32 @@
     }
 
     .apresentacao-text h1 {
-      color: #ffffff;
-      font-size: 30pt;
-      padding-bottom: 3%;
-      font-weight: 800;
+    font-size: 30pt;
+    margin-bottom: 3rem ;
+    border-right: 4px solid;
+    background-image: linear-gradient(to right bottom, var(--title-1), var(--title-2), var(--title-3));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #ffffff;
+    width: 37ch;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: blinking 1s infinite step-end alternate;
     }
+  
+  @keyframes blinking {
+      50% {
+          border-color: transparent;
+      }
+  }
   
     .apresentacao-text p {
       font-size: 14pt;
     }
 
     .Dictionary-Apresentation{
+      border-top: .5px solid #76c5f3;
       width: 100%;
       display: flex;
       padding: 5% 10% 5% 10%;
@@ -51,15 +75,14 @@
     .Dictionary-Apresentation h1{
         padding-bottom: 5%;
         font-size: 26pt;
-        background-image: linear-gradient(to right bottom, #031926, #009dff, rgb(0, 187, 255));
+        background-image: linear-gradient(to right bottom, var(--title-1), var(--title-2), var(--title-3));
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        color: #ffffff;
     }
 
     .Dictionary-Apresentation p {
-      color: #000;
+      color: var(--text);
       font-size: 14pt;
       padding-bottom: 20px;
     }
