@@ -33,6 +33,10 @@
     margin: 0.5em 0;
 }
 
+#screen-gif{
+    display: none;
+}
+
 form {
     display: flex;
     flex-wrap: nowrap;
@@ -54,4 +58,12 @@ form {
 #help-text{
     position:relative;
     top: -15%;
+}
+
+label{
+    margin: auto 10px;
+}
+
+button{
+    padding: 1.5em;
 }

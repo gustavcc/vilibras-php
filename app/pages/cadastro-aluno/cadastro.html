@@ -34,11 +34,11 @@
             <div class="forms">
                 <form action="#" method="post">
                     <label for="nome">Nome:</label>
-                    <input type="text" id="nome" name="nome" required tabindex="1">
+                    <input type="text" id="nome" name="nome"  placeholder="Nome:" required tabindex="1">
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required tabindex="2">
+                    <input type="email" id="email" name="email" placeholder="Email"  required tabindex="2">
                     <label for="senha">Senha:</label>
-                    <input type="password" id="senha" name="senha" required tabindex="3">
+                    <input type="password" id="senha" name="senha" placeholder="Senha"  required tabindex="3">
                     <button type="submit" tabindex="4">Cadastrar</button>
                 </form>
             </div>
@@ -49,14 +49,10 @@
                 <a id="help-btn" href="#">
                     <img id="help-a" src="../../../public/images/help-web-button_18436.png" alt="">
                     <span id="help-text">Ajuda</span>
-                  </a>
+                </a>
                   
-                <a id="vilibras-a-c" href="#">Vilibras Copyright</a>
-                <a href="#"><img id="github-a" src="../../../public/images/github_733609.png" alt=""></a>
-            </div>
+                <a id="vilibras-a-c" href="#">Vilibras</a>
 
-            <div class="cta">
-                <a href="#">dimlib.projeto@gmail.com</a>
             </div>
         </div>
     </div>
@@ -86,141 +82,172 @@
                 <h2>Você precisa de ajuda?</h2>
             </div>
             <div id="sidebar-info">
-                <p id="text-sidebar" >Utilize as teclas do teclado para te ajudar!</p>
-                <p id="text-sidebar2" >Utilize o TAB ou SHIFT + TAB para navegar no formulário.</p>
+                <p id="text-sidebar">Utilize as teclas do teclado para te ajudar!</p>
+                <p id="text-sidebar2">Utilize o TAB ou SHIFT + TAB para navegar no formulário.</p>
                 <p id="text-sidebar-portrait">toque e segure em qualquer canto da página para ativar o menú flutuante!</p>
-                <img src="../../../public/images/blocks_6302471.png" alt="">
+                <img id="keyboard-gif" src="../../../public/images/animated-keyboard.gif" alt="">
+                <img id="screen-gif" src="../../../public/images/animate-screen-phone.gif" alt="">
+
             </div>
         </div>
     </div>
     <script>
+        // Definindo a função globalmente
+        function toggleSidebar() {
+            console.log('Toggle Sidebar function called');
+            const sidebar = document.getElementById('sidebar');
+            const body = document.body;
+
+            if (sidebar.classList.contains('show')) {
+                sidebar.classList.remove('show');
+                body.classList.remove('sidebar-visible');
+            } else {
+                sidebar.classList.add('show');
+                body.classList.add('sidebar-visible');
+            }
+        }
+
         document.addEventListener('DOMContentLoaded', function () {
-    const canvas = document.querySelector("canvas");
-    const ctx = canvas.getContext("2d");
+            const canvas = document.querySelector("canvas");
+            const ctx = canvas.getContext("2d");
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
 
-    ctx.fillStyle = "black";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "black";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    ctx.lineJoin = "round";
-    ctx.lineCap = "round";
-    ctx.lineWidth = 200;
+            ctx.lineJoin = "round";
+            ctx.lineCap = "round";
+            ctx.lineWidth = 200;
 
-    ctx.globalCompositeOperation = "destination-out";
+            ctx.globalCompositeOperation = "destination-out";
 
-    let isDrawing = false;
-    let lastX = 0;
-    let lastY = 0;
+            let isDrawing = false;
+            let lastX = 0;
+            let lastY = 0;
 
-    function draw(e) {
-        if (!isDrawing) return;
-        ctx.beginPath();
-        ctx.moveTo(lastX, lastY);
-        ctx.lineTo(e.offsetX, e.offsetY);
-        ctx.stroke();
-        [lastX, lastY] = [e.offsetX, e.offsetY];
-    }
+            function draw(e) {
+                if (!isDrawing) return;
+                ctx.beginPath();
+                ctx.moveTo(lastX, lastY);
+                ctx.lineTo(e.offsetX, e.offsetY);
+                ctx.stroke();
+                [lastX, lastY] = [e.offsetX, e.offsetY];
+            }
 
-    canvas.addEventListener("mousedown", (e) => {
-        isDrawing = true;
-        [lastX, lastY] = [e.offsetX, e.offsetY];
-    });
+            canvas.addEventListener("mousedown", (e) => {
+                isDrawing = true;
+                [lastX, lastY] = [e.offsetX, e.offsetY];
+            });
 
-    canvas.addEventListener("mousemove", draw);
-    canvas.addEventListener("mouseup", () => (isDrawing = false));
-    canvas.addEventListener("mouseout", () => (isDrawing = false));
+            canvas.addEventListener("mousemove", draw);
+            canvas.addEventListener("mouseup", () => (isDrawing = false));
+            canvas.addEventListener("mouseout", () => (isDrawing = false));
 
-    const form = document.querySelector('.forms form');
-    const heroVideo = document.getElementById('heroVideo');
+            const form = document.querySelector('.forms form');
+            const heroVideo = document.getElementById('heroVideo');
 
-    form.addEventListener('focusin', () => {
-        heroVideo.classList.add('blur-background');
-    });
+            form.addEventListener('focusin', () => {
+                heroVideo.classList.add('blur-background');
+            });
 
-    form.addEventListener('focusout', () => {
-        heroVideo.classList.remove('blur-background');
-    });
+            form.addEventListener('focusout', () => {
+                heroVideo.classList.remove('blur-background');
+            });
 
-    function toggleSidebar() {
-        const sidebar = document.getElementById('sidebar');
-        const body = document.body;
+            function handleKeyPress(event) {
+                const form = document.querySelector('.forms form');
+                const fields = form.querySelectorAll('input, button');
 
-        if (sidebar.classList.contains('show')) {
-            sidebar.classList.remove('show');
-            body.classList.remove('sidebar-visible');
-        } else {
-            sidebar.classList.add('show');
-            body.classList.add('sidebar-visible');
-        }
-    }
+                if (event.key === 'Tab') {
+                    event.preventDefault(); 
 
-    function handleKeyPress(event) {
-        const form = document.querySelector('.forms form');
-        const fields = form.querySelectorAll('input, button');
+                    const currentFieldIndex = Array.from(fields).findIndex(field => field === document.activeElement);
 
-        if (event.key === 'Tab') {
-            event.preventDefault(); 
+                    const nextField = fields[currentFieldIndex + (event.shiftKey ? -1 : 1)] || fields[event.shiftKey ? fields.length - 1 : 0];
 
-            const currentFieldIndex = Array.from(fields).findIndex(field => field === document.activeElement);
+                    nextField.focus();
+                }
+            }
 
-            const nextField = fields[currentFieldIndex + (event.shiftKey ? -1 : 1)] || fields[event.shiftKey ? fields.length - 1 : 0];
+            document.addEventListener('keydown', handleKeyPress);
 
-            nextField.focus();
-        }
-    }
+            const popup = document.getElementById('popup');
+            const helpLink = document.getElementById('help-a');
+            const closePopupBtn = document.getElementById('close-popup');
+            const sidebar = document.getElementById('sidebar');
+            const container = document.querySelector('.container');
+            const helpbtn = document.getElementById('help-btn');
 
-    document.addEventListener('keydown', handleKeyPress);
+            let timeout;
+            let popupVisible = false;
 
-    const popup = document.getElementById('popup');
-    const helpLink = document.getElementById('help-a');
-    const closePopupBtn = document.getElementById('close-popup');
-    const sidebar = document.getElementById('sidebar');
-    const container = document.querySelector('.container');
-    const helpbtn = document.getElementById('help-btn');
+            function showPopup() {
+                const rect = helpLink.getBoundingClientRect();
+                if (window.matchMedia("(orientation: portrait)").matches) {
+                    popup.style.left = `50%`;
+                    popup.style.top = `50%`;
+                    popup.style.transform = `translate(-50%, -50%)`;
+                } else {
+                    popup.style.left = `${rect.right - 40}px`;
+                    popup.style.top = `${rect.top - 120}px`;
+                    popup.style.transform = `none`;
+                }
+                popup.style.display = 'block';
+                popupVisible = true;
+            }
 
-    let timeout;
-    let popupVisible = false;
+            function hidePopup() {
+                popup.style.display = 'none';
+                popupVisible = false;
+            }
 
-    function showPopup() {
-        const rect = helpLink.getBoundingClientRect();
-        if (window.matchMedia("(orientation: portrait)").matches) {
-            popup.style.left = `50%`;
-            popup.style.top = `50%`;
-            popup.style.transform = `translate(-50%, -50%)`;
-        } else {
-            popup.style.left = `${rect.right - 40}px`;
-            popup.style.top = `${rect.top - 120}px`;
-            popup.style.transform = `none`;
-        }
-        popup.style.display = 'block';
-        popupVisible = true;
-    }
+            function resetTimer() {
+                if (!popupVisible) {
+                    clearTimeout(timeout);
+                    timeout = setTimeout(showPopup, 50000);
+                }
+            }
 
-    function hidePopup() {
-        popup.style.display = 'none';
-        popupVisible = false;
-    }
+            closePopupBtn.addEventListener('click', hidePopup);
 
-    function resetTimer() {
-        if (!popupVisible) {
-            clearTimeout(timeout);
-            timeout = setTimeout(showPopup, 5000);
-        }
-    }
+            popup.addEventListener('click', toggleSidebar);
+            helpbtn.addEventListener('click',toggleSidebar);
 
-    closePopupBtn.addEventListener('click', hidePopup);
+            document.onmousemove = resetTimer;
+            document.onkeypress = resetTimer;
 
-    popup.addEventListener('click', toggleSidebar);
-    helpbtn.addEventListener('click',toggleSidebar);
+            timeout = setTimeout(showPopup, 50000);
 
-    document.onmousemove = resetTimer;
-    document.onkeypress = resetTimer;
+            let timeoutPopup;
+            let menuPopupVisible = false;
 
-    timeout = setTimeout(showPopup, 5000);
+            function showMenuPopup() {
+                menuPopup.style.display = 'block';
+                menuPopupVisible = true;
+            }
 
-    let timeoutId;
+            function hideMenuPopup() {
+                menuPopup.style.display = 'none';
+                menuPopupVisible = false;
+            }
+
+            function resetMenuTimer() {
+                clearTimeout(timeoutPopup);
+                if (menuPopupVisible) return;
+                timeoutPopup = setTimeout(showMenuPopup, 20000);
+            }
+
+            function activateButton(e) {
+                if (e.type === "touchstart") {
+                    resetMenuTimer();
+                }
+            }
+
+            document.addEventListener("touchstart", activateButton);
+            document.addEventListener("touchend", hideMenuPopup);
+            let timeoutId;
     const menuPopup = document.getElementById('menuPopup');
     const items = menuPopup.querySelectorAll('li');
     let selectedItemIndex = -1;
@@ -298,8 +325,8 @@
             hideMobilePopup();
         }
     });
-});
-
+        });
+        
     </script>
 </body>
 </html>

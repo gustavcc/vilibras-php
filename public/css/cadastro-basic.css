@@ -284,8 +284,9 @@ a {
 #sidebar-info img{
     position: absolute;
     top: 50%;
-    left: 30%;
-    width: 100px;
+    left: 12%;
+    width: 200px;
+    border-radius: 1em;
 }
 .popup {
     display: none;
@@ -340,4 +341,27 @@ a {
 
 #menuPopup img{
     width: 60px;
+}
+
+input{
+    background: #00000030;
+    border: none;
+    color: white;
+    border-radius: 5px;
+}
+
+label{
+    text-align: left;
+
+}
+
+::placeholder{
+    text-align: center;
+}
+
+button{
+    background: #71949e6d;
+    border: none;
+    border-radius: 5px;
+    color: white;
 }
