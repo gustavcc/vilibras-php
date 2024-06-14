@@ -2,6 +2,8 @@
 require_once("../base/cabecalho.php");
 ?>
 
+<!-- teste -->
+
 <link rel="stylesheet" href="../../../public/css/perfil.css">
 <script src="../../../public/js/perfil.js" defer></script>
     
