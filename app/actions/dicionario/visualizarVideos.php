@@ -40,12 +40,12 @@ elementos.forEach(function(elemento) {
 
     // Adicionar os options ao select
     const criarOption = document.createElement('option');
-    criarOption.value = elemento.id_hardware;
+    criarOption.value = elemento.id_elemento
     criarOption.textContent = elemento.titulo;
 
     // Cria um div para cada elemento da consulta
     const criarDiv = document.createElement('div');
-    criarDiv.id = elemento.id_hardware; // Define o ID da div com base no ID do hardware
+    criarDiv.id = elemento.id_elemento; // Define o ID da div com base no ID do hardware
     criarDiv.className = 'Content';
 
     // Cria um h2 dentro da div criada

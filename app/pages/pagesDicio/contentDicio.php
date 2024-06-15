@@ -125,15 +125,7 @@
 </main>
 
 
-<script>
-    let select = document.querySelector('#search');
-    let searchbtn = document.querySelector('.search-btn');
-
-    searchbtn.addEventListener('click', () => {
-        searchbtn.href = '#' + select.value;
-        console.log(searchbtn.value)
-    })
-</script>
+<script src="../../../public/js/contentDicio.js"></script>
     
 <?php
 require_once("../base/footer.php");
