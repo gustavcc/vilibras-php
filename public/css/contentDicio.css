@@ -7,40 +7,15 @@ body {
 /* ---------------------------------------------------------------- */
 /* Main */
 
-header{
-    padding-bottom: 1.5px;
-}
-
 main {
   width: 100%;
   padding: 15px;
-  /* background-image: linear-gradient(to bottom, #000, #031926, #143042, #20538a);
-    background-blend-mode: multiply;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    transition: 0.7s ease-in-out;
-    animation: blendmode 15s ease-in-out infinite alternate;  */
   background-size: 100%;
   background-attachment: fixed;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
-
-/* @keyframes blendmode {
-    0% {
-        background-color: #031926;
-    }
-
-    50% {
-        background-color: #2e93ff;
-    }
-
-    100% {
-        background-color: #585858;
-    }
-} */
 
 #seta{
   height: 100%;
@@ -53,11 +28,6 @@ main {
   flex-wrap: wrap;
   justify-content: space-around;
 }
-
-/* .Content:hover {
-  border: 1px solid #faebd7; 
-  box-sizing: border-box;
-} */
 
 .Content {
   width: 310px;

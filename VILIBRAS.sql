@@ -48,7 +48,7 @@ tipo_desafio VARCHAR(40) NOT NULL,
 conteudo VARCHAR(50) NOT NULL);
 
 CREATE TABLE dicionario_sinais(
-id_dicio TEXT PRIMARY KEY,
+id_dicio VARCHAR(50) PRIMARY KEY,
 titulo VARCHAR (50) NOT NULL,
 iframe TEXT NOT NULL,
 descricao TEXT NOT NULL);
@@ -56,26 +56,38 @@ descricao TEXT NOT NULL);
 CREATE TABLE hardware(
 id_hardware VARCHAR(50) PRIMARY KEY,
 titulo VARCHAR (50) NOT NULL,
-iframe TEXT NOT NULL,
-descricao TEXT NOT NULL);
+descricao TEXT NOT NULL,
+src TEXT NOT NULL,
+width TEXT NOT NULL,
+height TEXT NOT NULL,
+title TEXT NOT NULL);
 
 CREATE TABLE software(
-id_hardware VARCHAR(50) PRIMARY KEY,
+id_software VARCHAR(50) PRIMARY KEY,
 titulo VARCHAR (50) NOT NULL,
-iframe TEXT NOT NULL,
-descricao TEXT NOT NULL);
+descricao TEXT NOT NULL,
+src TEXT NOT NULL,
+width TEXT NOT NULL,
+height TEXT NOT NULL,
+title TEXT NOT NULL);
 
 CREATE TABLE conectividades(
-id_hardware VARCHAR(50) PRIMARY KEY,
+id_conectividades VARCHAR(50) PRIMARY KEY,
 titulo VARCHAR (50) NOT NULL,
-iframe TEXT NOT NULL,
-descricao TEXT NOT NULL);
+descricao TEXT NOT NULL,
+src TEXT NOT NULL,
+width TEXT NOT NULL,
+height TEXT NOT NULL,
+title TEXT NOT NULL);
 
 CREATE TABLE armazenamento_dados(
-id_hardware VARCHAR(50) PRIMARY KEY,
+id_armazenamento_dados VARCHAR(50) PRIMARY KEY,
 titulo VARCHAR (50) NOT NULL,
-iframe TEXT NOT NULL,
-descricao TEXT NOT NULL);
+descricao TEXT NOT NULL,
+src TEXT NOT NULL,
+width TEXT NOT NULL,
+height TEXT NOT NULL,
+title TEXT NOT NULL);
 
 CREATE TABLE tipo_material(
 id_tipo INT PRIMARY KEY AUTO_INCREMENT,
@@ -88,7 +100,7 @@ texto VARCHAR(200) NOT NULL);
 CREATE TABLE material(
 id_material INT PRIMARY KEY AUTO_INCREMENT,
 nome VARCHAR(40) NOT NULL,
-id_dicio INT,
+id_dicio VARCHAR(50),
 FOREIGN KEY (id_dicio) REFERENCES dicionario_sinais(id_dicio));
 
 CREATE TABLE insere_materais(
@@ -100,7 +112,7 @@ FOREIGN KEY (id_prof) REFERENCES professores(id_prof));
 
 CREATE TABLE acessa_dicio_prof(
 id_prof INT,
-id_dicio INT, 
+id_dicio VARCHAR(50), 
 PRIMARY KEY (id_prof,id_dicio),
 FOREIGN KEY (id_dicio) REFERENCES dicionario_sinais(id_dicio),
 FOREIGN KEY (id_prof) REFERENCES professores(id_prof));
@@ -113,7 +125,7 @@ FOREIGN KEY (id_material) REFERENCES material (id_material),
 FOREIGN KEY (id_aluno) REFERENCES alunos(id_aluno));
 
 CREATE TABLE acessa_dicio_aluno(
-id_dicio INT,
+id_dicio VARCHAR(50),
 id_aluno INT,
 PRIMARY KEY(id_dicio,id_aluno),
 FOREIGN KEY (id_aluno) REFERENCES alunos(id_aluno),
