@@ -53,6 +53,30 @@ titulo VARCHAR (50) NOT NULL,
 iframe TEXT NOT NULL,
 descricao TEXT NOT NULL);
 
+CREATE TABLE hardware(
+id_hardware VARCHAR(50) PRIMARY KEY,
+titulo VARCHAR (50) NOT NULL,
+iframe TEXT NOT NULL,
+descricao TEXT NOT NULL);
+
+CREATE TABLE software(
+id_hardware VARCHAR(50) PRIMARY KEY,
+titulo VARCHAR (50) NOT NULL,
+iframe TEXT NOT NULL,
+descricao TEXT NOT NULL);
+
+CREATE TABLE conectividades(
+id_hardware VARCHAR(50) PRIMARY KEY,
+titulo VARCHAR (50) NOT NULL,
+iframe TEXT NOT NULL,
+descricao TEXT NOT NULL);
+
+CREATE TABLE armazenamento_dados(
+id_hardware VARCHAR(50) PRIMARY KEY,
+titulo VARCHAR (50) NOT NULL,
+iframe TEXT NOT NULL,
+descricao TEXT NOT NULL);
+
 CREATE TABLE tipo_material(
 id_tipo INT PRIMARY KEY AUTO_INCREMENT,
 conteudo VARCHAR(40));
