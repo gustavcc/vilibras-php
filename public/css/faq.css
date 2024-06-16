@@ -1,0 +1,139 @@
+/* Main */
+
+main {
+    width: 100%;
+    padding:0 0 45px 0;
+    background-image: white;
+    background-size: 100%;
+    background-attachment: fixed;
+    color: radial-gradient(#102430, #031926, #000);
+  }
+
+.answer{
+    color: #009dff;
+    padding-top: 5px;
+    font-weight: bold;
+    text-indent: 9px;
+    outline: none;
+    /* isso é para corrigir o problema do navegador edge, mas voc\~e ainda tem  q procurar oq é */
+    /* -webkit-animation-name: ; */
+}
+
+.duvida-resposta{
+    margin: 0.7% 4% 0.7% 3.2%;
+    padding: 8px 8px 5px 8px;
+    border-bottom: solid 1px #aaaaaa;
+    border-radius: 15px;
+    transition: 1s;
+    background: var(--section-especial-bg);
+    color: var(--text);
+    padding: 5px;
+}
+
+.duvida-resposta:hover{
+    cursor: pointer;
+}
+
+.descricao{
+    font-size: 18px;
+    text-align: justify;
+}
+
+.data{
+    text-align: end;
+}
+
+.answer-content{
+    margin-top: 5px;
+    text-indent: 30px;
+}
+
+
+/* Estilo para o botão */
+.btn {
+    cursor: pointer;
+    position: fixed;
+    right: 10px;
+    bottom: 40px;
+    background-color: initial;
+    border-radius: 100%;
+    border: none;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    right: 50px;
+    bottom: 50px;
+}
+
+/* Estilo para o conteúdo do pop-up */
+.popup-content {
+    background-color: #031926;
+    font-size: 15px;
+    color: white;
+    font-weight: bold;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.receivers{
+    display: flex;
+    height: 200px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.receivers input, .receivers textarea, .receivers button{
+    border: solid 0.9px;
+    border-radius: 6px;
+    background-color: #efece9;
+    height: 30px;
+    font-size: 14px;
+    outline: none;
+}
+
+
+.receivers input, .receivers textarea, .receivers button{
+    padding: 3px;
+    margin: 3px;
+}
+
+#divTextarea{
+    display: flex;
+    margin-top: 10px;
+}
+
+#divTextarea label{
+    align-items: center;
+}
+
+#div-buttons{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Estilo para o botão de fechar */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover{
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 650px){
+    .duvida-resposta{
+        margin: 0.7% 12% 0.7% 5.2%;
+    }
+}
+
+/* Main */
+/* ---------------------------------------------------------------- */

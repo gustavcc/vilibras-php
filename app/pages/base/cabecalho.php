@@ -91,7 +91,7 @@
                 <a class="b-link" href="../questoes/questoes.php">Questões</a>
                 <a class="b-link" href="../aulas/aulas.php">Aulas</a>
                 <a class="b-link" href="../dicionario/dicionario.php">Dicionário</a>
-                <a class="b-link" href="#">FAQ</a>
+                <a class="b-link" href="../faq/faq.php">FAQ</a>
             </div>
         </div>
     </header>
