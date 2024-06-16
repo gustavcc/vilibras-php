@@ -41,7 +41,7 @@ require_once("../base/cabecalho.php");
         </section>
         <p class="title">Questões</p>
         <section class="questoes">
-            <a href="questoes.php" class="box-questoes">
+            <a href="../questoes/questoes.php" class="box-questoes">
                 <i id="icon-check" class="fa-regular fa-circle-check"></i>
                 <p class="text">Lista de Questões</p>
             </a>
@@ -52,14 +52,14 @@ require_once("../base/cabecalho.php");
         </section>
         <p class="title">Dicionário</p>
         <section class="dicionario">
-            <a href="dicionario.php" class="box-dicionario">
+            <a href="../dicionario/dicionario.php" class="box-dicionario">
                 <i id="icon-t" class="fa-solid fa-book"></i>
                 <p class="text">Dicionário de tradução</p>
             </a>
         </section>
         <p class="title">Aulas</p>
         <section class="aulas">
-            <a href="aulas.php" class="box-aulas">
+            <a href="../aulas/aulas.php" class="box-aulas">
                 <i id="icon-a" class="fa-solid fa-users-rectangle"></i>
                 <p class="text">Aulas com professores infríveis</p>
             </a>
@@ -69,10 +69,10 @@ require_once("../base/cabecalho.php");
     <aside>
         <section class="perfil">
             <p class="text">Perfil de Usuário</p>
-            <a href="perfil.php" class="image-perfil">
+            <a href="../perfil/perfil.php" class="image-perfil">
                 <img id="image" src="../../../public/images/user.png" alt="Perfil usuário">
             </a>
-            <a href="perfil.php" class="box-perfil">
+            <a href="../perfil/perfil.php" class="box-perfil">
                 <p id="user-perfil">Gustavo</p>
             </a>
             <div class="calendar">
