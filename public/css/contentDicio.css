@@ -17,11 +17,6 @@ main {
   flex-direction: column;
 }
 
-#seta{
-  height: 100%;
-  align-self: self-start;
-}
-
 .Dictionary-Content {
   display: flex;
   width: 80%;

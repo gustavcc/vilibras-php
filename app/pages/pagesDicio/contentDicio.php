@@ -87,7 +87,7 @@
         <div id="menu-bottom" class="menu-bottom">
             <div id="menu">
                 <button id="closeMenu"><i class="fa-solid fa-xmark"></i></button>
-                <a class="b-link" href="../dicionario/dicionario.php?categoria=<?php echo $_GET['categoria']?>">Dicionario</a> <!--aparecer se for autenticado-->
+                <a class="b-link" href="../dicionario/dicionario.php?categoria=<?php echo $_GET['categoria']?>">Dicionário</a> <!--aparecer se for autenticado-->
                 <a class="b-link" href="contentDicio.php?categoria=hardware">Hardware</a>
                 <a class="b-link" href="contentDicio.php?categoria=software">Software</a>
                 <a class="b-link" href="contentDicio.php?categoria=conectividades">Conectividades</a>
@@ -97,26 +97,6 @@
     </header>
 
 <main>
-
-    <nav id = "seta">
-        <a href="../dicionario/dicionario.php">
-            <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
-            width="70px" height="70px" viewBox="0 0 488.000000 490.000000"
-            preserveAspectRatio="xMidYMid meet">
-           
-           <g transform="translate(0.000000,490.000000) scale(0.100000,-0.100000)"
-           fill="#faebd7" stroke="none">
-           
-           <path d="M2645 3406 c-16 -7 -68 -44 -115 -82 -123 -101 -338 -276 -460 -375
-           -527 -427 -510 -410 -510 -499 0 -89 -16 -73 505 -495 61 -49 142 -115 180
-           -146 266 -219 374 -304 402 -316 80 -33 176 -1 219 73 22 37 26 54 22 97 -2
-           29 -12 65 -23 80 -15 24 -229 201 -711 590 -74 59 -134 111 -134 115 0 8 80
-           76 215 185 39 31 124 100 190 154 67 54 190 154 273 222 164 133 192 168 192
-           242 0 118 -134 203 -245 155z"/>
-           </g>
-           </svg>
-        </a>
-        </nav>
 
         <div class="Dictionary-Content">
             
