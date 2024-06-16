@@ -2,9 +2,11 @@
 
 require_once("../../config/conecta.php");
 
-if (isset($_POST['title']) && isset($_POST['answer_A']) && isset($_POST['answer_B']) && isset($_POST['answer_C']) && isset($_POST['answer_D']) && isset($_POST['answer_E']) && isset($_POST['correct']) && isset($_POST['content']) && isset($_POST['year']) && isset($_POST['test'])) {
+if (isset($_POST['title']) && isset($_POST['answer_A']) && isset($_POST['answer_B']) && isset($_POST['answer_C']) && isset($_POST['answer_D']) && isset($_POST['answer_E']) && isset($_POST['correct']) && isset($_POST['content']) && isset($_POST['year']) && isset($_POST['test']) && isset($_POST['id'])) {
 
     $title = $_POST['title'];
+
+    $id = $_POST['id'];
 
     $a = $_POST["answer_A"];
     $b = $_POST["answer_B"];
@@ -19,26 +21,23 @@ if (isset($_POST['title']) && isset($_POST['answer_A']) && isset($_POST['answer_
 
     conecta();
 
-    $sql = "UPDATE INTO questoes(test,content,year,title,answer_A,answer_B,answer_C,answer_D,answer_E,correct)VALUES(?,?,?,?,?,?,?,?,?,?);";
+    $sql = "UPDATE questoes SET test=?,content=?,year=?,title=?,answer_A=?,answer_B=?,answer_C=?,answer_D=?,answer_E=?,correct=? WHERE id_questao=?;";
 
-    # prepara a querry sql verificando se esta nos conformes, além de passar os
-    # valores de forma segura
-    $stmt = $mysqli->prepare($sql);
+    $stmt = $mysqli->prepare($sql);     
     if(!$stmt){
-            die("Erro ao inserir. Problema no acesso ao banco de dados");
+        die("Erro ao editar. Problema no acesso ao banco de dados");
     }
-    # passa as variaveis que entrarão como os valores do registro
-    $stmt->bind_param("ssssssssss",$test,$content,$year,$title,$a,$b,$c,$d,$e,$correct);
+
+    $stmt->bind_param("ssssssssssi",$test,$content,$year,$title,$a,$b,$c,$d,$e,$correct,$id);
     $stmt->execute();
 
-		# verifica se foi adicionado algum registro
-    if($stmt->affected_rows > 0){
-            $msg = "Questão cadastrada com sucesso.";
+    if($stmt->affected_rows>0){
+            $msg = "Questão editada com sucesso.";
     }else{
-            $msg = "Não foi possível inserir.";
+            $msg = "Não foi possível Editar.";
     }
 
     desconecta();
 }
 
-header("Location: ../../pages/questoes/inserirQuestaoForm.php?msg={$msg}");
+header("Location: ../../pages/questoes/editarQuestaoForm.php?id={$id}");        

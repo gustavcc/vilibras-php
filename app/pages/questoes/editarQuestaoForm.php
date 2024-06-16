@@ -14,50 +14,59 @@ require_once("../../actions/questoes/findQuestao.php");
         echo "<div class='msg'>". $msg ."</div>";
     }
 
-    $questao = findQuestao($_GET['id'])
+    $questao = findQuestao($_GET['id']);
+    
+    $id = $_GET['id'];
+    $test = $questao['test'];
+    $content = $questao['content'];
+    $year = $questao['year'];
+
     
     ?>
 
     <form action="../../actions/questoes/editarQuestao.php" method="POST">
         <div class="label">
-            <label for="">Title: </label> <textarea name="title" id=""></textarea>
+            <label for="">Title: </label> <input value="<?=htmlspecialchars($questao['title'])?>" name="title" id=""></input>
         </div>
         <fieldset>
             <div class="label">
-                <label for="">Answer A: </label> <textarea value="" name="answer_A" id=""></textarea>
+                <input type="hidden" value="<?=htmlspecialchars($id)?>" name="id" id="">
             </div>
             <div class="label">
-                <label for="">Answer B: </label> <textarea value="" name="answer_B" id=""></textarea>
+                <label for="">Answer A: </label> <input value="<?=htmlspecialchars($questao['answer_A'])?>" name="answer_A" id=""></input>
             </div>
             <div class="label">
-                <label for="">Answer C: </label> <textarea value="" name="answer_C" id=""></textarea>
+                <label for="">Answer B: </label> <input value="<?=htmlspecialchars($questao['answer_B'])?>" name="answer_B" id=""></input>
             </div>
             <div class="label">
-                <label for="">Answer D: </label> <textarea value="" name="answer_D" id=""></textarea>
+                <label for="">Answer C: </label> <input value="<?=htmlspecialchars($questao['answer_C'])?>" name="answer_C" id=""></input>
             </div>
             <div class="label">
-                <label for="">Answer E: </label> <textarea value="" name="answer_E" id=""></textarea>
+                <label for="">Answer D: </label> <input value="<?=htmlspecialchars($questao['answer_D'])?>" name="answer_D" id=""></input>
+            </div>
+            <div class="label">
+                <label for="">Answer E: </label> <input value="<?=htmlspecialchars($questao['answer_E'])?>" name="answer_E" id=""></input>
             </div>
         </fieldset>
 
         <fieldset>
         <div class="radio">
                 <label for="">Select the answer correct:</label>
-                <input name="correct" value="" type="text">
+                <input name="correct" value="<?=htmlspecialchars($questao['correct'])?>" type="text">
             </div>
         </fieldset>
         <div class="label">
-            <label for="">Test: </label> <input value="" name="test" type="text">
+            <label for="">Test: </label> <input value="<?=htmlspecialchars($test)?>" name="test" type="text">
         </div>
         
         <div class="label">
-            <label for="">Content: </label> <input value="" name="content" type="text">
+            <label for="">Content: </label> <input value="<?=htmlspecialchars($content)?>" name="content" type="text">
         </div>
         
         <div class="label">
-            <label for="">Year: </label> <input value="" name="year" type="number">
+            <label for="">Year: </label> <input value="<?=htmlspecialchars($year)?>" name="year" type="number">
         </div>
         
-        <input type="submit" value="Inserir">
+        <input type="submit" value="Editar">
     </form>
 </main>

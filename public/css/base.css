@@ -593,6 +593,7 @@ footer a:hover {
 	--title-3: rgb(0, 187, 255);
 	--links-principal: #031926;
 	--text: #000;
+	--text-gray: #565656;
 	--section-bg: #fff;
 	--section-especial-bg: #d5def6ff;
 	--section-line: #031926;
@@ -618,6 +619,7 @@ footer a:hover {
 	--title-3: rgb(157, 229, 255);
 	--links-principal: #fff;
 	--text: #f2f6fc;
+	--text-gray: #fff;
 	--section-bg: #111111;
 	--section-especial-bg: #000000;
 	--section-line: #76c5f3;

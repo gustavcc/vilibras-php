@@ -1,0 +1,16 @@
+{
+  "name": "vilibras",
+  "version": "1.0.0",
+  "description": "Porjeto Escolar -   VILIBRAS: O Vocabulário de Informátoca em Libras (VILIBRAS) é uma maneira de aprender Libras voltado para a área da informática, reunindo vários termos de tecnologia em um só lugar. Um 'curso', criado a partir de ideias de colegas do Instituto Federal Baiano - Campus BJL, para facilitar a comunicação com pessoas que portam de deficiência auditiva ou apenas para aqueles que querem aprender uma lingua nova. Site construido usando apenas PHP, JS, HTML e CSS.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node db_conecta"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "mysql2": "^3.10.1"
+  }
+}

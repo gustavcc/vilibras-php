@@ -1,3 +1,4 @@
+"""
 DROP DATABASE VILIBRAS;
 
 CREATE DATABASE VILIBRAS;
@@ -22,8 +23,7 @@ nome VARCHAR(40) NOT NULL);
 
 CREATE TABLE acertou_questao (
 	id_acertou INT PRIMARY KEY AUTO_INCREMENT,
-	acertou BOOLEAN DEFAULT false
-
+	acertou BOOLEAN
 );
 
 CREATE TABLE IF NOT EXISTS questoes (
@@ -201,3 +201,4 @@ telefone_PK INT PRIMARY KEY AUTO_INCREMENT,
 telefone VARCHAR (10) NOT NULL,
 id_adm_FK INT,
 FOREIGN KEY (id_adm_FK) REFERENCES ADM (id_adm));
+"""

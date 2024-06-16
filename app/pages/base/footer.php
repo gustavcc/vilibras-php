@@ -18,11 +18,11 @@
                 <h2>Ajuda</h2>
                 <p>
                     <i class="fa-regular fa-circle-question"></i>
-                    <a href="#">FAQ</a>
+                    <a href="../faq/faq.php">FAQ</a>
                 </p>
                 <p>
                     <i class="fa-regular fa-circle-question"></i>
-                    <a href="#">Alguma Dúvida?</a>
+                    <a href="../faq/faq.php">Alguma Dúvida?</a>
                 </p>
             </div>
             <div class="footer-item social">
