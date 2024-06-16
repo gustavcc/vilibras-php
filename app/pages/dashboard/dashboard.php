@@ -75,8 +75,84 @@ require_once("../base/cabecalho.php");
             <a href="perfil.php" class="box-perfil">
                 <p id="user-perfil">Gustavo</p>
             </a>
-            <div class="calender">
-                <p>Calender</p>
+            <div class="calendar">
+                <div class="header-calendar">
+                    <div class="btn" id="previous"><i class="fa-solid fa-angle-left"></i></div>
+                    <div class="data">
+                        <div id='mes'></div>
+                        <div id='ano'></div>
+                    </div>
+                    <div class="btn" id='next'><i class="fa-solid fa-angle-right"></i></div>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Dom</td>
+                            <td>Seg</td>
+                            <td>Ter</td>
+                            <td>Qua</td>
+                            <td>Qui</td>
+                            <td>Sex</td>
+                            <td>Sab</td>
+                        </tr>
+                    </thead>
+                    <tbody id="dias">
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                        </tr>
+                        <tr>
+                            <td class="event">1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td class="event">3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td>7</td>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>2</td>
+                            <td>3</td>
+                            <td>4</td>
+                            <td>5</td>
+                            <td>6</td>
+                            <td class="proximo-mes">7</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </section>
     </aside>
