@@ -17,6 +17,25 @@
 <fieldset>
     <legend> Adicionar Vídeo</legend>
 
+    <div class="categorias">
+        <p>Categoria que será alterada:</p>
+
+        <label for="">Hardware</label>
+        <input type="radio" name = "categoria" value="hardware">
+
+        <label for="">Software</label>
+        <input type="radio" name = "categoria" value="software">
+
+        <label for="">Conectividades</label>
+        <input type="radio" name = "categoria" value="conectividades">
+
+        <label for="">Amazenamento de dados</label>
+        <input type="radio" name = "categoria" value="armazenamento_dados">
+
+    </div>
+
+    <div class = "campos">
+
     <div class="secundaria">
         <label for="Id-Video">Id:</label>
         <input type="text" name = "Id-Video" id = "Id-Video" required>
@@ -34,10 +53,16 @@
         <br>
     </div>
 
+    <br>
+
     <div class="secundaria">
-        <label for="iframe">Iframe:</label>
-        <input type="text" name="Iframe" id = "Iframe" required>
+        <label for="iframe">Iframe</label>
         <br>
+            <label for="src" id = "srcLabel">Src:</label>
+            <input type="text" name="Src" id = "srcInput" required>
+        <br>
+    </div>
+
     </div>
 
     <button type="submit">Enviar</button>

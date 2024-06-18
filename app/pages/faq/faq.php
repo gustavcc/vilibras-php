@@ -87,60 +87,11 @@ require_once("../base/cabecalho.php");
 
 </div>
 
-<div class ="duvida-resposta">
-    <h2 class = 'title'> A Libras é universal?</h2>
-    <p class = 'descricao'>Muitas pessoas questionam se a Língua de Sinais Brasileira (Libras) é universal, pois sua compreensão pode variar em diferentes contextos culturais. Por exemplo, a forma como um sinal é interpretado pode ser influenciada por aspectos regionais. Diante disso, surge a pergunta: a Libras é verdadeiramente universal ou sua compreensão varia?</p>
-
-    <details> <summary class = 'answer'>Resposta</summary> <p class = 'answer-content'>
-        Não, a Libras não é universal. Assim como as línguas orais, a compreensão dos sinais pode variar regionalmente, influenciada por fatores culturais e linguísticos específicos.
-    </p></details>
-    <p class = 'data'>01/06/2022</p>
-</div>
-
-<div class ="duvida-resposta">
-    <h2 class = 'title'>Libras e inclusão educacional: uma combinação eficaz?</h2>
-    <p class = 'descricao'>Muitos discutem o papel da Libras na inclusão educacional de surdos. A pergunta que se destaca é: a Libras é realmente eficaz na promoção da inclusão educacional, ou existem desafios que precisam ser superados?</p>
-
-    <details> <summary class = 'answer'>Resposta</summary> <p class = 'answer-content'>
-        Sim, a Libras desempenha um papel eficaz na inclusão educacional ao proporcionar acesso igualitário ao conteúdo curricular. No entanto, desafios como a falta de intérpretes qualificados ainda precisam ser abordados para garantir uma inclusão efetiva.
-    </p></details>
-    <p class = 'data'>01/06/2022</p>
-</div>
-
-<div class ="duvida-resposta">
-    <h2 class = 'title'>Qual é o impacto da tecnologia na difusão da Libras?</h2>
-    <p class = 'descricao'>Com o avanço da tecnologia, surgem questões sobre seu impacto na disseminação da Libras. Como a tecnologia tem contribuído para promover o aprendizado e a compreensão da Libras?</p>
-
-    <details> <summary class = 'answer'>Resposta</summary> <p class = 'answer-content'>
-        A tecnologia tem desempenhado um papel significativo na promoção da Libras, através de aplicativos, plataformas online e recursos audiovisuais, tornando a língua mais acessível e ampliando sua visibilidade.
-    </p></details>
-    <p class = 'data'>01/06/2022</p>
-</div>
-
-<div class ="duvida-resposta">
-    <h2 class = 'title'>A Libras pode ser aprendida de forma autodidata?</h2>
-    <p class = 'descricao'>Muitas pessoas se questionam sobre a viabilidade de aprender Libras de forma autodidata. Diante dessa dúvida, exploramos se é possível dominar efetivamente a língua de sinais sem a orientação de um instrutor ou curso formal.</p>
-
-    <details> <summary class = 'answer'>Resposta</summary> <p class = 'answer-content'>
-        Sim, é possível aprender Libras de forma autodidata, especialmente com o auxílio de recursos online, vídeos educativos e prática constante. No entanto, a interação com a comunidade surda e instrutores especializados pode potencializar a aprendizagem.
-    </p></details>
-    <p class = 'data'>01/06/2022</p>
-</div>
-
-<div class ="duvida-resposta">
-    <h2 class = 'title'>Como a Libras impacta a comunicação entre surdos e ouvintes?</h2>
-    <p class = 'descricao'>A eficácia da Libras na comunicação entre surdos e ouvintes é frequentemente discutida. Exploramos como essa língua influencia a interação entre esses grupos, considerando a necessidade de interpretação e a compreensão mútua.</p>
-
-    <details> <summary class = 'answer'>Resposta</summary> <p class = 'answer-content'>
-        A Libras facilita a comunicação entre surdos e ouvintes, promovendo a inclusão. No entanto, a necessidade de intérpretes e a conscientização sobre a língua são cruciais para garantir uma interação eficaz.
-    </p></details>
-    <p class = 'data'>01/06/2022</p>
-</div>
-
 </main>
 
 </body>
 
 <?php
+require_once("../../actions/faq/visualizarPerguntas.php");
 require_once("../base/footer.php");
 ?>

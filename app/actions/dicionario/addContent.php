@@ -3,8 +3,9 @@
 require_once("../../config/conecta.php");
 
 // Buscando as variáveis para a consulta
+$id = $_GET[]
 $titulo = $_GET['Title-Video'];
-$iframe = $_GET['Iframe'];
+$rc= $_GET['Src'];
 $descricao = $_GET['Descricao'];
 
 // Conectar ao banco de dados
@@ -13,8 +14,8 @@ conecta();
 global $mysqli;
 
 // Construir a consulta SQL
-$query = "INSERT INTO dicionario_sinais (titulo, iframe, descricao) 
-          VALUES ('$titulo', '$iframe', '$descricao')";
+$query = "INSERT INTO (id_elemento, titulo, width, height, src, title, descricao)
+          VALUES ('$titulo', '$src', '$descricao')";
 
 // Executar a consulta diretamente
 $mysqli->query($query);

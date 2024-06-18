@@ -24,7 +24,7 @@ position: relative;
 form{
     background-image: linear-gradient(to bottom, #000, #031926, #143042, #20538a);
     background-color: rgba(255, 255, 255, 0.7);
-    padding: 18px 50px 25px 27px;
+    padding: 18px 63px 25px 27px;
     border-radius: 10px;
     color: white;
 }
@@ -34,6 +34,9 @@ fieldset{
     border-radius: 5px;
     height: 95%;
     width: 105%;
+}
+
+.campos{
     display: flex;
     align-items: start;
     justify-content: center;
@@ -44,22 +47,36 @@ fieldset{
 legend{
     padding: 0 8px 0 8px;
     margin-left: 50px;
-    font-size: 23px;
-    font-weight: 100;
+    font-size: 22px;
 }
 
-input{
+.secundaria input{
     border: none;
     outline: 0;
     background-color: rgba(255, 255, 255, 0.7);
-    width: 350px;
+    width: 450px;
     height: 20px;
     border-radius: 3px;
     font-size: 15px;
 }
 
+.categorias{
+    margin: 15px 0px 25px 5px;
+}
 
-label{
+.categorias label{
+    margin-left: 15px;
+}
+
+#srcInput{
+    width: 450px;
+}
+
+#srcLabel{
+    margin-left: 30px;
+}
+
+label, p{
     font-size: 20px;
     padding-bottom: 5px;
 }
