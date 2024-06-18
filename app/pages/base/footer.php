@@ -11,7 +11,7 @@
                 </p>
                 <p>
                     <i class="fa-solid fa-phone"></i>
-                    <a href="#">Contato</a>
+                    <a href="mailto:dimlib.projeto@gmail.com">Contato</a>
                 </p>
             </div>
             <div class="footer-item">

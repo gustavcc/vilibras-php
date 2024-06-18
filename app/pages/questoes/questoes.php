@@ -118,8 +118,6 @@ function verifyQuestao(e){
     }
 
     var array_banco_json = JSON.stringify(add_banco);
-
-    console.log(array_banco_json);
 }
 
 </script>
