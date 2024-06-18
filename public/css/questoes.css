@@ -56,6 +56,7 @@ main {
     display: flex;
     flex-direction: column;
     padding: 30px;
+    /* margin: 20px; */
     border-bottom: 1px solid var(--text-gray);
 }
 
@@ -67,14 +68,10 @@ main {
     border-bottom: 1px solid var(--text-gray);
 }
 
-.text-acertou {
-    font-size: 20px;
-    display: none;
-}
-
 .informations {
     display: flex;
     font-size: 10pt;
+    flex-wrap: wrap;
     font-weight: 400;
     padding-bottom: 30px;
     justify-content: flex;
@@ -128,9 +125,27 @@ main {
     border: 1px solid #777777;
 }
 
-.acertou > .text-acertou {
+.check {
+    font-size: 20px;
     display: block;
+    color: transparent;
+    /* color: var(--bg-questoes); */
+}
+
+.is-correct{
+    font-size: 14pt;
+    color: #f0c400;
+}
+
+.desativado {
+    cursor: not-allowed;
+}
+
+.acertou {
     color: #00d05a;
+}
+.errou {
+    color: #fc6060;
 }
 
 .correct {

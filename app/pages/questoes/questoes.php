@@ -4,76 +4,125 @@ require_once("../../actions/questoes/mostrarQuestoes.php");
 ?>
 
 <link rel="stylesheet" href="../../../public/css/questoes.css">
-<script src="../../../public/js/questoes.js" type="text/javascript" defer></script>
 
 <main>
     <?php
+    if (isset($_GET['msg'])){
+        $msg=$_GET['msg'];
+        echo "<div class='msg'>". $msg ."</div>";
+    }?>
 
-    // if (isset($_GET['msg'])){
-    //     $msg=$_GET['msg'];
-    //     echo "<div class='msg'>". $msg ."</div>";
-    // }
+    <?php foreach($questoes as $questao): ?>
+        
+        <div id="<?=$questao['id_questao']?>" class='questoes'>
+           <div id="informations" class='text-question'>
+                <div class='informations'>
+                    <p class='indexQuestao'>Q.<?=$questao['id_questao']?></p>
+                    <p>-</p>
+                    <p class='prova'><?=$questao['test']?></p>
+                    <p>-</p>
+                    <p class='conteudo'><?=$questao['content']?></p>
+                    <p>-</p>
+                    <p class='ano'><?=$questao['year']?></p>
+                </div>
+                <i class='check fa-solid fa-circle-check'></i>
+            </div>
+            <div class="quiz">
+                <p class='enunciado' id='pergunta'><?=$questao['title']?></p>
+                <div class='answers'>
+                    <div class="answer">
+                        <p>A)</p>
+                        <button onclick="verifyQuestao(this)" id='<?=$questao['correct']?>' value='A' class='btn'><?=$questao['answer_A']?></button>
+                    </div>
+                    <div class="answer">
+                        <p>B)</p>
+                        <button onclick="verifyQuestao(this)" id='<?=$questao['correct']?>' value='B' class='btn'><?=$questao['answer_B']?></button>
+                    </div>
+                    <div class="answer">
+                        <p>C)</p>
+                        <button onclick="verifyQuestao(this)" id='<?=$questao['correct']?>' value='C' class='btn'><?=$questao['answer_C']?></button>
+                    </div>
+                    <div class="answer">
+                        <p>D)</p>
+                        <button onclick="verifyQuestao(this)" id='<?=$questao['correct']?>' value='D' class='btn'><?=$questao['answer_D']?></button>
+                    </div>
+                    <div class="answer">
+                        <p>E)</p>
+                        <button onclick="verifyQuestao(this)" id='<?=$questao['correct']?>' value='E' class='btn'><?=$questao['answer_E']?></button>
+                    </div>
+                </div>
+            </div>
+            <div class='options'>
+                <a href='../../pages/questoes/editarQuestaoForm.php?id=<?=$questao['id_questao']?>' id='edit'> <i class='fa-solid fa-pen-to-square'></i> </a>
+                <a href='../../actions/questoes/excluirQuestao.php?id=<?=$questao['id_questao']?>' id='del'> <i class='fa-solid fa-trash'></i> </a>
+            </div>
+        </div>
+    
+    <?php endforeach; ?>
 
-    if (isset($questoes)) {
-        foreach($questoes as $questao) {
-            $id = $questao['id_questao'];
-            $title = $questao['title'];
-            $test = $questao['test'];
-            $content = $questao['content'];
-            $year = $questao['year'];
-            $correct = $questao['correct'];
-            $answer_A = $questao['answer_A'];
-            $answer_B = $questao['answer_B'];
-            $answer_C = $questao['answer_C'];
-            $answer_D = $questao['answer_D'];
-            $answer_E = $questao['answer_E'];
-            
-            echo "<div value='$id' class='questoes'>";
-            echo "   <div class='text-question'>";
-            echo "        <div class='informations'>";
-            echo "            <p class='indexQuestao'>Q.$id</p>";
-            echo '            <p>-</p>';
-            echo "            <p class='prova'>$test</p>";
-            echo '            <p>-</p>';
-            echo "            <p class='conteudo'>$content</p>";
-            echo '            <p>-</p>';
-            echo "            <p class='ano'>$year</p>";
-            echo "        </div>";
-            echo "        <p class='text-acertou'><i class='fa-solid fa-circle-check'></i></p>";
-            echo "    </div>";
-            echo '    <div class="quiz">';
-            echo "        <p class='enunciado' id='pergunta'>$title</p>";
-            echo "        <div class='answers'>";
-            echo '            <div class="answer">';
-            echo '                <p>A)</p>';
-            echo "                <button id='$correct' value='A' class='btn'>$answer_A</button>";
-            echo "            </div>";
-            echo '            <div class="answer">';
-            echo '                <p>B)</p>';
-            echo "                <button id='$correct' value='B' class='btn'>$answer_B</button>";
-            echo "            </div>";
-            echo '            <div class="answer">';
-            echo '                <p>C)</p>';
-            echo "                <button id='$correct' value='C' class='btn'>$answer_C</button>";
-            echo "            </div>";
-            echo '            <div class="answer">';
-            echo '                <p>D)</p>';
-            echo "                <button id='$correct' value='D' class='btn'>$answer_D</button>";
-            echo "            </div>";
-            echo '            <div class="answer">';
-            echo '                <p>E)</p>';
-            echo "                <button id='$correct' value='E' class='btn'>$answer_E</button>";
-            echo "            </div>";
-            echo "        </div>";
-            echo "    </div>";
-            echo "<div class='options'>";
-            echo "      <a href='../../pages/questoes/editarQuestaoForm.php?id={$id}' id='edit'> <i class='fa-solid fa-pen-to-square'></i> </a>";
-            echo "      <a href='../../actions/questoes/excluirQuestao.php?id={$id}' id='del'> <i class='fa-solid fa-trash'></i> </a>";
-            echo "</div>";
-            echo '</div>';
-        }
+<!-- Inicio do script JavaScript -->
+<script>
+
+function verifyQuestao(e){
+    const botaoSelecionado = e; 
+    let isCorrect = false;
+
+    // Define se a resposta é correta
+    if (botaoSelecionado.id == botaoSelecionado.value){
+        isCorrect = true;
     }
-    ?>
+
+    // Selecionar alguns elementos relacionados à resposta selecionada pelo usuário
+    const answer = e.parentElement;
+    const answers = answer.parentElement;
+    const quiz = answers.parentElement;
+    const questao = quiz.parentElement;
+    const text_elem = questao.children[0];
+    const check = text_elem.children[1];
+    const id_questao = questao.id;
+
+    // Desativar clique nos outros botões
+    for (let i=0; i<5; i++){
+        answers.children[i].children[1].onclick = null;
+        answers.children[i].children[1].disabled = true;
+        answers.children[i].children[1].classList.add('desativado');
+    }
+
+    var add_banco = [];
+
+    if(isCorrect){ 
+        botaoSelecionado.classList.add("correct");
+        check.classList.add('acertou');
+
+        // Desativa o clique das outras respostas
+        botaoSelecionado.onclick = null; 
+        botaoSelecionado.disabled = true; 
+        
+        add_banco.push([`${id_questao}`, 'acertou']);
+    }
+    else{
+        botaoSelecionado.classList.add("incorrect");
+        check.classList.add('errou');
+
+        // Desativa o clique das outras respostas
+        botaoSelecionado.onclick = null; 
+        botaoSelecionado.disabled = true; 
+
+        // Se for errado cria uma div nova indicando a resposta correta 
+        const correta = document.createElement('div');
+        correta.textContent = `⚠️ A resposta correta é: ${botaoSelecionado.id})`;
+        correta.classList.add('is-correct');
+        quiz.appendChild(correta);
+
+        add_banco.push([`${id_questao}`, 'errou']);
+    }
+
+    var array_banco_json = JSON.stringify(add_banco);
+
+    console.log(array_banco_json);
+}
+
+</script>
 
 </main>
 
