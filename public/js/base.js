@@ -44,7 +44,7 @@ window.addEventListener('load', ()=>{
   }
   else {
     // menuTop.appendChild(searchBox);
-    menuBottom.removeChild(searchBox)
+    // menuBottom.removeChild(searchBox)
     menuTop.insertBefore(searchBox, menuTop.firstChild);
   }
 })
@@ -55,7 +55,7 @@ window.addEventListener('resize', ()=>{
   }
   else {
     // menuTop.appendChild(searchBox);
-    menuBottom.removeChild(searchBox)
+    // menuBottom.removeChild(searchBox)
     menuTop.insertBefore(searchBox, menuTop.firstChild);
   }
 })
