@@ -6,7 +6,6 @@ main {
     background-image: white;
     background-size: 100%;
     background-attachment: fixed;
-    color: radial-gradient(#102430, #031926, #000);
   }
 
 .answer{
@@ -25,13 +24,19 @@ main {
     border-bottom: solid 1px #aaaaaa;
     border-radius: 15px;
     transition: 1s;
-    background: var(--section-especial-bg);
-    color: var(--text);
     padding: 5px;
+    color: var(--text);
 }
 
 .duvida-resposta:hover{
     cursor: pointer;
+}
+
+.duvida-resposta h2, .answer{
+    background-image: linear-gradient(to right bottom, var(--title-1), var(--title-2), var(--title-3));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .descricao{

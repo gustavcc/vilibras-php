@@ -21,16 +21,16 @@
         <p>Categoria que será alterada:</p>
 
         <label for="">Hardware</label>
-        <input type="radio" name = "categoria" value="hardware">
+        <input type="radio" name = "Categoria" value="hardware">
 
         <label for="">Software</label>
-        <input type="radio" name = "categoria" value="software">
+        <input type="radio" name = "Categoria" value="software">
 
         <label for="">Conectividades</label>
-        <input type="radio" name = "categoria" value="conectividades">
+        <input type="radio" name = "Categoria" value="conectividades">
 
         <label for="">Amazenamento de dados</label>
-        <input type="radio" name = "categoria" value="armazenamento_dados">
+        <input type="radio" name = "Categoria" value="armazenamento_dados">
 
     </div>
 

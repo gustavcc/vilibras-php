@@ -8,7 +8,7 @@ global $mysqli;
 
 if (isset($_GET['categoria'])) {
     $categoria = $_GET['categoria'];
-    $query = "SELECT * FROM $categoria";
+    $query = "SELECT * FROM $categoria ORDER BY titulo";
 } 
 
 $resultado = $mysqli->query($query);
@@ -32,13 +32,12 @@ $elementos_json = json_encode($elementos);
 // Agora, $elementos_json contém os dados no formato JSON que podem ser utilizados no JavaScript
 var elementos = <?php echo $elementos_json; ?>;
 
-// Exemplo de uso dos dados
 elementos.forEach(function(elemento) {
     // Seleciona o elemento pai onde as novas divs serão adicionadas
     var dictionaryContent = document.querySelector('.Dictionary-Content');
     var search = document.querySelector('#search')
 
-    // Adicionar os options ao select
+    // Adiciona os options ao select
     const criarOption = document.createElement('option');
     criarOption.value = elemento.id_elemento
     criarOption.textContent = elemento.titulo;
