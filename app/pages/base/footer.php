@@ -1,6 +1,3 @@
-<link rel="stylesheet" href="../../../public/css/base.css"> 
-<script src="../../../public/js/base.js" type="text/javascript" defer></script>
-
     <footer>
         <div class="footer_section">
             <div class="footer-item">

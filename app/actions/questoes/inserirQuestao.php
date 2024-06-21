@@ -38,7 +38,7 @@ elseif(empty($_POST['correct'])){
 
     conecta();
 
-    $sql = "INSERT INTO questoes(test,content,year,title,answer_A,answer_B,answer_C,answer_D,answer_E,correct)VALUES(?,?,?,?,?,?,?,?,?,?);";
+    $sql = "INSERT INTO questoes (test,content,year,title,answer_A,answer_B,answer_C,answer_D,answer_E,correct)VALUES(?,?,?,?,?,?,?,?,?,?);";
 
     # prepara a querry sql verificando se esta nos conformes, além de passar os
     # valores de forma segura

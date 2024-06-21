@@ -1,3 +1,4 @@
+// script do slide
 const imagens = document.getElementById('imagens');
 const img = document.querySelectorAll('#imagens img');
 const next = document.getElementById('next-slide');
@@ -79,6 +80,7 @@ back.addEventListener('click', () => {
 
 setInterval(carrossel, 1000);
 
+// script do calendário
 document.addEventListener('DOMContentLoaded', () => {
     const months = ['janeiro','fevereiro','março','abril','maio','junho','julho','agosto','setembro','outubro','novembro','dezembro'];
     const tableDays = document.getElementById('dias');

@@ -72,7 +72,7 @@ aside {
 /* calendar */
 
 .calendar {
-    box-shadow: 0px 0px 20px var(--section-shadow);
+    /* box-shadow: 0px 0px 20px var(--section-shadow); */
     margin-top: 40px;
     font-family: 'JetBrains Mono', monospace;
     width: 300px;
@@ -321,9 +321,17 @@ aside {
 
 .questoes {
     width: 100%;
-    height: 250px;
+    height: 350px;
     display: flex;
     justify-content: space-evenly;
+    align-items: center;
+}
+
+.duvidas {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
@@ -376,6 +384,18 @@ aside {
 }
 
 .box-duvidas {
+    width: 100%;
+    height: 100%;
+    box-shadow: 0px 0px 20px var(--section-shadow);
+    background: var(--section-bg);
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.box-desempenho {
     width: 50%;
     height: 100%;
     box-shadow: 0px 0px 20px var(--section-shadow);
@@ -383,9 +403,33 @@ aside {
     border-radius: 20px;
     margin: 0 0 0 10px;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.datas-desempenho {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+}
+
+#chartsQuestion {
+    cursor: pointer;
+}
+
+.text-desempenho {
+    width: 50%;
+    height: 100%;
+    display: flex;
     justify-content: space-evenly;
     flex-direction: column;
-    padding: 20px;
+}
+
+.box-desempenho i {
+    font-size: 30pt;
+    color: #898989;
 }
 
 .box-duvidas i {
@@ -393,7 +437,7 @@ aside {
     color: #898989;
 }
 
-.box-duvidas:hover #icon-d {
+.duvidas:hover #icon-d {
     background-image: linear-gradient(to right bottom, var(--title-1), var(--title-2));
     background-clip: text;
     -webkit-background-clip: text;
@@ -401,10 +445,18 @@ aside {
     color: #ffffff;
 }
 
-/* .box-duvidas:hover {
+.box-desempenho:hover #icon-i {
+    background-image: linear-gradient(to right bottom, var(--title-1), var(--title-2));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #ffffff;
+}
+
+.duvidas:hover {
     transition: all .2s linear;
     transform: translateY(-5px);
-} */
+}
 
 .dicionario {
     width: 100%;
@@ -510,12 +562,17 @@ aside {
        align-items: center; */
 }
 
-@media only screen and (max-width: 1141) {
+@media only screen and (max-width: 1141px) {
     .carrossel {
         height: 220px;
     }
 }
 
+@media only screen and (max-width: 1194px) {
+    .text-desempenho {
+        display: none;
+    }
+}
 
 @media only screen and (max-width: 999px) {
     main {
@@ -530,6 +587,7 @@ aside {
     .carrossel {
         height: 300px;
     }
+
 }
 
 @media only screen and (max-width:570px) {
@@ -537,6 +595,10 @@ aside {
     aside {
         margin: 20px 20px 20px 20px;
         min-width: none;
+    }
+
+    main {
+        height: auto;
     }
 
     .calender{
@@ -558,11 +620,17 @@ aside {
 
     .questoes {
         flex-direction: column;
-        height: 400px;
+        height: 500px;
+    }
+
+    .box-desempenho {
+        width: 100%;
+        margin: 0;
     }
 
     .box-questoes {
         width: 100%;
+        height: 100%;
         margin: 0px 0px 20px 0px;
     }
 

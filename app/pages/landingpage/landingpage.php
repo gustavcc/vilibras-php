@@ -146,7 +146,7 @@ require_once("../base/cabecalho.php");
                         <a href="../cadastro-aluno/cadastro-aluno.php">Cadastre-se</a>
                     </div>
                     <div class="button">
-                        <a href="../login/login.php">Login</a>
+                        <a href="../login/login.php">Entrar</a>
                     </div>
                 </div>
             </div>

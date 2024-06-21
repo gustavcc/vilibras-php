@@ -12,4 +12,6 @@ if($result->num_rows > 0){
     $questoes = $result->fetch_all(MYSQLI_ASSOC);
 }
 
+$qtdQuestoes = count($questoes);
+
 desconecta();

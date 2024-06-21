@@ -39,7 +39,11 @@ require_once("../base/cabecalho.php");
         <fieldset>
             <div class="radio">
                 <label for="">Select the answer correct:</label>
-                <input name="correct" placeholder="A/B/C/D/E" type="text">
+                A)<input type="radio" name="correct" value="A">
+                B)<input type="radio" name="correct" value="B">
+                C)<input type="radio" name="correct" value="C">
+                D)<input type="radio" name="correct" value="D">
+                E)<input type="radio" name="correct" value="E">
             </div>
         </fieldset>
         <div class="label">

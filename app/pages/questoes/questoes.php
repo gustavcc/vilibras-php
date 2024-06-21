@@ -1,6 +1,7 @@
 <?php
 require_once("../base/cabecalho.php");
 require_once("../../actions/questoes/mostrarQuestoes.php");
+require_once("../../actions/questoes/getQuestoesAcertou.php");
 ?>
 
 <link rel="stylesheet" href="../../../public/css/questoes.css">
@@ -12,9 +13,9 @@ require_once("../../actions/questoes/mostrarQuestoes.php");
         echo "<div class='msg'>". $msg ."</div>";
     }?>
 
-    <?php foreach($questoes as $questao): ?>
+    <?php if(isset($questoes)) { foreach($questoes as $questao): ?>
         
-        <div id="<?=$questao['id_questao']?>" class='questoes'>
+        <div id="<?=$questao['id_questao']?>_questao" class='questoes'>
            <div id="informations" class='text-question'>
                 <div class='informations'>
                     <p class='indexQuestao'>Q.<?=$questao['id_questao']?></p>
@@ -58,11 +59,12 @@ require_once("../../actions/questoes/mostrarQuestoes.php");
             </div>
         </div>
     
-    <?php endforeach; ?>
+    <?php endforeach; }?>
 
 <!-- Inicio do script JavaScript -->
 <script>
 
+// função que verifica resultado da resposta selecionada pelo usuário e adiciona tal informação no banco
 function verifyQuestao(e){
     const botaoSelecionado = e; 
     let isCorrect = false;
@@ -86,9 +88,12 @@ function verifyQuestao(e){
         answers.children[i].children[1].onclick = null;
         answers.children[i].children[1].disabled = true;
         answers.children[i].children[1].classList.add('desativado');
+        answers.children[i].children[1].style.border = 'None';
     }
 
-    var add_banco = [];
+    // removo as classes para evitar erros de interferencia
+    check.classList.remove('acertou');
+    check.classList.remove('errou');
 
     if(isCorrect){ 
         botaoSelecionado.classList.add("correct");
@@ -96,11 +101,13 @@ function verifyQuestao(e){
 
         // Desativa o clique das outras respostas
         botaoSelecionado.onclick = null; 
-        botaoSelecionado.disabled = true; 
+        botaoSelecionado.disabled = true;   
         
-        add_banco.push([`${id_questao}`, 'acertou']);
+        // crio o objeto com as inforções se acertou e o id da questão
+        var add_banco = {id:`${id_questao}`,check:'acertou'};
     }
-    else{
+    else {
+
         botaoSelecionado.classList.add("incorrect");
         check.classList.add('errou');
 
@@ -114,11 +121,87 @@ function verifyQuestao(e){
         correta.classList.add('is-correct');
         quiz.appendChild(correta);
 
-        add_banco.push([`${id_questao}`, 'errou']);
+        // crio o objeto com as inforções se errou e o id da questão
+        var add_banco = {id:`${id_questao}`,check:'errou'};
     }
 
-    var array_banco_json = JSON.stringify(add_banco);
+    // usar try-catch é uma boa prática para manter o código funcionando corretamente
+    try {
+        // transformei meu objeto em string para converter em array no php
+        var add_banco_str = JSON.stringify(add_banco);
+
+    } catch (error) {
+        console.error('Erro ao converter ou ao enviar JSON: ',error)
+    }
+
+    // defino o objeto que me permiter enviar dados ao servidor (php nesse caso)
+    var objectRequest = new XMLHttpRequest();
+
+    // configuro a solicitação que desejo fazer: nesse caso enviar dados usando o metótodo POST do Http e indico "true" para dizer que é assíncrono (sem precisar recarregar a página)
+    objectRequest.open("POST","../../actions/questoes/acertouQuestao.php", true)
+
+    // toda solicitação Http tem o body e o header, no body passo o método, no header configurações específicas
+    // meu header: passei o tipo de dado que será enviado
+    objectRequest.setRequestHeader("Content-Type", "aplication/json")
+
+    // o servidor enviar respostas de como está o andamento da solicitação através do status (200 significa que o servidor recebeu a solicitação)
+    objectRequest.onreadystatechange = function() {
+        if (objectRequest.readyState === 4 && objectRequest.status === 200) {
+            console.log('Status of request: ',objectRequest.responseText); // resposta do servidor se houver
+        }
+    }
+
+    // enviei a solicitação para o servidor(arquivo: ../../actions/questoes/acertouQuestao.php)
+    objectRequest.send(add_banco_str);
 }
+
+// converto o array php para  json
+<?php 
+if (isset($questoesCheck)) {
+    $questoesCheckJson = json_encode($questoesCheck);
+}
+?>
+
+// função que pega as informações da tabela acertou_questao no banco de dados e verifica os resultados das questãos que já foram respondidas por cada usuário 
+function showQuestaoCheck(){
+
+    // pego todas as questões do html
+    const questoes = document.querySelectorAll('.questoes');
+
+    // crio um bloco php que só existirá se ouver questões respondidas
+    <?php if (isset($questoesCheckJson)): ?>
+
+    // finalmente converto o json para array em JavaScripct
+    var listCheckQuestao = <?php echo $questoesCheckJson; ?>;
+
+    // passo por todas as questões do html
+    questoes.forEach(questao => {
+        listCheckQuestao.forEach(checkQuestao => {
+
+            // ferifica se a questão já foi respondida antes
+            if (`${checkQuestao['id_questao']}_questao`==questao.id) {
+
+                const check = questao.children[0].children[1];
+
+                // removo as classes antes para evitar erros
+                check.classList.remove('acertou');
+                check.classList.remove('errou');
+
+                // se foi respondida, verifica se acertou e adicona a classe acertou
+                if (checkQuestao['acertou']==='acertou') {
+                    check.classList.add('acertou');
+                }
+                // se foi respondida, verifica se errou e adicona a classe errou
+                if (checkQuestao['acertou']==='errou') {
+                    check.classList.add('errou');
+                }
+            }
+        })
+    });
+    <?php endif; ?>
+}
+
+showQuestaoCheck();
 
 </script>
 
