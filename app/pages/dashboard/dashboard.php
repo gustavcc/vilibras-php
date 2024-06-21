@@ -1,5 +1,7 @@
 <?php
 require_once("../base/cabecalho.php");
+require_once("../../actions/questoes/mostrarQuestoes.php");
+require_once("../../actions/questoes/getQuestoesAcertou.php");
 ?>
 
 <link rel="stylesheet" href="../../../public/css/dashboard.css">
@@ -45,9 +47,15 @@ require_once("../base/cabecalho.php");
                 <i id="icon-check" class="fa-regular fa-circle-check"></i>
                 <p class="text">Lista de Questões</p>
             </a>
-            <div class="box-duvidas">
-                <i id="icon-d" class="fa-solid fa-chart-simple"></i>
-                <p class="text">Desempenho</p>
+            <div class="box-desempenho">
+                <div class="text-desempenho">
+                    <i id="icon-i" class="fa-solid fa-chart-simple"></i>
+                    <p class="text">Desempenho</p>
+                </div>
+                <div class="datas-desempenho">
+                    <canvas id='chartsQuestion'></canvas>
+                </div>
+
             </div>
         </section>
         <p class="title">Dicionário</p>
@@ -61,7 +69,14 @@ require_once("../base/cabecalho.php");
         <section class="aulas">
             <a href="../aulas/aulas.php" class="box-aulas">
                 <i id="icon-a" class="fa-solid fa-users-rectangle"></i>
-                <p class="text">Aulas com professores infríveis</p>
+                <p class="text">Aperfeiçoe seu aprendizado</p>
+            </a>
+        </section>
+        <p class="title">Alguma Dúvida?</p>
+        <section class="duvidas">
+            <a href="../faq/faq.php" class="box-duvidas">
+                <i id="icon-d" class="fa-solid fa-question"></i>
+                <p class="text">Acesse a nossa central de dúvidas</p>
             </a>
         </section>
     </main>
@@ -73,7 +88,7 @@ require_once("../base/cabecalho.php");
                 <img id="image" src="../../../public/images/user.png" alt="Perfil usuário">
             </a>
             <a href="../perfil/perfil.php" class="box-perfil">
-                <p id="user-perfil">Gustavo</p>
+                <p id="user-perfil">Usuário</p>
             </a>
             <div class="calendar">
                 <div class="header-calendar">
@@ -156,6 +171,35 @@ require_once("../base/cabecalho.php");
             </div>
         </section>
     </aside>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+
+var qtdQuestoesErrou = <?php echo $qtdQuestoesErrou; ?>;
+var qtdQuestoesAcertou = <?php echo $qtdQuestoesAcertou; ?>;
+
+const charts = document.getElementById('chartsQuestion');
+
+new Chart(charts, {
+    type: 'doughnut',
+    data: {
+        labels: [
+        'Acertos',  
+        'Erros'
+        ],
+        datasets: [{
+        label: 'Quantidade',
+        data: [qtdQuestoesAcertou, qtdQuestoesErrou],
+        backgroundColor: [
+            '#00d05a',
+            '#fc6060'
+        ],
+        hoverOffset: 4,
+        }] 
+    }
+});
+
+</script>
 
 <?php
 require_once("../base/footer.php");
