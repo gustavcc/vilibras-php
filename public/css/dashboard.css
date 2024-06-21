@@ -562,12 +562,17 @@ aside {
        align-items: center; */
 }
 
-@media only screen and (max-width: 1141) {
+@media only screen and (max-width: 1141px) {
     .carrossel {
         height: 220px;
     }
 }
 
+@media only screen and (max-width: 1194px) {
+    .text-desempenho {
+        display: none;
+    }
+}
 
 @media only screen and (max-width: 999px) {
     main {
@@ -583,9 +588,6 @@ aside {
         height: 300px;
     }
 
-    .text-desempenho {
-        display: none;
-    }
 }
 
 @media only screen and (max-width:570px) {
@@ -597,10 +599,6 @@ aside {
 
     main {
         height: auto;
-    }
-
-    .text-desempenho {
-        display: none;
     }
 
     .calender{
