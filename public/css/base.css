@@ -610,6 +610,7 @@ footer a:hover {
 	--perfil-text: #333;
 	--bg-questoes: #f2f6fc;
 	--bg-calendar: #e9e9e9;
+	--bg-faq: transparent;
 
 }
 
@@ -637,5 +638,6 @@ footer a:hover {
 	--perfil-text: #dcdcdc;
 	--bg-questoes: #434343;
 	--bg-calendar: #000000;
+	--bg-faq: #000;
 
 }

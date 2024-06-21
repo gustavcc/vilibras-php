@@ -6,6 +6,7 @@ main {
     background-image: white;
     background-size: 100%;
     background-attachment: fixed;
+    background-color: var(--bg-faq);
   }
 
 .answer{
