@@ -1,8 +1,15 @@
 <?php
+session_start();
+
+// se não tiver logado, vai para o login
+if (!isset($_SESSION['login'])) {
+    header("Location: ../usuario/login.php?");
+    exit();
+}?>
+
+<?php
 require_once("../base/cabecalho.php");
 ?>
-
-<!-- teste -->
 
 <link rel="stylesheet" href="../../../public/css/perfil.css">
 <script src="../../../public/js/perfil.js" defer></script>

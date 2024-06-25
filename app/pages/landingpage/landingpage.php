@@ -1,4 +1,13 @@
 <?php
+session_start();
+
+if (isset($_SESSION['login'])) {
+    header("Location: ../dashboard/dashboard.php");
+    exit();
+}?>
+
+
+<?php
 require_once("../base/cabecalho.php");
 ?>
 

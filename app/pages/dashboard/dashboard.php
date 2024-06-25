@@ -1,4 +1,13 @@
 <?php
+session_start();
+
+// se não tiver logado, vai para o login
+if (!isset($_SESSION['login'])) {
+    header("Location: ../usuario/login.php?");
+    exit();
+}?>
+
+<?php
 require_once("../base/cabecalho.php");
 require_once("../../actions/questoes/mostrarQuestoes.php");
 require_once("../../actions/questoes/getQuestoesAcertou.php");
@@ -35,7 +44,7 @@ require_once("../../actions/questoes/getQuestoesAcertou.php");
         <section class="recepcao">
             <div class="text-recepcao">
                 <i class="fa-solid fa-location-dot"></i>
-                <p class="text">Seja bem-vindo(a) ao seu <span id="dash">Dashboard</span></p>
+                <p class="text">Seja bem-vindo(a), <?php echo htmlspecialchars($_SESSION['login']) ?>, ao seu <span id="dash">Dashboard</span></p>
             </div>
             <img src="../../../public/images/desktop computer-rafiki.svg" alt="">
 
@@ -81,6 +90,8 @@ require_once("../../actions/questoes/getQuestoesAcertou.php");
         </section>
     </main>
 
+    <?php  ?>
+
     <aside>
         <section class="perfil">
             <p class="text">Perfil de Usuário</p>
@@ -88,7 +99,7 @@ require_once("../../actions/questoes/getQuestoesAcertou.php");
                 <img id="image" src="../../../public/images/user.png" alt="Perfil usuário">
             </a>
             <a href="../perfil/perfil.php" class="box-perfil">
-                <p id="user-perfil">Usuário</p>
+                <p id="user-perfil"><?php echo htmlspecialchars($_SESSION['login']) ?></p>
             </a>
             <div class="calendar">
                 <div class="header-calendar">
@@ -178,7 +189,28 @@ require_once("../../actions/questoes/getQuestoesAcertou.php");
 var qtdQuestoesErrou = <?php echo $qtdQuestoesErrou; ?>;
 var qtdQuestoesAcertou = <?php echo $qtdQuestoesAcertou; ?>;
 
+console.log(qtdQuestoesAcertou,'/',qtdQuestoesErrou);
+
 const charts = document.getElementById('chartsQuestion');
+
+if (qtdQuestoesAcertou==0 && qtdQuestoesErrou==0) {
+    new Chart(charts, {
+    type: 'doughnut',
+    data: {
+        labels: [
+        'Ainda não respondeu!'
+        ],
+        datasets: [{
+        label: 'Quantidade',
+        data: [qtdQuestoesAcertou, qtdQuestoesErrou],
+        backgroundColor: [
+            '#fc6060'
+        ],
+        hoverOffset: 4,
+        }] 
+        }
+    });
+}
 
 new Chart(charts, {
     type: 'doughnut',
