@@ -21,6 +21,13 @@ sexo VARCHAR(10) NOT NULL,
 e_mail VARCHAR(40) NOT NULL,
 nome VARCHAR(40) NOT NULL);
 
+CREATE TABLE usuario(
+id_usuario INT PRIMARY KEY AUTO_INCREMENT,
+email VARCHAR(100) NOT NULL,
+senha VARCHAR(20) NOT NULL,
+nome VARCHAR(100) NOT null
+);
+
 CREATE TABLE IF NOT EXISTS acertou_questao (
 	id_acertou INT PRIMARY KEY AUTO_INCREMENT,
 	acertou VARCHAR(20) NOT NULL,
@@ -55,7 +62,7 @@ iframe TEXT NOT NULL,
 descricao TEXT NOT NULL);
 
 CREATE TABLE hardware(
-id_elemento VARCHAR(50) PRIMARY KEY,
+id_hardware VARCHAR(50) PRIMARY KEY,
 titulo VARCHAR (50) NOT NULL,
 descricao TEXT NOT NULL,
 src TEXT NOT NULL,
@@ -64,7 +71,7 @@ height TEXT NOT NULL,
 title TEXT NOT NULL);
 
 CREATE TABLE software(
-id_elemento VARCHAR(50) PRIMARY KEY,
+id_software VARCHAR(50) PRIMARY KEY,
 titulo VARCHAR (50) NOT NULL,
 descricao TEXT NOT NULL,
 src TEXT NOT NULL,
@@ -73,7 +80,7 @@ height TEXT NOT NULL,
 title TEXT NOT NULL);
 
 CREATE TABLE conectividades(
-id_elemento VARCHAR(50) PRIMARY KEY,
+id_conectividades VARCHAR(50) PRIMARY KEY,
 titulo VARCHAR (50) NOT NULL,
 descricao TEXT NOT NULL,
 src TEXT NOT NULL,
@@ -82,7 +89,7 @@ height TEXT NOT NULL,
 title TEXT NOT NULL);
 
 CREATE TABLE armazenamento_dados(
-id_elemento VARCHAR(50) PRIMARY KEY,
+id_armazenamento_dados VARCHAR(50) PRIMARY KEY,
 titulo VARCHAR (50) NOT NULL,
 descricao TEXT NOT NULL,
 src TEXT NOT NULL,
@@ -201,5 +208,5 @@ CREATE TABLE telefone_ADM(
 telefone_PK INT PRIMARY KEY AUTO_INCREMENT,
 telefone VARCHAR (10) NOT NULL,
 id_adm_FK INT,
-FOREIGN KEY (id_adm_FK) REFERENCES ADM (id_adm));
+FOREIGN KEY (id_adm_FK) REFERENCES ADM (id_adm));usuario
 """
