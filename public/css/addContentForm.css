@@ -22,26 +22,16 @@ position: relative;
 }
 
 form{
-    background-image: linear-gradient(to bottom, #000, #031926, #143042, #20538a);
-    background-color: rgba(255, 255, 255, 0.7);
     padding: 18px 63px 25px 27px;
     border-radius: 10px;
-    color: white;
 }
 
-fieldset{
-    border: 2px solid white;
+fieldset {
+    border: 2px solid transparent;
     border-radius: 5px;
-    height: 95%;
-    width: 105%;
-}
-
-.campos{
-    display: flex;
-    align-items: start;
-    justify-content: center;
-    flex-direction: column;
-    padding-left: 1vw;
+    border-color: black;
+    padding: 10px;
+    width: 100%;
 }
 
 legend{
@@ -51,9 +41,8 @@ legend{
 }
 
 .secundaria input{
-    border: none;
     outline: 0;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.3);
     width: 450px;
     height: 20px;
     border-radius: 3px;
@@ -61,15 +50,11 @@ legend{
 }
 
 .categorias{
-    margin: 15px 0px 25px 5px;
+    margin: 5px 0px 25px 5px;
 }
 
-.categorias label{
+.categorias label, .campos label{
     margin-left: 15px;
-}
-
-#srcInput{
-    width: 450px;
 }
 
 #srcLabel{
@@ -87,9 +72,16 @@ label, p{
 
 button{
     font-size: 18px;
-    border: solid gray 2px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border: solid black 2px;
     border-radius: 5px;
     width: 80px;
     font-weight: 100;
     margin-bottom: 5px;
+    font-weight: 400;
+}
+
+input{
+    border: 2px solid black;
+    border-radius: 5px;  
 }
