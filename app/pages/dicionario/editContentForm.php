@@ -23,10 +23,10 @@
 
 <div class="principal">
 
-<form action="../../actions/dicionario/addContent.php" method="get">
+<form action="../../actions/dicionario/editContent.php" method="get">
 
 <fieldset>
-    <legend> Adicionar Vídeo</legend>
+    <legend> Editar Vídeo</legend>
 
     <div class="categorias">
         <p>Selecione a categoria que será alterada:</p>
@@ -41,7 +41,7 @@
             <label for="">Software</label>
             <input type="radio" name = "Categoria" value="software" required>
 
-            <br>
+            <br> 
 
             <label for="">Conectividades</label>
             <input type="radio" name = "Categoria" value="conectividades" required>
@@ -57,32 +57,41 @@
 
     <div class = "campos">
 
-    <p>Dados a serem enviados:</p>
+    <p>Dados necessários para identificar o elemento que será modificado:</p>
 
     <div class="secundaria">
         <label for="Id-Video">Id:</label>
         <input type="text" name = "Id-Video" id = "Id-Video" required>
         <br>
     </div>
+    <br>
+
+    <p>Dados a serem modificados:</p>
 
     <div class="secundaria">
-        <label for="Title-Video">Titulo: </label>
-        <input type="text" name = "Title-Video" id = "Title-Video" required><br>
+        <label for="NovoId">Novo Id:</label>
+        <input type="text" name = "NovoId" id = "NovoId">
+        <br>
     </div>
 
     <div class="secundaria">
-        <label for="Descricao">Descrição:</label>
-        <input type="text" name="Descricao" id = "Descricao" required>
+        <label for="Title-Video">Novo titulo: </label>
+        <input type="text" name = "Title-Video" id = "Title-Video"><br>
+    </div>
+
+    <div class="secundaria">
+        <label for="Descricao">Nova descrição:</label>
+        <input type="text" name="Descricao" id = "Descricao">
         <br>
     </div>
 
     <br>
 
     <div class="secundaria">
-        <label for="iframe">Iframe</label>
+        <label for="iframe">Novo iframe</label>
         <br>
             <label for="src" id = "srcLabel">Src:</label>
-            <input type="text" name="Src" id = "srcInput" required>
+            <input type="text" name="Src" id = "srcInput">
         <br>
     </div>
 
@@ -90,9 +99,10 @@
 
     <button type="submit">Enviar</button>
 
+    <p id = "obs" >Obs: O que não for modificar, deixe em branco.</p>
+
 
 </fieldset>
-
 
 </form>
 

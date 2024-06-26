@@ -23,10 +23,10 @@
 
 <div class="principal">
 
-<form action="../../actions/dicionario/addContent.php" method="get">
+<form action="../../actions/dicionario/removeContent.php" method="get">
 
 <fieldset>
-    <legend> Adicionar Vídeo</legend>
+    <legend> Remover Vídeo</legend>
 
     <div class="categorias">
         <p>Selecione a categoria que será alterada:</p>
@@ -57,32 +57,11 @@
 
     <div class = "campos">
 
-    <p>Dados a serem enviados:</p>
+    <p>Dado a ser enviado:</p>
 
-    <div class="secundaria">
+    <div class="secundaria" id = "idRemove">
         <label for="Id-Video">Id:</label>
         <input type="text" name = "Id-Video" id = "Id-Video" required>
-        <br>
-    </div>
-
-    <div class="secundaria">
-        <label for="Title-Video">Titulo: </label>
-        <input type="text" name = "Title-Video" id = "Title-Video" required><br>
-    </div>
-
-    <div class="secundaria">
-        <label for="Descricao">Descrição:</label>
-        <input type="text" name="Descricao" id = "Descricao" required>
-        <br>
-    </div>
-
-    <br>
-
-    <div class="secundaria">
-        <label for="iframe">Iframe</label>
-        <br>
-            <label for="src" id = "srcLabel">Src:</label>
-            <input type="text" name="Src" id = "srcInput" required>
         <br>
     </div>
 
