@@ -170,6 +170,7 @@ header {
 }
 
 .menu-user {
+	cursor: pointer;
 	padding: 0 10px 0 10px;
 	display: flex;
 	align-items: center;
@@ -492,7 +493,7 @@ footer a:hover {
 	transition: all .2s linear;
 }
 
-@media screen and (max-width: 479px) {
+@media screen and (max-width: 579px) {
 	footer {
 		justify-content: center;
 		padding: 2rem;

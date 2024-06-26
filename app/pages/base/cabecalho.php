@@ -34,17 +34,19 @@
     <header>
         <div class="menu-top">
             <div class="logo">
-                <a href="#"><img src="../../../public/images/Logo.png" alt=""></a>
-                <a id="logoname" href="#">VILIBRAS</a>
+                <a href="../../pages/dashboard/dashboard.php"><img src="../../../public/images/Logo.png" alt=""></a>
+                <a id="logoname" href="../../pages/dashboard/dashboard.php">VILIBRAS</a>
             </div>
 
             <div id="menu-top" class="menu-right">
+                <?php if (isset($_SESSION['login'])): ?>
                 <div id="search-box" class="search-box">
                     <input id="search" type="text" class="search-text" placeholder="Pesquisar...">
                     <a class="search-btn" href="#">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </a>
                 </div>
+                <?php endif; ?>
                 <label class="container-box">
                     <input id="checkbox" checked="checked" type="checkbox">
                     <svg viewBox="0 0 384 512" height="1em" xmlns="http://www.w3.org/2000/svg" class="moon">
@@ -58,22 +60,26 @@
                         </path>
                     </svg>
                 </label>
+                <?php if (!isset($_SESSION['login'])): ?>
                 <div class="login">
-                <a href="Dashboard">Entrar</a>
+                <a href="../usuario/login.php">Entrar</a>
                 </div>
+                <?php endif; ?>
+
+                <?php if (isset($_SESSION['login'])): ?>
                 <div class="menu-user">
                     <ul class="dropdown-menu">
                         <li>
                             <i id="menu-icon" class="fa-solid fa-user"></i>
                             <ul class="dropdown">
                                 <li>
-                                    <p>Olá, </p>
+                                    <p>Olá, <?php echo htmlspecialchars($_SESSION['login']) ?></p>
                                 </li>
-                                <li><a href="#">
+                                <li><a href="../perfil/perfil.php">
                                         <span><i class="fa-solid fa-house"></i></span>
                                         <span>Acessar Conta</span>
                                     </a></li>
-                                <li><a id="sair" href="#">
+                                <li><a id="sair" href="../../actions/usuario/logoutUsuario.php">
                                         <span><i class="fa-solid fa-right-from-bracket"></i></span>
                                         <span>Sair</span>
                                     </a></li>
@@ -81,6 +87,7 @@
                         </li>
                     </ul>
                 </div>
+                <?php endif; ?>
                 <button id="openMenu"><i class="fa-solid fa-bars"></i></button>
             </div>
         </div>

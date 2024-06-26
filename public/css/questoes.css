@@ -84,9 +84,11 @@ main {
 }
 
 .enunciado {
+    font-size: 13pt;
+    letter-spacing: -.5px;
     padding: 5px 0 5px 0;
     padding-bottom: 20px;
-    font-size: 16pt;
+    text-align: justify;
     font-weight: 300;
     color: var(--text);
 }
@@ -97,7 +99,7 @@ main {
     flex-direction: column;
     padding: 10px;
     border-radius: 20px;
-    border: 1px solid var(--bg-questoes);
+    /* border: 1px solid var(--bg-questoes); */
 }
 
 .answer {
@@ -106,23 +108,26 @@ main {
 }
 
 .btn {
+    letter-spacing: -.5px;
     background: var(--bg-questoes);
     color: var(--text);
     font-weight: 400;
     width: 100%;
     padding: 7px;
     border-radius: 10px;
-    border: 1px solid var(--bg-questoes);
+    border: none;
+    /* border: 1px solid var(--bg-questoes); */
     margin: 10px 0 10px 0;
     cursor: pointer;
-    text-align: left;
+    text-align: justify;
     transition: all .3s;
     box-sizing: border-box;
     font-size: 12pt;
 }
 
 .btn:hover {
-    border: 1px solid #777777;
+    /* border: 1px solid #777777; */
+    background: #afafaf;
 }
 
 .check {
@@ -134,18 +139,24 @@ main {
 
 .is-correct{
     font-size: 14pt;
-    color: #f0c400;
+    color: #e9af00;
+}
+.is-right{
+    font-size: 14pt;
+    color: #00d05a;
 }
 
+
 .desativado {
-    cursor: not-allowed;
+    cursor:auto;
+    pointer-events: none;
 }
 
 .acertou {
     color: #00d05a;
 }
 .errou {
-    color: #fc6060;
+    color: #e9af00;
 }
 
 .correct {

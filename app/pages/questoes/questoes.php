@@ -1,4 +1,13 @@
 <?php
+session_start();
+
+// se não tiver logado, vai para o login
+if (!isset($_SESSION['login'])) {
+    header("Location: ../usuario/login.php?");
+    exit();
+}?>
+
+<?php
 require_once("../base/cabecalho.php");
 require_once("../../actions/questoes/mostrarQuestoes.php");
 require_once("../../actions/questoes/getQuestoesAcertou.php");
@@ -88,7 +97,7 @@ function verifyQuestao(e){
         answers.children[i].children[1].onclick = null;
         answers.children[i].children[1].disabled = true;
         answers.children[i].children[1].classList.add('desativado');
-        answers.children[i].children[1].style.border = 'None';
+        answers.children[i].children[1].style.hover = 'None';
     }
 
     // removo as classes para evitar erros de interferencia
@@ -101,7 +110,13 @@ function verifyQuestao(e){
 
         // Desativa o clique das outras respostas
         botaoSelecionado.onclick = null; 
-        botaoSelecionado.disabled = true;   
+        botaoSelecionado.disabled = true;  
+        
+        // Se for correta cria uma div nova indicando que acertou
+        const correta = document.createElement('div');
+        correta.textContent = `😊 Você acertou!!!`;
+        correta.classList.add('is-right');
+        quiz.appendChild(correta);
         
         // crio o objeto com as inforções se acertou e o id da questão
         var add_banco = {id:`${id_questao}`,check:'acertou'};

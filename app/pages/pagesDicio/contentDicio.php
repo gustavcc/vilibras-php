@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+// se não tiver logado, vai para o login
+if (!isset($_SESSION['login'])) {
+    header("Location: ../usuario/login.php?");
+    exit();
+}?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

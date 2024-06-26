@@ -10,14 +10,17 @@ $result = $mysqli->query($sql);
 
 if($result->num_rows > 0){
     $questoesCheck = $result->fetch_all(MYSQLI_ASSOC);
+} else {
+    $questoesCheck = [];
 }
+
 $correct = [];
 $incorrect = [];
 foreach ($questoesCheck as $questaoRespondida) {
-    if ($questaoRespondida['acertou'] == 'acertou') {
+    if ($questaoRespondida['acertou'] == 'acertou' && isset($questaoRespondida)) {
         array_push($correct, $questaoRespondida);
     }
-    if ($questaoRespondida['acertou'] == 'errou') {
+    if ($questaoRespondida['acertou'] == 'errou' && isset($questaoRespondida)) {
         array_push($incorrect, $questaoRespondida);
     }
 }

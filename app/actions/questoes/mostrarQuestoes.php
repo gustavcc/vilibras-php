@@ -10,6 +10,8 @@ $result = $mysqli->query($sql);
 
 if($result->num_rows > 0){
     $questoes = $result->fetch_all(MYSQLI_ASSOC);
+} else {
+    $questoes = [];
 }
 
 $qtdQuestoes = count($questoes);
