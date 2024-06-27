@@ -20,7 +20,7 @@ if (isset($_GET["Id-Video"]) && isset($_GET['Categoria'])){
     }
 
     $stmt->bind_param('s', $idVideo);
-    $result = $stmt->execute();
+    $stmt->execute();
     $stmt->store_result();
 
     if ($stmt->num_rows > 0){
