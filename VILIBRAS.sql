@@ -62,7 +62,7 @@ iframe TEXT NOT NULL,
 descricao TEXT NOT NULL);
 
 CREATE TABLE hardware(
-id_hardware VARCHAR(50) PRIMARY KEY,
+id_elemento VARCHAR(50) PRIMARY KEY,
 titulo VARCHAR (50) NOT NULL,
 descricao TEXT NOT NULL,
 src TEXT NOT NULL,
@@ -71,7 +71,7 @@ height TEXT NOT NULL,
 title TEXT NOT NULL);
 
 CREATE TABLE software(
-id_software VARCHAR(50) PRIMARY KEY,
+id_elemento VARCHAR(50) PRIMARY KEY,
 titulo VARCHAR (50) NOT NULL,
 descricao TEXT NOT NULL,
 src TEXT NOT NULL,
@@ -80,7 +80,7 @@ height TEXT NOT NULL,
 title TEXT NOT NULL);
 
 CREATE TABLE conectividades(
-id_conectividades VARCHAR(50) PRIMARY KEY,
+id_elemento VARCHAR(50) PRIMARY KEY,
 titulo VARCHAR (50) NOT NULL,
 descricao TEXT NOT NULL,
 src TEXT NOT NULL,
@@ -89,7 +89,7 @@ height TEXT NOT NULL,
 title TEXT NOT NULL);
 
 CREATE TABLE armazenamento_dados(
-id_armazenamento_dados VARCHAR(50) PRIMARY KEY,
+id_elemento VARCHAR(50) PRIMARY KEY,
 titulo VARCHAR (50) NOT NULL,
 descricao TEXT NOT NULL,
 src TEXT NOT NULL,
@@ -103,7 +103,11 @@ conteudo VARCHAR(40));
 
 CREATE TABLE feedback(
 id_feedback INT PRIMARY KEY AUTO_INCREMENT,
-texto VARCHAR(200) NOT NULL);
+titulo TEXT NOT NULL,
+descricao TEXT NOT NULL,
+pergunta TEXT NOT NULL,
+data_dia DATE NOT NULL,
+resposta TEXT);
 
 CREATE TABLE material(
 id_material INT PRIMARY KEY AUTO_INCREMENT,
