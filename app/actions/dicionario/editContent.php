@@ -6,15 +6,15 @@ conecta();
 
 global $mysqli;
 
-if (isset($_GET["Id-Video"]) && isset($_GET['Categoria'])){
-    $idVideo = $_GET["Id-Video"];
-    $categoria = $_GET["Categoria"];
+if (isset(!empty(trim($_GET["Id-Video"]))) && isset(!empty(trim($_GET['Categoria'])))){
+    $idVideo = trim($_GET["Id-Video"]);
+    $categoria = trim($_GET["Categoria"]);
     $alteracao = 0;
 
     $query = "SELECT id_elemento FROM $categoria WHERE id_elemento = ?";
 
     $stmt = $mysqli->prepare($query);
-    
+
     if ($stmt === false){
         die ("Erro na preparação da consulta que verificaria a existência do id informado: " . $mysqli->error);
     }
@@ -25,7 +25,7 @@ if (isset($_GET["Id-Video"]) && isset($_GET['Categoria'])){
 
     if ($stmt->num_rows > 0){
         
-        if (!empty($_GET['Title-Video'])){
+        if (!empty(trim($_GET['Title-Video']))){
             $titleVideo = $_GET['Title-Video'];
             $query = "UPDATE $categoria SET titulo = ? WHERE id_elemento = ?";
     
@@ -45,7 +45,7 @@ if (isset($_GET["Id-Video"]) && isset($_GET['Categoria'])){
             $stmt_update->close();
         }
         
-        if (!empty($_GET['Descricao'])){
+        if (!empty(trim($_GET['Descricao']))){
             $descricao = $_GET['Descricao'];
             $query = "UPDATE $categoria SET descricao = ? WHERE id_elemento = ?";
     
@@ -65,7 +65,7 @@ if (isset($_GET["Id-Video"]) && isset($_GET['Categoria'])){
             $stmt_update->close();
         }
         
-        if (!empty($_GET['Src'])){
+        if (!empty(trim($_GET['Src']))){
             $src = $_GET['Src'];
             $query = "UPDATE $categoria SET src = ? WHERE id_elemento = ?";
     
@@ -85,7 +85,7 @@ if (isset($_GET["Id-Video"]) && isset($_GET['Categoria'])){
             $stmt_update->close();
         }
         
-        if (!empty($_GET['NovoId'])){
+        if (!empty(trim($_GET['NovoId']))){
             $novoId = $_GET['NovoId'];
             $query = "UPDATE $categoria SET id_elemento = ? WHERE id_elemento = ?";
     
@@ -121,7 +121,7 @@ if (isset($_GET["Id-Video"]) && isset($_GET['Categoria'])){
     $stmt->close();
 }
 else {
-    die ("Id não informado.");
+    die ("Id ou categoria vazia não é válido.");
 }
 
 desconecta();
