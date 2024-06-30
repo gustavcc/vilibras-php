@@ -92,7 +92,7 @@ require_once("../base/cabecalho.php");
                 <p>Acesse o nosso <span>dicionário</span> virtual e saiba mais</p>
             </div>
             <div class="button">
-                <a href="dicionario.php">Dicionário</a>
+                <a href="../dicionario/dicionario.php">Dicionário</a>
             </div>
         </div>
 
@@ -139,7 +139,7 @@ require_once("../base/cabecalho.php");
                     <p>Acesse a aba de <span>questões</span> e comece a praticar</p>
                 </div>
                 <div class="button">
-                    <a href="questoes.php">Questões</a>
+                    <a href="../questoes/questoes.php">Questões</a>
                 </div>
             </div>
         </div>
