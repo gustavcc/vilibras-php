@@ -73,7 +73,7 @@
                             <i id="menu-icon" class="fa-solid fa-user"></i>
                             <ul class="dropdown">
                                 <li>
-                                    <p>Olá, <?php echo htmlspecialchars($_SESSION['login']) ?></p>
+                                    <p>Olá, <?=$usuarioLogado['nome']?></p>
                                 </li>
                                 <li><a href="../perfil/perfil.php">
                                         <span><i class="fa-solid fa-house"></i></span>

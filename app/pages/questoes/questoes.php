@@ -159,7 +159,7 @@ function verifyQuestao(e){
     // meu header: passei o tipo de dado que será enviado
     objectRequest.setRequestHeader("Content-Type", "aplication/json")
 
-    // o servidor enviar respostas de como está o andamento da solicitação através do status (200 significa que o servidor recebeu a solicitação)
+    // o servidor envia respostas de como está o andamento da solicitação através do status (200 significa que o servidor recebeu a solicitação)
     objectRequest.onreadystatechange = function() {
         if (objectRequest.readyState === 4 && objectRequest.status === 200) {
             console.log('Status of request: ',objectRequest.responseText); // resposta do servidor se houver

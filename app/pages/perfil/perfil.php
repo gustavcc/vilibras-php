@@ -1,5 +1,5 @@
 <?php
-session_start();
+require_once("../../actions/usuario/identifyUsuarioLogado.php");
 
 // se não tiver logado, vai para o login
 if (!isset($_SESSION['login'])) {
@@ -18,10 +18,10 @@ require_once("../base/cabecalho.php");
         <div class="profile-card">
             <div class="profile-header">
                 <div class="profile-image">
-                    <img src="../../../public/images/user.png" alt="Foto">
+                    <img src="../../../public/images/<?=$usuarioLogado['path_img']?>" alt="Foto">
                 </div>
                 <div class="profile-info">
-                    <div class="profile-name">Danyele de Oliveira Santana</div>
+                    <div class="profile-name"><?=$usuarioLogado['nome']?></div>
                     <div class="profile-bio">Confirme ou edite seus dados cadastrais.</div>
                 </div>
             </div>
@@ -37,31 +37,25 @@ require_once("../base/cabecalho.php");
                             <i class="fa-solid fa-server"></i>
                             <h3>Dados Cadastrais</h3>
                         </div>
-                        <div class="dados">
+                        <form class="dados" method="POST" action="../../actions/usuario/editUsuario.php">
                             <div class="profile-row">
                                 <p class="title-dados">Nome:</p>
-                                <p class="title-resp" id="nome">Danyele de Oliveira Santana</p>
-                            </div>
-                            <div class="profile-row">
-                                <p class="title-dados">Sexo:</p>
-                                <p class="title-resp"  id="sexo">Feminino</p>
-                            </div>
-                            <div class="profile-row">
-                                <p class="title-dados">Data de nascimento:</p>
-                                <p class="title-resp"  id="data">Junho 8, 1985</p>
+                                <input class="title-resp"  id="email" type="text" value="<?=$usuarioLogado['nome']?>">
                             </div>
                             <div class="profile-row">
                                 <p class="title-dados">Email:</p>
-                                <p class="title-resp"  id="email">Dany@gmail.com</p>
+                                <input class="title-resp"  id="email" type="text" value="<?=$usuarioLogado['email']?>">
                             </div>
-                            <div class="profile-row">
+                            <!-- <div class="profile-row">
                                 <p class="title-dados">Celular:</p>
                                 <p class="title-resp"  id="celular">(77) 99999-0000</p>
+                            </div> -->
+                            <div class="profile-buttons">
+                                <button type="submit" class="btn-save"><i class="fa-solid fa-pen-to-square"></i>Alterar dados</button>
                             </div>
-                        </div>
+                        </form>
                         <div class="profile-buttons">
                             <button class="btn-change"><i class="fas fa-key"></i> Alterar Senha</button>
-                            <button class="btn-save"><i class="fa-solid fa-pen-to-square"></i>Alterar dados</button>
                         </div>
                     </div>
                     <!-- --- dados --- -->

@@ -37,7 +37,7 @@ elseif(empty($_POST['senha'])){
         if ($credential)
 
         // define a sessão como logada e atribue o nome
-        $_SESSION['login'] = $credential['nome'];
+        $_SESSION['login'] = $credential['email'];
         
         header("Location: ../../pages/dashboard/dashboard.php");
         exit();

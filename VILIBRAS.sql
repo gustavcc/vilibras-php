@@ -23,9 +23,10 @@ nome VARCHAR(40) NOT NULL);
 
 CREATE TABLE usuario(
 id_usuario INT PRIMARY KEY AUTO_INCREMENT,
-email VARCHAR(100) NOT NULL,
+email VARCHAR(100) UNIQUE NOT NULL,
 senha VARCHAR(20) NOT NULL,
-nome VARCHAR(100) NOT null
+nome VARCHAR(100) NOT null,
+path_img VARCHAR(200)
 );
 
 CREATE TABLE IF NOT EXISTS acertou_questao (
@@ -212,5 +213,5 @@ CREATE TABLE telefone_ADM(
 telefone_PK INT PRIMARY KEY AUTO_INCREMENT,
 telefone VARCHAR (10) NOT NULL,
 id_adm_FK INT,
-FOREIGN KEY (id_adm_FK) REFERENCES ADM (id_adm));usuario
+FOREIGN KEY (id_adm_FK) REFERENCES ADM (id_adm));
 """

@@ -141,6 +141,15 @@ main {
   color: var(--perfil-text);
 }
 
+.profile-row input {
+  border: none;
+  font-size: 12pt;
+  padding: 5px;
+  width: 100%;
+  border-radius: 5px;
+  box-shadow: 0 0 5px var(--section-shadow);
+}
+
 .profile-row i {
   font-size: 20px;
   margin-right: 10px;
@@ -168,7 +177,7 @@ main {
 
 .btn-change {
   background-color: var(--perfil-text);
-  color: #fff;
+  color: var(--perfil-text);
 }
 
 .btn-change:hover {
