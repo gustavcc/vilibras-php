@@ -17,6 +17,7 @@ if(empty($_POST['nome'])){
     $email = $_POST['email'];
     $nome = $_POST['nome'];
     $senha = $_POST['senha'];
+    $path_img = '../../../public/images/user/user.png';
 
     conecta();
 
@@ -54,7 +55,7 @@ if(empty($_POST['nome'])){
     } else {
         conecta();
 
-        $sql = "INSERT INTO usuario (email,senha,nome) VALUES (?,?,?);";
+        $sql = "INSERT INTO usuario (email,senha,nome,path_img) VALUES (?,?,?,?);";
 
         # prepara a querry sql verificando se esta nos conformes, além de passar os
         # valores de forma segura
@@ -63,7 +64,7 @@ if(empty($_POST['nome'])){
                 die("Erro ao cadastrar. Problema no acesso ao banco de dados");
         }
         # passa as variaveis que entrarão como os valores do registro
-        $stmt->bind_param("sss",$email, $senha, $nome);
+        $stmt->bind_param("ssss",$email, $senha, $nome, $path_img);
         $stmt->execute();
 
         # verifica se foi adicionado algum registro

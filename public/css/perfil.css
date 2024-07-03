@@ -72,6 +72,13 @@ main {
   justify-content: center;
 }
 
+.msg {
+  margin: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #76c5f3;
+}
+
 .profile-name {
   font-size: 28px;
   font-weight: bold;
@@ -163,25 +170,16 @@ main {
 }
 
 .profile-buttons button {
-  width: 45%;
+  width: auto;
   font-size: 18px;
   border: none;
   border-radius: 5px;
-  padding: 5px;
+  padding: 5px 10px 5px 10px;
   cursor: pointer;
 }
 
 .profile-buttons i {
   margin-right: 10px;
-}
-
-.btn-change {
-  background-color: var(--perfil-text);
-  color: var(--perfil-text);
-}
-
-.btn-change:hover {
-  background-color: #444;
 }
 
 .btn-save {

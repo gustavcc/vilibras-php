@@ -94,7 +94,7 @@ require_once("../../actions/questoes/getQuestoesAcertou.php");
         <section class="perfil">
             <p class="text">Perfil de Usuário</p>
             <a href="../perfil/perfil.php" class="image-perfil">
-                <img id="image" src="../../../public/images/user.png" alt="Perfil usuário">
+                <img id="image" src="<?=$usuarioLogado['path_img']?>" alt="Perfil usuário">
             </a>
             <a href="../perfil/perfil.php" class="box-perfil">
                 <p id="user-perfil"><?=htmlspecialchars($usuarioLogado['nome'])?></p>
@@ -187,8 +187,6 @@ require_once("../../actions/questoes/getQuestoesAcertou.php");
 
 var qtdQuestoesErrou = <?=$qtdQuestoesErrou?>;
 var qtdQuestoesAcertou = <?=$qtdQuestoesAcertou?>;
-
-console.log(qtdQuestoesAcertou,'/',qtdQuestoesErrou);
 
 const charts = document.getElementById('chartsQuestion');
 

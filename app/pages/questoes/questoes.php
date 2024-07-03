@@ -1,5 +1,5 @@
 <?php
-session_start();
+require_once("../../actions/usuario/identifyUsuarioLogado.php");
 
 // se não tiver logado, vai para o login
 if (!isset($_SESSION['login'])) {
@@ -187,14 +187,15 @@ function showQuestaoCheck(){
     <?php if (isset($questoesCheckJson)): ?>
 
     // finalmente converto o json para array em JavaScripct
-    var listCheckQuestao = <?php echo $questoesCheckJson; ?>;
+    var listCheckQuestao = <?=$questoesCheckJson ?>;
 
     // passo por todas as questões do html
     questoes.forEach(questao => {
         listCheckQuestao.forEach(checkQuestao => {
 
             // ferifica se a questão já foi respondida antes
-            if (`${checkQuestao['id_questao']}_questao`==questao.id) {
+            if (`${checkQuestao[1]}_questao`== questao.id) {
+                // console.log(`${checkQuestao['id_questao']}_questao`,'|',questao.id);
 
                 const check = questao.children[0].children[1];
 
@@ -203,11 +204,11 @@ function showQuestaoCheck(){
                 check.classList.remove('errou');
 
                 // se foi respondida, verifica se acertou e adicona a classe acertou
-                if (checkQuestao['acertou']==='acertou') {
+                if (checkQuestao[2]==='acertou') {
                     check.classList.add('acertou');
                 }
                 // se foi respondida, verifica se errou e adicona a classe errou
-                if (checkQuestao['acertou']==='errou') {
+                if (checkQuestao[2]==='errou') {
                     check.classList.add('errou');
                 }
             }

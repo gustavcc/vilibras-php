@@ -1,5 +1,5 @@
 <?php
-session_start();
+require_once("../../actions/usuario/identifyUsuarioLogado.php");
 
 // se não tiver logado, vai para o login
 if (!isset($_SESSION['login'])) {

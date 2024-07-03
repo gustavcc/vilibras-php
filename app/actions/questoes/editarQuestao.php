@@ -32,7 +32,7 @@ if (isset($_POST['title']) && isset($_POST['answer_A']) && isset($_POST['answer_
     $stmt->execute();
 
     if($stmt->affected_rows>0){
-            $msg = "Questão editada com sucesso.";
+            $msg = "Questão ". $id ." editada com sucesso.";
     }else{
             $msg = "Não foi possível Editar.";
     }
@@ -40,4 +40,4 @@ if (isset($_POST['title']) && isset($_POST['answer_A']) && isset($_POST['answer_
     desconecta();
 }
 
-header("Location: ../../pages/questoes/editarQuestaoForm.php?id={$id}");        
+header("Location: ../../pages/questoes/questoes.php?msg={$msg}");        
