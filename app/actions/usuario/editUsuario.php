@@ -21,7 +21,7 @@ if (isset($_POST['user']) && isset($_POST['nome']) && isset($_POST['email']) )
         if (($imagemType == 'png') OR ($imagemType == 'jpeg') OR ($imagemType == 'jpg')) {
             $imagemDB = "../../../public/images/user/".$_POST['imagem'];
 
-            move_uploaded_file($_POST['imagem'], $imagemDB);
+            move_uploaded_file($imagemName, $imagemDB);
 
             conecta();
 
@@ -47,7 +47,7 @@ if (isset($_POST['user']) && isset($_POST['nome']) && isset($_POST['email']) )
         }
     }
 } else {
-    $msg = "Erro aqui";
+    $msg = "Preencha os campos";
 }
 
 header("Location: ../../pages/perfil/perfil.php?msg={$msg}");        
