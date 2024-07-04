@@ -55,18 +55,14 @@ require_once("../base/cabecalho.php");
                             </div>
                             <div class="profile-row">
                                 <p class="title-dados">Foto:</p>
-                                <input class="title-resp" name="img" type="file" accept="image/">
+                                <input class="title-resp" name="imagem" type="file" accept="image/*">
                             </div>
-                            <!-- <div class="profile-row">
-                                <p class="title-dados">Celular:</p>
-                                <p class="title-resp"  id="celular">(77) 99999-0000</p>
-                            </div> -->
                             <div class="profile-buttons">
                                 <button type="submit" class="btn-save"><i class="fa-solid fa-pen-to-square"></i>Salvar Alterações</button>
                             </div>
                         </form>
                         <div class="profile-buttons">
-                            <button class="btn-save"><i class="fas fa-key"></i> Alterar Senha</button>
+                            <button class="btn-password"><i class="fas fa-key"></i> Alterar Senha</button>
                         </div>
                     </div>
                     <!-- --- dados --- -->

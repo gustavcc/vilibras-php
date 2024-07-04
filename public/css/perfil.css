@@ -11,6 +11,7 @@ main {
   height: auto;
   background-color: var(--main-bg);
   padding: 20px;
+  flex-direction: column;
 }
 
 .title-dados {
@@ -180,6 +181,15 @@ main {
 
 .profile-buttons i {
   margin-right: 10px;
+}
+
+.btn-password {
+  background-color: var(--text);
+  color: var(--bg-calendar);
+}
+
+.btn-password:hover {
+  background-color: var(--text);
 }
 
 .btn-save {

@@ -17,6 +17,7 @@ if(empty($_POST['nome'])){
     $email = $_POST['email'];
     $nome = $_POST['nome'];
     $senha = $_POST['senha'];
+    $senhaHash = password_hash($senha, PASSWORD_DEFAULT); 
     $path_img = '../../../public/images/user/user.png';
 
     conecta();
@@ -64,7 +65,7 @@ if(empty($_POST['nome'])){
                 die("Erro ao cadastrar. Problema no acesso ao banco de dados");
         }
         # passa as variaveis que entrarão como os valores do registro
-        $stmt->bind_param("ssss",$email, $senha, $nome, $path_img);
+        $stmt->bind_param("ssss",$email, $senhaHash, $nome, $path_img);
         $stmt->execute();
 
         # verifica se foi adicionado algum registro

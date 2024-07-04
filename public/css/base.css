@@ -241,7 +241,7 @@ ul.dropdown-menu li ul.dropdown {
 	position: sticky;
 	right: -10px;
 	transition: all 2s;
-	width: 200px;
+	width: 250px;
 	padding-bottom: 15px;
 	border-radius: 20px;
 	border: 2px solid var(--links-principal);
