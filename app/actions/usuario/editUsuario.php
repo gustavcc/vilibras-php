@@ -1,6 +1,7 @@
 <?php
 
 require_once("../../config/conecta.php");
+require_once("identifyUsuarioLogado.php");
 
 if(!isset($_FILES['imagem']) && $_FILES['imagem']['error'] != 0){
     $msg = "Selecione um arquivo em Fotos!";
@@ -41,15 +42,17 @@ if(!isset($_FILES['imagem']) && $_FILES['imagem']['error'] != 0){
         $stmt->bind_param("ssss",$nome,$email,$imagemDB,$user);
         $stmt->execute();
 
+        $_SESSION['login'] = $email;
+
         if($stmt->affected_rows>0){
             $msg = "Dados editados com sucesso!";
         }else{
-                $msg = "Não foi possível Editar.";
+            $msg = "Não foi possível Editar.";
         }
 
         desconecta();   
     } else {
-        $msg = $imagem['name'];
+        $msg = 'Selecione uma imagem válida!';
 
     }
 }
