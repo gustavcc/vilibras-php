@@ -50,7 +50,7 @@ if(empty($_POST['nome'])){
 
     if ($existe) {
         $msg = "Usuário já cadastrado. Tente fazer login!";
-        header("Location: ../../pages/usuario/cadastro-provisorio.php?msg={$msg}");
+        header("Location: ../../pages/usuario/cadastro.php?msg={$msg}");
         exit();
     } else {
         conecta();
@@ -80,5 +80,5 @@ if(empty($_POST['nome'])){
         exit();
     }
 }
-header("Location: ../../pages/usuario/cadastro-provisorio.php?msg={$msg}");
+header("Location: ../../pages/usuario/cadastro.php?msg={$msg}");
 exit();

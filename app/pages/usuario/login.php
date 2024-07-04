@@ -1,183 +1,36 @@
-<?php session_start(); ?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../../public/images/Logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../../public/css/login.css">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://unpkg.com/jwt-decode/build/jwt-decode.js"></script>
+    <script src="../../../public/js/login.js"></script>
     <title>Login | VILIBRAS</title>
-
-    <style>
-        body {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            padding: 0;
-            margin: 0;
-            height: 100vh;
-            flex-direction: column;
-            background: #15172b;
-        }
-        .msg {
-          color: #fff;
-        }
-        .login-page {
-          font-family: sans-serif;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 100%;
-          color: #eee;
-          margin-top: 20px;
-          gap: 3px;
-        }
-        .login-page a {
-          color: #08d;
-        }
-        .form {
-        background-color: #15172b;
-        border-radius: 20px;
-        box-sizing: border-box;
-        height: 500px;
-        padding: 20px;
-        width: 320px;
-        }
-
-        .title {
-        color: #eee;
-        font-family: sans-serif;
-        font-size: 36px;
-        font-weight: 600;
-        margin-top: 30px;
-        }
-
-        .subtitle {
-        color: #eee;
-        font-family: sans-serif;
-        font-size: 16px;
-        font-weight: 600;
-        margin-top: 10px;
-        }
-
-        .input-container {
-        height: 50px;
-        position: relative;
-        width: 100%;
-        }
-
-        .ic1 {
-        margin-top: 40px;
-        }
-
-        .ic2 {
-        margin-top: 30px;
-        }
-
-        .input {
-        background-color: #303245;
-        border-radius: 12px;
-        border: 0;
-        box-sizing: border-box;
-        color: #eee;
-        font-size: 18px;
-        height: 100%;
-        outline: 0;
-        padding: 4px 20px 0;
-        width: 100%;
-        }
-
-        .cut {
-        background-color: #15172b;
-        border-radius: 10px;
-        height: 20px;
-        left: 20px;
-        position: absolute;
-        top: -20px;
-        transform: translateY(0);
-        transition: transform 200ms;
-        width: 76px;
-        }
-
-        .cut-short {
-        width: 50px;
-        }
-
-        .iLabel {
-        color: #65657b;
-        font-family: sans-serif;
-        left: 20px;
-        line-height: 14px;
-        pointer-events: none;
-        position: absolute;
-        transform-origin: 0 50%;
-        transition: transform 200ms, color 200ms;
-        top: 20px;
-        }
-
-        .input:focus ~ .cut {
-        transform: translateY(8px);
-        }
-
-        .input:focus ~ .iLabel {
-        transform: translateY(-30px) translateX(10px) scale(0.75);
-        }
-
-        .input:not(:focus) ~ .iLabel {
-        color: #808097;
-        }
-
-        .input:focus ~ .iLabel {
-        color: #dc2f55;
-        }
-
-        .submit {
-        background-color: #08d;
-        border-radius: 12px;
-        border: 0;
-        box-sizing: border-box;
-        color: #eee;
-        cursor: pointer;
-        font-size: 18px;
-        height: 50px;
-        margin-top: 38px;
-        text-align: center;
-        width: 100%;
-        }
-
-        .submit:active {
-        background-color: #06b;
-        }
-    </style>
 </head>
 <body>
-    <?php
-    if (isset($_GET['msg'])){
-        $msg=$_GET['msg'];
-        echo "<div class='msg'>". $msg ."</div>";
-    }
-    ?>
+    <div class="background-image" id="background-image">
+        <div class="login-container" id="login-container">
+            <div class="avatar"></div>
+            <h1>Faça o seu login</h1>
+            <img src="../../../public/images/Logo.png" id="foto" alt="">
+            <form method="POST" action="../../actions/usuario/loginUsuario.php">
+                <input type="text" name="email" placeholder="E-mail" required>
+                <input type="password" name="senha" placeholder="Senha" required>
+                <button type="submit"><a href="../dashboard/dashboard.php"></a>Login</button>
+            <div id="buttonDiv"></div>
+            </form>
 
-    <form class="form" method="POST" action="../../actions/usuario/loginUsuario.php">
-      <div class="title">Make your login</div>
-      <div class="subtitle">Let's enter your account!</div>
 
-      <div class="input-container ic2">
-        <input required type="text" name="email" class="input" id="email">
-        <div class="cut cut-short"></div>
-        <label class="iLabel" for="email">Email</label>
-      </div>
-      <div class="input-container ic2">
-        <input required type="password" name="senha" class="input" id="senha">
-        <div class="cut"></div>
-        <label class="iLabel" for="senha">Password</label>
-      </div>
-      <button class="submit" type="text">submit</button>
-      <div class="login-page">
-        Não possui conta? Faça seu
-        <a href="cadastro-provisorio.php">cadastro</a>
-      </div>
-    </form>
+            <div class="links">
+                <a href="#">Redefinir senha</a>
+                <a href="#">|</a>
+                <a href="cadastro.php">Criar uma nova conta</a> <br>
+            </div>
 
+        </div>
+    </div>
 </body>
 </html>
