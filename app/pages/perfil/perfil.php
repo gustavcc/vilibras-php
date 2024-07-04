@@ -43,7 +43,8 @@ require_once("../base/cabecalho.php");
                             <i class="fa-solid fa-server"></i>
                             <h3>Dados Cadastrais</h3>
                         </div>
-                        <form class="dados" method="POST" action="../../actions/usuario/editUsuario.php">
+
+                        <form class="dados" method="POST" action="../../actions/usuario/editUsuario.php" enctype="multipart/form-data">
                             <input type="hidden" name="user" value="<?=$usuarioLogado['email']?>">
                             <div class="profile-row">
                                 <p class="title-dados">Nome:</p>
@@ -55,7 +56,7 @@ require_once("../base/cabecalho.php");
                             </div>
                             <div class="profile-row">
                                 <p class="title-dados">Foto:</p>
-                                <input class="title-resp" name="imagem" type="file" accept="image/*">
+                                <input name="imagem" type="file" accept="image/">
                             </div>
                             <div class="profile-buttons">
                                 <button type="submit" class="btn-save"><i class="fa-solid fa-pen-to-square"></i>Salvar Alterações</button>
