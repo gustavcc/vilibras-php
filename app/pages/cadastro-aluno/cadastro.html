@@ -51,7 +51,7 @@
                     <span id="help-text">Ajuda</span>
                 </a>
                   
-                <a id="vilibras-a-c" href="#">Vilibras</a>
+                <a id="vilibras-a-c" href="#">VILIBRAS</a>
 
             </div>
         </div>
@@ -83,8 +83,8 @@
             </div>
             <div id="sidebar-info">
                 <p id="text-sidebar">Utilize as teclas do teclado para te ajudar!</p>
-                <p id="text-sidebar2">Utilize o TAB ou SHIFT + TAB para navegar no formulário.</p>
-                <p id="text-sidebar-portrait">toque e segure em qualquer canto da página para ativar o menú flutuante!</p>
+                <p id="text-sidebar2">Utilize o <span>TAB ou SHIFT + TAB</span> para navegar no formulário.</p>
+                <p id="text-sidebar-portrait">Toque e segure em qualquer canto da página para ativar o <span>menú flutuante !</span></p>
                 <img id="keyboard-gif" src="../../../public/images/animated-keyboard.gif" alt="">
                 <img id="screen-gif" src="../../../public/images/animate-screen-phone.gif" alt="">
 
@@ -94,16 +94,17 @@
     <script>
         // Definindo a função globalmente
         function toggleSidebar() {
-            console.log('Toggle Sidebar function called');
             const sidebar = document.getElementById('sidebar');
             const body = document.body;
 
             if (sidebar.classList.contains('show')) {
                 sidebar.classList.remove('show');
                 body.classList.remove('sidebar-visible');
+
             } else {
                 sidebar.classList.add('show');
                 body.classList.add('sidebar-visible');
+
             }
         }
 

@@ -1,0 +1,249 @@
+@font-face {
+    font-family: Founder;
+    src: url(FoundersGroteskCondensed-Bold.ttf);
+}
+
+@font-face {
+    font-family: CardinalR;
+    src: url(cardinalfruitweb-regular.ttf);
+}
+
+@font-face {
+    font-family: Cardinali;
+    src: url(cardinalfruitweb-italic.ttf);
+}
+
+::-webkit-scrollbar{
+    opacity: 0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+.main-p {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(61, 61, 61);
+}
+
+#main {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: aquamarine;
+    overflow: hidden;
+}
+
+#top {
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    height: 50vh;
+    background-color: rgb(255, 255, 255);
+    z-index: 9;
+    overflow: hidden;
+    animation: colorChange 10s cubic-bezier(0.4, 0, 1, 1) infinite;
+}
+#center {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    transform-origin: center;
+    background: linear-gradient(130deg, #000000e0, #086cef);
+    background-size: 300% 300%;
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) 1s;
+    animation: degrade-animado 7s infinite alternate;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+@keyframes degrade-animado {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+#bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50vh;
+    background-color: rgb(255, 255, 255);
+    overflow: hidden;
+    
+}
+
+#main h1 {
+    font-family: Founder;
+    font-size: 22vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: colorChange 5s cubic-bezier(0.4, 0, 1, 1) infinite;
+
+}
+
+@keyframes colorChange {
+0% {
+color: #000000;
+}
+25% {
+color: #003c4c;
+}
+50% {
+color: #025ed7;
+}
+75% {
+color: #003c4c;
+}
+100% {
+color: #000000;
+}
+}
+
+#top-h1 {
+    bottom: 50%;
+}
+
+#bottom-h1 {
+    top: 0% !important;
+}
+
+.content {
+    margin-top: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    color: #fff;
+    gap: 4vh;
+}
+
+
+.content h4 {
+    font-size: 1vw;
+    font-family: Founder;
+}
+
+.content h3 {
+    width: 22%;
+    font-size: 3vw;
+    font-family: CardinalR;
+    text-align: center;
+    font-weight: 400;
+}
+
+
+.content h2 {
+    font-size: 20vw;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+section img{
+    width: 200px;
+}
+
+.scroll-btn {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    z-index: 1000000;
+    top: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    font-family: Founder;
+    cursor: pointer;
+    border-radius: 1em;
+}
+
+.scroll-btn a {
+    margin: 5px;
+    text-decoration: none;
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#home-icon, .options{
+    filter: brightness(0) saturate(0%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+    width: 30px;
+}
+
+.options{
+    width: 20px;
+    margin: 5px;
+}
+
+#gif{
+    width: 50px;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+section{
+    padding: 30px;
+    font-size: 1.3em;
+}
+
+#icon1, #icon3, figcaption{
+    float: right;
+}
+#icon2{
+    float: left;
+}
+section p{
+    margin: 8em;
+    text-align: justify;
+    background: linear-gradient(45deg, white, #c3c3c3);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: system-ui;
+    font-weight: 400;
+}
+
+.icon{
+    background: red;
+    border-radius: 50%;
+    border: 5px solid white;
+    box-shadow: 0px 0px 10px white;
+    margin: 20px;
+}
+
+#logo{
+    position: relative;
+    width: 300px;
+    float: inline-end;
+}
+
+
+footer{
+    background: linear-gradient(45deg, #505050, black, #505050);
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.content h2 {
+    font-size: 10vw !important;
+    text-shadow: 0px 0px 3px #ffffff8c;
+    margin-bottom: 10px;
+}

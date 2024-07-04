@@ -7,7 +7,7 @@
                 <h2>VILIBRAS</h2>
                 <p>
                     <i class="fa-solid fa-address-card"></i>
-                    <a href="#">Sobre</a>
+                    <a href="../sobre/sobre.php">Sobre</a>
                 </p>
                 <p>
                     <i class="fa-solid fa-phone"></i>

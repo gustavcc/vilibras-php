@@ -115,7 +115,7 @@ require_once("../base/cabecalho.php");
                     <p>Acesse a aba de <span>aulas</span> e comece a aprender</p>
                 </div>
                 <div class="button">
-                    <a href="../aulas/aulas.php">Aulas</a>
+                    <a href="../aulas/aulas_v2.php">Aulas</a>
                 </div>
             </div>
         </div>
@@ -152,10 +152,10 @@ require_once("../base/cabecalho.php");
                 </p>
                 <div id="button-final">
                     <div class="button">
-                        <a href="../cadastro-aluno/cadastro-aluno.php">Cadastre-se</a>
+                        <a href="../usuario/cadastro.php">Cadastre-se</a>
                     </div>
                     <div class="button">
-                        <a href="../login/login.php">Entrar</a>
+                        <a href="../usuario/login.php">Entrar</a>
                     </div>
                 </div>
             </div>
