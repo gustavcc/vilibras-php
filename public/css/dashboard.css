@@ -427,6 +427,10 @@ aside {
     flex-direction: column;
 }
 
+.text-desempenho .text {
+    font-size: 15pt;
+}
+
 .box-desempenho i {
     font-size: 30pt;
     color: #898989;
@@ -569,8 +573,21 @@ aside {
 }
 
 @media only screen and (max-width: 1194px) {
-    .text-desempenho {
+    .box-desempenho {
+        width: 100%;
+        flex-direction: column;
+        margin: 0;
+    }
+
+    #icon-i {
         display: none;
+    }
+
+    .text-desempenho {
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 20px;
     }
 }
 
@@ -621,11 +638,6 @@ aside {
     .questoes {
         flex-direction: column;
         height: 500px;
-    }
-
-    .box-desempenho {
-        width: 100%;
-        margin: 0;
     }
 
     .box-questoes {

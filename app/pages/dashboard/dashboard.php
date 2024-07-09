@@ -5,7 +5,10 @@ require_once("../../actions/usuario/identifyUsuarioLogado.php");
 if (!isset($_SESSION['login'])) {
     header("Location: ../usuario/login.php?");
     exit();
-}?>
+} else if (!isset($_SESSION['login-admin'])){
+    header("Location: ../admin/login-admin.php?");
+    exit();
+} ?>
 
 <?php
 require_once("../base/cabecalho.php");
@@ -59,7 +62,7 @@ require_once("../../actions/questoes/getQuestoesAcertou.php");
             <div class="box-desempenho">
                 <div class="text-desempenho">
                     <i id="icon-i" class="fa-solid fa-chart-simple"></i>
-                    <p class="text">Desempenho</p>
+                    <p class="text">Percentual de Acertos</p>
                 </div>
                 <div class="datas-desempenho">
                     <canvas id='chartsQuestion'></canvas>
