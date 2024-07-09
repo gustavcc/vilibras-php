@@ -68,7 +68,7 @@ require_once("../../actions/questoes/getQuestoesAcertou.php");
             </div>
         </div>
     
-    <?php endforeach; }?>
+    <?php endforeach;}?>
 
 <!-- Inicio do script JavaScript -->
 <script>

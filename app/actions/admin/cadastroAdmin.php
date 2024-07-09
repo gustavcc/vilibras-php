@@ -5,11 +5,9 @@ require_once("../../config/conecta.php");
 
 # define as credenciais do adm que deseja cadastrar
 
-$email = 'gustavoadmin@email.com';
-$nome = 'Gustavo Admin';
+$email = 'yuri@email.com';
 $senha = 'admin1234';
 $senhaHash = password_hash($senha, PASSWORD_DEFAULT); 
-$path_img = '../../../public/images/admin/admin.jpg';
 
 conecta();
 
@@ -45,7 +43,7 @@ if ($existe) {
 } else {
     conecta();
 
-    $sql = "INSERT INTO administrador (email,senha,nome,path_img) VALUES (?,?,?,?);";
+    $sql = "INSERT INTO administrador (email,senha) VALUES (?,?);";
 
     # prepara a querry sql verificando se esta nos conformes, além de passar os
     # valores de forma segura
@@ -54,7 +52,7 @@ if ($existe) {
             die("Erro ao cadastrar. Problema no acesso ao banco de dados");
     }
     # passa as variaveis que entrarão como os valores do registro
-    $stmt->bind_param("ssss",$email, $senhaHash, $nome, $path_img);
+    $stmt->bind_param("ss",$email, $senhaHash);
     $stmt->execute();
 
     # verifica se foi adicionado algum registro
@@ -66,9 +64,8 @@ if ($existe) {
 
     desconecta();
 }
-
 ?>
 
 <br>
 <br>
-<a href="../../pages/usuario/login.php">Faça login</a>
+<a href="../../pages/admin/login-admin.php">Faça login</a>

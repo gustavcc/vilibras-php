@@ -14,6 +14,7 @@ if (isset($_SESSION['login'])) {
     $stmt->execute();
 
     $usuarioLogado = mysqli_fetch_assoc(mysqli_stmt_get_result($stmt));
+
 } else {
     $usuarioLogado = [];
 }

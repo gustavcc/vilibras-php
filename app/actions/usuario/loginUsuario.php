@@ -31,12 +31,14 @@ elseif(empty($_POST['senha'])){
         $credential = [];
     }
 
+    desconecta();
+
     // se o usuário requisitado existir
     if (count($credential) > 0) {
 
         if (password_verify($senhaForm, $credential['senha'])){
     
-            // define a sessão como logada e atribue o nome
+            // define a sessão como logada e atribue o email
             $_SESSION['login'] = $credential['email'];
             
             header("Location: ../../pages/dashboard/dashboard.php");
@@ -49,9 +51,7 @@ elseif(empty($_POST['senha'])){
         $msg = "Usuário não cadastrado ou dados inválidos!";
         header("Location: ../../pages/usuario/login.php?msg={$msg}");
     }
-
-    desconecta();
-
 }
+print_r('deu ruim');
 header("Location: ../../pages/usuario/login.php?msg={$msg}");
 exit();
