@@ -31,6 +31,6 @@ if ($stmt->affected_rows > 0) {
 
 desconecta();
 
-header("Location: ../../pages/questoes/questoes.php?msg={$msg}");
+header("Location: ../../pages/questoes/listQuestoes.php?msg={$msg}");
 
 

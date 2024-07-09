@@ -1,12 +1,11 @@
 <?php
-session_start();
 
 require_once("../../config/conecta.php");
 
 # define as credenciais do adm que deseja cadastrar
-
-$email = 'yuri@email.com';
-$senha = 'admin1234';
+# o correto é ter apenas uma conta de adm cadastrado
+$email = 'dimlib.projeto@gmail.com';
+$senha = '1projeto_vilibras1';
 $senhaHash = password_hash($senha, PASSWORD_DEFAULT); 
 
 conecta();
@@ -39,7 +38,7 @@ if (count($emails)>0){
 }
 
 if ($existe) {
-    echo "Adm já cadastrado. Tente fazer login!";
+    echo "ADM já cadastrado. Tente fazer login!";
 } else {
     conecta();
 
@@ -57,7 +56,7 @@ if ($existe) {
 
     # verifica se foi adicionado algum registro
     if($stmt->affected_rows > 0){
-            echo "Adm cadastrado com sucesso.";
+            echo "ADM cadastrado com sucesso.";
     }else{
             echo "Não foi possível inserir.";
     }
@@ -68,4 +67,4 @@ if ($existe) {
 
 <br>
 <br>
-<a href="../../pages/admin/login-admin.php">Faça login</a>
+<a href="../../pages/admin/loginAdmin.php">Faça login</a>

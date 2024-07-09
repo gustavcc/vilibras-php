@@ -40,4 +40,4 @@ if (isset($_POST['title']) && isset($_POST['answer_A']) && isset($_POST['answer_
     desconecta();
 }
 
-header("Location: ../../pages/questoes/questoes.php?msg={$msg}");        
+header("Location: ../../pages/questoes/listQuestoes.php?msg={$msg}");        

@@ -1,0 +1,56 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: auto;
+}
+
+main {
+    width: 100%;
+    height: auto;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+    justify-content: center;
+    align-items: start;
+}
+
+.msg {
+    margin: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #76c5f3;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+}
+
+.options {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 20px;
+    font-size: 20px;
+}
+
+#edit {
+    cursor: pointer;
+    color: #00883b;
+}
+#del {
+    cursor: pointer;
+    color: #fc6060;
+}
+#add {
+    cursor: pointer;
+    color: #00b7ff;
+}

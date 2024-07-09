@@ -49,6 +49,6 @@ elseif(empty($_POST['senha'])){
         }
     } else {
         $msg = "Admin não cadastrado ou dados inválidos!";
-        header("Location: ../../pages/admin/login-admin.php?msg={$msg}");
+        header("Location: ../../pages/admin/loginAdmin.php?msg={$msg}");
     }
 }
