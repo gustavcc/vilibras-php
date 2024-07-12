@@ -41,4 +41,11 @@ window.addEventListener("load", function() {
   document.body.classList.add("blend-effect");
 })
 
-  
+const submit = document.getElementById('submit');
+const forms = document.getElementById('forms');
+
+submit.addEventListener('keypress', (e)=>{
+  if (e.code = "Enter") {
+    forms.onsubmit();
+  }
+})

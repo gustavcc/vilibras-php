@@ -6,7 +6,7 @@ conecta();
 
 global $mysqli;
 
-if (isset(!empty(trim($_GET["Id-Video"]))) && isset(!empty(trim($_GET['Categoria'])))){
+if (!empty(trim(isset($_GET["Id-Video"]))) && !empty(trim(isset($_GET['Categoria'])))){
     $idVideo = trim($_GET["Id-Video"]);
     $categoria = trim($_GET["Categoria"]);
     $alteracao = 0;

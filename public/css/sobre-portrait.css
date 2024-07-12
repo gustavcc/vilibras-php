@@ -1,0 +1,74 @@
+.scroll-btn{
+    width: 90%;
+    border-radius: 1em;
+    background: linear-gradient(90deg, rgb(255, 252, 252), #f1f1f180,#f1f1f180,#f1f1f180,rgb(255, 252, 252) ) !important;
+    backdrop-filter: blur(20px);
+    --webkit-backdrop-filter-blur: (20px);
+    justify-content: space-between;
+}
+
+#home-icon, .options{
+    filter: none !important;
+    width: 30px;
+}
+
+#gif{
+    width: 15vw !important;
+    top: 40% !important;
+}
+
+.scroll-btn a{
+    color: black !important;
+    margin: 2px !important;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    margin-top: 70em;
+    padding: 0 !important;
+}
+
+#bottom{
+    -webkit-text-fill-color: transparent !important;
+}
+
+section p{
+    margin: 0em !important;
+    padding: 0 30px;
+    font-size: 0.8em;
+}
+
+#icon1, #icon2, #icon3, #icon4{
+    float:unset !important;
+}
+
+.icon{
+    margin: 50px auto !important;
+    width: 120px;
+}
+
+
+.content{
+    overflow: auto;
+    position: relative;
+}
+
+#logo{
+    width: 100px !important;
+    margin: auto;
+}
+
+footer{
+    background: linear-gradient(45deg, #505050, black, #505050);
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.content h2 {
+    font-size: 10vw !important;
+    text-shadow: 0px 0px 3px #ffffff8c;
+    margin-bottom: 10px;
+}

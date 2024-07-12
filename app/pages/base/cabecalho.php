@@ -73,7 +73,7 @@
                             <i id="menu-icon" class="fa-solid fa-user"></i>
                             <ul class="dropdown">
                                 <li>
-                                    <p>Olá, <?php echo htmlspecialchars($_SESSION['login']) ?></p>
+                                    <p>Olá, <?=$usuarioLogado['nome']?></p>
                                 </li>
                                 <li><a href="../perfil/perfil.php">
                                         <span><i class="fa-solid fa-house"></i></span>
@@ -96,7 +96,7 @@
                 <button id="closeMenu"><i class="fa-solid fa-xmark"></i></button>
                 <a class="b-link" href="../dashboard/dashboard.php">Home</a> <!--aparecer se for autenticado-->
                 <a class="b-link" href="../questoes/questoes.php">Questões</a>
-                <a class="b-link" href="../aulas/aulas.php">Aulas</a>
+                <a class="b-link" href="../aulas/aulas_v2.php">Aulas</a>
                 <a class="b-link" href="../dicionario/dicionario.php">Dicionário</a>
                 <a class="b-link" href="../faq/faq.php">FAQ</a>
             </div>

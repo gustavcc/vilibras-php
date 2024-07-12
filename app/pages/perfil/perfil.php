@@ -1,5 +1,5 @@
 <?php
-session_start();
+require_once("../../actions/usuario/identifyUsuarioLogado.php");
 
 // se não tiver logado, vai para o login
 if (!isset($_SESSION['login'])) {
@@ -15,13 +15,19 @@ require_once("../base/cabecalho.php");
 <script src="../../../public/js/perfil.js" defer></script>
     
     <main>
+
+        <?php
+        if (isset($_GET['msg'])){
+            $msg=$_GET['msg'];
+            echo "<div class='msg'>". $msg ."</div>";
+        }?>
         <div class="profile-card">
             <div class="profile-header">
                 <div class="profile-image">
-                    <img src="../../../public/images/user.png" alt="Foto">
+                    <img src="<?=$usuarioLogado['path_img']?>" alt="Foto">
                 </div>
                 <div class="profile-info">
-                    <div class="profile-name">Danyele de Oliveira Santana</div>
+                    <div class="profile-name"><?=$usuarioLogado['nome']?></div>
                     <div class="profile-bio">Confirme ou edite seus dados cadastrais.</div>
                 </div>
             </div>
@@ -37,31 +43,27 @@ require_once("../base/cabecalho.php");
                             <i class="fa-solid fa-server"></i>
                             <h3>Dados Cadastrais</h3>
                         </div>
-                        <div class="dados">
+
+                        <form class="dados" method="POST" action="../../actions/usuario/editUsuario.php" enctype="multipart/form-data">
+                            <input type="hidden" name="user" value="<?=$usuarioLogado['email']?>">
                             <div class="profile-row">
                                 <p class="title-dados">Nome:</p>
-                                <p class="title-resp" id="nome">Danyele de Oliveira Santana</p>
-                            </div>
-                            <div class="profile-row">
-                                <p class="title-dados">Sexo:</p>
-                                <p class="title-resp"  id="sexo">Feminino</p>
-                            </div>
-                            <div class="profile-row">
-                                <p class="title-dados">Data de nascimento:</p>
-                                <p class="title-resp"  id="data">Junho 8, 1985</p>
+                                <input class="title-resp" name="nome" type="text" value="<?=$usuarioLogado['nome']?>">
                             </div>
                             <div class="profile-row">
                                 <p class="title-dados">Email:</p>
-                                <p class="title-resp"  id="email">Dany@gmail.com</p>
+                                <input class="title-resp" name="email" type="text" value="<?=$usuarioLogado['email']?>">
                             </div>
                             <div class="profile-row">
-                                <p class="title-dados">Celular:</p>
-                                <p class="title-resp"  id="celular">(77) 99999-0000</p>
+                                <p class="title-dados">Foto:</p>
+                                <input name="imagem" type="file" accept="image/">
                             </div>
-                        </div>
+                            <div class="profile-buttons">
+                                <button type="submit" class="btn-save"><i class="fa-solid fa-pen-to-square"></i>Salvar Alterações</button>
+                            </div>
+                        </form>
                         <div class="profile-buttons">
-                            <button class="btn-change"><i class="fas fa-key"></i> Alterar Senha</button>
-                            <button class="btn-save"><i class="fa-solid fa-pen-to-square"></i>Alterar dados</button>
+                            <button class="btn-password"><i class="fas fa-key"></i> Alterar Senha</button>
                         </div>
                     </div>
                     <!-- --- dados --- -->
@@ -75,10 +77,6 @@ require_once("../base/cabecalho.php");
                                 <p class="title-dados">Tipo de cadastro:</p>
                                 <p class="title-resp"  id="tipo">Aluno</p>
                             </div>
-                            <!-- <div class="profile-row">
-                                <p class="title-dados">CPF:</p>
-                                <p class="title-resp"  id="cpf">111.222.333-44</p>
-                            </div> -->
                         </div>
                         <!-- <div class="profile-buttons">
                             <button class="btn-save"><i class="fa-solid fa-pen-to-square"></i>Alterar dados</button>

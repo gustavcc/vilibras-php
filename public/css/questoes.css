@@ -126,8 +126,8 @@ main {
 }
 
 .btn:hover {
-    /* border: 1px solid #777777; */
-    background: #afafaf;
+    /* background: #afafaf; */
+    cursor: pointer;
 }
 
 .check {

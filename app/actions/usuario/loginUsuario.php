@@ -22,7 +22,7 @@ elseif(empty($_POST['senha'])){
     $query = "SELECT email, senha, nome, id_usuario FROM usuario WHERE email = ? AND senha = ?;";
     
     $stmt = $mysqli->prepare($query);
-    $stmt->bind_param('ss', $emailForm, $senhaForm);
+    $stmt->bind_param('s', $emailForm);
     $stmt->execute();
 
     $credential = mysqli_fetch_assoc(mysqli_stmt_get_result($stmt));
@@ -30,6 +30,8 @@ elseif(empty($_POST['senha'])){
     if (empty($credential)){
         $credential = [];
     }
+
+    desconecta();
 
     // se o usuário requisitado existir
     if (count($credential) > 0) {
@@ -46,9 +48,6 @@ elseif(empty($_POST['senha'])){
         $msg = "Dados inválidos!";
         header("Location: ../../pages/usuario/login.php?msg={$msg}");
     }
-
-    desconecta();
-
 }
 header("Location: ../../pages/usuario/login.php?msg={$msg}");
 exit();

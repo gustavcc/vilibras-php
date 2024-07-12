@@ -51,6 +51,10 @@ form {
 
 }
 
+#sidebar button{
+    pointer-events: auto;
+}
+
 #text-sidebar-portrait{
     display: none;
 }

@@ -1,11 +1,11 @@
 <?php
-session_start();
+require_once("../../actions/usuario/identifyUsuarioLogado.php");
 
 // se não tiver logado, vai para o login
 if (!isset($_SESSION['login'])) {
     header("Location: ../usuario/login.php?");
     exit();
-}?>
+} ?>
 
 <?php
 require_once("../base/cabecalho.php");
@@ -44,7 +44,7 @@ require_once("../../actions/questoes/getQuestoesAcertou.php");
         <section class="recepcao">
             <div class="text-recepcao">
                 <i class="fa-solid fa-location-dot"></i>
-                <p class="text">Seja bem-vindo(a), <?=htmlspecialchars($_SESSION['login'])?>, ao seu <span id="dash">Dashboard</span></p>
+                <p class="text">Seja bem-vindo(a), <?=htmlspecialchars($usuarioLogado['nome'])?>, ao seu <span id="dash">Dashboard</span></p>
             </div>
             <img src="../../../public/images/desktop computer-rafiki.svg" alt="">
 
@@ -59,7 +59,7 @@ require_once("../../actions/questoes/getQuestoesAcertou.php");
             <div class="box-desempenho">
                 <div class="text-desempenho">
                     <i id="icon-i" class="fa-solid fa-chart-simple"></i>
-                    <p class="text">Desempenho</p>
+                    <p class="text">Percentual de Acertos</p>
                 </div>
                 <div class="datas-desempenho">
                     <canvas id='chartsQuestion'></canvas>
@@ -94,10 +94,10 @@ require_once("../../actions/questoes/getQuestoesAcertou.php");
         <section class="perfil">
             <p class="text">Perfil de Usuário</p>
             <a href="../perfil/perfil.php" class="image-perfil">
-                <img id="image" src="../../../public/images/user.png" alt="Perfil usuário">
+                <img id="image" src="<?=$usuarioLogado['path_img']?>" alt="Perfil usuário">
             </a>
             <a href="../perfil/perfil.php" class="box-perfil">
-                <p id="user-perfil"><?=htmlspecialchars($_SESSION['login'])?></p>
+                <p id="user-perfil"><?=htmlspecialchars($usuarioLogado['nome'])?></p>
             </a>
             <div class="calendar">
                 <div class="header-calendar">
@@ -187,8 +187,6 @@ require_once("../../actions/questoes/getQuestoesAcertou.php");
 
 var qtdQuestoesErrou = <?=$qtdQuestoesErrou?>;
 var qtdQuestoesAcertou = <?=$qtdQuestoesAcertou?>;
-
-console.log(qtdQuestoesAcertou,'/',qtdQuestoesErrou);
 
 const charts = document.getElementById('chartsQuestion');
 
