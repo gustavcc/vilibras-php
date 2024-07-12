@@ -105,9 +105,9 @@ CREATE TABLE feedback(
 id_feedback INT PRIMARY KEY AUTO_INCREMENT,
 titulo TEXT NOT NULL,
 descricao TEXT NOT NULL,
-pergunta TEXT NOT NULL,
 data_dia DATE NOT NULL,
-resposta TEXT);
+resposta TEXT,
+id_usuario INT);
 
 CREATE TABLE material(
 id_material INT PRIMARY KEY AUTO_INCREMENT,

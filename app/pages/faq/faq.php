@@ -63,22 +63,26 @@ require_once("../base/cabecalho.php");
 <!-- O pop-up -->
 <div id="popup" class="popup">
 
-   <div class="popup-content">
 
-      <span class="close" onclick="document.getElementById('popup').style.display='none'; document.querySelector('.btn').style.display = 'block';">×</span>
+            <form action="../../actions/faq/addPergunta.php" class="receivers" method = "get">
 
-            <form action="" class="receivers">
+            <fieldset>
+
+
+            <div class="popup-content">
+
+            <span class="close" onclick="document.getElementById('popup').style.display='none'; document.querySelector('.btn').style.display = 'block';">×</span>
 
             <h2>Insira uma pergunta</h2><br><br>
     
             <div id = "Title-Question" >
-                <label for="Title-Question">Titulo: </label>
+                <label for="Title">Titulo: </label>
                 <input type="text" name="Title" placeholder="O que é o VILIBRAS?" required>
             </div>
             
             <div id = "divTextarea"> 
                 <label for="Content-Question" id = "Label-Question">Descrição: </label>     
-                <textarea name="Content" id="Content-Question" cols="20" rows="2" 
+                <textarea name="Content-Question" id="Content-Question" cols="20" rows="2" 
                 placeholder="Qual é o foco principal?"
                 required></textarea>
             </div>
@@ -91,10 +95,14 @@ require_once("../base/cabecalho.php");
 
             </div>
 
+            </div>
+
+
+            </fieldset>
+
             </form>
     </div>
 
-</div>
 
 </main>
 

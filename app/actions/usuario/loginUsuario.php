@@ -19,7 +19,7 @@ elseif(empty($_POST['senha'])){
     conecta();
 
     // fazendo a busca no banco para coletar todos os email e senha
-    $query = "SELECT email, senha, nome FROM usuario WHERE email = ? AND senha = ?;";
+    $query = "SELECT email, senha, nome, id_usuario FROM usuario WHERE email = ? AND senha = ?;";
     
     $stmt = $mysqli->prepare($query);
     $stmt->bind_param('ss', $emailForm, $senhaForm);
@@ -38,7 +38,8 @@ elseif(empty($_POST['senha'])){
 
         // define a sessão como logada e atribue o nome
         $_SESSION['login'] = $credential['nome'];
-        
+        $_SESSION['usuario'] = $credential['id_usuario'];
+
         header("Location: ../../pages/dashboard/dashboard.php");
         exit();
     } else {
