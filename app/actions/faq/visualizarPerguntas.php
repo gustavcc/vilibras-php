@@ -143,7 +143,7 @@ elementos.forEach(function(elemento){
 
     const criarData = document.createElement('p');
     criarData.className = 'data';
-    criarData.textContent = elemento.data_dia;
+    criarData.textContent = elemento.data_dia.split('-').reverse().join('-');
 
     criarDiv.appendChild(criarDescricao);
 

@@ -11,18 +11,19 @@ if (isset($_GET['Title']) && isset($_GET['Content-Question'])) {
     if (!empty(trim($_GET['Title'])) && !empty(trim($_GET['Content-Question']))) {
         $titulo = trim($_GET['Title']);
         $descricao = trim($_GET['Content-Question']);
+        $data = date('Y/m/d');
         
         conecta();
         global $mysqli;
 
-        $query = "INSERT INTO feedback (titulo, descricao, id_usuario) VALUES (?, ?, ?)";
+        $query = "INSERT INTO feedback (titulo, descricao, id_usuario,data_dia) VALUES (?, ?, ?,?)";
         $stmt = $mysqli->prepare($query);
 
         if ($stmt == false) {
             die("Erro na preparação da consulta que adicionaria a pergunta.");
         }
 
-        $stmt->bind_param('ssi', $titulo, $descricao, $id_usuario);
+        $stmt->bind_param('ssis', $titulo, $descricao, $id_usuario,$data);
 
         if ($stmt->execute()) {
             if ($stmt->affected_rows > 0) {

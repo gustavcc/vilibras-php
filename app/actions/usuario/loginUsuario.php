@@ -19,7 +19,7 @@ elseif(empty($_POST['senha'])){
     conecta();
 
     // fazendo a busca no banco para coletar todos os email e senha
-    $query = "SELECT email, senha, nome, id_usuario FROM usuario WHERE email = ? AND senha = ?;";
+    $query = "SELECT email, senha, nome, id_usuario FROM usuario WHERE email = ?;";
     
     $stmt = $mysqli->prepare($query);
     $stmt->bind_param('s', $emailForm);
@@ -36,18 +36,23 @@ elseif(empty($_POST['senha'])){
     // se o usuário requisitado existir
     if (count($credential) > 0) {
 
-        if ($credential)
+        if (password_verify($senhaForm, $credential['senha'])){
+    
+            // define a sessão como logada e atribue o email
+            $_SESSION['login'] = $credential['email'];
+            $_SESSION['usuario'] = $credential['id_usuario'];
+            
+            header("Location: ../../pages/dashboard/dashboard.php");
+            exit();
+        } else {
+            $msg = 'Senha incorreta!';
+        }
 
-        // define a sessão como logada e atribue o nome
-        $_SESSION['login'] = $credential['nome'];
-        $_SESSION['usuario'] = $credential['id_usuario'];
-
-        header("Location: ../../pages/dashboard/dashboard.php");
-        exit();
     } else {
-        $msg = "Dados inválidos!";
+        $msg = "Usuário não cadastrado ou dados inválidos!";
         header("Location: ../../pages/usuario/login.php?msg={$msg}");
     }
 }
+print_r('deu ruim');
 header("Location: ../../pages/usuario/login.php?msg={$msg}");
 exit();
