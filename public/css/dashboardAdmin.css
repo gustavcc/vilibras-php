@@ -13,11 +13,37 @@ main {
     width: 100%;
     height: auto;
     display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    justify-content: start;
+    align-items: center;
+}
+
+.functions {
+    width: 100%;
+    height: auto;
+    display: flex;
     gap: 20px;
     flex-wrap: wrap;
     padding: 20px;
     justify-content: center;
     align-items: start;
+}
+
+.users {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    margin: 0 30px 0 30px;
+}
+
+.user {
+    display: flex;
+    gap: 5px;
 }
 
 .msg {
