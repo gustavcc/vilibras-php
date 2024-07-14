@@ -7,6 +7,7 @@ main {
     background-attachment: fixed;
     background-color: var(--bg-faq);
     position: relative;
+    min-height: 75vh;
 }
 
 .answer{
@@ -202,18 +203,48 @@ fieldset {
     z-index: 999999;
     display: flex;
     justify-content: center;
-    align-items: center;
-    
+    align-items: center; 
+}
+
+.organizer{
+    align-self: end;
+}
+
+.organizer button{
+    background-color: transparent;
+    border: none;
+    border-radius: 15px;
+    margin-left: 13px;
+    padding: 8px;
+    color: #3ea6ff;
+    font-weight: 700;
+}
+
+.organizer button:hover{
+    background-color: var(--hv-organizer);
+    transition: 0.3s;
 }
 
 .confirm{
     background-color: var(--main-bg);
-    height: 200px;
+    height: 180px;
     border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 3px 10px 0 10px;
+}
+
+.lastInform{
+    color: var(--lastInform);
+    font-size: 14px;
+    font-weight: 400;
 }
 
 .inform{
-    font-size: 20px;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--inform);
 }
 
 @media screen and (max-width: 650px) {
