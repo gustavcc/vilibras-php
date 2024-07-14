@@ -6,6 +6,8 @@ if (!isset($_SESSION['login-admin'])) {
     exit();
 } ?>
 
+<?php require_once('../../actions/usuario/getUsuarios.php') ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -53,68 +55,78 @@ if (!isset($_SESSION['login-admin'])) {
                 <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
             </li>
-            <!-- <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-            </li> -->
         </ul>
         </div>
     </div>
     </nav>
 
     <main>
-        <div class="card" style="width: 18rem;">
-            <img style="height: 10rem;" src="../../../public/images/o-que-e-banco-de-questoes.png" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Questões</h5>
-                <p class="card-text">Edit, Delete and Insert datas.</p>
-                <div class='options'>
-                    <a href='../../pages/questoes/inserirQuestaoForm.php?>' id='add'> <i class="fa-solid fa-plus"></i> </a>
+        <div class="functions">
+            <div class="card" style="width: 18rem;">
+                <img style="height: 10rem;" src="../../../public/images/o-que-e-banco-de-questoes.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Questões</h5>
+                    <p class="card-text">Edit, Delete and Insert datas.</p>
+                    <div class='options'>
+                        <a href='../../pages/questoes/inserirQuestaoForm.php?>' id='add'> <i class="fa-solid fa-plus"></i> </a>
+                    </div>
+                    <a href="../questoes/listQuestoes.php" class="btn btn-primary">Listar</a>
                 </div>
-                <a href="../questoes/listQuestoes.php" class="btn btn-primary">Listar</a>
             </div>
+            
+            <div class="card" style="width: 18rem;">
+                <img style="height: 10rem;" src="../../../public/images/faq.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">FAQ</h5>
+                    <p class="card-text">Edit, Delete and Insert datas.</p>
+                    <div class='options'>
+                        <a href='../../pages/questoes/editarQuestaoForm.php?id=<?=$questao['id_questao']?>' id='edit'> <i class='fa-solid fa-pen-to-square'></i> </a>
+                        <a href='../../actions/questoes/excluirQuestao.php?id=<?=$questao['id_questao']?>' id='del'> <i class='fa-solid fa-trash'></i> </a>
+                        <a href='../../actions/questoes/excluirQuestao.php?id=<?=$questao['id_questao']?>' id='add'> <i class="fa-solid fa-plus"></i> </a>
+                    </div>
+                    <a href="../faq/faq.php" class="btn btn-primary">Listar</a>
+                </div>
+            </div>
+            
+            <div class="card" style="width: 18rem;">
+                <img style="height: 10rem;" src="../../../public/images/libras-maos.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Dicionário</h5>
+                    <p class="card-text">Edit, Delete and Insert datas.</p>
+                    <div class='options'>
+                        <a href='../../pages/dicionario/editContentForm.php?>' id='edit'> <i class='fa-solid fa-pen-to-square'></i> </a>
+                        <a href='../../pages/dicionario/removeContentForm.php?>' id='del'> <i class='fa-solid fa-trash'></i> </a>
+                        <a href='../../pages/dicionario/addContentForm.php?>' id='add'> <i class="fa-solid fa-plus"></i> </a>
+                    </div>
+                    <a href="../questoes/questoes.php" class="btn btn-primary">Listar</a>
+                </div>
+            </div>
+            
+            <div class="card" style="width: 18rem;">
+                <img style="height: 10rem;" src="../../../public/images/aulas.webp" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Aulas</h5>
+                    <p class="card-text">Edit, Delete and Insert datas.</p>
+                    <div class='options'>
+                        <a href='../../pages/questoes/editarQuestaoForm.php?id=<?=$questao['id_questao']?>' id='edit'> <i class='fa-solid fa-pen-to-square'></i> </a>
+                        <a href='../../actions/questoes/excluirQuestao.php?id=<?=$questao['id_questao']?>' id='del'> <i class='fa-solid fa-trash'></i> </a>
+                        <a href='../../actions/questoes/excluirQuestao.php?id=<?=$questao['id_questao']?>' id='add'> <i class="fa-solid fa-plus"></i> </a>
+                    </div>
+                    <a href="../aulas/aulas.php" class="btn btn-primary">Listar</a>
+                </div>
+            </div> 
         </div>
         
-        <div class="card" style="width: 18rem;">
-            <img style="height: 10rem;" src="../../../public/images/faq.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">FAQ</h5>
-                <p class="card-text">Edit, Delete and Insert datas.</p>
-                <div class='options'>
-                    <a href='../../pages/questoes/editarQuestaoForm.php?id=<?=$questao['id_questao']?>' id='edit'> <i class='fa-solid fa-pen-to-square'></i> </a>
-                    <a href='../../actions/questoes/excluirQuestao.php?id=<?=$questao['id_questao']?>' id='del'> <i class='fa-solid fa-trash'></i> </a>
-                    <a href='../../actions/questoes/excluirQuestao.php?id=<?=$questao['id_questao']?>' id='add'> <i class="fa-solid fa-plus"></i> </a>
+        <div class="users">
+            <h3>Lista de usuários cadastrados:</h3>
+            <?php foreach($users as $user): ?>
+                <div class="user">
+                    <p class="nome">Nome: <?=$user['nome']?></p>
+                    <span>|</span>
+                    <p class="nome">Email: <?=$user['email']?></p>
                 </div>
-                <!-- <a href="../faq/faq.php" class="btn btn-primary">Listar</a> -->
-            </div>
+            <?php endforeach; ?>
         </div>
-        
-        <div class="card" style="width: 18rem;">
-            <img style="height: 10rem;" src="../../../public/images/libras-maos.png" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Dicionário</h5>
-                <p class="card-text">Edit, Delete and Insert datas.</p>
-                <div class='options'>
-                    <a href='../../pages/dicionario/editContentForm.php?>' id='edit'> <i class='fa-solid fa-pen-to-square'></i> </a>
-                    <a href='../../pages/dicionario/removeContentForm.php?>' id='del'> <i class='fa-solid fa-trash'></i> </a>
-                    <a href='../../pages/dicionario/addContentForm.php?>' id='add'> <i class="fa-solid fa-plus"></i> </a>
-                </div>
-                <a href="../questoes/questoes.php" class="btn btn-primary">Listar</a>
-            </div>
-        </div>
-        
-        <div class="card" style="width: 18rem;">
-            <img style="height: 10rem;" src="../../../public/images/aulas.webp" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Aulas</h5>
-                <p class="card-text">Edit, Delete and Insert datas.</p>
-                <div class='options'>
-                    <a href='../../pages/questoes/editarQuestaoForm.php?id=<?=$questao['id_questao']?>' id='edit'> <i class='fa-solid fa-pen-to-square'></i> </a>
-                    <a href='../../actions/questoes/excluirQuestao.php?id=<?=$questao['id_questao']?>' id='del'> <i class='fa-solid fa-trash'></i> </a>
-                    <a href='../../actions/questoes/excluirQuestao.php?id=<?=$questao['id_questao']?>' id='add'> <i class="fa-solid fa-plus"></i> </a>
-                </div>
-                <a href="../aulas/aulas.php" class="btn btn-primary">Listar</a>
-            </div>
-        </div>  
         
     </main>
 </body>
