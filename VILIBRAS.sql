@@ -21,7 +21,8 @@ e_mail VARCHAR(40) NOT NULL,
 nome VARCHAR(40) NOT NULL);
 
 CREATE TABLE darkmode (
-status_darkmode VARCHAR(10)
+status_darkmode VARCHAR(10),
+email_usuario VARCHAR(255)
 );
 
 CREATE TABLE usuario(

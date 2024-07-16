@@ -62,10 +62,6 @@ require_once("../../actions/questoes/getQuestoesAcertou.php");
                     </div>
                 </div>
             </div>
-            <div class='options'>
-                <a href='../../pages/questoes/editarQuestaoForm.php?id=<?=$questao['id_questao']?>' id='edit'> <i class='fa-solid fa-pen-to-square'></i> </a>
-                <a href='../../actions/questoes/excluirQuestao.php?id=<?=$questao['id_questao']?>' id='del'> <i class='fa-solid fa-trash'></i> </a>
-            </div>
         </div>
     
     <?php endforeach;}?>

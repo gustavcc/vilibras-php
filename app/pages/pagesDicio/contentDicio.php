@@ -106,7 +106,7 @@ if (!isset($_SESSION['login'])) {
             <div id="menu">
                 <button id="closeMenu"><i class="fa-solid fa-xmark"></i></button>
                 <a class="b-link" href="../dicionario/dicionario.php?categoria=<?php echo $_GET['categoria']?>">Dicionário</a> <!--aparecer se for autenticado-->
-                <a class="b-link" href="contentDicio.php?categoria=hardware">Hardware</a>
+                <a class="b-link" href="contentDicio.php?   categoria=hardware">Hardware</a>
                 <a class="b-link" href="contentDicio.php?categoria=software">Software</a>
                 <a class="b-link" href="contentDicio.php?categoria=conectividades">Conectividades</a>
                 <a class="b-link" href="contentDicio.php?categoria=armazenamento_dados">Armazenamento de Dados</a>
@@ -124,6 +124,44 @@ if (!isset($_SESSION['login'])) {
 
 
 <script src="../../../public/js/contentDicio.js"></script>
+
+<script>
+       
+    // save dark mode in database
+    const html = document.querySelector('html');
+    const checkbox = document.getElementById('checkbox');
+
+    
+    window.addEventListener('load', ()=>{
+        
+        checkbox.checked = <?=$darkmode?>;
+
+        checkbox.checked ? html.classList.remove('dark-mode') : html.classList.add('dark-mode');
+    })
+
+    checkbox.addEventListener('click', function () {
+
+        checkbox.checked ? html.classList.remove('dark-mode') : html.classList.add('dark-mode');
+
+        var objectRequest = new XMLHttpRequest();
+
+        objectRequest.open("POST", "../../actions/darkmode/darkmode.php", true)
+
+        objectRequest.setRequestHeader("Content-Type", "aplication/json")
+
+        objectRequest.onreadystatechange = function() {
+            if (objectRequest.readyState === 4 && objectRequest.status === 200) {
+                console.log('Status of request: ',objectRequest.responseText); // resposta do servidor se houver
+            }
+        }
+
+        var status = checkbox.checked ? 'true' : 'false';
+
+        var status_str = JSON.stringify(status)
+
+        objectRequest.send(status_str)
+    })
+</script>
     
 <?php
 require_once("../base/footer.php");

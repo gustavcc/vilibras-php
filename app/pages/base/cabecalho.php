@@ -1,5 +1,6 @@
 <?php
-require_once('../../actions/darkmode/darkmode.php')
+require_once('../../actions/darkmode/darkmode.php');
+require_once("../../actions/usuario/identifyUsuarioLogado.php");
 ?>
 
 <!DOCTYPE html>
@@ -139,8 +140,11 @@ require_once('../../actions/darkmode/darkmode.php')
 
             var status = checkbox.checked ? 'true' : 'false';
 
-            var status_str = JSON.stringify(status)
+            //  passando o status do checkbox e o email do usuário
+            var arr = {sts: `${status}`, email: `<?=$usuarioLogado['email']?>`}
 
-            objectRequest.send(status_str)
+            var arr_str = JSON.stringify(arr)
+
+            objectRequest.send(arr_str)
         })
     </script>
