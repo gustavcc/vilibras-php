@@ -1,6 +1,5 @@
 <?php
 require_once('../../actions/darkmode/darkmode.php');
-
 require_once("../../actions/usuario/identifyUsuarioLogado.php");
 
 // se não tiver logado, vai para o login
@@ -116,56 +115,7 @@ if (!isset($_SESSION['login'])) {
         </div>
     </header>
 
-<main>
-
-        <div class="Dictionary-Content">
-            
-        </div>
-
-</main>
-
-    <script>
-       
-        // save dark mode in database
-        const html = document.querySelector('html');
-        const checkbox = document.getElementById('checkbox');
-
-        
-        window.addEventListener('load', ()=>{
-            
-            checkbox.checked = <?=$darkmode?>;
-
-            checkbox.checked ? html.classList.remove('dark-mode') : html.classList.add('dark-mode');
-        })
-
-        checkbox.addEventListener('click', function () {
-
-            checkbox.checked ? html.classList.remove('dark-mode') : html.classList.add('dark-mode');
-
-            var objectRequest = new XMLHttpRequest();
-
-            objectRequest.open("POST", "../../actions/darkmode/darkmode.php", true)
-
-            objectRequest.setRequestHeader("Content-Type", "aplication/json")
-
-            objectRequest.onreadystatechange = function() {
-                if (objectRequest.readyState === 4 && objectRequest.status === 200) {
-                    console.log('Status of request: ',objectRequest.responseText); // resposta do servidor se houver
-                }
-            }
-
-            var status = checkbox.checked ? 'true' : 'false';
-
-            var status_str = JSON.stringify(status)
-
-            objectRequest.send(status_str)
-        })
-    </script>
-
-<script src="../../../public/js/contentDicio.js"></script>
-
 <script>
-       
     // save dark mode in database
     const html = document.querySelector('html');
     const checkbox = document.getElementById('checkbox');
@@ -196,11 +146,24 @@ if (!isset($_SESSION['login'])) {
 
         var status = checkbox.checked ? 'true' : 'false';
 
-        var status_str = JSON.stringify(status)
+        //  passando o status do checkbox e o email do usuário
+        var arr = {sts: `${status}`, email: `<?=$usuarioLogado['email']?>`}
 
-        objectRequest.send(status_str)
+        var arr_str = JSON.stringify(arr)
+
+        objectRequest.send(arr_str)
     })
 </script>
+
+<main>
+
+        <div class="Dictionary-Content">
+            
+        </div>
+
+</main>
+
+<script src="../../../public/js/contentDicio.js" defer></script>
     
 <?php
 require_once("../base/footer.php");

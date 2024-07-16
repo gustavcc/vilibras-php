@@ -109,7 +109,6 @@ require_once("../../actions/usuario/identifyUsuarioLogado.php");
     </header>
 
     <script>
-       
         // save dark mode in database
         const html = document.querySelector('html');
         const checkbox = document.getElementById('checkbox');
