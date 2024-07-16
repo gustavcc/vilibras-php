@@ -1,15 +1,10 @@
 <?php
-session_start();
+require_once("../base/cabecalho.php");
 
 if (isset($_SESSION['login'])) {
     header("Location: ../dashboard/dashboard.php");
     exit();
 }?>
-
-
-<?php
-require_once("../base/cabecalho.php");
-?>
 
     <link rel="stylesheet" href="../../../public/css/landingpage.css">
     <script src="../../../public/js/landingpage.js" type="text/javascript" defer></script>

@@ -1,11 +1,3 @@
-// Dark mode
-const html = document.querySelector('html');
-const checkbox = document.getElementById('checkbox');
-
-checkbox.addEventListener('change', function () {
-  html.classList.toggle('dark-mode')
-})
-
 // Menu
 const close = document.getElementById('closeMenu');
 openMenu.addEventListener('click', () => {
