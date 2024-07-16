@@ -612,6 +612,9 @@ footer a:hover {
 	--bg-questoes: #f2f6fc;
 	--bg-calendar: #e9e9e9;
 	--bg-faq: transparent;
+	--inform: #0f0f0f;
+	--lastInform:#606060;
+	--hv-organizer:hsl(199, 69%, 91%);
 
 }
 
@@ -640,5 +643,8 @@ footer a:hover {
 	--bg-questoes: #434343;
 	--bg-calendar: #000000;
 	--bg-faq: #000;
+	--inform: #f1f1f1;
+	--lastInform: #AAAAAA;
+	--hv-organizer: hsl(196, 16%, 23%);
 
 }

@@ -90,6 +90,9 @@ elementos.forEach(function(elemento){
             document.body.style.top = `-${scrollPosition}px`; // Define a posição de rolagem no estilo top do body
             document.body.classList.add('no-scroll'); // Adiciona a classe para desativar a rolagem
 
+            const criarOrganizer = document.createElement('div');
+            criarOrganizer.className = 'organizer';
+
             const criarBottom = document.createElement('div');
             criarBottom.className = 'fundo';
 
@@ -98,7 +101,7 @@ elementos.forEach(function(elemento){
 
             const criarInform = document.createElement('h2');
             criarInform.className = 'inform';
-            criarInform.textContent = 'Excluir comentário';
+            criarInform.textContent = 'Excluir pergunta';
 
             const criarLastInform = document.createElement('p');
             criarLastInform.className = 'lastInform';
@@ -112,10 +115,12 @@ elementos.forEach(function(elemento){
             criarButonConfirm.className = 'buttonConfirm';
             criarButonConfirm.textContent = 'Excluir';
 
+            criarOrganizer.appendChild(criarButonCancel);
+            criarOrganizer.appendChild(criarButonConfirm);
+
             criarConfirm.appendChild(criarInform);
             criarConfirm.appendChild(criarLastInform);
-            criarConfirm.appendChild(criarButonCancel);
-            criarConfirm.appendChild(criarButonConfirm);
+            criarConfirm.appendChild(criarOrganizer);
 
             criarBottom.appendChild(criarConfirm);
             main.appendChild(criarBottom);
