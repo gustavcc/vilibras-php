@@ -6,6 +6,10 @@ require_once("../../actions/questoes/findQuestao.php");
 <link rel="stylesheet" href="../../../public/css/forms.css">
 
 <main>
+    <div class="return">
+        <a href="../admin/dashboardAdmin.php"><i class="fa-solid fa-rotate-left"></i></a>
+    </div>
+
     <h1>Editar questão:</h1>
 
     <?php

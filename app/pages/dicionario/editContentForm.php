@@ -23,6 +23,10 @@
 
 <div class="principal">
 
+<div class="return">
+        <a href="../admin/dashboardAdmin.php"><i class="fa-solid fa-rotate-left"></i></a>
+    </div>
+
 <form action="../../actions/dicionario/editContent.php" method="get">
 
 <fieldset>

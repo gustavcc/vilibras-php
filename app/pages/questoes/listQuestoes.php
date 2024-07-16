@@ -33,12 +33,26 @@ require_once("../../actions/questoes/mostrarQuestoes.php");
             height: auto;
         }
 
-        td, th {
-            width: 50px;
+        td {
+            min-height: 30px;
         }
 
         table, th, td {
             border: 1px solid #000;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .return {
+            font-size: 20pt;
+            color: #00b7ff;
+            position: fixed;
+            cursor: pointer;
+            top: 40px;
+            left: 40px;
         }
         #edit {
             cursor: pointer;
@@ -63,40 +77,34 @@ require_once("../../actions/questoes/mostrarQuestoes.php");
             echo "<div class='msg'>". $msg ."</div>";
         }?>
 
-            <!-- <table>
-                <tr>
-                    <th>ID</th>
-                    <th>Enunciado</th>
-                    <th>Ano</th>
-                    <th>Teste</th>
-                    <th>Editar</th>
-                    <th>Deletar</th>
-                    <th>Inserir</th>
-                </tr>
-            </table> -->
-    
-        <?php if(isset($questoes)) { foreach($questoes as $questao): ?>
-            
-            <table>
-                <tr>
-                    <th>ID</th>
-                    <th>Enunciado</th>
-                    <th>Ano</th>
-                    <th>Teste</th>
-                    <th>Editar</th>
-                    <th>Deletar</th>
-                </tr>
-                <tr>
-                    <td><?=$questao['id_questao']?></td>
-                    <td><?=$questao['title']?></td>
-                    <td><?=$questao['year']?></td>
-                    <td><?=$questao['test']?></td>
-                    <td><a href='../../pages/questoes/editarQuestaoForm.php?id=<?=$questao['id_questao']?>' id='edit'> <i class='fa-solid fa-pen-to-square'></i> </a></td>
-                    <td><a href='../../actions/questoes/excluirQuestao.php?id=<?=$questao['id_questao']?>' id='del'> <i class='fa-solid fa-trash'></i> </a></td>
-                </tr>
-            </table>
-    
-        <?php endforeach;}?>
+        <div class="return">
+            <a href="../admin/dashboardAdmin.php"><i class="fa-solid fa-rotate-left"></i></a>
+        </div>
+
+        <h2>Lista de Questões: </h2>
+
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Enunciado</th>
+                <th>Ano</th>
+                <th>Teste</th>
+                <th>Editar</th>
+                <th>Deletar</th>
+            </tr>
+
+            <?php if(isset($questoes)) { foreach($questoes as $questao): ?>
+            <tr>
+                <td><?=$questao['id_questao']?></td>
+                <td><?=$questao['title']?></td>
+                <td><?=$questao['year']?></td>
+                <td><?=$questao['test']?></td>
+                <td><a href='../../pages/questoes/editarQuestaoForm.php?id=<?=$questao['id_questao']?>' id='edit'> <i class='fa-solid fa-pen-to-square'></i> </a></td>
+                <td><a href='../../actions/questoes/excluirQuestao.php?id=<?=$questao['id_questao']?>' id='del'> <i class='fa-solid fa-trash'></i> </a></td>
+            </tr>    
+            <?php endforeach;}?>
+
+        </table>
     </main>
 </body>
 </html>

@@ -14,6 +14,10 @@ require_once("../base/cabecalho.php");
     }
     ?>
 
+    <div class="return">
+        <a href="../admin/dashboardAdmin.php"><i class="fa-solid fa-rotate-left"></i></a>
+    </div>
+
     <form action="../../actions/questoes/inserirQuestao.php" method="POST">
         <div class="label">
             <label for="">Title: </label> <textarea required name="title" id=""></textarea>

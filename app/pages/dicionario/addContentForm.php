@@ -26,6 +26,11 @@
 <form action="../../actions/dicionario/addContent.php" method="get">
 
 <fieldset>
+
+<div class="return">
+        <a href="../admin/dashboardAdmin.php"><i class="fa-solid fa-rotate-left"></i></a>
+    </div>
+
     <legend> Adicionar Vídeo</legend>
 
     <div class="categorias">

@@ -21,6 +21,10 @@
     
 <main>
 
+<div class="return">
+        <a href="../admin/dashboardAdmin.php"><i class="fa-solid fa-rotate-left"></i></a>
+    </div>
+
 <div class="principal">
 
 <form action="../../actions/dicionario/removeContent.php" method="get">

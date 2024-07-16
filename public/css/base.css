@@ -529,6 +529,15 @@ footer a:hover {
 /* barra lateral */
 /* ------------------------------------ */
 
+.return {
+	font-size: 20pt;
+	color: #00b7ff;
+	position: fixed;
+	cursor: pointer;
+	top: 150px;
+	left: 40px;
+}
+
 /*! DARK MODE */
 
 /*------ Settings ------*/
