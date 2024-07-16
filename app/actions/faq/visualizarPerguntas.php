@@ -86,11 +86,54 @@ elementos.forEach(function(elemento){
         });
 
         criarOptionEdit.addEventListener('click', function(){
-            // scrollPosition = window.scrollY; // Salva a posição de rolagem atual
-            // document.body.style.top = `-${scrollPosition}px`; // Define a posição de rolagem no estilo top do body
-            // document.body.classList.add('no-scroll'); // Adiciona a classe para desativar a rolagem
+            scrollPosition = window.scrollY; // Salva a posição de rolagem atual
+            document.body.style.top = `-${scrollPosition}px`; // Define a posição de rolagem no estilo top do body
+            document.body.classList.add('no-scroll'); // Adiciona a classe para desativar a rolagem
+
+            const criarOrganizer = document.createElement('div');
+            criarOrganizer.className = 'organizer';
+
+            const criarBottom = document.createElement('div');
+            criarBottom.className = 'fundo';
+
+            const criarConfirm = document.createElement('div');
+            criarConfirm.className = 'confirm';
+
+            const criarInform = document.createElement('h2');
+            criarInform.className = 'inform';
+            criarInform.textContent = 'Editar pergunta';
+
+            const criarInputEdit = document.createElement('textarea');
+            criarInputEdit.className = 'inputEdit';
+            criarInputEdit.value = elemento.descricao;
+
+            const criarButonCancel = document.createElement('button');
+            criarButonCancel.className = 'buttonCancel';
+            criarButonCancel.textContent = 'Cancelar';
+
+            const criarButonConfirm = document.createElement('button');
+            criarButonConfirm.className = 'buttonConfirm';
+            criarButonConfirm.textContent = 'Editar';
+
+            criarOrganizer.appendChild(criarButonCancel);
+            criarOrganizer.appendChild(criarButonConfirm);
+
+            criarConfirm.appendChild(criarInform);
+            criarConfirm.appendChild(criarInputEdit);
+            criarConfirm.appendChild(criarOrganizer);
+
+            criarBottom.appendChild(criarConfirm);
+            main.appendChild(criarBottom);
+
+            criarButonCancel.addEventListener('click', function() {
+                main.removeChild(criarBottom);
+                document.body.classList.remove('no-scroll'); // Remove a classe para reativar a rolagem
+                window.scrollTo(0, scrollPosition); // Restaura a posição de rolagem
+
 
         })
+
+    })
 
         criarOptionRemove.addEventListener('click', function() {
             scrollPosition = window.scrollY; // Salva a posição de rolagem atual

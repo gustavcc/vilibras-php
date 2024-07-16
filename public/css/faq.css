@@ -227,12 +227,13 @@ fieldset {
 
 .confirm{
     background-color: var(--main-bg);
-    height: 180px;
+    min-height: 180px;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     padding: 3px 10px 0 10px;
+    resize: none;
 }
 
 .lastInform{
@@ -245,6 +246,18 @@ fieldset {
     font-size: 16px;
     font-weight: 400;
     color: var(--inform);
+}
+
+.inputEdit{
+    background-color: var(--main-bg);
+    border: none;
+    outline: 0;
+    color: var(--inform);
+    border-bottom: solid 1px #aaaaaa;
+    width: 300px;
+    height: auto;
+   
+
 }
 
 @media screen and (max-width: 1300px) {
