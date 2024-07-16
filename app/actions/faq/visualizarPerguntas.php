@@ -85,6 +85,13 @@ elementos.forEach(function(elemento){
             }
         });
 
+        criarOptionEdit.addEventListener('click', function(){
+            // scrollPosition = window.scrollY; // Salva a posição de rolagem atual
+            // document.body.style.top = `-${scrollPosition}px`; // Define a posição de rolagem no estilo top do body
+            // document.body.classList.add('no-scroll'); // Adiciona a classe para desativar a rolagem
+
+        })
+
         criarOptionRemove.addEventListener('click', function() {
             scrollPosition = window.scrollY; // Salva a posição de rolagem atual
             document.body.style.top = `-${scrollPosition}px`; // Define a posição de rolagem no estilo top do body
