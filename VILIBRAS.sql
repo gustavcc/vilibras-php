@@ -22,7 +22,7 @@ nome VARCHAR(40) NOT NULL);
 
 CREATE TABLE darkmode (
 status_darkmode VARCHAR(10)
-)
+);
 
 CREATE TABLE usuario(
 id_usuario INT PRIMARY KEY AUTO_INCREMENT,
