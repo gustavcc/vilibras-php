@@ -29,7 +29,7 @@ desconecta();
 if ($darkmode_str == 'true') {
     conecta();
 
-    $sql = "INSERT INTO darkmode (satatus_darkmode) VALUES ('false')";
+    $sql = "INSERT INTO darkmode (status_darkmode) VALUES ('false')";
     $mysqli->execute_query($sql);
 
     desconecta();
@@ -37,7 +37,7 @@ if ($darkmode_str == 'true') {
 } else {
     conecta();
 
-    $sql = "INSERT INTO darkmode (satatus_darkmode) VALUES ('true')";
+    $sql = "INSERT INTO darkmode (status_darkmode) VALUES ('true')";
     $mysqli->execute_query($sql);
 
     desconecta();

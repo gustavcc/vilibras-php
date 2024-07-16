@@ -20,6 +20,10 @@ sexo VARCHAR(10) NOT NULL,
 e_mail VARCHAR(40) NOT NULL,
 nome VARCHAR(40) NOT NULL);
 
+CREATE TABLE darkmode (
+status_darkmode VARCHAR(10)
+)
+
 CREATE TABLE usuario(
 id_usuario INT PRIMARY KEY AUTO_INCREMENT,
 email VARCHAR(100) UNIQUE NOT NULL,
