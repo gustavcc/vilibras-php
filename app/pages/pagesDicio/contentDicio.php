@@ -1,14 +1,18 @@
 <?php
+require_once('../../actions/darkmode/darkmode.php');
+
 require_once("../../actions/usuario/identifyUsuarioLogado.php");
 
 // se não tiver logado, vai para o login
 if (!isset($_SESSION['login'])) {
     header("Location: ../usuario/login.php?");
     exit();
-}?>
+}
+?> 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,10 +21,14 @@ if (!isset($_SESSION['login'])) {
 
     <link rel="icon" href="../../../public/images/Logo.png">
 
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="../../../public/css/contentDicio.css">
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <link rel="stylesheet" href="../../../public/css/base.css">
+    <link rel="stylesheet" href="../../../public/css/contentDicio.css">
+    <script src="../../../public/js/base.js" type="text/javascript" defer></script>
 </head>
 
 <body>
@@ -28,15 +36,14 @@ if (!isset($_SESSION['login'])) {
     <div vw class="enabled">
         <div vw-access-button class="active"></div>
         <div vw-plugin-wrapper>
-          <div class="vw-plugin-top-wrapper"></div>
+            <div class="vw-plugin-top-wrapper"></div>
         </div>
-        </div>
+    </div>
 
-            <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-      <script>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
         new window.VLibras.Widget('https://vlibras.gov.br/app');
-      </script>
-
+    </script>
     <header>
         <div class="menu-top">
             <div class="logo">
@@ -47,17 +54,14 @@ if (!isset($_SESSION['login'])) {
             <div id="menu-top" class="menu-right">
                 <?php if (isset($_SESSION['login'])): ?>
                 <div id="search-box" class="search-box">
-                <select id="search" class="search-text">
-                    
-                </select>
-                
+                    <input id="search" type="text" class="search-text" placeholder="Pesquisar...">
                     <a class="search-btn" href="#">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </a>
                 </div>
                 <?php endif; ?>
                 <label class="container-box">
-                    <input id="checkbox" checked="checked" type="checkbox">
+                    <input id="checkbox" type="checkbox">
                     <svg viewBox="0 0 384 512" height="1em" xmlns="http://www.w3.org/2000/svg" class="moon">
                         <path
                             d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z">
@@ -73,18 +77,16 @@ if (!isset($_SESSION['login'])) {
                 <div class="login">
                 <a href="../usuario/login.php">Entrar</a>
                 </div>
-
                 <?php endif; ?>
 
                 <?php if (isset($_SESSION['login'])): ?>
-
                 <div class="menu-user">
                     <ul class="dropdown-menu">
                         <li>
                             <i id="menu-icon" class="fa-solid fa-user"></i>
                             <ul class="dropdown">
                                 <li>
-                                    <p>Olá, <?php echo htmlspecialchars($_SESSION['login']) ?></p>
+                                    <p>Olá, <?=$usuarioLogado['nome']?></p>
                                 </li>
                                 <li><a href="../perfil/perfil.php">
                                         <span><i class="fa-solid fa-house"></i></span>
@@ -122,6 +124,43 @@ if (!isset($_SESSION['login'])) {
 
 </main>
 
+    <script>
+       
+        // save dark mode in database
+        const html = document.querySelector('html');
+        const checkbox = document.getElementById('checkbox');
+
+        
+        window.addEventListener('load', ()=>{
+            
+            checkbox.checked = <?=$darkmode?>;
+
+            checkbox.checked ? html.classList.remove('dark-mode') : html.classList.add('dark-mode');
+        })
+
+        checkbox.addEventListener('click', function () {
+
+            checkbox.checked ? html.classList.remove('dark-mode') : html.classList.add('dark-mode');
+
+            var objectRequest = new XMLHttpRequest();
+
+            objectRequest.open("POST", "../../actions/darkmode/darkmode.php", true)
+
+            objectRequest.setRequestHeader("Content-Type", "aplication/json")
+
+            objectRequest.onreadystatechange = function() {
+                if (objectRequest.readyState === 4 && objectRequest.status === 200) {
+                    console.log('Status of request: ',objectRequest.responseText); // resposta do servidor se houver
+                }
+            }
+
+            var status = checkbox.checked ? 'true' : 'false';
+
+            var status_str = JSON.stringify(status)
+
+            objectRequest.send(status_str)
+        })
+    </script>
 
 <script src="../../../public/js/contentDicio.js"></script>
 
@@ -167,6 +206,3 @@ if (!isset($_SESSION['login'])) {
 require_once("../base/footer.php");
 require_once("../../actions/dicionario/visualizarVideos.php");
 ?>
-
-</body>
-</html>

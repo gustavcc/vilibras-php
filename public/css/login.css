@@ -90,7 +90,7 @@ input {
     border: none;
     border-radius: 5px;
     text-align: center;
-
+    outline: 0;
 }
 
 select{
@@ -108,6 +108,7 @@ button {
     border-radius: 5px;
     padding: 10px;
     cursor: pointer;
+    margin-top: 5px;
 }
 
 #buttonDiv{
