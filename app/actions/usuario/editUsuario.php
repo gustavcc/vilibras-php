@@ -57,43 +57,55 @@ if(!isset($_FILES['imagem']) && $_FILES['imagem']['error'] != 0){
         // pego a imagem pelo formulário
         $imagem = $_FILES["imagem"];
     
-        if (!empty($_FILES["imagem"])) {
-            // divido o nome dela para verificar o tipo da imagem
-            $imagemType = explode('.', $imagem['name']);
+        // divido o nome dela para verificar o tipo da imagem
+        $imagemType = explode('.', $imagem['name']);
 
-            // verifico se o tipo da imagem é válido
+        // verifico se o tipo da imagem é válido
+        if (($imagemType[sizeof($imagemType)-1] == 'png') || ($imagemType[sizeof($imagemType)-1] == 'jpeg') || ($imagemType[sizeof($imagemType)-1] == 'jpg') || ($imagem=" ")) {
+
+            $imagemDB = $usuarioLogado['path_img'];
+
             if (($imagemType[sizeof($imagemType)-1] == 'png') || ($imagemType[sizeof($imagemType)-1] == 'jpeg') || ($imagemType[sizeof($imagemType)-1] == 'jpg')) {
                 // essa variavel será salva no banco de dados com o nome da imagem
                 $imagemDB = "../../../public/images/user/".$_FILES["imagem"]["name"];
+    
+                $dir = $usuarioLogado['path_img'];
+    
+                if ($dir!="../../../public/images/user/user.png") {
+                    if (file_exists($dir)) {
+                        unlink($dir);
+                    }
+                }
         
                 // insiro a imagem na pasta para ser acessada
                 move_uploaded_file($imagem["tmp_name"], $imagemDB);
-        
-                conecta();
-        
-                $sql = "UPDATE usuario SET nome=?,email=?,path_img=? WHERE email=?;";
-        
-                $stmt = $mysqli->prepare($sql);     
-                if(!$stmt){
-                    die("Erro ao editar. Problema no acesso ao banco de dados");
-                }
-        
-                $stmt->bind_param("ssss",$nome,$email,$imagemDB,$user);
-                $stmt->execute();
-        
-                $_SESSION['login'] = $email;
-        
-                if($stmt->affected_rows>0){
-                    $msg = "Dados editados com sucesso!";
-                }else{
-                    $msg = "Não foi possível Editar.";
-                }
-        
-                desconecta();   
             } else {
-                $msg = 'Selecione uma imagem válida!';
-        
+                $msg = 'Selecione uma imagem válida!';  
             }
+    
+            conecta();
+    
+            $sql = "UPDATE usuario SET nome=?,email=?,path_img=? WHERE email=?;";
+    
+            $stmt = $mysqli->prepare($sql);     
+            if(!$stmt){
+                die("Erro ao editar. Problema no acesso ao banco de dados");
+            }
+    
+            $stmt->bind_param("ssss",$nome,$email,$imagemDB,$user);
+            $stmt->execute();
+    
+            $_SESSION['login'] = $email;
+    
+            if($stmt->affected_rows>0){
+                $msg = "Dados editados com sucesso!";
+            }else{
+                $msg = "Não foi possível Editar.";
+            }
+    
+            desconecta();   
+        } else {
+            $msg = 'Selecione uma imagem válida!';    
         }
     }
 }

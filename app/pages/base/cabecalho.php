@@ -113,11 +113,10 @@ require_once("../../actions/usuario/identifyUsuarioLogado.php");
         const html = document.querySelector('html');
         const checkbox = document.getElementById('checkbox');
 
+        checkbox.checked = <?=$darkmode?>;
+
         
         window.addEventListener('load', ()=>{
-            
-            checkbox.checked = <?=$darkmode?>;
-
             checkbox.checked ? html.classList.remove('dark-mode') : html.classList.add('dark-mode');
         })
 
