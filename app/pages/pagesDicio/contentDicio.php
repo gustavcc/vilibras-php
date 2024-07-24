@@ -27,6 +27,7 @@ if (!isset($_SESSION['login'])) {
     
     <link rel="stylesheet" href="../../../public/css/base.css">
     <link rel="stylesheet" href="../../../public/css/contentDicio.css">
+    <script src="../../../public/js/dark-mode.js" type="text/javascript" defer></script>
     <script src="../../../public/js/base.js" type="text/javascript" defer></script>
 </head>
 
@@ -114,44 +115,6 @@ if (!isset($_SESSION['login'])) {
             </div>
         </div>
     </header>
-
-<script>
-    // save dark mode in database
-    const html = document.querySelector('html');
-    const checkbox = document.getElementById('checkbox');
-
-    checkbox.checked = <?=$darkmode?>;
-    
-    window.addEventListener('load', ()=>{
-        checkbox.checked ? html.classList.remove('dark-mode') : html.classList.add('dark-mode');
-    })
-
-    checkbox.addEventListener('click', function () {
-
-        checkbox.checked ? html.classList.remove('dark-mode') : html.classList.add('dark-mode');
-
-        var objectRequest = new XMLHttpRequest();
-
-        objectRequest.open("POST", "../../actions/darkmode/darkmode.php", true)
-
-        objectRequest.setRequestHeader("Content-Type", "aplication/json")
-
-        objectRequest.onreadystatechange = function() {
-            if (objectRequest.readyState === 4 && objectRequest.status === 200) {
-                console.log('Status of request: ',objectRequest.responseText); // resposta do servidor se houver
-            }
-        }
-
-        var status = checkbox.checked ? 'true' : 'false';
-
-        //  passando o status do checkbox e o email do usuário
-        var arr = {sts: `${status}`, email: `<?=$usuarioLogado['email']?>`}
-
-        var arr_str = JSON.stringify(arr)
-
-        objectRequest.send(arr_str)
-    })
-</script>
 
 <main>
 

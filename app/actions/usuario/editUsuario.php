@@ -100,7 +100,7 @@ if(!isset($_FILES['imagem']) && $_FILES['imagem']['error'] != 0){
             if($stmt->affected_rows>0){
                 $msg = "Dados editados com sucesso!";
             }else{
-                $msg = "Não foi possível Editar.";
+                $msg = "Os dados perbaneceram como estavam.";
             }
     
             desconecta();   
