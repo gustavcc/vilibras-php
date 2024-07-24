@@ -557,22 +557,23 @@ footer a:hover {
 
 .container-box .moon {
 	position: absolute;
-	display: none;
+	display: block;
 	animation: keyframes-fill .5s;
 }
 
 .container-box .sun {
 	position: absolute;
 	animation: keyframes-fill .5s;
+	display: none;
 }
 
 /* ------ On check event ------ */
 .container-box input:checked~.sun {
-	display: none;
+	display: block;
 }
 
 .container-box input:checked~.moon {
-	display: block;
+	display: none;
 }
 
 /* ------ Hide the default checkbox ------ */
