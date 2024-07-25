@@ -170,8 +170,12 @@ main {
 @media screen and (max-width: 479px) {
 
     .questoes{
-        width: 100vw;
-        padding: 30px;
+        width: 100%;
+        padding: 20px;
+    }
+
+    main {
+        padding: 5px;
     }
 }
 

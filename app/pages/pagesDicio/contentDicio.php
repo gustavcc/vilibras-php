@@ -29,9 +29,17 @@ if (!isset($_SESSION['login'])) {
     <link rel="stylesheet" href="../../../public/css/contentDicio.css">
     <script src="../../../public/js/dark-mode.js" type="text/javascript" defer></script>
     <script src="../../../public/js/base.js" type="text/javascript" defer></script>
+
 </head>
 
 <body>
+    <script>
+        window.addEventListener('load', ()=>{
+            if (localStorage.getItem('dark-mode') === 'anabled') {
+                html.classList.add('dark-mode');
+            }
+        })
+    </script>
 
     <div vw class="enabled">
         <div vw-access-button class="active"></div>
