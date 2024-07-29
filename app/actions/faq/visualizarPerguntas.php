@@ -98,14 +98,29 @@ elementos.forEach(function(elemento){
 
             const criarConfirm = document.createElement('div');
             criarConfirm.className = 'confirm';
+            criarConfirm.id = 'confirmEdit'
+
+            const criarInformTitulo = document.createElement('h2');
+            criarInformTitulo.className = 'inform';
+            criarInformTitulo.id = 'InformTitulo';
+            criarInformTitulo.textContent = 'Titulo';
 
             const criarInform = document.createElement('h2');
             criarInform.className = 'inform';
-            criarInform.textContent = 'Editar pergunta';
+            criarInform.id = 'InformDescricao';
+            criarInform.textContent = 'Descrição';
 
-            const criarInputEdit = document.createElement('textarea');
-            criarInputEdit.className = 'inputEdit';
-            criarInputEdit.value = elemento.descricao;
+            const textAreaEditTitulo = document.createElement('textarea');
+            textAreaEditTitulo.className = 'textAreaEdit';
+            textAreaEditTitulo.id = 'textAreaTitulo'
+            textAreaEditTitulo.value = elemento.titulo;
+            textAreaEditTitulo.required = true;
+            
+            const textAreaEditDescricao = document.createElement('textarea');
+            textAreaEditDescricao.className = 'textAreaEdit';
+            textAreaEditDescricao.id = 'textAreaDescricao';
+            textAreaEditDescricao.value = elemento.descricao;
+            textAreaEditDescricao.required = true;
 
             const criarButonCancel = document.createElement('button');
             criarButonCancel.className = 'buttonCancel';
@@ -118,18 +133,31 @@ elementos.forEach(function(elemento){
             criarOrganizer.appendChild(criarButonCancel);
             criarOrganizer.appendChild(criarButonConfirm);
 
+            criarConfirm.appendChild(criarInformTitulo);
+            criarConfirm.appendChild(textAreaEditTitulo);
+
             criarConfirm.appendChild(criarInform);
-            criarConfirm.appendChild(criarInputEdit);
+            criarConfirm.appendChild(textAreaEditDescricao);
             criarConfirm.appendChild(criarOrganizer);
 
             criarBottom.appendChild(criarConfirm);
             main.appendChild(criarBottom);
 
+            textAreaEditDescricao.focus();
+
+            criarButonConfirm.addEventListener('click', function(){
+
+                if (((elemento.descricao != textAreaDescricao.value) || (elemento.titulo != textAreaTitulo.value)) && (textAreaDescricao.value.trim().length > 0 && textAreaTitulo.value.trim().length > 0)){
+                    const url = `../../actions/faq/editQuestion.php?titulo=${textAreaTitulo.value}&descricao=${textAreaDescricao.value}&id_feedback=${elemento.id_feedback}`;
+                window.location.href = url;
+                }
+
+            })
+            
             criarButonCancel.addEventListener('click', function() {
                 main.removeChild(criarBottom);
                 document.body.classList.remove('no-scroll'); // Remove a classe para reativar a rolagem
                 window.scrollTo(0, scrollPosition); // Restaura a posição de rolagem
-
 
         })
 

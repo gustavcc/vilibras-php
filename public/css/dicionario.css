@@ -47,23 +47,12 @@
     .apresentacao-text h1 {
     font-size: 30pt;
     margin-bottom: 3rem ;
-    border-right: 4px solid;
     background-image: linear-gradient(to right bottom, var(--title-1), var(--title-2), var(--title-3));
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    color: #ffffff;
-    width: 37ch;
-    white-space: nowrap;
-    overflow: hidden;
-    animation: blinking 1s infinite step-end alternate;
+    word-break: break-word;
     }
-  
-  @keyframes blinking {
-      50% {
-          border-color: transparent;
-      }
-  }
   
     .apresentacao-text p {
       font-size: 14pt;
@@ -195,6 +184,7 @@
     padding: 0% 3% 0% 0%;
     border-radius: 20px;
   }
+
   }
 
 /* Main */
