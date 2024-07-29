@@ -557,22 +557,23 @@ footer a:hover {
 
 .container-box .moon {
 	position: absolute;
-	display: none;
+	display: block;
 	animation: keyframes-fill .5s;
 }
 
 .container-box .sun {
 	position: absolute;
 	animation: keyframes-fill .5s;
+	display: none;
 }
 
 /* ------ On check event ------ */
 .container-box input:checked~.sun {
-	display: none;
+	display: block;
 }
 
 .container-box input:checked~.moon {
-	display: block;
+	display: none;
 }
 
 /* ------ Hide the default checkbox ------ */
@@ -624,14 +625,16 @@ footer a:hover {
 	--inform: #0f0f0f;
 	--lastInform:#606060;
 	--hv-organizer:hsl(199, 69%, 91%);
+	--bg-select: #85d0ff;
 
 }
 
 .dark-mode:root {
+	--bg-select: #7a7a7a;
 	--main-bg: #111111;
 	--title-1: #0066a1;
 	--title-2: #85d0ff;
-	--title-3: rgb(157, 229, 255);
+	--title-3: #acdfff;
 	--links-principal: #fff;
 	--text: #f2f6fc;
 	--text-gray: #fff;
@@ -639,7 +642,7 @@ footer a:hover {
 	--section-especial-bg: #000000;
 	--section-line: #76c5f3;
 	--section-shadow: #000;
-	--links-color: #b0b0b0;
+	--links-color: ;
 	--nav-footer-bg: #031926;
 	--nav-footer-bg-menu: #020b11;
 	--scroll-bg: #151414;

@@ -17,7 +17,7 @@
             <form id="forms" method="POST" action="../../actions/admin/loginAdmin.php">
                 <input type="emqil" name="email" placeholder="E-mail" required>
                 <input type="password" name="senha" placeholder="Senha" required>
-                <button id="submit" type="submit"><a href="../dashboard/dashboard.php">Entrar</a></button>
+                <button id="submit" type="submit"><a>Entrar</a></button>
             </form>
 
 

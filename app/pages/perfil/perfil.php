@@ -62,9 +62,9 @@ require_once("../base/cabecalho.php");
                                 <button type="submit" class="btn-save"><i class="fa-solid fa-pen-to-square"></i>Salvar Alterações</button>
                             </div>
                         </form>
-                        <div class="profile-buttons">
+                        <!-- <div class="profile-buttons">
                             <button class="btn-password"><i class="fas fa-key"></i> Alterar Senha</button>
-                        </div>
+                        </div> -->
                     </div>
                     <!-- --- dados --- -->
                     <div class="profile-tipo">

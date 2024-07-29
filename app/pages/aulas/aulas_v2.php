@@ -11,6 +11,10 @@ if (!isset($_SESSION['login'])) {
 require_once("../base/cabecalho.php");
 ?>
 
+<?php
+require_once("../base/popups/popup.php");
+?>
+
 <html lang="pt-br">
 <link rel="stylesheet" href="../../../public/css/aulas-v2.css" />
 <link rel="stylesheet" href="../../../public/css/aulas-portrait.css" media="screen and (orientation: portrait)">

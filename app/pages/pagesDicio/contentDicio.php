@@ -28,9 +28,17 @@ if (!isset($_SESSION['login'])) {
     <link rel="stylesheet" href="../../../public/css/base.css">
     <link rel="stylesheet" href="../../../public/css/contentDicio.css">
     <script src="../../../public/js/base.js" type="text/javascript" defer></script>
+
 </head>
 
 <body>
+    <script>
+        window.addEventListener('load', ()=>{
+            if (localStorage.getItem('dark-mode') === 'anabled') {
+                html.classList.add('dark-mode');
+            }
+        })
+    </script>
 
     <div vw class="enabled">
         <div vw-access-button class="active"></div>
@@ -53,7 +61,8 @@ if (!isset($_SESSION['login'])) {
             <div id="menu-top" class="menu-right">
                 <?php if (isset($_SESSION['login'])): ?>
                 <div id="search-box" class="search-box">
-                    <input id="search" type="text" class="search-text" placeholder="Pesquisar...">
+                    <select name="" id="search" class="search-text"></select>
+                    <!-- <input id="search" type="text" class="search-text" placeholder="Pesquisar..."> -->
                     <a class="search-btn" href="#">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </a>
@@ -72,6 +81,9 @@ if (!isset($_SESSION['login'])) {
                         </path>
                     </svg>
                 </label>
+                <!-- script -->
+                <script src="../../../public/js/dark-mode.js" type="text/javascript"></script>
+
                 <?php if (!isset($_SESSION['login'])): ?>
                 <div class="login">
                 <a href="../usuario/login.php">Entrar</a>
@@ -114,46 +126,6 @@ if (!isset($_SESSION['login'])) {
             </div>
         </div>
     </header>
-
-<script>
-    // save dark mode in database
-    const html = document.querySelector('html');
-    const checkbox = document.getElementById('checkbox');
-
-    
-    window.addEventListener('load', ()=>{
-        
-        checkbox.checked = <?=$darkmode?>;
-
-        checkbox.checked ? html.classList.remove('dark-mode') : html.classList.add('dark-mode');
-    })
-
-    checkbox.addEventListener('click', function () {
-
-        checkbox.checked ? html.classList.remove('dark-mode') : html.classList.add('dark-mode');
-
-        var objectRequest = new XMLHttpRequest();
-
-        objectRequest.open("POST", "../../actions/darkmode/darkmode.php", true)
-
-        objectRequest.setRequestHeader("Content-Type", "aplication/json")
-
-        objectRequest.onreadystatechange = function() {
-            if (objectRequest.readyState === 4 && objectRequest.status === 200) {
-                console.log('Status of request: ',objectRequest.responseText); // resposta do servidor se houver
-            }
-        }
-
-        var status = checkbox.checked ? 'true' : 'false';
-
-        //  passando o status do checkbox e o email do usuário
-        var arr = {sts: `${status}`, email: `<?=$usuarioLogado['email']?>`}
-
-        var arr_str = JSON.stringify(arr)
-
-        objectRequest.send(arr_str)
-    })
-</script>
 
 <main>
 

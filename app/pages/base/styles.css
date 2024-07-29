@@ -1,0 +1,34 @@
+body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+.popup {
+    position: fixed;
+    width: 300px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none;
+    z-index: 1000;
+    cursor: grab;
+}
+
+.popup-header {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.close-popup {
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.popup-content {
+    margin-top: 10px;
+}

@@ -41,18 +41,17 @@ if (!isset($_SESSION['login-admin'])) {
             <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
-            <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-            </li>
+            <!-- <li class="nav-item">
+            <a class="nav-link" href="#"></a>
+            </li> -->
             <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown
+                Opções
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><a class="dropdown-item" href="#">Home</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li><a class="dropdown-item" href="../../actions/admin/logoutAdmin.php">Sair</a></li>
             </ul>
             </li>
         </ul>
@@ -62,7 +61,7 @@ if (!isset($_SESSION['login-admin'])) {
 
     <main>
         <div class="functions">
-            <div class="card" style="width: 18rem;">
+            <div class="card" style="width: 18rem; height: 22rem">
                 <img style="height: 10rem;" src="../../../public/images/o-que-e-banco-de-questoes.png" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Questões</h5>
@@ -74,7 +73,7 @@ if (!isset($_SESSION['login-admin'])) {
                 </div>
             </div>
             
-            <div class="card" style="width: 18rem;">
+            <div class="card" style="width: 18rem; height: 22rem">
                 <img style="height: 10rem;" src="../../../public/images/faq.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">FAQ</h5>
@@ -84,11 +83,11 @@ if (!isset($_SESSION['login-admin'])) {
                         <a href='../../actions/questoes/excluirQuestao.php?id=<?=$questao['id_questao']?>' id='del'> <i class='fa-solid fa-trash'></i> </a>
                         <a href='../../actions/questoes/excluirQuestao.php?id=<?=$questao['id_questao']?>' id='add'> <i class="fa-solid fa-plus"></i> </a>
                     </div>
-                    <a href="../faq/faq.php" class="btn btn-primary">Listar</a>
+                    <!-- <a href="../faq/faq.php" class="btn btn-primary">Listar</a> -->
                 </div>
             </div>
             
-            <div class="card" style="width: 18rem;">
+            <div class="card" style="width: 18rem; height: 22rem">
                 <img style="height: 10rem;" src="../../../public/images/libras-maos.png" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Dicionário</h5>
@@ -98,21 +97,21 @@ if (!isset($_SESSION['login-admin'])) {
                         <a href='../../pages/dicionario/removeContentForm.php?>' id='del'> <i class='fa-solid fa-trash'></i> </a>
                         <a href='../../pages/dicionario/addContentForm.php?>' id='add'> <i class="fa-solid fa-plus"></i> </a>
                     </div>
-                    <a href="../questoes/questoes.php" class="btn btn-primary">Listar</a>
+                    <!-- <a href="../questoes/questoes.php" class="btn btn-primary">Listar</a> -->
                 </div>
             </div>
             
-            <div class="card" style="width: 18rem;">
+            <div class="card" style="width: 18rem; height: 22rem">
                 <img style="height: 10rem;" src="../../../public/images/aulas.webp" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Aulas</h5>
-                    <p class="card-text">Edit, Delete and Insert datas.</p>
+                    <p class="card-text">Futuramente...</p>
                     <div class='options'>
                         <a href='../../pages/questoes/editarQuestaoForm.php?id=<?=$questao['id_questao']?>' id='edit'> <i class='fa-solid fa-pen-to-square'></i> </a>
                         <a href='../../actions/questoes/excluirQuestao.php?id=<?=$questao['id_questao']?>' id='del'> <i class='fa-solid fa-trash'></i> </a>
                         <a href='../../actions/questoes/excluirQuestao.php?id=<?=$questao['id_questao']?>' id='add'> <i class="fa-solid fa-plus"></i> </a>
                     </div>
-                    <a href="../aulas/aulas.php" class="btn btn-primary">Listar</a>
+                    <!-- <a href="../aulas/aulas.php" class="btn btn-primary">Listar</a> -->
                 </div>
             </div> 
         </div>

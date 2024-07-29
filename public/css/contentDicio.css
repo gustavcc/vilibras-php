@@ -1,6 +1,8 @@
 body {
   flex: 1 1 100vw;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -9,12 +11,13 @@ body {
 
 main {
   width: 100%;
-  padding: 15px;
   background-size: 100%;
   background-attachment: fixed;
   display: flex;
   align-items: center;
   flex-direction: column;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .Dictionary-Content {
@@ -34,7 +37,6 @@ main {
   transition: all 1s;
   box-sizing: border-box;
   background: var(--section-especial-bg);
-  color: var(--text);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -47,12 +49,12 @@ main {
   background-image: linear-gradient(to right bottom, var(--title-1), var(--title-2), var(--title-3));
   background-clip: text;
   -webkit-background-clip: text;
-   -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 
 .Descrição {
   margin-top: 1px;
-  /* color: #a49c9c; */
+  color: var(--text);
   font-size: 13px;
   align-self: center;
 }
@@ -62,6 +64,10 @@ iframe {
   width: 280px;
   height: 200px;
   border-radius: 10px;
+}
+
+.select {
+  background: var(--bg-select);
 }
 
 /* Main */
