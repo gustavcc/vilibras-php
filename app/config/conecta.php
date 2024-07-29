@@ -1,7 +1,7 @@
 <?php
 
 define('user','root');
-define('password','');
+define('password','admin');
 define('host','localhost');
 define('db','vilibras');
 
