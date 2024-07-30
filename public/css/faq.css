@@ -233,7 +233,11 @@ fieldset {
     flex-direction: column;
     justify-content: space-around;
     padding: 3px 10px 0 10px;
-    resize: none;
+    /* 200px */
+}
+
+#confirmEdit{
+    min-height: 230px;
 }
 
 .lastInform{
@@ -248,16 +252,27 @@ fieldset {
     color: var(--inform);
 }
 
-.inputEdit{
+#textAreaTitulo{
+    margin-top: 5px;
+}
+
+#textAreaDescricao{
+    margin: 5px 0 17px;
+}
+
+#InformDescricao, #InformTitulo{
+    margin-top: 10px;
+}
+
+.textAreaEdit{
     background-color: var(--main-bg);
     border: none;
     outline: 0;
     color: var(--inform);
     border-bottom: solid 1px #aaaaaa;
     width: 300px;
-    height: auto;
-   
-
+    resize: none;
+    margin: 2px 0 5px 0;
 }
 
 @media screen and (max-width: 1300px) {

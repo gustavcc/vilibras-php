@@ -34,7 +34,6 @@ require_once("../base/cabecalho.php");
 <!-- Botão que abre o pop-up -->
 <button class="btn" onclick="document.getElementById('popup').style.display='block'; this.style.display = 'none';">
     
-    
     <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
     width="40pt" height="40pt" viewBox=" 0 0 512 505"
     preserveAspectRatio="xMidYMid meet">
@@ -63,8 +62,7 @@ require_once("../base/cabecalho.php");
 <!-- O pop-up -->
 <div id="popup" class="popup">
 
-
-            <form action="../../actions/faq/addPergunta.php" class="receivers" method = "get">
+            <form action="../../actions/faq/responder.php" class="receivers" method = "get">
 
             <fieldset>
 
@@ -73,7 +71,7 @@ require_once("../base/cabecalho.php");
 
             <span class="close" onclick="document.getElementById('popup').style.display='none'; document.querySelector('.btn').style.display = 'block';">×</span>
 
-            <h2>Insira uma pergunta</h2><br><br>
+            <h2>Insira uma resposta</h2><br><br>
     
             <div id = "Title-Question" >
                 <label for="Title">Titulo: </label>
