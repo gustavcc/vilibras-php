@@ -83,7 +83,7 @@ if (!isset($_SESSION['login-admin'])) {
                         <a href='../../actions/questoes/excluirQuestao.php?id=<?=$questao['id_questao']?>' id='del'> <i class='fa-solid fa-trash'></i> </a>
                         <a href='../../actions/questoes/excluirQuestao.php?id=<?=$questao['id_questao']?>' id='add'> <i class="fa-solid fa-plus"></i> </a>
                     </div>
-                    <!-- <a href="../faq/faq.php" class="btn btn-primary">Listar</a> -->
+                    <a href="../faq/listFaq.php" class="btn btn-primary">Listar</a>
                 </div>
             </div>
             
