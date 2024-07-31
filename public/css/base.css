@@ -422,7 +422,7 @@ footer {
 	flex: 1 1 100vw;
 	height: 300px;
 	display: flex;
-	color: var(--links-color);
+	color: #fff;
 	justify-content: space-around;
 	flex-wrap: wrap;
 	padding: 1rem 0;
@@ -454,7 +454,7 @@ footer p {
 }
 
 footer a {
-	color: var(--links-color);
+	color: #fff;
 	cursor: pointer;
 }
 
