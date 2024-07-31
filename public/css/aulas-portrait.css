@@ -58,6 +58,12 @@ h1::before{
     display: none;
 }
 
+/* teste dps mexsr */
+
+script{
+  opacity: 0;
+}
+
 /* 
 #videos{
     display: flex;

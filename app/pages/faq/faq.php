@@ -62,7 +62,7 @@ require_once("../base/cabecalho.php");
 
 <!-- O pop-up -->
 
-
+            <form action="../../actions/faq/responder.php" class="receivers" method = "get">
             <form action="../../actions/faq/addPergunta.php" class="receivers" method = "get">
 
             <div class="fundo">
@@ -79,6 +79,7 @@ require_once("../base/cabecalho.php");
             </div>
                 
                 <textarea type="text" name="Title"  class="textAreaEdit" placeholder="O que é o VILIBRAS?" rows="1" required></textarea>
+
             </div>
 
             <div> 

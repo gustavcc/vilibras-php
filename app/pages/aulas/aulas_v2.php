@@ -11,10 +11,6 @@ if (!isset($_SESSION['login'])) {
 require_once("../base/cabecalho.php");
 ?>
 
-<?php
-require_once("../base/popups/popup.php");
-?>
-
 <html lang="pt-br">
 <link rel="stylesheet" href="../../../public/css/aulas-v2.css" />
 <link rel="stylesheet" href="../../../public/css/aulas-portrait.css" media="screen and (orientation: portrait)">
@@ -153,6 +149,12 @@ require_once("../base/popups/popup.php");
 			  <img src="../../../public/images/69603047_uyfydu4.jpg" alt="">
 			</div>
 		</section>
+
+		<div class="footer-site">
+			<?php
+				require_once("../base/footer.php");
+			?>
+		</div>
 			<script>
 			TweenMax.staggerFrom(
 				".titles > div",
@@ -266,6 +268,11 @@ require_once("../base/popups/popup.php");
 			setTimeout(() => {
             document.getElementById('target-section').style.display = 'block';
         }, 9000);
+		var footer = document.body.lastElementChild;
+
+		setTimeout(() => {
+			footer.style.display= 'block';
+        }, 9000);
 
 		document.addEventListener("DOMContentLoaded", function() {
   var scrBtn = document.getElementById("scr-btn");
@@ -290,5 +297,4 @@ require_once("../base/popups/popup.php");
 		</script>
 	</body>
 <?php
-require_once("../base/footer.php");
 ?>
