@@ -114,7 +114,8 @@ titulo TEXT NOT NULL,
 descricao TEXT NOT NULL,
 data_dia DATE NOT NULL,
 resposta TEXT,
-id_usuario INT);
+id_usuario INT,
+FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario));
 
 CREATE TABLE material(
 id_material INT PRIMARY KEY AUTO_INCREMENT,

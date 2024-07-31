@@ -14,7 +14,6 @@ if (isset($_GET['Title']) && isset($_GET['Content-Question'])) {
         $data = date('Y/m/d');
         
         conecta();
-        global $mysqli;
 
         $query = "INSERT INTO feedback (titulo, descricao, id_usuario,data_dia) VALUES (?, ?, ?,?)";
         $stmt = $mysqli->prepare($query);

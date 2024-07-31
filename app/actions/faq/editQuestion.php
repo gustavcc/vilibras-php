@@ -8,8 +8,6 @@ $description_alternation = $_GET['descricao'];
 
 conecta();
 
-global $mysqli;
-
 $query_verify = 'SELECT * FROM feedback WHERE id_feedback = ?';
 $stmt_verify =  $mysqli->prepare($query_verify);
 $stmt_verify->bind_param('s',$id_feedback);

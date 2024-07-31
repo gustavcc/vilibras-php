@@ -4,8 +4,6 @@ require_once("../../config/conecta.php");
 // Conecta ao banco de dados
 conecta();
 
-global $mysqli;
-
 if (isset($_GET['categoria'])) {
     $categoria = $_GET['categoria'];
     $query = "SELECT * FROM $categoria ORDER BY titulo";

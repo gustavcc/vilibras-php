@@ -8,7 +8,6 @@ if (isset($_GET["Id-Video"], $_GET["Categoria"])) {
 
     if (!empty($categoria) && !empty($idVideo)) {
         conecta();
-        global $mysqli;
 
         // Prepara a consulta para verificar a existência do ID
         $query = "SELECT id_elemento FROM $categoria WHERE id_elemento = ?";

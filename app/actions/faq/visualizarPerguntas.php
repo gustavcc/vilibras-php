@@ -8,8 +8,6 @@ require_once("../../config/conecta.php");
 
 conecta();
 
-global $mysqli;
-
 $query = "SELECT * FROM feedback";
 
 $resultado = $mysqli->query($query);

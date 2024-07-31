@@ -32,7 +32,7 @@ require_once("../base/cabecalho.php");
 <main>
 
 <!-- Botão que abre o pop-up -->
-<button class="btn" onclick="document.getElementById('popup').style.display='block'; this.style.display = 'none';">
+<button class="btn">
     
     
     <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
@@ -61,48 +61,46 @@ require_once("../base/cabecalho.php");
    </svg></button>
 
 <!-- O pop-up -->
-<div id="popup" class="popup">
 
 
             <form action="../../actions/faq/addPergunta.php" class="receivers" method = "get">
 
-            <fieldset>
+            <div class="fundo">
 
+            <div class="confirm">
 
-            <div class="popup-content">
+            <div>
 
-            <span class="close" onclick="document.getElementById('popup').style.display='none'; document.querySelector('.btn').style.display = 'block';">×</span>
+            <div class="teste">
 
-            <h2>Insira uma pergunta</h2><br><br>
-    
-            <div id = "Title-Question" >
-                <label for="Title">Titulo: </label>
-                <input type="text" name="Title" placeholder="O que é o VILIBRAS?" required>
+                <h2 for="Title" class="inform">Titulo: </h2>
+                <span class="close">×</span>
+
             </div>
-            
-            <div id = "divTextarea"> 
-                <label for="Content-Question" id = "Label-Question">Descrição: </label>     
-                <textarea name="Content-Question" id="Content-Question" cols="20" rows="2" 
+                
+                <textarea type="text" name="Title"  class="textAreaEdit" placeholder="O que é o VILIBRAS?" rows="1" required></textarea>
+            </div>
+
+            <div> 
+                <h2 for="Content-Question" class="inform" id="">Descrição: </h2>     
+                <textarea name="Content-Question" class="textAreaEdit" cols="20" rows="1" 
                 placeholder="Qual é o foco principal?"
                 required></textarea>
             </div>
 
-            <div id = "div-buttons">
+            <div class="organizer">
 
-                <button type="reset" id = "button-reset">Limpar</button>
-
-                <button type="submit" id = "button-submit">Enviar</button>
-
-            </div>
+                <button type="reset" class = "buttonCancel">Limpar</button>
+                <button type="submit" class = "buttonConfirm">Enviar</button>
 
             </div>
 
+            </div>
 
-            </fieldset>
+
+            </div>
 
             </form>
-    </div>
-
 
 </main>
 
@@ -112,3 +110,5 @@ require_once("../base/cabecalho.php");
 require_once("../../actions/faq/visualizarPerguntas.php");
 require_once("../base/footer.php");
 ?>
+
+<script src="../../../public/js/faq.js" type="text/javascript" defer></script>

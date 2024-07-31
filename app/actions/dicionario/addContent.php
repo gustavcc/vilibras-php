@@ -13,8 +13,6 @@ if (isset($_GET['Id-Video']) && isset($_GET['Title-Video']) && isset($_GET['Src'
 
     if (!empty($titulo) && !empty($src) && !empty($descricao) && !empty($categoria) && !empty($id)){
 
-    global $mysqli;
-
     conecta();
 
     $query = "SELECT id_elemento FROM $categoria WHERE id_elemento = ?";
