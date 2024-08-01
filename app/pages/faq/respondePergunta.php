@@ -342,49 +342,49 @@
 </head>
 <body>
 
-<div id="popup" class="popup">
+    <div id="popup" class="popup">
 
-<form action="../../actions/faq/responder.php" class="receivers" method = "get">
+        <form action="../../actions/faq/responder.php" class="receivers" method = "get">
 
-<fieldset>
-
-
-<div class="popup-content">
-
-<span class="close" onclick="document.getElementById('popup').style.display='none'; document.querySelector('.btn').style.display = 'block';">×</span>
-
-<h2>Insira uma resposta</h2><br><br>
-
-<input type="text">
-<!--     
-<div id = "Title-Question" >
-    <label for="Resposta">Resposta: </label>
-    <input type="text" name="Resposta" placeholder="..." required>
-</div> -->
-
-<input type="hidden" name="id_pergunta">
-
-<div id = "divTextarea"> 
-    <label for="Resposta" id = "Label-Question">Resposta: </label>     
-    <textarea name="Resposta" id="Content-Question" cols="20" rows="2" 
-    placeholder="..."
-    required></textarea>
-</div>
-
-<div id = "div-buttons">
-
-    <button type="reset" id = "button-reset">Limpar</button>
-
-    <button type="submit" id = "button-submit">Enviar</button>
-
-</div>
-
-</div>
+            <fieldset>
 
 
-</fieldset>
+            <div class="popup-content">
 
-</form>
+            <span class="close" onclick="document.getElementById('popup').style.display='none'; document.querySelector('.btn').style.display = 'block';">×</span>
+
+            <h2>Insira uma resposta</h2><br><br>
+
+            <input type="text">
+            <!--     
+            <div id = "Title-Question" >
+                <label for="Resposta">Resposta: </label>
+                <input type="text" name="Resposta" placeholder="..." required>
+            </div> -->
+
+            <input type="hidden" name="id_pergunta">
+
+            <div id = "divTextarea"> 
+                <label for="Resposta" id = "Label-Question">Resposta: </label>     
+                <textarea name="Resposta" id="Content-Question" cols="20" rows="2" 
+                placeholder="..."
+                required></textarea>
+            </div>
+
+            <div id = "div-buttons">
+
+                <button type="reset" id = "button-reset">Limpar</button>
+
+                <button type="submit" id = "button-submit">Enviar</button>
+
+            </div>
+
+            </div>
+
+
+        </fieldset>
+
+    </form>
 
 </div>
 </body>
