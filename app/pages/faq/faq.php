@@ -62,7 +62,7 @@ require_once("../base/cabecalho.php");
 <!-- O pop-up -->
 <div id="popup" class="popup">
 
-            <form action="../../actions/faq/responder.php" class="receivers" method = "get">
+            <form action="../../actions/faq/addPergunta.php" class="receivers" method = "get">
 
             <fieldset>
 
