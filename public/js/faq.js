@@ -3,6 +3,7 @@ let popup = document.querySelector(".receivers");
 let buttonFechar = document.querySelector(".close");
 let body = document.querySelector('body');
 const criarBottom = document.createElement('div');
+let textAreaEdit = document.querySelectorAll(".textAreaEdit");
 
 var scrollPosition = 0;
 
@@ -22,6 +23,10 @@ button.addEventListener('click', function () {
 buttonFechar.addEventListener('click', function () {
     popup.style.display = 'none';
     button.style.display = 'block';
+    
+    textAreaEdit.forEach(function(textArea) {
+        textArea.value = '';
+    });
 
     body.removeChild(criarBottom);
 

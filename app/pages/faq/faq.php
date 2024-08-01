@@ -62,7 +62,6 @@ require_once("../base/cabecalho.php");
 
 <!-- O pop-up -->
 
-            <form action="../../actions/faq/responder.php" class="receivers" method = "get">
             <form action="../../actions/faq/addPergunta.php" class="receivers" method = "get">
 
             <div class="fundo">
@@ -70,21 +69,17 @@ require_once("../base/cabecalho.php");
             <div class="confirm">
 
             <div>
-
-            <div class="teste">
-
-                <h2 for="Title" class="inform">Titulo: </h2>
-                <span class="close">×</span>
-
-            </div>
+                <div class="teste">
+                    <h2 for="Title" class="inform">Titulo: </h2>
+                    <span class="close">×</span>
+                </div>
                 
-                <textarea type="text" name="Title"  class="textAreaEdit" placeholder="O que é o VILIBRAS?" rows="1" required></textarea>
-
+                <textarea type="text" name="Title"  class="textAreaEdit" placeholder="O que é o VILIBRAS?" rows="2" required></textarea>
             </div>
 
             <div> 
-                <h2 for="Content-Question" class="inform" id="">Descrição: </h2>     
-                <textarea name="Content-Question" class="textAreaEdit" cols="20" rows="1" 
+                <h2 for="Content-Question" class="inform">Descrição: </h2>     
+                <textarea name="Content-Question" class="textAreaEdit" cols="20" rows="2" 
                 placeholder="Qual é o foco principal?"
                 required></textarea>
             </div>
