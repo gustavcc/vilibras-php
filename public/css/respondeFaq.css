@@ -1,0 +1,268 @@
+* {
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#Content-Question {
+    min-height: 50px;
+}
+
+.return {
+    font-size: 20pt;
+    color: #00b7ff;
+    position: fixed;
+    cursor: pointer;
+    top: 40px;
+    left: 40px;
+}
+
+.answer-content {
+    margin-top: 5px;
+    text-indent: 30px;
+}
+
+/* Estilo para o botão */
+.btn {
+    cursor: pointer;
+    background-color: initial;
+    border-radius: 100%;
+    border: none;
+}
+
+.popup {
+    display: flex;
+    width: 100%;
+    height: auto; 
+    background-color: #111111;
+    padding-bottom: 20px;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilo para o conteúdo do pop-up */
+.popup-content {
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+fieldset {
+    padding: 15px;
+    border-radius: 20px;
+    border: solid var(--title-2) 2px;
+    color: #fff;
+}
+
+.receivers {
+    display: flex;
+    height: 100px;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--popup);
+    padding: 20px 20px 220px 20px;
+    border-radius: 10px;
+}
+
+.receivers input, .receivers textarea, .receivers button {
+    border: solid 0.9px;
+    border-radius: 6px;
+    background-color: #efece9;
+    height: 30px;
+    font-size: 14px;
+    padding: 3px;
+    margin: 3px;
+    outline: none;
+}
+
+#divTextarea {
+    display: flex;
+    margin-top: 10px;
+}
+
+#divTextarea label {
+    align-items: center;
+}
+
+#div-buttons {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-top: 10px;
+}
+
+/* Estilo para o botão de fechar */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.order {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.order button {
+    line-height: 0.4;
+    background-color: transparent;
+    border: none;
+    align-self: self-start;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--text);
+}
+
+.options {
+    display: none;
+    position: absolute;
+    background-color: #111111;
+    z-index: 9999;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    flex-direction: column;
+    gap: 5px;
+    top: 25px;
+    right: 0;
+    width: max-content;
+    width: 100px;
+    height: 60px;
+    align-items: start;
+    justify-content: center;
+}
+
+.options button {
+    /* background-color: #444; */
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 90px;
+    height: 30px;
+    gap: 10px;
+}
+
+.options button:hover {
+    background-color: #666;
+}
+
+.fundo{
+    position: fixed;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(34, 32, 32, 0.1);
+    z-index: 999999;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+.organizer{
+    align-self: end;
+}
+
+.organizer button{
+    background-color: transparent;
+    border: none;
+    border-radius: 15px;
+    margin-left: 13px;
+    padding: 8px;
+    color: #3ea6ff;
+    font-weight: 700;
+}
+
+.organizer button:hover{
+    background-color: var(--hv-organizer);
+    transition: 0.3s;
+}
+
+.confirm{
+    background-color: var(--main-bg);
+    min-height: 180px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 3px 10px 0 10px;
+    /* 200px */
+}
+
+#confirmEdit{
+    min-height: 230px;
+}
+
+.lastInform{
+    color: var(--lastInform);
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.inform{
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--inform);
+}
+
+#textAreaTitulo{
+    margin-top: 5px;
+}
+
+#textAreaDescricao{
+    margin: 5px 0 17px;
+}
+
+#InformDescricao, #InformTitulo{
+    margin-top: 10px;
+}
+
+.textAreaEdit{
+    background-color: var(--main-bg);
+    border: none;
+    outline: 0;
+    color: var(--inform);
+    border-bottom: solid 1px #aaaaaa;
+    width: 300px;
+    resize: none;
+    margin: 2px 0 5px 0;
+}

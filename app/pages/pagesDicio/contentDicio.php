@@ -1,5 +1,4 @@
 <?php
-require_once('../../actions/darkmode/darkmode.php');
 require_once("../../actions/usuario/identifyUsuarioLogado.php");
 
 // se não tiver logado, vai para o login

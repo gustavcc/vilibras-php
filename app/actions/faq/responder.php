@@ -3,36 +3,50 @@ require_once("../../config/conecta.php");
 
 session_start();
 
-if (isset($_SESSION['login']) && isset($_SESSION['usuario'])) {
-    $id_usuario = $_SESSION['usuario'];
-} 
+$msg;
 
-if (isset($_GET['Resposta']) && isset($_GET['Content-Question'])) {
-    if (!empty(trim($_GET['Title'])) && !empty(trim($_GET['Content-Question']))) {
-        $resposta = trim($_GET['Title']);
-        $descricao = trim($_GET['Content-Question']);
-        $data = date('Y/m/d');
+if (isset($_GET['Resposta']) && isset($_GET['id_pergunta'])) {
+
+    if (!empty(trim($_GET['Resposta']))) {
+
+        $resposta = trim($_GET['Resposta']);
+        $id_pergunta = trim($_GET['id_pergunta']);
         
         conecta();
-        global $mysqli;
 
-        $query = "INSERT INTO feedback (resposta) VALUES (?)";
-        $stmt = $mysqli->prepare($query);
+        $query_verify = 'SELECT * FROM feedback WHERE id_feedback = ?';
+        $stmt_verify =  $mysqli->prepare($query_verify);
+        $stmt_verify->bind_param('i',$id_pergunta);
+        $stmt_verify->execute();
+        $resultado = $stmt_verify->get_result();
 
-        if ($stmt == false) {
-            die("Erro na preparação da consulta que adicionaria a pergunta.");
-        }
+        $row = $resultado->fetch_assoc();
 
-        $stmt->bind_param('ssis', $titulo, $descricao, $id_usuario,$data);
-
-        if ($stmt->execute()) {
-            if ($stmt->affected_rows > 0) {
-                header("Location: ../../pages/faq/faq.php");
-            } else {
-                echo "Não foi possível adicionar a pergunta.";
-            }
+        if ($row['resposta']) {
+            // die('Pergunta já possui resposta!');
+            $msg = 'Pergunta já possui resposta!';
+            header("Location: ../../pages/faq/listFaq.php?msg=$msg");
         } else {
-            echo "Erro ao executar a consulta: " . $stmt->error;
+
+            $query = "UPDATE feedback SET resposta = ? WHERE id_feedback = (?)";
+            $stmt = $mysqli->prepare($query);
+    
+            if ($stmt == false) {
+                die("Erro na preparação da consulta que adicionaria a pergunta.");
+            }
+    
+            $stmt->bind_param('si', $resposta, $id_pergunta);
+    
+            if ($stmt->execute()) {
+                if ($stmt->affected_rows > 0) {
+                    $msg = 'Resposta inserida!';
+                    header("Location: ../../pages/faq/listFaq.php?msg=$msg");
+                } else {
+                    echo "Não foi possível adicionar a resposta.";
+                }
+            } else {
+                echo "Erro ao executar a consulta: " . $stmt->error;
+            }
         }
 
         $stmt->close();
