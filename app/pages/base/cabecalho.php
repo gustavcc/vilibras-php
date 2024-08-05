@@ -1,5 +1,5 @@
 <?php
-require_once('../../actions/darkmode/darkmode.php');
+// require_once('../../actions/darkmode/darkmode.php');
 require_once("../../actions/usuario/identifyUsuarioLogado.php");
 ?>
 
