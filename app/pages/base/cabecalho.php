@@ -102,7 +102,7 @@ require_once("../../actions/usuario/identifyUsuarioLogado.php");
                 <button id="closeMenu"><i class="fa-solid fa-xmark"></i></button>
                 <a class="b-link" href="../dashboard/dashboard.php">Home</a> <!--aparecer se for autenticado-->
                 <a class="b-link" href="../questoes/questoes.php">Questões</a>
-                <a class="b-link" href="../aulas/aulas_v2.php">Aulas</a>
+                <a class="b-link" href="../aulas/aula.php">Aulas</a>
                 <a class="b-link" href="../dicionario/dicionario.php">Dicionário</a>
                 <a class="b-link" href="../faq/faq.php">FAQ</a>
             </div>
