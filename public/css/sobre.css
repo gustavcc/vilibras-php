@@ -155,7 +155,9 @@ color: #000000;
 
 section img{
     width: 200px;
+    height: 200px;
 }
+
 
 .scroll-btn {
     display: flex;
@@ -205,7 +207,7 @@ section{
 #icon1, #icon3, figcaption{
     float: right;
 }
-#icon2{
+#icon2, #icon4{
     float: left;
 }
 section p{

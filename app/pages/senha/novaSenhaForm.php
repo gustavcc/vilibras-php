@@ -7,9 +7,6 @@
   <title>VILIBRAS</title>
   <link rel="stylesheet" href="../../../public/css/novaSenhaForm.css">
   <script src="https://kit.fontawesome.com/2bb7425346.js" crossorigin="anonymous"></script>
-  <style>
-    /* estilo CSS aqui */
-  </style>
 </head>
 <body>
   <header>

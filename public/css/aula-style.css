@@ -8,10 +8,11 @@
     --light-100: #c0c0c0;
 }
 
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-color: var(--dark-900);
+    background: var(--dark-900);
     /* background: linear-gradient(135deg, rgba(19, 128, 217, 0.132), rgba(19, 128, 217, 0.777)); */
     color: #FFFFFF;
     transition: background-color 0.3s, color 0.3s;
@@ -35,19 +36,45 @@ header {
     border-radius: 10px;
     margin: 10px;
     transition: background-color 0.3s;
+    z-index: 15;
+    position: relative;
+
 }
 
-.plastic-objets-vector{
+.element1{
     position: absolute;
     z-index: 10;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    opacity: 0.3;
-    filter: grayscale(0.6);
-    z-index: 1;
+    width: 50vw;
+    left: 65em;
+    bottom: 30%;
 }
 
+.element2{
+    position: absolute;
+    z-index: 10;
+    width: 50vw;
+    right: 50em;
+    top: 65%;
+}
+
+.objects-3d{
+    display: none;
+}
+
+
+#user-button a{
+    color: #f9f9f9;
+    text-decoration: none;
+}
+
+
+#text-inntro span{
+    background-image: linear-gradient(to right,#0073E6, #005bb5);
+    background-clip: text; 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    color: transparent;
+}
 
 .light-theme header {
     background-color:white;
@@ -217,12 +244,11 @@ aside.hidden {
 .search-results {
     position: absolute;
     background-color: var(--dark-500);
-    border: 1px solid #ddd;
-    width: calc(50vw - 2px); /* Ajuste para corresponder à largura do input */
+    width: calc(50vw - 2px);
     max-height: 200px;
     overflow-y: auto;
     z-index: 1000;
-    color: #fff; /* Ajustar a cor do texto */
+    color: #fff;
 }
 
 .search-results .result-item {
@@ -288,13 +314,31 @@ aside nav ul .sign-in-button {
     background-color: #0073E6;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 10px 10px;
     cursor: pointer;
     margin-top: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 5px;
+}
+
+.btnsNav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btnsNav a{
+    text-decoration: none;
+    color: #f9f9f9;
+}
+
+.btnsNav button:hover{
+    background-color: #005bb5;
+    padding: 10px 15px;
+    transition: 0.7s;
 }
 
 .light-theme aside nav ul .sign-in-button {
@@ -334,13 +378,20 @@ main {
 
 .light-theme .hero{
     background-color: var(--light-900);
-    border: 1px solid lightgray;
     color: #000000;
 }
 
 .light-theme main {
     background-color: var(--light-900);
     color: #000000;
+}
+
+.light-theme p#text-intro{
+    background-image: linear-gradient(to right,rgb(202, 201, 201), rgb(145, 145, 145));
+    background-clip: text; 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    color: transparent;
 }
 
 iframe{
@@ -363,9 +414,9 @@ iframe{
 
 h2{
     position: absolute;
-    top: 10%;
+    top: 90%;
     left: 15%;
-    
+    font-weight: 200;
 }
 
 h2::after{
@@ -382,7 +433,7 @@ h2::after{
 
 h3{
     position: absolute;
-    top: 95%;
+    top: 100%;
     left: 15%;
 }
 
@@ -407,8 +458,15 @@ h3{
 
 p#text-intro{
     font-family: system-ui;
-    width: 300px;
+    font-weight: 700;
+    font-size: 2vw;
+    width: 450px;
     text-align: right;
+    background-image: linear-gradient(to right,gray, lightgray);
+  background-clip: text; 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  color: transparent;
 }
 
 .main-intro{
@@ -431,6 +489,7 @@ p#text-intro{
 }
 
 
+
 .wrapper {
     display: grid;
     grid-gap: 10px;
@@ -438,6 +497,11 @@ p#text-intro{
     grid-template-rows: repeat(3, auto);
     color: #4444445e;
 }
+
+/* strong{
+    position: relative;
+    right: 5%;
+} */
 
 .box {
     background: linear-gradient(
@@ -456,6 +520,12 @@ p#text-intro{
       width: 100%;
 }
 
+
+.light-theme .box{
+    background: none;
+    box-shadow: none;
+    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.2));
+}
 
 .a {
     grid-column: span 2;
@@ -499,103 +569,3 @@ p#text-intro{
 }
 
 
-@media (max-width: 768px) {
-    aside {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        z-index: 1000;
-    }
-    
-    main {
-        margin-left: 0;
-        padding: 10px;
-    }
-}
-
-@media (max-width: 480px) {
-    body{
-        min-height: 100vw;
-        background: var(--light-900);
-    }
-    header {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-  
-    .search-bar {
-        flex-grow: 0;
-        margin: 10px 0;
-    }
-  
-    .user-options {
-        flex-direction: column;
-        align-items: center;
-    }
-  
-    aside {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 85%;
-        height: 100%;
-        transform: translateX(-100%);
-        transition: transform 0.3s ease-in-out;
-    }
-  
-    aside.hidden {
-        transform: translateX(0);
-        width: 50%;
-    }
-    }
-  
-    main {
-        margin-left: 0;
-        padding: 10px;
-    }
-
-    main-intro{
-        width: 90%;
-    }
-
-    .wrapper{
-        grid-template-columns: repeat(4, 70px);
-    }
-
-    p#text-intro{
-        position: relative;
-        right: 30%;
-    }
-
-    h3{
-        top: 55em;
-    }
-
-    iframe{
-        top: 75%;
-    }
-
-    h2{
-        top: 30%;
-    }
-
-    .close-sidebar-button {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        background-color: transparent;
-        border: none;
-        font-size: 24px;
-        cursor: pointer;
-        display: none;
-        color: #fff;
-    }
-
-
-@media (max-width: 768px) {
-    .close-sidebar-button {
-        display: block;
-    }
-}

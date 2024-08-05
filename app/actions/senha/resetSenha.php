@@ -14,7 +14,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->store_result();
 
     if ($stmt->num_rows == 0) {
-        echo "Token inválido ou expirado.";
+        desconecta(); // Desconecta do banco de dados antes de redirecionar
+        header("Location: ../../pages/senha/recuperarSenhaForm.php?status=error&message=Token inválido ou expirado.");
         exit;
     }
 
@@ -25,9 +26,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->execute();
 
     if ($stmt->affected_rows == 1) {
-        echo "Senha redefinida com sucesso.";
+        desconecta(); // Desconecta do banco de dados antes de redirecionar
+        header("Location: ../../pages/usuario/login.php?status=success&message=Senha redefinida com sucesso.");
     } else {
-        echo "Erro ao redefinir senha.";
+        desconecta(); // Desconecta do banco de dados antes de redirecionar
+        header("Location: ../../pages/senha/recuperarSenhaForm.php?status=error&message=Erro ao redefinir senha.");
     }
 }
 

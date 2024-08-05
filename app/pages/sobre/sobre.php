@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../../public/images/Logo.png" type="image/x-icon">
     <title>VILIBRAS | SOBRE NÓS</title>
     <!-- <link rel="stylesheet" href="style.css"> -->
      <link rel="stylesheet" href="../../../public/css/sobre-portrait.css" media="screen and (orientation: portrait)">
@@ -21,13 +22,14 @@
                 <h4>SOBRE NÓS</h4>
                 <h3><i><strong>VILIBRAS</strong></i> Descrição geral da plataforma</h3>
                 <section>
-                    <img id="icon1" class="icon" src="../../../public/images/Logo.png" alt="">
+                    <img id="icon1" class="icon" src="../../../public/images/ellen.jpeg" alt="">
                     <p>Durante muitos anos, pessoas surdas eram consideradas deficientes e eram excluídas de diversos projetos. A partir do século XIX, começaram a surgir no Brasil, as primeiras escolas de ensino em linguagem de sinais voltadas para surdos, inspiradas em modelos de outras linguagens de sinais europeias e norte-americanas. Essa é a história da LIBRAS, uma língua brasileira de sinais, que por muitos anos, transmitiu diferentes palavras levando cultura e informação até os surdos.
                     </p>
-                    <img id="icon2" class="icon" src="../../../public/images/user.png" alt="">
+                    <img id="icon2" class="icon" src="../../../public/images/yuri.jpeg" alt="">
                     <p>A História da marginalização das pessoas surdas é ridicularizada por muitos e admirada por poucos. As raízes históricas desta marginalização remontam ao isolamento social ao qual os surdos eram submetidos e aos tratamentos totalmente desumanos que recebiam simplesmente por serem surdos. Além disso, a falta de conscientização sobre o problema na comunidade resultou em projetos visando a inclusão dos surdos na sociedade fossem pensados de forma tardia, se é que foram pensados.</p>
-                    <img id="icon3" class="icon" src="../../../public/images/user.png" alt="">
+                    <img id="icon3" class="icon" src="../../../public/images/cardoso.jpeg" alt="">
                     <p>A princípio, medidas envolvendo a inclusão dos surdos na atualidade precisam ser levadas em consideração. Ao levarmos a problemática a um contexto atual é perceptível que soluções tecnológicas não possuem a acessibilidade digital adequada, principalmente em áreas técnicas da tecnologia, pois termos são criados e aprimorados ano após ano. Com base nessa problemática, o projeto de incluir surdos em áreas técnicas está sendo desenvolvido.</p>
+                    <img id="icon4" class="icon" src="../../../public/images/adriam.jpeg" alt="">
                     <p>A relevância de criar mecanismos que influenciam na inclusão dessa parte da população visa combater os preconceitos enraizados pela sociedade sobre os surdos. Estimular a participação e auxiliar no processo de formação de indivíduos com deficiência auditiva é um passo extremamente gradual e que precisa ser atualizado e mantido.</p>
                 </section>
 

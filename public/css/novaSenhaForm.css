@@ -92,7 +92,7 @@ header {
   background-color: var(--dark-500);
 }
 
-header.light {
+header .light {
   background-color: var(--light-500);
   border-bottom: 1px solid lightgray;
 }
@@ -109,8 +109,8 @@ header.light {
   margin: 0 10px;
 }
 
-.header-links a.light {
-  color: black;
+h2{
+  color: #707070;
 }
 
 .theme-toggle {
@@ -118,8 +118,9 @@ header.light {
   font-size: 24px;
 }
 
-.theme-toggle.light {
-  color: black;
+
+.fa-moon:before{
+  color:#ffffff;
 }
 
 .header-vilibras {

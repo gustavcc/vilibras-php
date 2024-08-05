@@ -8,13 +8,16 @@
     <style>
         /* styles.css */
 
-.container {
+
+.containerPopup {
     position: fixed !important;
     top: 100px;
     display: inline-block;
     font-family: Arial, sans-serif !important;
     z-index: 10000 !important;
     background: transparent;
+    color: black !important;
+
 }
 
 .basic-blocks {
@@ -133,14 +136,14 @@
     display: block;
 }
 
-.footer{
+.footerPopup{
     display:flex;
     align-items: center;
     margin: 30px 0px 0px 0px;
 }
 
 
-.basic-blocks .box .footer img{
+.basic-blocks .boxPopup .footerPopup img{
     width: 20px;
     height: 20px;
 }
@@ -152,7 +155,7 @@
     margin: 5px;
 }
 
-.basic-blocks .box{
+.basic-blocks .boxPopup{
     display: flex;
     width: auto;
     flex-wrap: nowrap;
@@ -174,22 +177,22 @@
     background: #f0f0f0;
 }
 
-.container {
+.containerPopup {
     position: absolute;
     display: none;
   }
   
-.container.show {
+.containerPopup.show {
     display: block;
   }
 
-.container.hide {
+.containerPopup.hide {
     display: none;
 }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="containerPopup">
         <div class="basic-blocks">
             <div class="block-item" id="block-zoom">
                 <span class="icon">🔍</span>
@@ -255,10 +258,10 @@
                     </div>
                 </div>
             </div>
-            <div class="box">
-                <div class="footer">
-                    <h2>VILIBRAS |</h2>
-                    <img src="../../../../public/images/Logo.png" alt="">
+            <div class="boxPopup">
+                <div class="footerPopup">
+                    <h4>VILIBRAS |</h4>
+                    <img src="../../../public/images/Logo.png" alt="">
                 </div>
             </div>
         </div>
@@ -309,10 +312,10 @@ document.addEventListener('mousedown', function(event) {
   clickY = event.clientY;
   timer = setTimeout(function() {
     if (isHolding) {
-      const container = document.querySelector('.container');
-      container.style.top = `${clickY}px`;
-      container.style.left = `${clickX}px`;
-      container.classList.add('show');
+      const containerPopup = document.querySelector('.containerPopup');
+      containerPopup.style.top = `${clickY}px`;
+      containerPopup.style.left = `${clickX}px`;
+      containerPopup.classList.add('show');
     }
   }, 500);
 });
@@ -323,7 +326,7 @@ document.addEventListener('mouseup', function(event) {
 });
 
 document.querySelector('.close-btn').addEventListener('click', function() {
-  document.querySelector('.container').classList.remove('show');
+  document.querySelector('.containerPopup').classList.remove('show');
 });
     </script>
 </body>

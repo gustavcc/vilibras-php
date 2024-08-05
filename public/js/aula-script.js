@@ -1,61 +1,72 @@
-const contentMap = {
-    content1: `
-        <h2>Introdução</h2>
-        <p>Bem-vindo à introdução da LIBRAS...</p>
-    `,
-    content2: `
-        <h2>O que é a LIBRAS</h2>
-        <p>A LIBRAS é a Língua Brasileira de Sinais...</p>
-    `,
-    content3: `
-        <h2>Teste 1</h2>
-        <p>Conteúdo do Teste 1...</p>
-    `,
-    content4: `
-        <h2>Teste 2</h2>
-        <p>Conteúdo do Teste 2...</p>
-    `
-    // Adicione mais conteúdos conforme necessário
-};
-
-document.querySelectorAll('#sidebar nav ul li').forEach(li => {
-    li.addEventListener('click', function() {
-        const contentKey = this.getAttribute('data-content');
-        if (contentMap[contentKey]) {
-            document.querySelector('main').innerHTML = contentMap[contentKey];
-            document.getElementById('sidebar').classList.add('hidden');
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('search-input').addEventListener('input', function () {
+        const query = this.value;
+        if (query.length > 2) {
+            fetch(`search.php?query=${query}`)
+                .then(response => response.json())
+                .then(data => {
+                    const resultsContainer = document.getElementById('search-results');
+                    resultsContainer.innerHTML = '';
+                    data.forEach(aula => {
+                        const resultItem = document.createElement('div');
+                        resultItem.classList.add('result-item');
+                        resultItem.innerHTML = `<strong>${aula.titulo}</strong><p>${aula.descricao}</p>`;
+                        resultsContainer.appendChild(resultItem);
+                    });
+                });
+        } else {
+            document.getElementById('search-results').innerHTML = '';
         }
     });
-});
 
-document.getElementById('theme-toggle').addEventListener('click', function() {
-    document.body.classList.toggle('light-theme');
-    if (document.body.classList.contains('light-theme')) {
-        this.textContent = '🌙';
-    } else {
-        this.textContent = '🌞';
-    }
+    const contentMap = {
+        <?php foreach ($aulas as $index => $aula): ?>
+            content<?php echo $index + 1; ?>: `
+                <h2><?php echo htmlspecialchars($aula['titulo']); ?></h2>
+                <h3><?php echo htmlspecialchars($aula['descricao']); ?></h3>
+                <iframe src="<?php echo htmlspecialchars($aula['iframe']); ?>" frameborder="0" allowfullscreen></iframe>
+            `,
+        <?php endforeach; ?>
+    };
 
-    if (document.body.style.backgroundColor === 'rgb(249, 249, 249)') {
-        document.body.style.backgroundColor = '#03000a'; // Dark color
-        document.body.style.color = '#FFFFFF';
-        this.textContent = '🌙';
-    } else {
-        document.body.style.backgroundColor = '#f9f9f9'; // Light color
-        document.body.style.color = '#000000';
-        document.body.style.border = '1px solid lightgray';
-        this.textContent = '🌞';
-    }
-});
+    document.querySelectorAll('#sidebarMenu nav ul li').forEach(li => {
+        li.addEventListener('click', function () {
+            const contentKey = this.getAttribute('data-content');
+            if (contentMap[contentKey]) {
+                document.querySelector('main').innerHTML = contentMap[contentKey];
+                document.getElementById('sidebarMenu').classList.add('hidden');
+            }
+        });
+    });
 
-document.getElementById('menu-toggle').addEventListener('click', function() {
-    const sidebar = document.getElementById('sidebar');
-    sidebar.classList.toggle('hidden');
-    document.body.classList.toggle('aside-hidden', sidebar.classList.contains('hidden'));
-});
+    document.getElementById('theme-toggle').addEventListener('click', function () {
+        document.body.classList.toggle('light-theme');
+        if (document.body.classList.contains('light-theme')) {
+            this.textContent = '🌞';
+            document.body.style.backgroundColor = '#f9f9f9'; // Mudar a cor do background para branco no tema claro
+        } else {
+            this.textContent = '🌙';
+            document.body.style.backgroundColor = ''; // Resetar a cor do background no tema escuro
+        }
+    });
 
-document.getElementById('close-sidebar').addEventListener('click', function() {
-    const sidebar = document.getElementById('sidebar');
-    sidebar.classList.add('hidden');
-    document.body.classList.add('aside-hidden');
+    document.getElementById('menu-toggle').addEventListener('click', function () {
+        const sidebarMenu = document.getElementById('sidebarMenu');
+        sidebarMenu.classList.toggle('hidden');
+        document.body.classList.toggle('aside-hidden', sidebarMenu.classList.contains('hidden'));
+    });
+
+    document.getElementById('close-sidebar').addEventListener('click', function () {
+        const sidebarMenu = document.getElementById('sidebarMenu');
+        sidebarMenu.classList.remove('hidden');
+        document.body.classList.remove('aside-hidden');
+    });
+
+    document.querySelectorAll('.help-options button').forEach(button => {
+        button.addEventListener('click', function () {
+        });
+    });
+
+    document.querySelector('.sign-in-button').addEventListener('click', function () {
+    });
 });

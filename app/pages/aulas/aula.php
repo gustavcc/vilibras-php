@@ -1,3 +1,14 @@
+
+
+<?php
+require_once("../../actions/usuario/identifyUsuarioLogado.php");
+
+// se não tiver logado, vai para o login
+if (!isset($_SESSION['login'])) {
+    header("Location: ../usuario/login.php?");
+    exit();
+}?>
+
 <?php
 require_once("../base/popups/popup.php");
 ?>
@@ -7,9 +18,16 @@ require_once("../base/popups/popup.php");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="../../../public/images/Logo.png">
+    <link rel="shortcut icon" href="../../../public/images/Logo.png" type="image/x-icon">
+    
     <title>VILIBRAS</title>
     <link rel="stylesheet" href="../../../public/css/aula-style.css">
+
+    <link rel="stylesheet" href="../../../public/css/aula-portrait-style.css" media="screen and (orientation: portrait)">
+
+    <link rel="stylesheet" href="../../../public/css/aula-landscape-style.css" media="screen and (orientation: landscape)">
+
+
 </head>
 <body>
 
@@ -23,15 +41,26 @@ require_once("../base/popups/popup.php");
     </div>
     <div class="user-options">
         <button id="theme-toggle">🌙</button>
-        <button id="user-button"><i class="fas fa-user user-icon"></i></button>
+        <button id="user-button"><a href="../perfil/perfil.php"><i class="fas fa-user user-icon"></i></a></button>
     </div>
 </header>
 
 <div class="container">
-    <aside id="sidebar">
+    <div class="objects-3d">
+        <img class="element1" src="../../../public/images/objetos 3d.png" alt="">
+        <img class="element2" src="../../../public/images/objetos 3d.png" alt="">
+
+    </div>
+    <aside id="sidebarMenu">
         <button id="close-sidebar" class="close-sidebar-button">&#10005;</button>
         <nav>
             <ul>
+                <hr>
+                <div class="btnsNav">
+                    <button class="sign-in-button"><a href="../dicionario/dicionario.php">📖Dicionario</a></button>
+                    <button class="sign-in-button"><a href="../questoes/questoes.php">❓Questões</a></button>
+                </div>
+                <hr>
                 <?php
                 require_once("../../config/conecta.php");
                 conecta();
@@ -45,6 +74,7 @@ require_once("../base/popups/popup.php");
                 }
                 desconecta();
                 ?>
+                <br> <br>
 
                 <?php if (!empty($aulas)): ?>
                     <?php foreach ($aulas as $index => $aula): ?>
@@ -56,8 +86,8 @@ require_once("../base/popups/popup.php");
                 <?php else: ?>
                     <li>Nenhuma aula encontrada.</li>
                 <?php endif; ?>
-                <hr>
-                <button class="sign-in-button"><img src="sign-in-icon.png" alt="entrar">teste</button>
+                <br> <br>
+
                 <hr>
                 <li><strong>Ajuda</strong></li>
                 <div class="help-options">
@@ -70,13 +100,15 @@ require_once("../base/popups/popup.php");
     <main>
         <div class="hero">
             <div class="main-intro">
-                <div class="logomain">
-                    <img src="../../../public/images/Logo.png" alt="">
+                <!-- <div class="logomain">
+                    <img src="../../../public/images/Logo.png" alt=""> -->
                 </div>
 
-                <p id="text-intro">Seja bem vindo a sessão de vídeos da plataforma <strong>VILIBRAS<strong></p>
+                <p id="text-intro"><span>Olá</span><br><br>Seja bem vindo a sessão de vídeos<br> da plataforma <em><span>VILIBRAS</span></em></p>
                 <img class="blocks-img" src="../../../public/images/cubos-3d-abstratos.png" alt="">
             </div>
+            <img class="alert-icon" src="../../../public/images/help-web-button_18436.png" alt="">
+
             <p>Selecione uma aula para assistir!</p>
             <div class="wrapper">
                 <div class="box a">
@@ -130,12 +162,12 @@ document.addEventListener('DOMContentLoaded', function () {
         <?php endforeach; ?>
     };
 
-    document.querySelectorAll('#sidebar nav ul li').forEach(li => {
+    document.querySelectorAll('#sidebarMenu nav ul li').forEach(li => {
         li.addEventListener('click', function () {
             const contentKey = this.getAttribute('data-content');
             if (contentMap[contentKey]) {
                 document.querySelector('main').innerHTML = contentMap[contentKey];
-                document.getElementById('sidebar').classList.add('hidden');
+                document.getElementById('sidebarMenu').classList.add('hidden');
             }
         });
     });
@@ -144,20 +176,22 @@ document.addEventListener('DOMContentLoaded', function () {
         document.body.classList.toggle('light-theme');
         if (document.body.classList.contains('light-theme')) {
             this.textContent = '🌞';
+            document.body.style.backgroundColor = '#f9f9f9'; // Mudar a cor do background para branco no tema claro
         } else {
             this.textContent = '🌙';
+            document.body.style.backgroundColor = ''; // Resetar a cor do background no tema escuro
         }
     });
 
     document.getElementById('menu-toggle').addEventListener('click', function () {
-        const sidebar = document.getElementById('sidebar');
-        sidebar.classList.toggle('hidden');
-        document.body.classList.toggle('aside-hidden', sidebar.classList.contains('hidden'));
+        const sidebarMenu = document.getElementById('sidebarMenu');
+        sidebarMenu.classList.toggle('hidden');
+        document.body.classList.toggle('aside-hidden', sidebarMenu.classList.contains('hidden'));
     });
 
     document.getElementById('close-sidebar').addEventListener('click', function () {
-        const sidebar = document.getElementById('sidebar');
-        sidebar.classList.remove('hidden');
+        const sidebarMenu = document.getElementById('sidebarMenu');
+        sidebarMenu.classList.remove('hidden');
         document.body.classList.remove('aside-hidden');
     });
 
@@ -169,7 +203,20 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelector('.sign-in-button').addEventListener('click', function () {
     });
 });
+
 </script>
 <script src="https://kit.fontawesome.com/2bb7425346.js" crossorigin="anonymous"></script>
+
+<div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
 </body>
 </html>
