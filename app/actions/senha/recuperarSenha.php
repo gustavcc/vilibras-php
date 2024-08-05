@@ -43,13 +43,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->isSMTP();
         $mail->Host       = 'smtp.office365.com';
         $mail->SMTPAuth   = true;
-        $mail->Username   = 'sky.lapa@outlook.com'; // Seu e-mail do Gmail
-        $mail->Password   = 'acadesc7891'; // Sua senha do Gmail (ou senha de app)
+        $mail->Username   = 'criar email projeto'; // Seu e-mail do Gmail
+        $mail->Password   = 'criar email projeto'; // Sua senha do Gmail (ou senha de app)
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port       = 587; // Porta TCP para o servidor SMTP
 
         // Configurações do e-mail
-        $mail->setFrom('sky.lapa@outlook.com', 'VILIBRAS');
+        $mail->setFrom('criar email do projeto', 'VILIBRAS');
         $mail->addAddress($email); // Adicionar um destinatário
         $mail->isHTML(true); // Definir o formato do e-mail como HTML
         $mail->Subject = 'Redefinição de Senha';
