@@ -10,7 +10,28 @@ if (!isset($_SESSION['login-admin'])) {
 require_once("../base/popups/popup.php");
 ?>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="stylesheet" href="../../../public/css/faq.css">
+<link rel="stylesheet" href="../../../public/css/base.css">
+
+<style>
+
+.return {
+            font-size: 20pt;
+            color: #00b7ff;
+            position: fixed;
+            cursor: pointer;
+            top: 40px;
+            left: 30px;
+        }
+
+main{
+    margin:  0 10px 0 25px;
+}
+
+</style>
 
 <body>
 
@@ -29,6 +50,10 @@ require_once("../base/popups/popup.php");
 
 
 <main>
+
+<div class="return">
+            <a href="../admin/dashboardAdmin.php"><i class="fa-solid fa-rotate-left"></i></a>
+        </div>
 
 <!-- Botão que abre o pop-up -->
 <button class="btn">
@@ -61,7 +86,7 @@ require_once("../base/popups/popup.php");
 
 <!-- O pop-up -->
 
-            <form action="../../actions/faq/addPergunta.php" class="receivers" method = "get">
+            <form action="../../actions/faqAdmin/addPerguntaAdmin.php" class="receivers" method = "get">
 
             <div class="fundo">
 

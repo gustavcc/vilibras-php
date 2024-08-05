@@ -23,7 +23,7 @@ if (isset($_GET['Title']) && isset($_GET['Content-Question'])) {
 
         if ($stmt->execute()) {
             if ($stmt->affected_rows > 0) {
-                header("Location: ../../pages/faq/faq.php");
+                header("Location: ../../pages/faq/faqAdmin.php");
             } else {
                 echo "Não foi possível adicionar a pergunta.";
             }

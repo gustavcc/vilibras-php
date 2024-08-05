@@ -244,6 +244,13 @@ elementos.forEach(function(elemento){
         criarDiv.appendChild(criarDetails);   
     }
 
+    else{
+        const aguardo = document.createElement('p');
+        aguardo.className = 'responder';
+        aguardo.innerHTML = 'Aguardando resposta...';
+        criarDiv.appendChild(aguardo)
+    }
+
     criarDiv.appendChild(criarData);
 
     var main = document.querySelector('main');

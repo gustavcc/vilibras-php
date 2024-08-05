@@ -40,7 +40,7 @@ if (isset($_GET['Resposta']) && isset($_GET['id_pergunta'])) {
             if ($stmt->execute()) {
                 if ($stmt->affected_rows > 0) {
                     $msg = 'Resposta inserida!';
-                    header("Location: ../../pages/faq/listFaq.php?msg=$msg");
+                    header("Location: ../../pages/faq/faqAdmin.php?msg=$msg");
                 } else {
                     echo "Não foi possível adicionar a resposta.";
                 }
