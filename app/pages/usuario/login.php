@@ -25,7 +25,7 @@
 
 
             <div class="links">
-                <a href="#">Redefinir senha</a>
+                <a href="../senha/recuperarSenhaForm.php">Redefinir senha</a>
                 <a href="#">|</a>
                 <a href="cadastro.php">Criar uma nova conta</a> <br>
             </div>

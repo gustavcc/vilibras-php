@@ -62,4 +62,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: ../../pages/senha/recuperarSenhaForm.php?status=error&message=Erro ao enviar o e-mail");
     }
 }
-?>
