@@ -8,7 +8,7 @@ if (isset($_SESSION['login'])) {
 require_once("../base/cabecalho.php");
 ?>
 <?php
-// require_once("../base/popups/popup.php");
+require_once("../base/popups/popup.php");
 ?>
 
     <link rel="stylesheet" href="../../../public/css/landingpage.css">

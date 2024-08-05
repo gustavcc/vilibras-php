@@ -107,3 +107,6 @@ document.getElementById("<?php echo $_GET['categoria']?>555").scrollIntoView({ b
 <?php
 require_once("../base/footer.php");
 ?>
+<?php
+require_once("../base/popups/popup.php");
+?>

@@ -105,13 +105,14 @@ if (!isset($_SESSION['login-admin'])) {
                 <img style="height: 10rem;" src="../../../public/images/aulas.webp" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Aulas</h5>
-                    <p class="card-text">Futuramente...</p>
+                    <p class="card-text">Edit, Delete and Insert datas.</p>
                     <div class='options'>
-                        <a href='../../pages/questoes/editarQuestaoForm.php?id=<?=$questao['id_questao']?>' id='edit'> <i class='fa-solid fa-pen-to-square'></i> </a>
-                        <a href='../../actions/questoes/excluirQuestao.php?id=<?=$questao['id_questao']?>' id='del'> <i class='fa-solid fa-trash'></i> </a>
-                        <a href='../../actions/questoes/excluirQuestao.php?id=<?=$questao['id_questao']?>' id='add'> <i class="fa-solid fa-plus"></i> </a>
+                        <a href='../../pages/aulas/editarAulaForm.php' id='edit'> <i class='fa-solid fa-pen-to-square'></i> </a>
+                        <a href='../../pages/aulas/removerAulaForm.php'' id='del'> <i class='fa-solid fa-trash'></i> </a>
+
+                        <a href='../../pages/aulas/addAulaForm.php' id='add'><i class="fa-solid fa-plus"></i></a>
                     </div>
-                    <!-- <a href="../aulas/aulas.php" class="btn btn-primary">Listar</a> -->
+                    <a href="../aulas/listarAulas.php" class="btn btn-primary">Listar</a>
                 </div>
             </div> 
         </div>

@@ -19,9 +19,9 @@
         <div id="center">
             <div class="content" id="content">
                 <h4>SOBRE NÓS</h4>
-                <h3><i>VILIBRAS</i> Descrição geral da <i>plataforma</i></h3>
+                <h3><i><strong>VILIBRAS</strong></i> Descrição geral da plataforma</h3>
                 <section>
-                    <img id="icon1" class="icon" src="../../../public/images/user.png" alt="">
+                    <img id="icon1" class="icon" src="../../../public/images/Logo.png" alt="">
                     <p>Durante muitos anos, pessoas surdas eram consideradas deficientes e eram excluídas de diversos projetos. A partir do século XIX, começaram a surgir no Brasil, as primeiras escolas de ensino em linguagem de sinais voltadas para surdos, inspiradas em modelos de outras linguagens de sinais europeias e norte-americanas. Essa é a história da LIBRAS, uma língua brasileira de sinais, que por muitos anos, transmitiu diferentes palavras levando cultura e informação até os surdos.
                     </p>
                     <img id="icon2" class="icon" src="../../../public/images/user.png" alt="">
@@ -29,11 +29,6 @@
                     <img id="icon3" class="icon" src="../../../public/images/user.png" alt="">
                     <p>A princípio, medidas envolvendo a inclusão dos surdos na atualidade precisam ser levadas em consideração. Ao levarmos a problemática a um contexto atual é perceptível que soluções tecnológicas não possuem a acessibilidade digital adequada, principalmente em áreas técnicas da tecnologia, pois termos são criados e aprimorados ano após ano. Com base nessa problemática, o projeto de incluir surdos em áreas técnicas está sendo desenvolvido.</p>
                     <p>A relevância de criar mecanismos que influenciam na inclusão dessa parte da população visa combater os preconceitos enraizados pela sociedade sobre os surdos. Estimular a participação e auxiliar no processo de formação de indivíduos com deficiência auditiva é um passo extremamente gradual e que precisa ser atualizado e mantido.</p>
-
-                    <footer>
-                        <h2>VILIBRAS</h2>
-                        <img id="logo" src="../../../public/images/Logo.png" alt="">
-                    </footer>
                 </section>
 
             </div>

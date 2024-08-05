@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW 2019 (64 Bit Versão de avaliação) -->
+<?xml-stylesheet href="SGV3.css" type="text/css"?>
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="67.7332mm" height="67.7332mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 6773.32 6773.32"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+   <clipPath id="id0">
+    <rect x="2302.93" y="2832.09" width="2167.46" height="1109.13"/>
+   </clipPath>
+   <clipPath id="id1">
+    <rect x="7915.74" y="4365.92" width="2167.47" height="1109.14"/>
+   </clipPath>
+   <clipPath id="id2">
+    <rect x="10625.08" y="4365.92" width="2167.47" height="1109.14"/>
+   </clipPath>
+   <clipPath id="id3">
+    <rect x="7873.43" y="2524.42" width="2167.46" height="1109.13"/>
+   </clipPath>
+ </defs>
+ <g id="Camada_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g style="clip-path:url(#id0)">
+   <image x="2302.93" y="2832.09" width="2167.46" height="1109.13" xlink:href="SGV3_Images\SGV3_ImgID1.png"/>
+  </g>
+  <g style="clip-path:url(#id1)">
+   <image x="7915.74" y="4365.92" width="2167.47" height="1109.14" xlink:href="SGV3_Images\SGV3_ImgID2.png"/>
+  </g>
+  <g style="clip-path:url(#id2)">
+   <image x="10625.08" y="4365.92" width="2167.47" height="1109.14" xlink:href="SGV3_Images\SGV3_ImgID3.png"/>
+  </g>
+  <g style="clip-path:url(#id3)">
+   <image x="7873.43" y="2524.42" width="2167.46" height="1109.13" xlink:href="SGV3_Images\SGV3_ImgID4.png"/>
+  </g>
+ </g>
+</svg>

@@ -8,6 +8,10 @@ if (!isset($_SESSION['login'])) {
 }?>
 
 <?php
+require_once("../base/popups/popup.php");
+?>
+
+<?php
 require_once("../base/cabecalho.php");
 require_once("../../actions/questoes/mostrarQuestoes.php");
 require_once("../../actions/questoes/getQuestoesAcertou.php");

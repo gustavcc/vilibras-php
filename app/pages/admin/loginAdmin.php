@@ -22,7 +22,7 @@
 
 
             <div class="links">
-                <a href="#">Redefinir senha</a>
+                <a href="../senha/recuperarSenhaForm.php">Redefinir senha</a>
             </div>
 
         </div>

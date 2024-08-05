@@ -11,6 +11,10 @@ if (!isset($_SESSION['login'])) {
 require_once("../base/cabecalho.php");
 ?>
 
+<?php
+require_once("../base/popups/popup.php");
+?>
+
 <link rel="stylesheet" href="../../../public/css/faq.css">
 
 <body>
@@ -32,7 +36,7 @@ require_once("../base/cabecalho.php");
 <main>
 
 <!-- Botão que abre o pop-up -->
-<button class="btn">
+<button class="btn" onclick="document.getElementById('popup').style.display='block'; this.style.display = 'none';">
     
     
     <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
@@ -61,42 +65,48 @@ require_once("../base/cabecalho.php");
    </svg></button>
 
 <!-- O pop-up -->
+<div id="popup" class="popup">
+
 
             <form action="../../actions/faq/addPergunta.php" class="receivers" method = "get">
 
-            <div class="fundo">
+            <fieldset>
 
-            <div class="confirm">
 
-            <div>
-                <div class="teste">
-                    <h2 for="Title" class="inform">Titulo: </h2>
-                    <span class="close">×</span>
-                </div>
-                
-                <textarea type="text" name="Title"  class="textAreaEdit" placeholder="O que é o VILIBRAS?" rows="2" required></textarea>
+            <div class="popup-content">
+
+            <span class="close" onclick="document.getElementById('popup').style.display='none'; document.querySelector('.btn').style.display = 'block';">×</span>
+
+            <h2>Insira uma pergunta</h2><br><br>
+    
+            <div id = "Title-Question" >
+                <label for="Title">Titulo: </label>
+                <input type="text" name="Title" placeholder="O que é o VILIBRAS?" required>
             </div>
-
-            <div> 
-                <h2 for="Content-Question" class="inform">Descrição: </h2>     
-                <textarea name="Content-Question" class="textAreaEdit" cols="20" rows="2" 
+            
+            <div id = "divTextarea"> 
+                <label for="Content-Question" id = "Label-Question">Descrição: </label>     
+                <textarea name="Content-Question" id="Content-Question" cols="20" rows="2" 
                 placeholder="Qual é o foco principal?"
                 required></textarea>
             </div>
 
-            <div class="organizer">
+            <div id = "div-buttons">
 
-                <button type="reset" class = "buttonCancel">Limpar</button>
-                <button type="submit" class = "buttonConfirm">Enviar</button>
+                <button type="reset" id = "button-reset">Limpar</button>
+
+                <button type="submit" id = "button-submit">Enviar</button>
+
+            </div>
 
             </div>
 
-            </div>
 
-
-            </div>
+            </fieldset>
 
             </form>
+    </div>
+
 
 </main>
 
@@ -106,5 +116,3 @@ require_once("../base/cabecalho.php");
 require_once("../../actions/faq/visualizarPerguntas.php");
 require_once("../base/footer.php");
 ?>
-
-<script src="../../../public/js/faq.js" type="text/javascript" defer></script>

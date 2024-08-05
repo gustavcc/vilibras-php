@@ -12,12 +12,12 @@
 .links {
     display: flex;
     gap: 2em;
+    z-index: 1000;
 }
 
 .links img, #help-a, #github-a {
     width: 20px;
     height: 20px;
-    filter: brightness(0) saturate(0%) invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
 }
 
 .links a {

@@ -12,6 +12,14 @@ nome VARCHAR(40) NOT NULL,
 sexo VARCHAR (10) NOT NULL,
 e_mail VARCHAR(40) NOT NULL);
 
+CREATE TABLE aulas (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    titulo VARCHAR(255) NOT NULL,
+    descricao TEXT NOT NULL,
+    resumo TEXT,
+    iframe TEXT NOT NULL
+);
+
 CREATE TABLE professores(
 id_prof INT PRIMARY KEY AUTO_INCREMENT,
 cpf VARCHAR(13) UNIQUE NOT NULL,
@@ -20,13 +28,16 @@ sexo VARCHAR(10) NOT NULL,
 e_mail VARCHAR(40) NOT NULL,
 nome VARCHAR(40) NOT NULL);
 
-CREATE TABLE usuario(
+CREATE TABLE usuario (
 id_usuario INT PRIMARY KEY AUTO_INCREMENT,
 email VARCHAR(100) UNIQUE NOT NULL,
 senha VARCHAR(255) NOT NULL,
 nome VARCHAR(100) NOT NULL,
-path_img VARCHAR(200)
+path_img VARCHAR(200),
+reset_token VARCHAR(255),
+reset_expiration DATETIME
 );
+
 
 CREATE TABLE administrador(
 id_adm INT PRIMARY KEY AUTO_INCREMENT,
@@ -114,8 +125,7 @@ titulo TEXT NOT NULL,
 descricao TEXT NOT NULL,
 data_dia DATE NOT NULL,
 resposta TEXT,
-id_usuario INT,
-FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario));
+id_usuario INT);
 
 CREATE TABLE material(
 id_material INT PRIMARY KEY AUTO_INCREMENT,

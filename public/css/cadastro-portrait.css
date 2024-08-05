@@ -15,7 +15,8 @@
 }
 
 .links img{
-    display: none;
+    display: block;
+    width: 20px;
 }
 
 .hero-copy{
