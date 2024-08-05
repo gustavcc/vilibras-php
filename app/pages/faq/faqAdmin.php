@@ -1,15 +1,10 @@
 <?php
-require_once("../../actions/usuario/identifyUsuarioLogado.php");
-
+session_start();
 // se não tiver logado, vai para o login
-if (!isset($_SESSION['login'])) {
-    header("Location: ../usuario/login.php?");
+if (!isset($_SESSION['login-admin'])) {
+    header("Location: ../admin/loginAdmin.php?");
     exit();
-}?>
-
-<?php
-require_once("../base/cabecalho.php");
-?>
+} ?>
 
 <?php
 require_once("../base/popups/popup.php");
@@ -111,8 +106,7 @@ require_once("../base/popups/popup.php");
 </body>
 
 <?php
-require_once("../../actions/faq/visualizarPerguntas.php");
-require_once("../base/footer.php");
+require_once("../../actions/faqAdmin/modificationsAdmin.php");
 ?>
 
 <script src="../../../public/js/faq.js"></script>

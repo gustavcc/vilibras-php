@@ -79,9 +79,9 @@ if (!isset($_SESSION['login-admin'])) {
                     <h5 class="card-title">FAQ</h5>
                     <p class="card-text">Edit, Delete and Insert datas.</p>
                     <div class='options'>
-                        <a href='../../pages/questoes/editarQuestaoForm.php' id='edit'> <i class='fa-solid fa-pen-to-square'></i> </a>
-                        <a href='../../actions/questoes/excluirQuestao.php?id=<?=$questao['id_questao']?>' id='del'> <i class='fa-solid fa-trash'></i> </a>
-                        <a href='../../actions/questoes/excluirQuestao.php?id=<?=$questao['id_questao']?>' id='add'> <i class="fa-solid fa-plus"></i> </a>
+                        <a href='../../pages/faq/faqAdmin.php' id='edit'> <i class='fa-solid fa-pen-to-square'></i> </a>
+                        <!-- <a href='#' id='del'> <i class='fa-solid fa-trash'></i> </a>
+                        <a href='#' id='add'> <i class="fa-solid fa-plus"></i> </a> -->
                     </div>
                     <a href="../faq/listFaq.php" class="btn btn-primary">Listar</a>
                 </div>
