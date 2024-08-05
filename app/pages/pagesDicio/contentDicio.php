@@ -1,5 +1,4 @@
 <?php
-require_once('../../actions/darkmode/darkmode.php');
 require_once("../../actions/usuario/identifyUsuarioLogado.php");
 
 
@@ -57,7 +56,8 @@ require_once("../base/popups/popup.php");
             <div id="menu-top" class="menu-right">
                 <?php if (isset($_SESSION['login'])): ?>
                 <div id="search-box" class="search-box">
-                    <input id="search" type="text" class="search-text" placeholder="Pesquisar...">
+                    <!-- <input id="search" type="text" class="search-text" placeholder="Pesquisar..."> -->
+                    <select name="" id="search" class="search-text"></select>
                     <a class="search-btn" href="#">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </a>
@@ -118,6 +118,9 @@ require_once("../base/popups/popup.php");
             </div>
         </div>
     </header>
+
+    <!-- script -->
+    <script src="../../../public/js/dark-mode.js" type="text/javascript"></script>
 
 <main>
 
