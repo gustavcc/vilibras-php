@@ -4,6 +4,7 @@ require_once("../../actions/questoes/findQuestao.php");
 ?>
 
 <link rel="stylesheet" href="../../../public/css/forms.css">
+<link rel="icon" href="../../../public/images/Logo.png">
 
 <main>
     <div class="return">

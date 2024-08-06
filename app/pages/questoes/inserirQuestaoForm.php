@@ -3,6 +3,7 @@ require_once("../base/cabecalho.php");
 ?>
 
 <link rel="stylesheet" href="../../../public/css/forms.css">
+<link rel="icon" href="../../../public/images/Logo.png">
 
 <main>
     <h1>Inserir questão:</h1>
