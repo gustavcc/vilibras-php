@@ -56,7 +56,8 @@ require_once("../base/popups/popup.php");
                 <hr>
                 <div class="btnsNav">
                     <button class="sign-in-button"><a href="../dicionario/dicionario.php">📖Dicionario</a></button>
-                    <button class="sign-in-button"><a href="../questoes/questoes.php">❓Questões</a></button>
+                    <button class="sign-in-button"><a href="../questoes/questoes.php">❓ Questões</a></button>
+                    <button class="sign-in-button"><a href="../dashboard/dashboard.php">🏠 Home</a></button>
                 </div>
                 <hr>
                 <?php
@@ -182,7 +183,7 @@ document.addEventListener('DOMContentLoaded', function () {
             document.body.style.backgroundColor = '#f9f9f9'; // Mudar a cor do background para branco no tema claro
         } else {
             this.textContent = '🌙';
-            document.body.style.backgroundColor = ''; // Resetar a cor do background no tema escuro
+            document.body.style.backgroundColor = '#000'; // Resetar a cor do background no tema escuro
         }
     });
 
