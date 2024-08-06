@@ -134,4 +134,18 @@ main{
 require_once("../../actions/faqAdmin/modificationsAdmin.php");
 ?>
 
+<script>
+    function restoreScrollPosition() {
+        let savedScrollPosition = localStorage.getItem('scrollPosition');
+        if (savedScrollPosition !== null) {
+            scrollPosition = parseInt(savedScrollPosition, 10);
+            window.scrollTo(0, scrollPosition);
+        }
+        localStorage.removeItem('scrollPosition');
+    }
+
+    // Chama restoreScrollPosition quando a página é carregada
+    document.addEventListener('DOMContentLoaded', restoreScrollPosition);
+</script>
+
 <script src="../../../public/js/faq.js"></script>

@@ -269,12 +269,4 @@ $elementos_json = json_encode($elementos);
         document.querySelector('main').appendChild(criarDiv);
     });
 
-    function restoreScrollPosition() {
-    let savedScrollPosition = localStorage.getItem('scrollPosition');
-    if (savedScrollPosition !== null) {
-        scrollPosition = parseInt(savedScrollPosition, 10);
-        window.scrollTo(0, scrollPosition);
-    }
-    localStorage.removeItem('scrollPosition');
-    }
 </script>

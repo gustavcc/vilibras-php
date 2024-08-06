@@ -74,6 +74,9 @@ INSERT INTO questoes (test, content, year, title, answer_A, answer_B, answer_C, 
 'C');
 
 -- Add dados de dicionário e FAQ
+
+INSERT INTO dicionario_sinais(id_dicio) VALUES (1);
+
 INSERT INTO hardware (id_elemento, titulo, width, height, src, title, descricao)
 VALUES 
 ('Alto-Falante', 'Alto-Falante', '100%', '100%', 'https://www.youtube.com/embed/KK4iMNuoI_k?si=EJlKDn6xTT_yWZxW', 'YouTube video player', 'Descrição: dispositivo de saída de áudio utilizado para reproduzir som.'),

@@ -81,150 +81,154 @@ elementos.forEach(function(elemento){
         }
     });
 
-    criarOptionEdit.addEventListener('click', function(){
-        scrollPosition = window.scrollY; // Salva a posição de rolagem atual
-        document.body.style.top = `-${scrollPosition}px`; // Define a posição de rolagem no estilo top do body
-        document.body.classList.add('no-scroll'); // Adiciona a classe para desativar a rolagem
+    criarOptionEdit.addEventListener('click', function() {
+                scrollPosition = window.scrollY; // Salva a posição de rolagem atual
+                localStorage.setItem('scrollPosition', scrollPosition); // Salva a posição de rolagem no localStorage
+                document.body.style.top = `-${scrollPosition}px`; // Define a posição de rolagem no estilo top do body
+                document.body.classList.add('no-scroll'); // Adiciona a classe para desativar a rolagem
 
-        const criarForm = document.createElement('form');
-        criarForm.method = 'get';
-        criarForm.className = 'receivers';
-        criarForm.action = '../../actions/faqAdmin/editQuestionAdmin.php';
-        criarForm.style.display = 'flex';
+                const criarForm = document.createElement('form');
+                criarForm.method = 'get';
+                criarForm.className = 'receivers';
+                criarForm.action = '../../actions/faqAdmin/editQuestionAdmin.php';
+                criarForm.style.display = 'flex';
 
-        const criarOrganizer = document.createElement('div');
-        criarOrganizer.className = 'organizer';
+                const criarOrganizer = document.createElement('div');
+                criarOrganizer.className = 'organizer';
 
-        const criarBottom = document.createElement('div');
-        criarBottom.className = 'fundo';
+                const criarBottom = document.createElement('div');
+                criarBottom.className = 'fundo';
 
-        const criarConfirm = document.createElement('div');
-        criarConfirm.className = 'confirm';
-        criarConfirm.id = 'confirmEdit'
+                const criarConfirm = document.createElement('div');
+                criarConfirm.className = 'confirm';
+                criarConfirm.id = 'confirmEdit';
 
-        const idPergunta = document.createElement('input');
-        idPergunta.type = 'hidden';
-        idPergunta.value = elemento.id_feedback;
-        idPergunta.name = 'id_feedback';
+                const idPergunta = document.createElement('input');
+                idPergunta.type = 'hidden';
+                idPergunta.value = elemento.id_feedback;
+                idPergunta.name = 'id_feedback';
 
-        const criarInformTitulo = document.createElement('h2');
-        criarInformTitulo.className = 'inform';
-        criarInformTitulo.id = 'InformTitulo';
-        criarInformTitulo.textContent = 'Titulo';
+                const criarInformTitulo = document.createElement('h2');
+                criarInformTitulo.className = 'inform';
+                criarInformTitulo.id = 'InformTitulo';
+                criarInformTitulo.textContent = 'Titulo';
 
-        const criarInform = document.createElement('h2');
-        criarInform.className = 'inform';
-        criarInform.id = 'InformDescricao';
-        criarInform.textContent = 'Descrição';
+                const criarInform = document.createElement('h2');
+                criarInform.className = 'inform';
+                criarInform.id = 'InformDescricao';
+                criarInform.textContent = 'Descrição';
 
-        const textAreaEditTitulo = document.createElement('textarea');
-        textAreaEditTitulo.className = 'textAreaEdit';
-        textAreaEditTitulo.id = 'textAreaTitulo';
-        textAreaEditTitulo.name = 'titulo';
-        textAreaEditTitulo.value = elemento.titulo;
-        textAreaEditTitulo.required = true;
-        
-        const textAreaEditDescricao = document.createElement('textarea');
-        textAreaEditDescricao.className = 'textAreaEdit';
-        textAreaEditDescricao.id = 'textAreaDescricao';
-        textAreaEditDescricao.name = 'descricao';
-        textAreaEditDescricao.value = elemento.descricao;
-        textAreaEditDescricao.required = true;
+                const textAreaEditTitulo = document.createElement('textarea');
+                textAreaEditTitulo.className = 'textAreaEdit';
+                textAreaEditTitulo.id = 'textAreaTitulo';
+                textAreaEditTitulo.name = 'titulo';
+                textAreaEditTitulo.value = elemento.titulo;
+                textAreaEditTitulo.required = true;
+                
+                const textAreaEditDescricao = document.createElement('textarea');
+                textAreaEditDescricao.className = 'textAreaEdit';
+                textAreaEditDescricao.id = 'textAreaDescricao';
+                textAreaEditDescricao.name = 'descricao';
+                textAreaEditDescricao.value = elemento.descricao;
+                textAreaEditDescricao.required = true;
 
-        const criarButonCancel = document.createElement('button');
-        criarButonCancel.className = 'buttonCancel';
-        criarButonCancel.textContent = 'Cancelar';
+                const criarButonCancel = document.createElement('button');
+                criarButonCancel.className = 'buttonCancel';
+                criarButonCancel.textContent = 'Cancelar';
 
-        const criarButonConfirm = document.createElement('button');
-        criarButonConfirm.className = 'buttonConfirm';
-        criarButonConfirm.textContent = 'Editar';
+                const criarButonConfirm = document.createElement('button');
+                criarButonConfirm.className = 'buttonConfirm';
+                criarButonConfirm.textContent = 'Editar';
 
-        criarOrganizer.appendChild(criarButonCancel);
-        criarOrganizer.appendChild(criarButonConfirm);
+                criarOrganizer.appendChild(criarButonCancel);
+                criarOrganizer.appendChild(criarButonConfirm);
 
-        criarConfirm.appendChild(criarInformTitulo);
-        criarConfirm.appendChild(textAreaEditTitulo);
+                criarConfirm.appendChild(criarInformTitulo);
+                criarConfirm.appendChild(textAreaEditTitulo);
 
-        criarConfirm.appendChild(criarInform);
-        criarConfirm.appendChild(textAreaEditDescricao);
-        criarConfirm.appendChild(criarOrganizer);
-        criarConfirm.appendChild(idPergunta);
+                criarConfirm.appendChild(criarInform);
+                criarConfirm.appendChild(textAreaEditDescricao);
+                criarConfirm.appendChild(criarOrganizer);
+                criarConfirm.appendChild(idPergunta);
 
-        criarBottom.appendChild(criarConfirm);
-        criarForm.appendChild(criarBottom);
-        main.appendChild(criarForm);
+                criarBottom.appendChild(criarConfirm);
+                criarForm.appendChild(criarBottom);
+                document.querySelector('main').appendChild(criarForm);
 
-        textAreaEditDescricao.focus();
+                textAreaEditDescricao.focus();
 
-        // criarButonConfirm.addEventListener('click', function(){
+                criarButonCancel.addEventListener('click', function() {
+                    document.querySelector('main').removeChild(criarForm);
+                    document.body.classList.remove('no-scroll');
+                    window.scrollTo(0, scrollPosition); 
+                    localStorage.removeItem('scrollPosition');
+                });
+            });
 
-        //     if (((elemento.descricao != textAreaDescricao.value) || (elemento.titulo != textAreaTitulo.value)) && (textAreaDescricao.value.trim().length > 0 && textAreaTitulo.value.trim().length > 0)){
-        //         const url = `../../actions/faqAdmin/editQuestionAdmin.php?titulo=${textAreaTitulo.value}&descricao=${textAreaDescricao.value}&id_feedback=${elemento.id_feedback}`;
-        //         window.location.href = url;
-        //     }
+            criarOptionRemove.addEventListener('click', function() {
+                
+                scrollPosition = window.scrollY; // Salva a posição de rolagem atual
+                localStorage.setItem('scrollPosition', scrollPosition); // Salva a posição de rolagem no localStorage
+                document.body.style.top = `-${scrollPosition}px`; // Define a posição de rolagem no estilo top do body
+                document.body.classList.add('no-scroll'); // Adiciona a classe para desativar a rolagem
 
-        // })
-        
-        criarButonCancel.addEventListener('click', function() {
-            main.removeChild(criarForm);
-            document.body.classList.remove('no-scroll'); // Remove a classe para reativar a rolagem
-            window.scrollTo(0, scrollPosition); // Restaura a posição de rolagem
+                const criarForm = document.createElement('form');
+                criarForm.method = 'get';
+                criarForm.className = 'receivers';
+                criarForm.action = '../../actions/faqAdmin/removePerguntaAdmin.php';
+                criarForm.style.display = 'flex';
 
-        })
+                const criarOrganizer = document.createElement('div');
+                criarOrganizer.className = 'organizer';
 
-    })
+                const criarBottom = document.createElement('div');
+                criarBottom.className = 'fundo';
 
-    criarOptionRemove.addEventListener('click', function() {
-        scrollPosition = window.scrollY; // Salva a posição de rolagem atual
-        document.body.style.top = `-${scrollPosition}px`; // Define a posição de rolagem no estilo top do body
-        document.body.classList.add('no-scroll'); // Adiciona a classe para desativar a rolagem
+                const criarConfirm = document.createElement('div');
+                criarConfirm.className = 'confirm';
 
-        const criarOrganizer = document.createElement('div');
-        criarOrganizer.className = 'organizer';
+                const idPergunta = document.createElement('input');
+                idPergunta.type = 'hidden';
+                idPergunta.name = 'id_pergunta';
+                idPergunta.value = elemento.id_feedback;
 
-        const criarBottom = document.createElement('div');
-        criarBottom.className = 'fundo';
+                const criarInform = document.createElement('h2');
+                criarInform.className = 'inform';
+                criarInform.textContent = 'Excluir pergunta';
 
-        const criarConfirm = document.createElement('div');
-        criarConfirm.className = 'confirm';
+                const criarLastInform = document.createElement('p');
+                criarLastInform.className = 'lastInform';
+                criarLastInform.textContent = 'Excluir sua pergunta permanentemente?';
 
-        const criarInform = document.createElement('h2');
-        criarInform.className = 'inform';
-        criarInform.textContent = 'Excluir pergunta';
+                const criarButonCancel = document.createElement('button');
+                criarButonCancel.className = 'buttonCancel';
+                criarButonCancel.textContent = 'Cancelar';
 
-        const criarLastInform = document.createElement('p');
-        criarLastInform.className = 'lastInform';
-        criarLastInform.textContent = 'Excluir sua pergunta permanentemente?';
+                const criarButonConfirm = document.createElement('button');
+                criarButonConfirm.className = 'buttonConfirm';
+                criarButonConfirm.textContent = 'Excluir';
+                criarButonConfirm.type = 'submit';
 
-        const criarButonCancel = document.createElement('button');
-        criarButonCancel.className = 'buttonCancel';
-        criarButonCancel.textContent = 'Cancelar';
+                criarOrganizer.appendChild(criarButonCancel);
+                criarOrganizer.appendChild(criarButonConfirm);
 
-        const criarButonConfirm = document.createElement('button');
-        criarButonConfirm.className = 'buttonConfirm';
-        criarButonConfirm.textContent = 'Excluir';
+                criarConfirm.appendChild(criarInform);
+                criarConfirm.appendChild(criarLastInform);
+                criarConfirm.appendChild(criarOrganizer);
+                criarConfirm.appendChild(idPergunta);
 
-        criarOrganizer.appendChild(criarButonCancel);
-        criarOrganizer.appendChild(criarButonConfirm);
+                criarBottom.appendChild(criarConfirm);
+                criarForm.appendChild(criarBottom);
+                document.querySelector('main').appendChild(criarForm);
 
-        criarConfirm.appendChild(criarInform);
-        criarConfirm.appendChild(criarLastInform);
-        criarConfirm.appendChild(criarOrganizer);
+                criarButonCancel.addEventListener('click', function() {
+                    document.querySelector('main').removeChild(criarForm);
+                    document.body.classList.remove('no-scroll');
+                    window.scrollTo(0, scrollPosition); 
+                    localStorage.removeItem('scrollPosition');
+                });
+            });
 
-        criarBottom.appendChild(criarConfirm);
-        main.appendChild(criarBottom);
-
-        criarButonCancel.addEventListener('click', function() {
-            main.removeChild(criarBottom);
-            document.body.classList.remove('no-scroll'); // Remove a classe para reativar a rolagem
-            window.scrollTo(0, scrollPosition); // Restaura a posição de rolagem
-        });
-
-        criarButonConfirm.addEventListener('click', function() {
-            const url = `../../actions/faqAdmin/removePerguntaAdmin.php?id_pergunta=${elemento.id_feedback}`;
-            window.location.href = url;
-        });
-    });
 
     criarOrder.appendChild(criarButon);  
     criarDiv.appendChild(criarOrder);
@@ -262,6 +266,7 @@ elementos.forEach(function(elemento){
         editResposta.addEventListener('click', function(){
 
         scrollPosition = window.scrollY; // Salva a posição de rolagem atual
+        localStorage.setItem('scrollPosition', scrollPosition); // Salva a posição de rolagem no localStorage
         document.body.style.top = `-${scrollPosition}px`; // Define a posição de rolagem no estilo top do body
         document.body.classList.add('no-scroll'); // Adiciona a classe para desativar a rolagem
 
@@ -323,11 +328,11 @@ elementos.forEach(function(elemento){
         textAreaEditResposta.focus();
         
         criarButonCancel.addEventListener('click', function() {
-            main.removeChild(criarForm);
-            document.body.classList.remove('no-scroll'); // Remove a classe para reativar a rolagem
-            window.scrollTo(0, scrollPosition); // Restaura a posição de rolagem
-
-        })
+                    document.querySelector('main').removeChild(criarForm);
+                    document.body.classList.remove('no-scroll');
+                    window.scrollTo(0, scrollPosition); 
+                    localStorage.removeItem('scrollPosition');
+                });
 
 
         })
@@ -338,9 +343,10 @@ elementos.forEach(function(elemento){
         removeResposta.style.fontSize = '14px';
 
 
-        removeResposta.addEventListener('click',function(){
+    removeResposta.addEventListener('click',function(){
 
         scrollPosition = window.scrollY; // Salva a posição de rolagem atual
+        localStorage.setItem('scrollPosition', scrollPosition); // Salva a posição de rolagem no localStorage
         document.body.style.top = `-${scrollPosition}px`; // Define a posição de rolagem no estilo top do body
         document.body.classList.add('no-scroll'); // Adiciona a classe para desativar a rolagem
 
@@ -380,10 +386,11 @@ elementos.forEach(function(elemento){
         main.appendChild(criarBottom);
 
         criarButonCancel.addEventListener('click', function() {
-            main.removeChild(criarBottom);
-            document.body.classList.remove('no-scroll'); // Remove a classe para reativar a rolagem
-            window.scrollTo(0, scrollPosition); // Restaura a posição de rolagem
-        });
+                    document.querySelector('main').removeChild(criarForm);
+                    document.body.classList.remove('no-scroll');
+                    window.scrollTo(0, scrollPosition); 
+                    localStorage.removeItem('scrollPosition');
+                });
 
         criarButonConfirm.addEventListener('click', function() {
             const url = `../../actions/faqAdmin/removeResposta.php?id_pergunta=${elemento.id_feedback}`;
@@ -407,6 +414,11 @@ elementos.forEach(function(elemento){
         criarDiv.appendChild(criarResponder);
 
         criarResponder.addEventListener('click',function(){
+
+            scrollPosition = window.scrollY; // Salva a posição de rolagem atual
+            localStorage.setItem('scrollPosition', scrollPosition); // Salva a posição de rolagem no localStorage
+            document.body.style.top = `-${scrollPosition}px`; // Define a posição de rolagem no estilo top do body
+            document.body.classList.add('no-scroll'); // Adiciona a classe para desativar a rolagem
             
             const form = document.createElement('form');
             form.action = "../../actions/faqAdmin/responder.php";
