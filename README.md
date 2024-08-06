@@ -13,7 +13,7 @@ Porjeto Escolar - VILIBRAS: O Vocabulário de Informátoca em Libras (VILIBRAS) 
 * Status: Concluído!
 
 * Documentação:
-* 
+  
     * Pesquisa Bibligráfica:
       https://docs.google.com/document/d/1rCjwMpaFkH_CT-4k6vW5Puv45REIOyyV4RLP4Yh68ho/edit
       
