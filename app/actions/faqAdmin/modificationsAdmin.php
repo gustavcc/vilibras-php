@@ -1,7 +1,12 @@
 <?php
+
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
 // se não tiver logado, vai para o login
 if (!isset($_SESSION['login-admin'])) {
-    header("Location: ../admin/loginAdmin.php?");
+    header("Location: ../../pages/admin/loginAdmin.php?");
     exit();
 }
 

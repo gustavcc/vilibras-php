@@ -1,7 +1,15 @@
 <?php
-require_once("../../config/conecta.php");
 
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+if (!isset($_SESSION['login-admin'])) {
+    header("Location: ../../pages/admin/loginAdmin.php?");
+    exit();
+}
+
+require_once("../../config/conecta.php");
 
 $msg;
 

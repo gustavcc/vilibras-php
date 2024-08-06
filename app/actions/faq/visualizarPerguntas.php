@@ -1,5 +1,14 @@
 <?php
 
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+if (!isset($_SESSION['login'])) {
+    header("Location: ../../pages/usuario/login.php?");
+    exit();
+}
+
 if (isset($_SESSION['login'])) {
     $id_usuario = $_SESSION['usuario'];
 }

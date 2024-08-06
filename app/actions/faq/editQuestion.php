@@ -1,14 +1,23 @@
 <?php
 
-require_once('../../config/conecta.php');
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
-$id_feedback = $_GET['id_feedback'];
-$title_alternation = $_GET['titulo'];
-$description_alternation = $_GET['descricao'];
+if (!isset($_SESSION['login'])) {
+    header("Location: ../../pages/usuario/login.php?");
+    exit();
+}
+
+require_once('../../config/conecta.php');
 
 conecta();
 
-if (isset($id_feedback) && isset($title_alternation) && isset($description_alternation)){
+if (isset($_GET['id_feedback']) && isset($_GET['titulo']) && isset($_GET['descricao'])){
+
+    $id_feedback = $_GET['id_feedback'];
+    $title_alternation = $_GET['titulo'];
+    $description_alternation = $_GET['descricao'];
 
     $query_verify = 'SELECT * FROM feedback WHERE id_feedback = ?';
     $stmt_verify =  $mysqli->prepare($query_verify);

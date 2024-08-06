@@ -1,7 +1,15 @@
 <?php
-require_once("../../config/conecta.php");
 
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+if (!isset($_SESSION['login'])) {
+    header("Location: ../../pages/usuario/login.php?");
+    exit();
+}
+
+require_once("../../config/conecta.php");
 
 if (isset($_SESSION['login']) && isset($_SESSION['usuario'])) {
     $id_usuario = $_SESSION['usuario'];
