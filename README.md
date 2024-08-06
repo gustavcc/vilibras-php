@@ -9,6 +9,12 @@ Porjeto Escolar - VILIBRAS: O Vocabulário de Informátoca em Libras (VILIBRAS) 
 * O Projeto - VILIBRAS:
     * Site com página de mostragem (Landing page), dashboard para  ter acesso a todas as funcionalidades em um só lugar, área de aulas, área com um dicionário de tradução de palavras, área de questões (para praticar os conhecimentos) e um sistema de login para cada usuário poder notar sua evolução.
     * Área do administrador, para inserir questões, aulas, além de alterar ou excluir informações, através de um CRUD completo em PHP e JS.
+    * Disponibiliza dicionário de tradução.
+    * Área de questões.
+    * Asistir aulas.
+    * Perfil de usuário.
+    * Cadastro e login de usuário e administradores.
+    * Possui serviços de acessbilidade, para facilitar a vida do usuário.
 
 * Status: Concluído!
 
