@@ -1,3 +1,16 @@
+<?php
+
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+if (!isset($_SESSION['login-admin'])) {
+    header("Location: ../admin/loginAdmin.php?");
+    exit();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>

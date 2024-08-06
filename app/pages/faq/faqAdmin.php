@@ -1,10 +1,13 @@
 <?php
-session_start();
-// se não tiver logado, vai para o login
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
 if (!isset($_SESSION['login-admin'])) {
-    header("Location: ../admin/loginAdmin.php?");
+    header("Location: ../../pages/admin/loginAdmin.php?");
     exit();
-} ?>
+}
+?>
 
 <?php
 require_once("../base/popups/popup.php");
