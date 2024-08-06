@@ -1,5 +1,15 @@
 <?php 
-require_once("../../actions/faq/visualizarPerguntas.php");
+
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+if (!isset($_SESSION['login-admin'])) {
+    header("Location: ../../pages/admin/loginAdmin.php?");
+    exit();
+}
+
+require_once("../../actions/faqAdmin/visualizarPerguntasAdmin.php");
 ?>
 
 <!DOCTYPE html>
