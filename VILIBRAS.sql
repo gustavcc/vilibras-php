@@ -74,10 +74,7 @@ tipo_desafio VARCHAR(40) NOT NULL,
 conteudo VARCHAR(50) NOT NULL);
 
 CREATE TABLE dicionario_sinais(
-id_dicio VARCHAR(50) PRIMARY KEY,
-titulo VARCHAR (50) NOT NULL,
-iframe TEXT NOT NULL,
-descricao TEXT NOT NULL);
+id_dicio VARCHAR(50) PRIMARY KEY);
 
 CREATE TABLE hardware(
 id_elemento VARCHAR(50) PRIMARY KEY,
@@ -86,7 +83,9 @@ descricao TEXT NOT NULL,
 src TEXT NOT NULL,
 width TEXT NOT NULL,
 height TEXT NOT NULL,
-title TEXT NOT NULL);
+title TEXT NOT NULL,
+id_dicio VARCHAR(50),
+FOREIGN KEY (id_dicio) REFERENCES dicionario_sinais(id_dicio));
 
 CREATE TABLE software(
 id_elemento VARCHAR(50) PRIMARY KEY,
@@ -95,7 +94,9 @@ descricao TEXT NOT NULL,
 src TEXT NOT NULL,
 width TEXT NOT NULL,
 height TEXT NOT NULL,
-title TEXT NOT NULL);
+title TEXT NOT NULL,
+id_dicio VARCHAR(50),
+FOREIGN KEY (id_dicio) REFERENCES dicionario_sinais(id_dicio));
 
 CREATE TABLE conectividades(
 id_elemento VARCHAR(50) PRIMARY KEY,
@@ -104,7 +105,9 @@ descricao TEXT NOT NULL,
 src TEXT NOT NULL,
 width TEXT NOT NULL,
 height TEXT NOT NULL,
-title TEXT NOT NULL);
+title TEXT NOT NULL,
+id_dicio VARCHAR(50),
+FOREIGN KEY (id_dicio) REFERENCES dicionario_sinais(id_dicio));
 
 CREATE TABLE armazenamento_dados(
 id_elemento VARCHAR(50) PRIMARY KEY,
@@ -113,7 +116,9 @@ descricao TEXT NOT NULL,
 src TEXT NOT NULL,
 width TEXT NOT NULL,
 height TEXT NOT NULL,
-title TEXT NOT NULL);
+title TEXT NOT NULL,
+id_dicio VARCHAR(50),
+FOREIGN KEY (id_dicio) REFERENCES dicionario_sinais(id_dicio));
 
 CREATE TABLE tipo_material(
 id_tipo INT PRIMARY KEY AUTO_INCREMENT,
@@ -127,39 +132,6 @@ data_dia DATE NOT NULL,
 resposta TEXT,
 id_usuario INT);
 
-CREATE TABLE material(
-id_material INT PRIMARY KEY AUTO_INCREMENT,
-nome VARCHAR(40) NOT NULL,
-id_dicio VARCHAR(50),
-FOREIGN KEY (id_dicio) REFERENCES dicionario_sinais(id_dicio));
-
-CREATE TABLE insere_materais(
-id_material INT,
-id_prof INT,
-PRIMARY KEY (id_material, id_prof),
-FOREIGN KEY (id_material) REFERENCES material(id_material),
-FOREIGN KEY (id_prof) REFERENCES professores(id_prof));
-
-CREATE TABLE acessa_dicio_prof(
-id_prof INT,
-id_dicio VARCHAR(50), 
-PRIMARY KEY (id_prof,id_dicio),
-FOREIGN KEY (id_dicio) REFERENCES dicionario_sinais(id_dicio),
-FOREIGN KEY (id_prof) REFERENCES professores(id_prof));
-
-CREATE TABLE acessa_materias(
-id_material INT,
-id_aluno INT,
-PRIMARY KEY (id_material,id_aluno),
-FOREIGN KEY (id_material) REFERENCES material (id_material),
-FOREIGN KEY (id_aluno) REFERENCES alunos(id_aluno));
-
-CREATE TABLE acessa_dicio_aluno(
-id_dicio VARCHAR(50),
-id_aluno INT,
-PRIMARY KEY(id_dicio,id_aluno),
-FOREIGN KEY (id_aluno) REFERENCES alunos(id_aluno),
-FOREIGN KEY (id_dicio) REFERENCES dicionario_sinais (id_dicio));
 
 CREATE TABLE acessa_desafios(
 id_desafio INT,
@@ -174,60 +146,3 @@ id_desafio INT,
 PRIMARY KEY (id_prof, id_desafio),
 FOREIGN KEY (id_prof) REFERENCES professores(id_prof),
 FOREIGN KEY (id_desafio) REFERENCES desafios (id_desafio));
-
-CREATE TABLE efetua_feedback(
-id_aluno INT,
-id_feedback INT,
-PRIMARY KEY (id_aluno,id_feedback),
-FOREIGN KEY (id_aluno) REFERENCES alunos (id_aluno),
-FOREIGN KEY (id_feedback) REFERENCES feedback (id_feedback));
-
-CREATE TABLE endereco_aluno(
-endereco_PK INT PRIMARY KEY AUTO_INCREMENT,
-rua VARCHAR (100) NOT NULL,
-bairro VARCHAR (100) NOT NULL,
-cidade VARCHAR (100) NOT NULL,
-id_aluno_FK INT,
-FOREIGN KEY (id_aluno_FK) REFERENCES alunos (id_aluno));
-
-CREATE TABLE telefone_aluno(
-telefone_PK INT PRIMARY KEY AUTO_INCREMENT,
-telefone VARCHAR (10) NOT NULL,
-id_aluno_FK INT,
-FOREIGN KEY (id_aluno_FK) REFERENCES alunos (id_aluno));
-
-CREATE TABLE endereco_prof(
-endereco_PK INT PRIMARY KEY AUTO_INCREMENT,
-rua VARCHAR (100) NOT NULL,
-bairro VARCHAR (100) NOT NULL,
-cidade VARCHAR (100) NOT NULL,
-id_prof_FK INT,
-FOREIGN KEY (id_prof_FK) REFERENCES professores (id_prof));
-
-CREATE TABLE telefone_prof(
-telefone_PK INT PRIMARY KEY AUTO_INCREMENT,
-telefone VARCHAR (10) NOT NULL,
-id_prof_FK INT,
-FOREIGN KEY (id_prof_FK) REFERENCES professores (id_prof));
-
-CREATE TABLE ADM(
-id_adm INT PRIMARY KEY AUTO_INCREMENT,
-cpf VARCHAR(13) UNIQUE NOT NULL,
-idade INT NOT NULL,
-sexo VARCHAR(10) NOT NULL,
-e_mail VARCHAR(40) NOT NULL,
-nome VARCHAR(40) NOT NULL);
-
-CREATE TABLE endereco_ADM(
-endereco_PK INT PRIMARY KEY AUTO_INCREMENT,
-rua VARCHAR (100) NOT NULL,
-bairro VARCHAR (100) NOT NULL,
-cidade VARCHAR (100) NOT NULL,
-id_adm_FK INT,
-FOREIGN KEY (id_adm_FK) REFERENCES ADM (id_adm));
-
-CREATE TABLE telefone_ADM(
-telefone_PK INT PRIMARY KEY AUTO_INCREMENT,
-telefone VARCHAR (10) NOT NULL,
-id_adm_FK INT,
-FOREIGN KEY (id_adm_FK) REFERENCES ADM (id_adm));
