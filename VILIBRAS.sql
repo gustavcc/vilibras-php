@@ -38,21 +38,13 @@ reset_token VARCHAR(255),
 reset_expiration DATETIME
 );
 
-
 CREATE TABLE administrador(
 id_adm INT PRIMARY KEY AUTO_INCREMENT,
 email VARCHAR(100) UNIQUE NOT NULL,
 senha VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE IF NOT EXISTS acertou_questao (
-	id_acertou INT PRIMARY KEY AUTO_INCREMENT,
-	acertou VARCHAR(20) NOT NULL,
-	id_questao INT NOT NULL,
-	email_user VARCHAR(255) 
-);
-
-CREATE TABLE IF NOT EXISTS questoes (
+CREATE TABLE questoes (
 	id_questao INT PRIMARY KEY AUTO_INCREMENT,
 	test VARCHAR(1000) NOT NULL,
 	content VARCHAR(1000) NOT NULL,
@@ -64,14 +56,16 @@ CREATE TABLE IF NOT EXISTS questoes (
 	answer_D VARCHAR(1000) NOT NULL,
 	answer_E VARCHAR(1000) NOT NULL,
 	correct CHAR(1) NOT NULL,
-	id_acertou INT,
-	CONSTRAINT fk_AcertouQuestao FOREIGN KEY (id_acertou) REFERENCES acertou_questao (id_acertou)
+	id_acertou INT
 );
 
-CREATE TABLE desafios(
-id_desafio INT PRIMARY KEY NOT NULL,
-tipo_desafio VARCHAR(40) NOT NULL,
-conteudo VARCHAR(50) NOT NULL);
+CREATE TABLE acertou_questao (
+	id_acertou INT PRIMARY KEY AUTO_INCREMENT,
+	acertou VARCHAR(20) NOT NULL,
+	email_user VARCHAR(255),
+	id_questao INT,
+	FOREIGN KEY (id_questao) REFERENCES questoes(id_questao)
+);
 
 CREATE TABLE dicionario_sinais(
 id_dicio VARCHAR(50) PRIMARY KEY);
@@ -120,10 +114,6 @@ title TEXT NOT NULL,
 id_dicio VARCHAR(50),
 FOREIGN KEY (id_dicio) REFERENCES dicionario_sinais(id_dicio));
 
-CREATE TABLE tipo_material(
-id_tipo INT PRIMARY KEY AUTO_INCREMENT,
-conteudo VARCHAR(40));
-
 CREATE TABLE feedback(
 id_feedback INT PRIMARY KEY AUTO_INCREMENT,
 titulo TEXT NOT NULL,
@@ -131,18 +121,3 @@ descricao TEXT NOT NULL,
 data_dia DATE NOT NULL,
 resposta TEXT,
 id_usuario INT);
-
-
-CREATE TABLE acessa_desafios(
-id_desafio INT,
-id_aluno INT,
-PRIMARY KEY (id_desafio, id_aluno),
-FOREIGN KEY (id_desafio) REFERENCES desafios(id_desafio),
-FOREIGN KEY (id_aluno) REFERENCES alunos (id_aluno));
-
-CREATE TABLE insere_desafios(
-id_prof INT,
-id_desafio INT,
-PRIMARY KEY (id_prof, id_desafio),
-FOREIGN KEY (id_prof) REFERENCES professores(id_prof),
-FOREIGN KEY (id_desafio) REFERENCES desafios (id_desafio));

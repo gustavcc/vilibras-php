@@ -13,8 +13,8 @@ elseif(empty($_POST['senha'])){
     $msg = "Preencha a senha";
 }else{
 
-    $emailForm = $_POST['email'];
-    $senhaForm = $_POST['senha'];
+    $emailForm = trim($_POST['email']);
+    $senhaForm = trim($_POST['senha']);
 
     conecta();
 

@@ -14,9 +14,9 @@ if(empty($_POST['nome'])){
     $msg = "Preencha o email";
 }else{
 
-    $email = $_POST['email'];
-    $nome = $_POST['nome'];
-    $senha = $_POST['senha'];
+    $email = trim($_POST['email']);
+    $nome = trim($_POST['nome']);
+    $senha = trim($_POST['senha']);
     $senhaHash = password_hash($senha, PASSWORD_DEFAULT); 
     $path_img = '../../../public/images/user/user.png';
 

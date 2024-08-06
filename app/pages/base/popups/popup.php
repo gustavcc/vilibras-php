@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../../public/css/style-popup.css">
 
+    <link rel="icon" href="../../../public/images/Logo.png">
+
     <style>
         /* styles.css */
 
