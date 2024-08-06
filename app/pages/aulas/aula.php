@@ -183,7 +183,7 @@ document.addEventListener('DOMContentLoaded', function () {
             document.body.style.backgroundColor = '#f9f9f9'; // Mudar a cor do background para branco no tema claro
         } else {
             this.textContent = '🌙';
-            document.body.style.backgroundColor = '#000'; // Resetar a cor do background no tema escuro
+            document.body.style.backgroundColor = ''; // Resetar a cor do background no tema escuro
         }
     });
 
