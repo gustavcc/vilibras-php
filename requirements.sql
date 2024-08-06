@@ -99,7 +99,6 @@ VALUES
 ('Projetor', 'Projetor', '100%', '100%', 'https://www.youtube.com/embed/GTnpuJ2ka6A?si=dBb1zTESKmg7aD1T', 'YouTube video player', 'Descrição: dispositivo que exibe imagens ou vídeos em telas maiores ou superfícies.',1),
 ('Roteador', 'Roteador', '100%', '100%', 'https://www.youtube.com/embed/7D0qryqA8IA?si=BFjUeKDUzopivPPy', 'YouTube video player', 'Descrição: aparelho que compartilha e distribui a conexão de internet para outros dispositivos.',1),
 ('Switch', 'Switch', '100%', '100%', 'https://www.youtube.com/embed/X-FBKiwTnAM?si=ga9hm-XbyEJwajx-', 'YouTube video player', 'Descrição: dispositivo que permite a conexão de vários dispositivos em uma rede local.',1),
-('Tablet', 'Tablet', '100%', '100%', 'https://www.youtube.com/embed/gZt0RARba7I?si=gzp98lIfOweTR5TY', 'YouTube video player', 'Descrição: computador em forma de tela sensível ao toque.',1),
 ('Teclado', 'Teclado', '100%', '100%', 'https://www.youtube.com/embed/TfXojHYeApU?si=n5gLyOwIiyE3Gd-Z', 'YouTube video player', 'Descrição: dispositivo de entrada usado para digitar texto e comandos em um computador.',1),
 ('USB', 'USB', '100%', '100%', 'https://www.youtube.com/embed/sIkwHVT2xEc?si=MsYp5wEdWDEf-st9', 'YouTube video player', 'Descrição: conexão universal para transferência de dados e energia entre dispositivos.',1),
 ('Webcam', 'Webcam', '100%', '100%', 'https://www.youtube.com/embed/iAfZWBhaq-U?si=oANGcWWfz0CennK8', 'YouTube video player', 'Descrição: câmera de vídeo usada para capturar imagens e transmiti-las pela internet.',1);
@@ -143,14 +142,12 @@ VALUES
     ('Enviar', 'Enviar', '100%', '100%', 'https://www.youtube.com/embed/O9NByXdNirw?si=f1Oa3njc_DpMrRYp', 'YouTube video player', 'Descrição: transferir algo para outro local.',1),
     ('Framework', 'Framework', '100%', '100%', 'https://www.youtube.com/embed/wwArkzM2aKY?si=edvUwWnacuGopDWd', 'YouTube video player', 'Descrição: estrutura para facilitar o desenvolvimento de software.',1),
     ('GPS', 'GPS', '100%', '100%', 'https://www.youtube.com/embed/7bdr3QshAJo?si=ewH4NR9J46BBV20d', 'YouTube video player', 'Descrição: sistema de posicionamento que determina a localização geográfica exata.',1),
-    ('Internet', 'Internet', '100%', '100%', 'https://www.youtube.com/embed/5iB0_it6mjw?si=nmMWLV9M1Ub7BAFM', 'YouTube video player', 'Descrição: rede física global de comunicação entre dispositivos.',1),
     ('Protocolo', 'Protocolo', '100%', '100%', 'https://www.youtube.com/embed/MZ8ni7ucNwg?si=IFJGyMsT3ed2WO_v', 'YouTube video player', 'Descrição: regras para comunicação entre sistemas.',1),
     ('Roteador', 'Roteador', '100%', '100%', 'https://www.youtube.com/embed/7D0qryqA8IA?si=BFjUeKDUzopivPPy', 'YouTube video player', 'Descrição: aparelho que compartilha e distribui a conexão de internet para outros dispositivos.',1),
     ('Streaming', 'Streaming', '100%', '100%', 'https://www.youtube.com/embed/_ZKmWddp3Kc?si=nexlXUAu5GD57ib6', 'YouTube video player', 'Descrição: transmissão online de áudio e/ou vídeo em tempo real.',1),
     ('Switch', 'Switch', '100%', '100%', 'https://www.youtube.com/embed/OcET_3Bh3Po?si=IBgBR-8c-DTIJDQe', 'YouTube video player', 'Descrição: aparelho que compartilha e distribui a conexão de internet para outros dispositivos.',1),
     ('Upload', 'Upload', '100%', '100%', 'https://www.youtube.com/embed/MmNP-BmvpcQ?si=Y48hfxRnMTFTGSV3', 'YouTube video player', 'Descrição: enviar dados ou arquivos do dispositivo local para um servidor ou plataforma online.',1),
-    ('USB', 'USB', '100%', '100%', 'https://www.youtube.com/embed/sIkwHVT2xEc?si=MsYp5wEdWDEf-st9', 'YouTube video player', 'Descrição: conexão universal para transferência de dados e energia entre dispositivos.',1),
-    ('Wi-Fi', 'Wi-Fi', '100%', '100%', 'https://www.youtube.com/embed/HcPlx7OxleY?si=jOF9Q9Hl3Sburqlv', 'YouTube video player', 'Descrição: conexão sem fio para dispositivos.',1);
+    ('USB', 'USB', '100%', '100%', 'https://www.youtube.com/embed/sIkwHVT2xEc?si=MsYp5wEdWDEf-st9', 'YouTube video player', 'Descrição: conexão universal para transferência de dados e energia entre dispositivos.',1);
 
 INSERT INTO armazenamento_dados (id_elemento, titulo, width, height, src, title, descricao,id_dicio)
 VALUES
@@ -200,4 +197,3 @@ VALUES
  '2006-07-21', 
  'A Libras facilita a comunicação entre surdos e ouvintes, promovendo a inclusão. No entanto, a necessidade de intérpretes e a conscientização sobre a língua são cruciais para garantir uma interação eficaz.',NULL);
 
- 
