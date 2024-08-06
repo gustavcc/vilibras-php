@@ -86,6 +86,12 @@ elementos.forEach(function(elemento){
         document.body.style.top = `-${scrollPosition}px`; // Define a posição de rolagem no estilo top do body
         document.body.classList.add('no-scroll'); // Adiciona a classe para desativar a rolagem
 
+        const criarForm = document.createElement('form');
+        criarForm.method = 'get';
+        criarForm.className = 'receivers';
+        criarForm.action = '../../actions/faqAdmin/editQuestionAdmin.php';
+        criarForm.style.display = 'flex';
+
         const criarOrganizer = document.createElement('div');
         criarOrganizer.className = 'organizer';
 
@@ -95,6 +101,11 @@ elementos.forEach(function(elemento){
         const criarConfirm = document.createElement('div');
         criarConfirm.className = 'confirm';
         criarConfirm.id = 'confirmEdit'
+
+        const idPergunta = document.createElement('input');
+        idPergunta.type = 'hidden';
+        idPergunta.value = elemento.id_feedback;
+        idPergunta.name = 'id_feedback';
 
         const criarInformTitulo = document.createElement('h2');
         criarInformTitulo.className = 'inform';
@@ -108,13 +119,15 @@ elementos.forEach(function(elemento){
 
         const textAreaEditTitulo = document.createElement('textarea');
         textAreaEditTitulo.className = 'textAreaEdit';
-        textAreaEditTitulo.id = 'textAreaTitulo'
+        textAreaEditTitulo.id = 'textAreaTitulo';
+        textAreaEditTitulo.name = 'titulo';
         textAreaEditTitulo.value = elemento.titulo;
         textAreaEditTitulo.required = true;
         
         const textAreaEditDescricao = document.createElement('textarea');
         textAreaEditDescricao.className = 'textAreaEdit';
         textAreaEditDescricao.id = 'textAreaDescricao';
+        textAreaEditDescricao.name = 'descricao';
         textAreaEditDescricao.value = elemento.descricao;
         textAreaEditDescricao.required = true;
 
@@ -135,23 +148,25 @@ elementos.forEach(function(elemento){
         criarConfirm.appendChild(criarInform);
         criarConfirm.appendChild(textAreaEditDescricao);
         criarConfirm.appendChild(criarOrganizer);
+        criarConfirm.appendChild(idPergunta);
 
         criarBottom.appendChild(criarConfirm);
-        main.appendChild(criarBottom);
+        criarForm.appendChild(criarBottom);
+        main.appendChild(criarForm);
 
         textAreaEditDescricao.focus();
 
-        criarButonConfirm.addEventListener('click', function(){
+        // criarButonConfirm.addEventListener('click', function(){
 
-            if (((elemento.descricao != textAreaDescricao.value) || (elemento.titulo != textAreaTitulo.value)) && (textAreaDescricao.value.trim().length > 0 && textAreaTitulo.value.trim().length > 0)){
-                const url = `../../actions/faqAdmin/editQuestionAdmin.php?titulo=${textAreaTitulo.value}&descricao=${textAreaDescricao.value}&id_feedback=${elemento.id_feedback}`;
-                window.location.href = url;
-            }
+        //     if (((elemento.descricao != textAreaDescricao.value) || (elemento.titulo != textAreaTitulo.value)) && (textAreaDescricao.value.trim().length > 0 && textAreaTitulo.value.trim().length > 0)){
+        //         const url = `../../actions/faqAdmin/editQuestionAdmin.php?titulo=${textAreaTitulo.value}&descricao=${textAreaDescricao.value}&id_feedback=${elemento.id_feedback}`;
+        //         window.location.href = url;
+        //     }
 
-        })
+        // })
         
         criarButonCancel.addEventListener('click', function() {
-            main.removeChild(criarBottom);
+            main.removeChild(criarForm);
             document.body.classList.remove('no-scroll'); // Remove a classe para reativar a rolagem
             window.scrollTo(0, scrollPosition); // Restaura a posição de rolagem
 
@@ -236,8 +251,154 @@ elementos.forEach(function(elemento){
         const criarDetails = document.createElement('details');
         criarDetails.appendChild(criarSummary);
         criarDetails.appendChild(criarResposta);
+        
+        const organizerEditsResposta = document.createElement('div')
 
-        criarDiv.appendChild(criarDetails);   
+        const editResposta = document.createElement('button');
+        editResposta.innerHTML = 'Editar';
+        editResposta.className = 'responder';
+        editResposta.style.fontSize = '14px';
+
+        editResposta.addEventListener('click', function(){
+
+        scrollPosition = window.scrollY; // Salva a posição de rolagem atual
+        document.body.style.top = `-${scrollPosition}px`; // Define a posição de rolagem no estilo top do body
+        document.body.classList.add('no-scroll'); // Adiciona a classe para desativar a rolagem
+
+        const criarForm = document.createElement('form');
+        criarForm.className = 'receivers';
+        criarForm.action = "../../actions/faqAdmin/editResposta.php";
+        criarForm.method = 'get';
+        criarForm.style.display = 'flex';
+
+        const criarOrganizer = document.createElement('div');
+        criarOrganizer.className = 'organizer';
+
+        const criarBottom = document.createElement('div');
+        criarBottom.className = 'fundo';
+
+        const criarConfirm = document.createElement('div');
+        criarConfirm.className = 'confirm';
+        criarConfirm.id = 'confirmEditResposta'
+
+        const criarInformResposta = document.createElement('h2');
+        criarInformResposta.className = 'inform';
+        criarInformResposta.id = 'InformTitulo';
+        criarInformResposta.textContent = 'Resposta';
+
+        const textAreaEditResposta = document.createElement('textarea');
+        textAreaEditResposta.className = 'textAreaEdit';
+        textAreaEditResposta.id = 'textAreaTitulo'
+        textAreaEditResposta.name = 'resposta'
+        textAreaEditResposta.value = elemento.resposta;
+        textAreaEditResposta.required = true;
+
+        const idPergunta = document.createElement('input');
+        idPergunta.type = 'hidden';
+        idPergunta.name = 'id_feedback';
+        idPergunta.value = elemento.id_feedback;
+
+        const criarButonCancel = document.createElement('button');
+        criarButonCancel.className = 'buttonCancel';
+        criarButonCancel.textContent = 'Cancelar';
+
+        const criarButonConfirm = document.createElement('button');
+        button.type = 'submit';
+        criarButonConfirm.className = 'buttonConfirm';
+        criarButonConfirm.textContent = 'Editar';
+
+        criarOrganizer.appendChild(criarButonCancel);
+        criarOrganizer.appendChild(criarButonConfirm);
+
+        criarConfirm.appendChild(criarInformResposta);
+        criarConfirm.appendChild(textAreaEditResposta);
+        criarConfirm.appendChild(idPergunta);
+
+        criarConfirm.appendChild(criarOrganizer);
+
+        criarBottom.appendChild(criarConfirm);
+        criarForm.appendChild(criarBottom)
+        main.appendChild(criarForm);
+
+        textAreaEditResposta.focus();
+        
+        criarButonCancel.addEventListener('click', function() {
+            main.removeChild(criarForm);
+            document.body.classList.remove('no-scroll'); // Remove a classe para reativar a rolagem
+            window.scrollTo(0, scrollPosition); // Restaura a posição de rolagem
+
+        })
+
+
+        })
+
+        const removeResposta = document.createElement('button');
+        removeResposta.innerHTML = 'Remover';
+        removeResposta.className = 'responder'
+        removeResposta.style.fontSize = '14px';
+
+
+        removeResposta.addEventListener('click',function(){
+
+        scrollPosition = window.scrollY; // Salva a posição de rolagem atual
+        document.body.style.top = `-${scrollPosition}px`; // Define a posição de rolagem no estilo top do body
+        document.body.classList.add('no-scroll'); // Adiciona a classe para desativar a rolagem
+
+        const criarOrganizer = document.createElement('div');
+        criarOrganizer.className = 'organizer';
+
+        const criarBottom = document.createElement('div');
+        criarBottom.className = 'fundo';
+
+        const criarConfirm = document.createElement('div');
+        criarConfirm.className = 'confirm';
+
+        const criarInform = document.createElement('h2');
+        criarInform.className = 'inform';
+        criarInform.textContent = 'Excluir resposta';
+
+        const criarLastInform = document.createElement('p');
+        criarLastInform.className = 'lastInform';
+        criarLastInform.textContent = 'Excluir a resposta permanentemente?';
+
+        const criarButonCancel = document.createElement('button');
+        criarButonCancel.className = 'buttonCancel';
+        criarButonCancel.textContent = 'Cancelar';
+
+        const criarButonConfirm = document.createElement('button');
+        criarButonConfirm.className = 'buttonConfirm';
+        criarButonConfirm.textContent = 'Excluir';
+
+        criarOrganizer.appendChild(criarButonCancel);
+        criarOrganizer.appendChild(criarButonConfirm);
+
+        criarConfirm.appendChild(criarInform);
+        criarConfirm.appendChild(criarLastInform);
+        criarConfirm.appendChild(criarOrganizer);
+
+        criarBottom.appendChild(criarConfirm);
+        main.appendChild(criarBottom);
+
+        criarButonCancel.addEventListener('click', function() {
+            main.removeChild(criarBottom);
+            document.body.classList.remove('no-scroll'); // Remove a classe para reativar a rolagem
+            window.scrollTo(0, scrollPosition); // Restaura a posição de rolagem
+        });
+
+        criarButonConfirm.addEventListener('click', function() {
+            const url = `../../actions/faqAdmin/removeResposta.php?id_pergunta=${elemento.id_feedback}`;
+            window.location.href = url;
+        });
+
+    })
+
+        organizerEditsResposta.appendChild(removeResposta);
+        organizerEditsResposta.appendChild(editResposta);
+
+        criarDetails.appendChild(organizerEditsResposta);
+
+        criarDiv.appendChild(criarDetails); 
+
     } else {
         const criarResponder = document.createElement('button');
         criarResponder.className = 'responder';
@@ -277,6 +438,7 @@ elementos.forEach(function(elemento){
             textAreaResposta.className = 'textAreaEdit'
             textAreaResposta.rows = '2';
             textAreaResposta.name = 'Resposta';
+            textAreaResposta.required = true;
 
             const idPergunta = document.createElement('input');
             idPergunta.type = 'hidden';
