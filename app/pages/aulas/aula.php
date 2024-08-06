@@ -1,5 +1,3 @@
-
-
 <?php
 require_once("../../actions/usuario/identifyUsuarioLogado.php");
 
@@ -18,7 +16,7 @@ require_once("../base/popups/popup.php");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../../../public/images/Logo.png" type="image/x-icon">
+    <link rel="icon" href="../../../public/images/Logo.png">
     
     <title>VILIBRAS</title>
     <link rel="stylesheet" href="../../../public/css/aula-style.css">
@@ -73,6 +71,11 @@ require_once("../base/popups/popup.php");
                     $aulas[] = $row;
                 }
                 desconecta();
+
+                $userName = '';
+                if (isset($usuarioLogado['nome'])) {
+                    $userName = $usuarioLogado['nome'];
+                }
                 ?>
                 <br> <br>
 
@@ -104,7 +107,7 @@ require_once("../base/popups/popup.php");
                     <img src="../../../public/images/Logo.png" alt=""> -->
                 </div>
 
-                <p id="text-intro"><span>Olá</span><br><br>Seja bem vindo(a) a sessão de vídeos<br> da plataforma <em><span>VILIBRAS</span></em></p>
+                <p id="text-intro">Olá <span><?php echo htmlspecialchars($userName);?>,</span><br><br>Seja bem vindo(a)<br>a sessão de vídeos da <br>plataforma <em><span>VILIBRAS</span></em></p>
                 <img class="blocks-img" src="../../../public/images/cubos-3d-abstratos.png" alt="">
             </div>
             <img class="alert-icon" src="../../../public/images/help-web-button_18436.png" alt="">
@@ -143,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     data.forEach(aula => {
                         const resultItem = document.createElement('div');
                         resultItem.classList.add('result-item');
-                        resultItem.innerHTML = `<strong>${aula.titulo}</strong><p>${aula.descricao}</p>`;
+                        resultItem.innerHTML = `<div class="video-search"><strong>${aula.titulo}</strong><p>${aula.descricao}</p></div><div class="video-box"></div>` ;
                         resultsContainer.appendChild(resultItem);
                     });
                 });
