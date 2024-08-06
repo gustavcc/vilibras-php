@@ -13,7 +13,7 @@
 <body>
     <div class="site-content">
         <video autoplay muted loop id="heroVideo">
-            <source src="../../../public/images/COSTA RICA IN 4K 60fps HDR (ULTRA HD).mp4" type="video/mp4">
+            <source src="../../../public/images/background-cadastro.mp4" type="video/mp4">
         </video>
     </div>
 

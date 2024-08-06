@@ -70,7 +70,7 @@ header {
 
 
 
-#text-inntro span{
+#text-intro span{
     background-image: linear-gradient(to right,#0073E6, #005bb5);
     background-clip: text; 
     -webkit-background-clip: text;
@@ -394,7 +394,7 @@ main {
 }
 
 .light-theme p#text-intro{
-    background-image: linear-gradient(to right,rgb(202, 201, 201), rgb(145, 145, 145));
+    background-image: linear-gradient(to right, #00000090, #000000e0);
     background-clip: text; 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; 

@@ -25,7 +25,8 @@ iframe{
 h3{
     position: absolute;
     top: 85%;
-    left: 45%;
+    left: 50%;
+    width: 100%;
 }
 
 h2{
@@ -33,6 +34,7 @@ h2{
     top: 75%;
     left: 50%;
     font-weight: 200;
+    width: 85%;
 }
 
 
@@ -61,4 +63,39 @@ p#text-intro{
     position: relative;
     left: 25em;
 
+}
+
+#text-intro span{
+    font-size: 2.3vw
+}
+
+.search-results{
+    position: absolute;
+    background-color: var(--dark-500);
+    width: calc(45vw - 11px);
+    max-height: 200px;
+    overflow-y: auto;
+    z-index: 1000;
+    color: #fff;
+    top: 4em;
+}
+
+.video-box{
+    background: linear-gradient(90deg, rgb(31, 128, 231) 25%, #f2f2f2 50%, rgb(0, 115, 255) 75%);
+    background-size: 200% 200%;
+    animation: skeleton-loading 4.5s infinite;
+    width: 100px;
+    height: 50px;
+    /* margin: 0 auto; */
+    display: flex;
+    margin-right: 30px;
+    margin-top: 5px;
+    border-radius: 1em;
+}
+
+.search-results .result-item{
+    display: flex;
+    padding: 10px;
+    cursor: pointer;
+    justify-content: space-between;
 }
