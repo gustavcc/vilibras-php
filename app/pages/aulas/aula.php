@@ -33,7 +33,7 @@ require_once("../base/popups/popup.php");
 
 <header>
     <div class="menu-icon fa-solid fa-bars-staggered" id="menu-toggle"></div>
-    <div class="logo"><img src="../../../public/images/logo.png" alt="Logo"><p><a href="">VILIBRAS</a></p></div>
+    <div class="logo"><img src="../../../public/images/logo.png" alt="Logo"><p><a href="../dashboard/dashboard.php">VILIBRAS</a></p></div>
     <div class="search-bar">
         <input type="text" id="search-input" placeholder="Pesquisar">
         <button class="fa-solid fa-magnifying-glass"></button>
@@ -104,7 +104,7 @@ require_once("../base/popups/popup.php");
                     <img src="../../../public/images/Logo.png" alt=""> -->
                 </div>
 
-                <p id="text-intro"><span>Olá</span><br><br>Seja bem vindo a sessão de vídeos<br> da plataforma <em><span>VILIBRAS</span></em></p>
+                <p id="text-intro"><span>Olá</span><br><br>Seja bem vindo(a) a sessão de vídeos<br> da plataforma <em><span>VILIBRAS</span></em></p>
                 <img class="blocks-img" src="../../../public/images/cubos-3d-abstratos.png" alt="">
             </div>
             <img class="alert-icon" src="../../../public/images/help-web-button_18436.png" alt="">

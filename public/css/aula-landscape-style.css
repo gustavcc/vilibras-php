@@ -54,8 +54,8 @@ main p{
     left: 14em;
     top: 5em;
     width: 40px;
-    filter: invert(1);
 }
+
 
 p#text-intro{
     position: relative;

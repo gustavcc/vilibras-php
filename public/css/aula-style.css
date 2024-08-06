@@ -68,6 +68,8 @@ header {
 }
 
 
+
+
 #text-inntro span{
     background-image: linear-gradient(to right,#0073E6, #005bb5);
     background-clip: text; 
@@ -85,7 +87,7 @@ header {
 }
 
 .light-theme header a {
-    color: #000000;
+    color: #000000 !important;
 
 }
 
@@ -160,6 +162,7 @@ header {
 
 .light-theme .search-bar input{
     background-color: var(--light-500);
+    color: #000000;
 
 }
 
@@ -374,6 +377,10 @@ main {
     padding: 20px;
     /* opacity: 1 !important; */
     z-index: 2;
+}
+
+.alert-icon{
+    filter: invert(0.5);
 }
 
 .light-theme .hero{

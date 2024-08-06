@@ -56,15 +56,10 @@ input[type="password"] {
   border-radius: 5px;
   width: 100%;
   font-size: 16px;
-  background-color: var(--dark-100);
+  background-color: #7070701a;
   color: white;
 }
 
-input[type="password"].light {
-  border: 1px solid var(--light-100);
-  background-color: var(--light-100);
-  color: black;
-}
 
 button[type="submit"] {
   background-color: #4CAF50;

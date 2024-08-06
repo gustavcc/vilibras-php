@@ -204,7 +204,7 @@ section{
     font-size: 1.3em;
 }
 
-#icon1, #icon3, figcaption{
+#icon1, #icon3, #icon5, figcaption{
     float: right;
 }
 #icon2, #icon4{

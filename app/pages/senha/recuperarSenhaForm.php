@@ -171,8 +171,8 @@
 <body>
   <header>
     <div class="header-links">
-      <a href="../usuario/login.php" id="login-link">Login</a>
-      <a href="../usuario/cadastro.php" id="signup-link">Cadastro</a>
+      <a href="../usuario/login.php" id="login-link">🚪Login</a>
+      <a href="../usuario/cadastro.php" id="signup-link">🆔Cadastro</a>
     </div>
     <div class="header-vilibras">
       <img src="../../../public/images/Logo.png" alt="LOGO">
