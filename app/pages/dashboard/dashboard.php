@@ -77,7 +77,7 @@ require_once("../../actions/questoes/getQuestoesAcertou.php");
         </section>
         <p class="title">Aulas</p>
         <section class="aulas">
-            <a href="../aulas/aulas.php" class="box-aulas">
+            <a href="../aulas/aula.php" class="box-aulas">
                 <i id="icon-a" class="fa-solid fa-users-rectangle"></i>
                 <p class="text">Aperfeiçoe seu aprendizado</p>
             </a>

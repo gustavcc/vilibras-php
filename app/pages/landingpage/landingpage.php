@@ -115,7 +115,7 @@ require_once("../base/popups/popup.php");
                     <p>Acesse a aba de <span>aulas</span> e comece a aprender</p>
                 </div>
                 <div class="button">
-                    <a href="../aulas/aulas_v2.php">Aulas</a>
+                    <a href="../aulas/aula.php">Aulas</a>
                 </div>
             </div>
         </div>
