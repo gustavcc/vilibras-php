@@ -46,14 +46,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->isSMTP();
         $mail->Host       = 'smtp.office365.com';
         $mail->SMTPAuth   = true;
-        $mail->Username   = 'vilibras.projeto@outlook.com'; // Seu endereço de e-mail
+        $mail->Username   = 'dim.lib@outlook.com'; // Seu endereço de e-mail
         $mail->Password   = '1projeto_vilibras1'; // Sua senha de e-mail
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port       = 587; // Porta TCP para o servidor SMTP
 
         // Configurações do e-mail
         $mail->CharSet = 'UTF-8'; // Defina a codificação para UTF-8
-        $mail->setFrom('vilibras.projeto@outlook.com', 'VILIBRAS');
+        $mail->setFrom('dim.lib@outlook.com', 'VILIBRAS');
         $mail->addAddress($email); // Adicionar um destinatário
         $mail->isHTML(true); // Definir o formato do e-mail como HTML
         $mail->Subject = 'Redefinição de Senha';
@@ -68,4 +68,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: ../../pages/senha/recuperarSenhaForm.php?status=error&message=Erro ao enviar o e-mail");
     }
 }
-?>
