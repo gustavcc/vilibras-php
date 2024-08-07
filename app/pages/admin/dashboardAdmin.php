@@ -14,7 +14,7 @@ if (!isset($_SESSION['login-admin'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Dashboard ADM | VILIBRAS</title>
+    <title>Admin | VILIBRAS</title>
 
     <link rel="icon" href="../../../public/images/Logo.png">
     <link rel="stylesheet" href="../../../public/css/dashboardAdmin.css">
@@ -32,7 +32,7 @@ if (!isset($_SESSION['login-admin'])) {
         <div style="padding-right: 10px;" class="logo">
             <img src="../../../public/images/Logo.png" alt="logo">
         </div>
-        <a class="navbar-brand" href="#">ADM</a>
+        <a class="navbar-brand" href="../admin/dashboardAdmin.php">Admin</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>

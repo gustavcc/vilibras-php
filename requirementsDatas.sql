@@ -197,3 +197,9 @@ VALUES
  '2006-07-21', 
  'A Libras facilita a comunicação entre surdos e ouvintes, promovendo a inclusão. No entanto, a necessidade de intérpretes e a conscientização sobre a língua são cruciais para garantir uma interação eficaz.',NULL);
 
+-- Add dados de aulas
+
+INSERT INTO aulas (id, titulo, descricao, resumo, iframe)
+VALUES 
+(1, 'Titulo', 'Descricao', 'Resumo', 'https://www.youtube.com/embed/KK4iMNuoI_k?si=EJlKDn6xTT_yWZxW'),
+(2, 'AULA 1', 'Aula fundamental sobre LIBRAS', 'Resumo', 'https://www.youtube.com/embed/KK4iMNuoI_k?si=EJlKDn6xTT_yWZxW');
