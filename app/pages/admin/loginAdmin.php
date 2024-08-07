@@ -6,13 +6,13 @@
     <link rel="shortcut icon" href="../../../public/images/Logo.png" type="image/x-icon">
     <link rel="stylesheet" href="../../../public/css/login.css">
     <script src="https://unpkg.com/jwt-decode/build/jwt-decode.js"></script>
-    <title>Login ADM | VILIBRAS</title>
+    <title>Login Admin | VILIBRAS</title>
 </head>
 <body>
     <div class="background-image" id="background-image">
         <div class="login-container" id="login-container">
             <div class="avatar">    </div>
-            <h1>Logar como ADM</h1>
+            <h1>Logar Admin</h1>
             <img src="../../../public/images/Logo.png" id="foto" alt="">
             <form id="forms" method="POST" action="../../actions/admin/loginAdmin.php">
                 <input type="emqil" name="email" placeholder="E-mail" required>
